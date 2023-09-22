@@ -1,17 +1,18 @@
+import type {PackageJson} from '@feltjs/gro/util/package_json.js';
 import type {ComponentType} from 'svelte';
 
-// TODO dynamic import
-
-// TODO rename?
-export interface LibraryItem {
+export interface LibraryItemData {
 	slug: string;
 	pathname: string;
 	name: string;
+	tagline: string;
+	summary: string;
 	category: string;
+	package: PackageJson;
 	related: string[];
 }
 
-export type LibraryItemWithComponent = LibraryItem & {component: ComponentType};
+export type LibraryItemWithComponent = LibraryItemData & {component: ComponentType};
 
 /**
  * For now, mutate this directly to set up the library items.

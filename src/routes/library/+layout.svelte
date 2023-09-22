@@ -1,34 +1,23 @@
 <script lang="ts">
 	import {page} from '$app/stores';
-	import {setContext} from 'svelte';
+	import {onMount, setContext} from 'svelte';
 	import Breadcrumbs from '@fuz.dev/fuz/Breadcrumbs.svelte';
 
 	import LibraryMenu from '$lib/LibraryMenu.svelte';
-	import {
-		library_items_by_name,
-		get_library_items,
-		init_library_item,
-		type LibraryItemWithComponent,
-	} from '$lib/library_items';
+	import {library_items_by_name, get_library_items} from '$lib/library_items';
 	import LibraryPanel from '$lib/LibraryPanel.svelte';
-	import Library from '$routes/library/Library/+page.svelte';
 
-	const initial_library_items: LibraryItemWithComponent[] = [
-		{
-			name: 'Library',
-			slug: 'Library',
-			pathname: '',
-			category: 'components',
-			component: Library,
-			related: [], // TODO externals?
-		},
-	];
+	let library_items = get_library_items();
 
-	for (const item of initial_library_items) {
-		library_items_by_name.set(item.name, init_library_item(item));
-	}
+	onMount(async () => {
+		await init_items();
+	});
 
-	$: selected_item = get_library_items().find((c) => c.pathname === $page.url.pathname);
+	const init_items = async () => {
+		library_items = get_library_items();
+	};
+
+	$: selected_item = library_items.find((c) => c.pathname === $page.url.pathname);
 	$: items_related_to_selected = selected_item?.related?.map((r) => library_items_by_name.get(r)!);
 
 	// TODO factor this code out and publish the layout
