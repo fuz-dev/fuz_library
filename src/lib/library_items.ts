@@ -15,7 +15,7 @@ export interface LibraryItem {
 
 export type LibraryItemWithComponent = LibraryItem & {component: ComponentType};
 
-// TODO BLOCK extract data
+// TODO BLOCK extract data - context object? `library_context`
 export const library_items_by_name: Map<string, LibraryItemWithComponent> = new Map(
 	[
 		{
@@ -27,7 +27,7 @@ export const library_items_by_name: Map<string, LibraryItemWithComponent> = new 
 			related: [], // TODO externals?
 		},
 	].map((item) => {
-		item.pathname = `/library/${item.slug}`;
+		if (!item.pathname) item.pathname = `/library/${item.slug}`;
 		return [item.name, item];
 	}),
 );
