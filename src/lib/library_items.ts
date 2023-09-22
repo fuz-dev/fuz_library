@@ -5,7 +5,7 @@ import Library from '$routes/library/Library/+page.svelte';
 // TODO dynamic import
 
 // TODO rename?
-export interface MenuItem {
+export interface Librarytem {
 	slug: string;
 	pathname: string;
 	name: string;
@@ -13,9 +13,9 @@ export interface MenuItem {
 	related: string[];
 }
 
-export type MenuItemWithComponent = MenuItem & {component: ComponentType};
+export type LibraryItemWithComponent = Librarytem & {component: ComponentType};
 
-export const library_items_by_name: Map<string, MenuItemWithComponent> = new Map(
+export const library_items_by_name: Map<string, LibraryItemWithComponent> = new Map(
 	[
 		{
 			name: 'Library',
@@ -31,4 +31,4 @@ export const library_items_by_name: Map<string, MenuItemWithComponent> = new Map
 	}),
 );
 
-export const library_items: MenuItemWithComponent[] = Array.from(library_items_by_name.values());
+export const library_items: LibraryItemWithComponent[] = Array.from(library_items_by_name.values());

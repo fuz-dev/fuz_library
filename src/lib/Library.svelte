@@ -1,7 +1,7 @@
 <script lang="ts">
-	import {library_items, type MenuItemWithComponent} from '$lib/library_items';
+	import {library_items, type LibraryItemWithComponent} from '$lib/library_items';
 
-	export let items: MenuItemWithComponent[] = library_items;
+	export let items: LibraryItemWithComponent[] = library_items;
 </script>
 
 <div class="library">
