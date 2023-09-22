@@ -65,5 +65,39 @@
         }
       }
     ]
+  },
+  "exports": {
+    "./helpers.js": {
+      "default": "./dist/helpers.js",
+      "types": "./dist/helpers.d.ts"
+    },
+    "./items.js": {
+      "default": "./dist/items.js",
+      "types": "./dist/items.d.ts"
+    },
+    "./Library.svelte": {
+      "svelte": "./dist/Library.svelte",
+      "types": "./dist/Library.svelte.d.ts"
+    },
+    "./LibraryItem.svelte": {
+      "svelte": "./dist/LibraryItem.svelte",
+      "types": "./dist/LibraryItem.svelte.d.ts"
+    },
+    "./LibraryItemTitle.svelte": {
+      "svelte": "./dist/LibraryItemTitle.svelte",
+      "types": "./dist/LibraryItemTitle.svelte.d.ts"
+    },
+    "./LibraryMenu.svelte": {
+      "svelte": "./dist/LibraryMenu.svelte",
+      "types": "./dist/LibraryMenu.svelte.d.ts"
+    },
+    "./LibraryPanel.svelte": {
+      "svelte": "./dist/LibraryPanel.svelte",
+      "types": "./dist/LibraryPanel.svelte.d.ts"
+    },
+    "./LibraryVocab.svelte": {
+      "svelte": "./dist/LibraryVocab.svelte",
+      "types": "./dist/LibraryVocab.svelte.d.ts"
+    }
   }
 }
