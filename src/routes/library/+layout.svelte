@@ -17,8 +17,9 @@
 			component: Library,
 			related: [], // TODO externals?
 		},
-	])
+	]) {
 		library_items_by_name.set(item.name, init_library_item(item));
+	}
 
 	$: selectedItem = library_items().find((c) => c.pathname === $page.url.pathname);
 	$: itemsRelatedToSelected = selectedItem?.related?.map((r) => library_items_by_name.get(r)!);

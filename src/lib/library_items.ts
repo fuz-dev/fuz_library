@@ -13,6 +13,10 @@ export interface LibraryItem {
 
 export type LibraryItemWithComponent = LibraryItem & {component: ComponentType};
 
+/**
+ * For now, mutate this directly to set up the library items.
+ * TODO use Svelte5 patterns
+ */
 export const library_items_by_name: Map<string, LibraryItemWithComponent> = new Map();
 
 // TODO use Svelte 5 pattern here for $derived
