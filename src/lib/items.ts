@@ -1,8 +1,6 @@
 import type {ComponentType} from 'svelte';
 
-import Surface from '$routes/library/Surface/+page.svelte';
-import Mural from '$routes/library/Mural/+page.svelte';
-import Scaled from '$routes/library/Scaled/+page.svelte';
+import Library from '$routes/library/Library/+page.svelte';
 
 // TODO dynamic import
 
@@ -12,7 +10,7 @@ export interface MenuItem {
 	pathname: string;
 	name: string;
 	category: string;
-	related?: string[];
+	related: string[];
 }
 
 export type MenuItemWithComponent = MenuItem & {component: ComponentType};
@@ -20,28 +18,12 @@ export type MenuItemWithComponent = MenuItem & {component: ComponentType};
 export const libraryItemsByName: Map<string, MenuItemWithComponent> = new Map(
 	[
 		{
-			name: 'Mural',
-			slug: 'Mural',
+			name: 'Library',
+			slug: 'Library',
 			pathname: '',
 			category: 'components',
-			component: Mural,
-			related: ['Surface', 'Scaled'],
-		},
-		{
-			name: 'Scaled',
-			slug: 'Scaled',
-			pathname: '',
-			category: 'components',
-			component: Scaled,
-			related: ['Mural', 'Surface'],
-		},
-		{
-			name: 'Surface',
-			slug: 'Surface',
-			pathname: '',
-			category: 'components',
-			component: Surface,
-			related: ['Mural', 'Scaled'],
+			component: Library,
+			related: [], // TODO externals?
 		},
 	].map((item) => {
 		item.pathname = `/library/${item.slug}`;
