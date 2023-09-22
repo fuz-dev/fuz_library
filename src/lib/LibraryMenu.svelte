@@ -3,14 +3,14 @@
 	import {slide} from 'svelte/transition';
 	import {base} from '$app/paths';
 
-	import type {MenuItem} from '$routes/library/items';
-	import LibraryPanel from '$routes/library/LibraryPanel.svelte';
+	import type {MenuItem} from '$lib/library_items';
+	import LibraryPanel from '$lib/LibraryPanel.svelte';
 
 	// itemsMenu floats alongside the docs, showing scrolled item as active
 	export let items: MenuItem[];
 
-	let itemsByCategory: Record<string, MenuItem[]>;
-	$: itemsByCategory = items.reduce(
+	let items_by_category: Record<string, MenuItem[]>;
+	$: items_by_category = items.reduce(
 		(result, c) => {
 			if (!(c.category in result)) result[c.category] = [];
 			result[c.category].push(c);
@@ -20,7 +20,7 @@
 	);
 </script>
 
-{#each Object.entries(itemsByCategory) as [category, items] (category)}
+{#each Object.entries(items_by_category) as [category, items] (category)}
 	<div transition:slide>
 		<LibraryPanel>
 			<div class="library-menu">

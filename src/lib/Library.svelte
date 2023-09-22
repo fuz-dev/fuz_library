@@ -1,7 +1,7 @@
 <script lang="ts">
-	import {libraryItems, type MenuItemWithComponent} from '$routes/library/items';
+	import {library_items, type MenuItemWithComponent} from '$lib/library_items';
 
-	export let items: MenuItemWithComponent[] = libraryItems;
+	export let items: MenuItemWithComponent[] = library_items;
 </script>
 
 <div class="library">

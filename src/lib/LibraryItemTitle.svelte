@@ -1,18 +1,18 @@
 <script lang="ts">
 	import {page} from '$app/stores';
-
-	import {toLibraryPathInfo} from '$routes/library/helpers';
 	import {getContext} from 'svelte';
+
+	import {to_library_path_info} from '$lib/helpers';
 
 	export let name: string;
 
 	// TODO hacky to avoid a circular dependency problem
-	const libraryItemsByName: any = getContext('libraryItemsByName');
-	$: libraryItem = libraryItemsByName.get(name);
+	const library_items_by_name: any = getContext('library_items_by_name');
+	$: library_item = library_items_by_name.get(name);
 
-	$: ({path, pathIsActive} = toLibraryPathInfo(libraryItem.slug, $page.url.pathname));
+	$: ({path, path_is_active} = to_library_path_info(library_item.slug, $page.url.pathname));
 </script>
 
 <h2 class="box" id={name}>
-	{#if pathIsActive}{name}{:else}<a href={path}>{name}</a>{/if}
+	{#if path_is_active}{name}{:else}<a href={path}>{name}</a>{/if}
 </h2>

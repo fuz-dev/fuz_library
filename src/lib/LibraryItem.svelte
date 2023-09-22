@@ -1,6 +1,6 @@
 <script lang="ts">
-	import LibraryItemTitle from '$routes/library/LibraryItemTitle.svelte';
-	import LibraryPanel from '$routes/library/LibraryPanel.svelte';
+	import LibraryItemTitle from '$lib/LibraryItemTitle.svelte';
+	import LibraryPanel from '$lib/LibraryPanel.svelte';
 
 	export let name: string;
 </script>

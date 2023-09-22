@@ -3,7 +3,7 @@
 
 	// TODO add contextmenu behavior
 
-	export let name: string; // TODO type, generate from `libraryItems`?
+	export let name: string; // TODO type, generate from `library_items`?
 </script>
 
 <code {...$$restProps}><a href="{base}/library/{name}"><slot>{name}</slot></a></code>

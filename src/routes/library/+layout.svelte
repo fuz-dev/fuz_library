@@ -4,25 +4,23 @@
 	import {setContext} from 'svelte';
 	import Breadcrumbs from '@fuz.dev/fuz/Breadcrumbs.svelte';
 
-	import LibraryMenu from '$routes/library/LibraryMenu.svelte';
-	import {libraryItemsByName, libraryItems} from '$routes/library/items';
-	import FeltFooter from '$routes/FeltFooter.svelte';
-	import LibraryPanel from '$routes/library/LibraryPanel.svelte';
-	import Description from '$routes/Description.svelte';
+	import LibraryMenu from '$lib/LibraryMenu.svelte';
+	import {library_items_by_name, library_items} from '$lib/library_items';
+	import LibraryPanel from '$lib/LibraryPanel.svelte';
 
-	$: selectedItem = libraryItems.find((c) => c.pathname === $page.url.pathname);
-	$: itemsRelatedToSelected = selectedItem?.related?.map((r) => libraryItemsByName.get(r)!);
+	$: selectedItem = library_items.find((c) => c.pathname === $page.url.pathname);
+	$: itemsRelatedToSelected = selectedItem?.related?.map((r) => library_items_by_name.get(r)!);
 
 	// TODO this code needs to be moved into `Library`
 
 	// TODO hacky to avoid a circular dependency problem
-	setContext('libraryItemsByName', libraryItemsByName);
+	setContext('library_items_by_name', library_items_by_name);
 </script>
 
 <div class="layout width_md">
 	<div class="menu-wrapper">
 		<div class="menu width_sm">
-			<LibraryMenu items={libraryItems} />
+			<LibraryMenu items={library_items} />
 			{#if itemsRelatedToSelected}
 				<LibraryMenu items={itemsRelatedToSelected} let:category>
 					<h6>related {category}</h6>
@@ -30,12 +28,10 @@
 			{/if}
 		</div>
 	</div>
-	<LibraryPanel>
-		<Description />
-	</LibraryPanel>
+	<LibraryPanel>TODO description</LibraryPanel>
 	<slot />
 	<section class="box">
-		<FeltFooter />
+		<footer>TODO footer</footer>
 	</section>
 	<section class="box">
 		<Breadcrumbs>💚</Breadcrumbs>

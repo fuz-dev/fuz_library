@@ -15,7 +15,7 @@ export interface MenuItem {
 
 export type MenuItemWithComponent = MenuItem & {component: ComponentType};
 
-export const libraryItemsByName: Map<string, MenuItemWithComponent> = new Map(
+export const library_items_by_name: Map<string, MenuItemWithComponent> = new Map(
 	[
 		{
 			name: 'Library',
@@ -31,4 +31,4 @@ export const libraryItemsByName: Map<string, MenuItemWithComponent> = new Map(
 	}),
 );
 
-export const libraryItems: MenuItemWithComponent[] = Array.from(libraryItemsByName.values());
+export const library_items: MenuItemWithComponent[] = Array.from(library_items_by_name.values());
