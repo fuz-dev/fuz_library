@@ -20,7 +20,7 @@ export type LibraryItemWithComponent = LibraryItem & {component: ComponentType};
 export const library_items_by_name: Map<string, LibraryItemWithComponent> = new Map();
 
 // TODO use Svelte 5 pattern here for $derived
-export const library_items: () => LibraryItemWithComponent[] = () =>
+export const get_library_items: () => LibraryItemWithComponent[] = () =>
 	Array.from(library_items_by_name.values());
 
 export const init_library_item = <T extends LibraryItemWithComponent>(item: T): T => {

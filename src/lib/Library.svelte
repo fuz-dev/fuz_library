@@ -1,7 +1,7 @@
 <script lang="ts">
-	import {library_items, type LibraryItemWithComponent} from '$lib/library_items';
+	import {get_library_items, type LibraryItemWithComponent} from '$lib/library_items';
 
-	export let items: LibraryItemWithComponent[] = library_items();
+	export let items: LibraryItemWithComponent[] = get_library_items();
 </script>
 
 <div class="library_items">

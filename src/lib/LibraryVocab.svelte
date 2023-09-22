@@ -4,6 +4,8 @@
 	// TODO add contextmenu behavior
 
 	export let name: string; // TODO type, generate from `library_items`?
+
+	// TODO runes!
 </script>
 
 <code {...$$restProps}><a href="{base}/library/{name}"><slot>{name}</slot></a></code>

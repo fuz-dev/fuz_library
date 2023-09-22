@@ -4,11 +4,16 @@
 	import Breadcrumbs from '@fuz.dev/fuz/Breadcrumbs.svelte';
 
 	import LibraryMenu from '$lib/LibraryMenu.svelte';
-	import {library_items_by_name, library_items, init_library_item} from '$lib/library_items';
+	import {
+		library_items_by_name,
+		get_library_items,
+		init_library_item,
+		type LibraryItemWithComponent,
+	} from '$lib/library_items';
 	import LibraryPanel from '$lib/LibraryPanel.svelte';
 	import Library from '$routes/library/Library/+page.svelte';
 
-	for (const item of [
+	const initial_library_items: LibraryItemWithComponent[] = [
 		{
 			name: 'Library',
 			slug: 'Library',
@@ -17,12 +22,14 @@
 			component: Library,
 			related: [], // TODO externals?
 		},
-	]) {
+	];
+
+	for (const item of initial_library_items) {
 		library_items_by_name.set(item.name, init_library_item(item));
 	}
 
-	$: selectedItem = library_items().find((c) => c.pathname === $page.url.pathname);
-	$: itemsRelatedToSelected = selectedItem?.related?.map((r) => library_items_by_name.get(r)!);
+	$: selected_item = get_library_items().find((c) => c.pathname === $page.url.pathname);
+	$: items_related_to_selected = selected_item?.related?.map((r) => library_items_by_name.get(r)!);
 
 	// TODO factor this code out and publish the layout
 
@@ -33,9 +40,9 @@
 <div class="layout width_md">
 	<div class="menu-wrapper">
 		<div class="menu width_sm">
-			<LibraryMenu items={library_items()} />
-			{#if itemsRelatedToSelected}
-				<LibraryMenu items={itemsRelatedToSelected} let:category>
+			<LibraryMenu items={get_library_items()} />
+			{#if items_related_to_selected}
+				<LibraryMenu items={items_related_to_selected} let:category>
 					<h6>related {category}</h6>
 				</LibraryMenu>
 			{/if}
