@@ -72,17 +72,17 @@
       "default": "./dist/helpers.js",
       "types": "./dist/helpers.d.ts"
     },
-    "./items.js": {
-      "default": "./dist/items.js",
-      "types": "./dist/items.d.ts"
-    },
-    "./Library.svelte": {
-      "svelte": "./dist/Library.svelte",
-      "types": "./dist/Library.svelte.d.ts"
+    "./library_items.js": {
+      "default": "./dist/library_items.js",
+      "types": "./dist/library_items.d.ts"
     },
     "./LibraryItem.svelte": {
       "svelte": "./dist/LibraryItem.svelte",
       "types": "./dist/LibraryItem.svelte.d.ts"
+    },
+    "./LibraryItems.svelte": {
+      "svelte": "./dist/LibraryItems.svelte",
+      "types": "./dist/LibraryItems.svelte.d.ts"
     },
     "./LibraryItemTitle.svelte": {
       "svelte": "./dist/LibraryItemTitle.svelte",
