@@ -1,7 +1,6 @@
 <script lang="ts">
 	// import Library from '$lib/Library.svelte';
-	// TODO BLOCK
 </script>
 
-lib
+The <code>Library component</code> is a work in progress.
 <!-- <Library /> -->

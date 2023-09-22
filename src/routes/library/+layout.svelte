@@ -10,7 +10,7 @@
 	$: selectedItem = library_items.find((c) => c.pathname === $page.url.pathname);
 	$: itemsRelatedToSelected = selectedItem?.related?.map((r) => library_items_by_name.get(r)!);
 
-	// TODO this code needs to be moved into `Library`
+	// TODO factor this code out and publish the layout
 
 	// TODO hacky to avoid a circular dependency problem
 	setContext('library_items_by_name', library_items_by_name);
@@ -29,9 +29,6 @@
 	</div>
 	<LibraryPanel>TODO description</LibraryPanel>
 	<slot />
-	<section class="box">
-		<footer>TODO footer</footer>
-	</section>
 	<section class="box">
 		<Breadcrumbs>💚</Breadcrumbs>
 	</section>
