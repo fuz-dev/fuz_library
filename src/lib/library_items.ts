@@ -1,7 +1,5 @@
 import type {ComponentType} from 'svelte';
 
-import Library from '$routes/library/Library/+page.svelte';
-
 // TODO dynamic import
 
 // TODO rename?
@@ -15,21 +13,15 @@ export interface LibraryItem {
 
 export type LibraryItemWithComponent = LibraryItem & {component: ComponentType};
 
-// TODO BLOCK extract data - context object? `library_context`
-export const library_items_by_name: Map<string, LibraryItemWithComponent> = new Map(
-	[
-		{
-			name: 'Library',
-			slug: 'Library',
-			pathname: '',
-			category: 'components',
-			component: Library,
-			related: [], // TODO externals?
-		},
-	].map((item) => {
-		if (!item.pathname) item.pathname = `/library/${item.slug}`;
-		return [item.name, item];
-	}),
-);
+export const library_items_by_name: Map<string, LibraryItemWithComponent> = new Map();
 
-export const library_items: LibraryItemWithComponent[] = Array.from(library_items_by_name.values());
+// TODO use Svelte 5 pattern here for $derived
+export const library_items: () => LibraryItemWithComponent[] = () =>
+	Array.from(library_items_by_name.values());
+
+export const init_library_item = <T extends LibraryItemWithComponent>(item: T): T => {
+	if (!item.pathname) {
+		item.pathname = `/library/${item.slug}`;
+	}
+	return item;
+};
