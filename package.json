@@ -1,11 +1,16 @@
 {
-  "name": "@fuz.dev/template",
-  "private": true,
-  "description": "a static web app and Node library template with TypeScript, Svelte, SvelteKit, Vite, esbuild, Fuz, and Gro",
+  "name": "@fuz.dev/library",
+  "description": "library components and helpers for Svelte, SvelteKit, and Fuz",
   "version": "0.0.1",
+  "license": "MIT",
   "type": "module",
-  "homepage": "https://template.fuz.dev/",
-  "repository": "https://github.com/fuz-dev/template",
+  "homepage": "https://library.fuz.dev/",
+  "repository": "https://github.com/fuz-dev/library",
+  "author": {
+    "name": "Ryan Atkinson",
+    "email": "mail@ryanatkn.com",
+    "url": "https://www.ryanatkn.com/"
+  },
   "engines": {
     "node": ">=20.5"
   },
