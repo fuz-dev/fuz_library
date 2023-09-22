@@ -96,6 +96,10 @@
       "svelte": "./dist/LibraryMenu.svelte",
       "types": "./dist/LibraryMenu.svelte.d.ts"
     },
+    "./LibraryNav.svelte": {
+      "svelte": "./dist/LibraryNav.svelte",
+      "types": "./dist/LibraryNav.svelte.d.ts"
+    },
     "./LibraryPanel.svelte": {
       "svelte": "./dist/LibraryPanel.svelte",
       "types": "./dist/LibraryPanel.svelte.d.ts"
