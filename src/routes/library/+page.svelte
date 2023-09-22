@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Library from '$lib/Library.svelte';
+	import LibraryItems from '$lib/LibraryItems.svelte';
 </script>
 
-<Library />
+<LibraryItems />

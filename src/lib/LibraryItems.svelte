@@ -4,17 +4,18 @@
 	export let items: LibraryItemWithComponent[] = library_items;
 </script>
 
-<div class="library">
+<div class="library_items">
 	{#each items as item (item)}
 		<svelte:component this={item.component} />
 	{/each}
 </div>
 
 <style>
-	.library {
+	.library_items {
 		width: 100%;
 	}
-	.library :global(.library_item) {
+	/* TODO hacky */
+	.library_items :global(.library_item) {
 		margin-bottom: var(--spacing_xl9) !important;
 	}
 </style>
