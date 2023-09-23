@@ -12,6 +12,7 @@
 <section>
 	<!-- TODO h1 is tricky here, maybe should be h2? probably too much complexity to customize, maybe rename to `PackagePage`? or a title slot? -->
 	<h1>{package_json.name}</h1>
+	<blockquote>⚠️ work in progress</blockquote>
 	{#if package_json.description}
 		<blockquote>{package_json.description}</blockquote>
 	{/if}
