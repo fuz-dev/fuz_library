@@ -1,7 +1,7 @@
 <script lang="ts">
 	import HueInput from '$lib/HueInput.svelte';
-	import Code from '$lib/Code.svelte';
-	import LibraryItem from '$routes/library/LibraryItem.svelte';
+	import Code from '$routes/Code.svelte';
+	import LibraryItem from '$lib/LibraryItem.svelte';
 
 	const LIBRARY_ITEM_NAME = 'HueInput';
 

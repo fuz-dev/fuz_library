@@ -1,5 +1,5 @@
 <script lang="ts">
-	import {get_library_items, type LibraryItemWithComponent} from '$lib/library_items';
+	import {get_library_items, type LibraryItemWithComponent} from '$lib/library_item';
 
 	export let items: LibraryItemWithComponent[] = get_library_items();
 </script>

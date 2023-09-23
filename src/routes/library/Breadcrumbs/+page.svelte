@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Breadcrumbs from '$lib/Breadcrumbs.svelte';
-	import Code from '$lib/Code.svelte';
-	import LibraryItem from '$routes/library/LibraryItem.svelte';
+	import Code from '$routes/Code.svelte';
+	import LibraryItem from '$lib/LibraryItem.svelte';
 	import BreadcrumbsExample from '$routes/library/Breadcrumbs/BreadcrumbsExample.svelte';
 
 	const LIBRARY_ITEM_NAME = 'Breadcrumbs';

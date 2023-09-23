@@ -11,8 +11,8 @@
 		to_dialog_params,
 	} from '$lib/dialog';
 	import Alert from '$lib/Alert.svelte';
-	import LibraryItem from '$routes/library/LibraryItem.svelte';
-	import Code from '$lib/Code.svelte';
+	import LibraryItem from '$lib/LibraryItem.svelte';
+	import Code from '$routes/Code.svelte';
 	import Text from '$routes/library/Dialog/Text.svelte';
 
 	const LIBRARY_ITEM_NAME = 'Dialog';

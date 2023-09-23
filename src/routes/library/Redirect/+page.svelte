@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Redirect from '$lib/Redirect.svelte';
-	import LibraryItem from '$routes/library/LibraryItem.svelte';
-	import Code from '$lib/Code.svelte';
+	import LibraryItem from '$lib/LibraryItem.svelte';
+	import Code from '$routes/Code.svelte';
 
 	const LIBRARY_ITEM_NAME = 'Redirect';
 </script>

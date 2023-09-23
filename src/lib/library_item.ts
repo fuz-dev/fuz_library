@@ -1,4 +1,3 @@
-import type {PackageJson} from '@feltjs/gro/util/package_json.js';
 import type {ComponentType} from 'svelte';
 
 export interface LibraryItemData {
@@ -8,7 +7,6 @@ export interface LibraryItemData {
 	tagline: string;
 	summary: string;
 	category: string;
-	package: PackageJson;
 	related: string[];
 }
 

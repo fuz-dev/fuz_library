@@ -2,6 +2,7 @@ import type {Gen} from '@feltjs/gro/gen/gen.js';
 import {to_root_path} from '@feltjs/gro/util/paths.js';
 import {load_package_json} from '@feltjs/gro/util/package_json.js';
 
+// TODO probably change to import `package.json` directly without using codegen, for now this is convenient to avoid the complexity (exports, types, JSON import assertion)
 export const gen: Gen = async ({origin_id}) => {
 	const package_json = await load_package_json();
 
@@ -10,6 +11,6 @@ export const gen: Gen = async ({origin_id}) => {
 
 import type {PackageJson} from '@feltjs/gro/util/package_json.js';
 
-export const package_json = ${JSON.stringify(package_json)} satisfies PackageJson;
+export const pkg = ${JSON.stringify(package_json)} satisfies PackageJson;
 `;
 };

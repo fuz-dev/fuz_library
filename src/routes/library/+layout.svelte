@@ -4,7 +4,7 @@
 	import Breadcrumbs from '@fuz.dev/fuz/Breadcrumbs.svelte';
 
 	import LibraryMenu from '$lib/LibraryMenu.svelte';
-	import {library_items_by_name, get_library_items} from '$lib/library_items';
+	import {library_items_by_name, get_library_items} from '$lib/library_item';
 	import LibraryPanel from '$lib/LibraryPanel.svelte';
 
 	let library_items = get_library_items();
@@ -37,10 +37,20 @@
 			{/if}
 		</div>
 	</div>
-	<LibraryPanel>TODO description</LibraryPanel>
+	<LibraryPanel>
+		<div class="prose box text_align_center">
+			<blockquote class="width_sm">friendly user zystem</blockquote>
+			<code class="box padded_md panel"
+				>npm i -D <a href="https://www.npmjs.com/package/@fuz.dev/fuz">@fuz.dev/fuz-library</a>
+			</code>
+			<a class="padded_md panel" href="https://github.com/fuz-dev/fuz-library"
+				>github.com/fuz-dev/fuz-library</a
+			>
+		</div></LibraryPanel
+	>
 	<slot />
 	<section class="box">
-		<Breadcrumbs>💚</Breadcrumbs>
+		<Breadcrumbs>🧶</Breadcrumbs>
 	</section>
 </div>
 

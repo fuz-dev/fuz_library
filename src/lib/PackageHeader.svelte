@@ -1,21 +1,19 @@
 <script lang="ts">
 	import {base} from '$app/paths';
+	import type {PackageJson} from '@feltjs/gro/util/package_json.js';
 
-	import type {LibraryItemData} from '$lib/library_item';
-
-	export let item: LibraryItemData; // friendly user zystem
+	export let pkg: PackageJson;
 </script>
 
-<!-- <h1>@fuz.dev/fuz</h1> -->
-<!-- TODO publish and link the above to npm -->
-
 <section>
-	<blockquote>{item.tagline}</blockquote>
+	<h1>{pkg.name}</h1>
+</section>
+<section>
+	<blockquote>{pkg.description}</blockquote>
 </section>
 <section>
 	<code class="chip"
-		>npm i -D&nbsp;<a class="chip" href="https://npmjs.com/package/@fuz.dev/fuz">@fuz.dev/fuz</a
-		></code
+		>npm i -D&nbsp;<a href="https://npmjs.com/package/@fuz.dev/fuz">@fuz.dev/fuz</a></code
 	>
 </section>
 <section>

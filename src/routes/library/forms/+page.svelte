@@ -2,8 +2,8 @@
 	import {fly} from 'svelte/transition';
 
 	import Alert from '$lib/Alert.svelte';
-	import Code from '$lib/Code.svelte';
-	import LibraryItem from '$routes/library/LibraryItem.svelte';
+	import Code from '$routes/Code.svelte';
+	import LibraryItem from '$lib/LibraryItem.svelte';
 
 	const LIBRARY_ITEM_NAME = 'forms';
 

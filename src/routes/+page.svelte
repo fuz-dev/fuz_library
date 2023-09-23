@@ -1,9 +1,10 @@
 <script lang="ts">
-	import {base} from '$app/paths';
+	import PackageHeader from '$lib/PackageHeader.svelte';
+	import {pkg} from '$lib/pkg';
 </script>
 
 <main class="prose">
-	<section class="box"><a class="chip" href="{base}/library">library</a></section>
+	<PackageHeader {pkg} />
 </main>
 
 <style>
