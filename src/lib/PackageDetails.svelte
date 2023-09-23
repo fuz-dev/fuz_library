@@ -3,6 +3,8 @@
 
 	export let package_json: PackageJson;
 
+	// TODO think through with other presentations - Details, Summary, Card
+
 	// TODO refactor
 	$: has_library = !!package_json.exports;
 </script>
@@ -21,6 +23,13 @@
 			></code
 		>
 	</section>
+{/if}
+{#if package_json.repository}
+	<!-- TODO multiple types, add to Gro -->
+	<div>
+		repository: {JSON.stringify(package_json.repository)}
+	</div>
+	<!-- TODO more details behind a `<details>`, including author -->
 {/if}
 
 <style>
