@@ -6,15 +6,21 @@
 	// TODO think through with other presentations - Details, Summary, Card
 
 	// TODO refactor
-	$: has_library = !!package_json.exports;
+	$: has_library = !!package_json.name && !!package_json.exports;
 </script>
 
 <section>
 	<!-- TODO h1 is tricky here, maybe should be h2? probably too much complexity to customize, maybe rename to `PackagePage`? or a title slot? -->
 	<h1>{package_json.name}</h1>
-</section>
-<section>
-	<blockquote>{package_json.description}</blockquote>
+	{#if package_json.description}
+		<blockquote>{package_json.description}</blockquote>
+	{/if}
+	{#if package_json.version}
+		<div>version: {package_json.version}</div>
+	{/if}
+	{#if package_json.license}
+		<div>license: {package_json.license}</div>
+	{/if}
 </section>
 {#if has_library}
 	<section>
@@ -24,8 +30,8 @@
 		>
 	</section>
 {/if}
+<!-- TODO better rendering, also show author, etc -->
 {#if package_json.repository}
-	<!-- TODO better rendering -->
 	<section>
 		repo:
 		{#if typeof package_json.repository === 'string'}
