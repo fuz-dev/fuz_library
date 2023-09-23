@@ -124,9 +124,9 @@ export const pkg = {
 			svelte: './dist/LibraryVocab.svelte',
 			types: './dist/LibraryVocab.svelte.d.ts',
 		},
-		'./PackageHeader.svelte': {
-			svelte: './dist/PackageHeader.svelte',
-			types: './dist/PackageHeader.svelte.d.ts',
+		'./PackageDetails.svelte': {
+			svelte: './dist/PackageDetails.svelte',
+			types: './dist/PackageDetails.svelte.d.ts',
 		},
 		'./PendingAnimation.svelte': {
 			svelte: './dist/PendingAnimation.svelte',
