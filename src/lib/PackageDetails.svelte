@@ -25,10 +25,17 @@
 	</section>
 {/if}
 {#if package_json.repository}
-	<!-- TODO multiple types, add to Gro -->
-	<div>
-		repository: {JSON.stringify(package_json.repository)}
-	</div>
+	<!-- TODO better rendering -->
+	<section>
+		repo:
+		{#if typeof package_json.repository === 'string'}
+			{package_json.repository}
+		{:else}
+			{package_json.repository.type} -
+			{package_json.repository.url}
+			<!-- {package_json.repository.directory} -->
+		{/if}
+	</section>
 	<!-- TODO more details behind a `<details>`, including author -->
 {/if}
 
