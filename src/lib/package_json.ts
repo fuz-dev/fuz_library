@@ -15,8 +15,14 @@ export const package_json = {
 	type: 'module',
 	homepage: 'https://library.fuz.dev/',
 	repository: 'https://github.com/fuz-dev/fuz-library',
-	author: {name: 'Ryan Atkinson', email: 'mail@ryanatkn.com', url: 'https://www.ryanatkn.com/'},
-	engines: {node: '>=20.5'},
+	author: {
+		name: 'Ryan Atkinson',
+		email: 'mail@ryanatkn.com',
+		url: 'https://www.ryanatkn.com/',
+	},
+	engines: {
+		node: '>=20.5',
+	},
 	scripts: {
 		start: 'gro dev',
 		dev: 'gro dev',
@@ -47,35 +53,66 @@ export const package_json = {
 		typescript: '^5.2.2',
 		uvu: '^0.5.6',
 	},
-	eslintConfig: {root: true, extends: '@feltjs'},
+	eslintConfig: {
+		root: true,
+		extends: '@feltjs',
+	},
 	prettier: {
 		plugins: ['prettier-plugin-svelte'],
 		useTabs: true,
 		printWidth: 100,
 		singleQuote: true,
 		bracketSpacing: false,
-		overrides: [{files: 'package.json', options: {useTabs: false}}],
+		overrides: [
+			{
+				files: 'package.json',
+				options: {
+					useTabs: false,
+				},
+			},
+		],
 	},
 	exports: {
-		'./Alert.svelte': {svelte: './dist/Alert.svelte', types: './dist/Alert.svelte.d.ts'},
-		'./alert.js': {default: './dist/alert.js', types: './dist/alert.d.ts'},
+		'./Alert.svelte': {
+			svelte: './dist/Alert.svelte',
+			types: './dist/Alert.svelte.d.ts',
+		},
+		'./alert.js': {
+			default: './dist/alert.js',
+			types: './dist/alert.d.ts',
+		},
 		'./Breadcrumbs.svelte': {
 			svelte: './dist/Breadcrumbs.svelte',
 			types: './dist/Breadcrumbs.svelte.d.ts',
 		},
-		'./Card.svelte': {svelte: './dist/Card.svelte', types: './dist/Card.svelte.d.ts'},
+		'./Card.svelte': {
+			svelte: './dist/Card.svelte',
+			types: './dist/Card.svelte.d.ts',
+		},
 		'./CopyToClipboard.svelte': {
 			svelte: './dist/CopyToClipboard.svelte',
 			types: './dist/CopyToClipboard.svelte.d.ts',
 		},
-		'./devmode.js': {default: './dist/devmode.js', types: './dist/devmode.d.ts'},
+		'./devmode.js': {
+			default: './dist/devmode.js',
+			types: './dist/devmode.d.ts',
+		},
 		'./DevmodeControls.svelte': {
 			svelte: './dist/DevmodeControls.svelte',
 			types: './dist/DevmodeControls.svelte.d.ts',
 		},
-		'./Dialog.svelte': {svelte: './dist/Dialog.svelte', types: './dist/Dialog.svelte.d.ts'},
-		'./dialog.js': {default: './dist/dialog.js', types: './dist/dialog.d.ts'},
-		'./Dialogs.svelte': {svelte: './dist/Dialogs.svelte', types: './dist/Dialogs.svelte.d.ts'},
+		'./Dialog.svelte': {
+			svelte: './dist/Dialog.svelte',
+			types: './dist/Dialog.svelte.d.ts',
+		},
+		'./dialog.js': {
+			default: './dist/dialog.js',
+			types: './dist/dialog.d.ts',
+		},
+		'./Dialogs.svelte': {
+			svelte: './dist/Dialogs.svelte',
+			types: './dist/Dialogs.svelte.d.ts',
+		},
 		'./FeltWindowHost.svelte': {
 			svelte: './dist/FeltWindowHost.svelte',
 			types: './dist/FeltWindowHost.svelte.d.ts',
@@ -88,10 +125,22 @@ export const package_json = {
 			svelte: './dist/GithubLogo.svelte',
 			types: './dist/GithubLogo.svelte.d.ts',
 		},
-		'./helpers.js': {default: './dist/helpers.js', types: './dist/helpers.d.ts'},
-		'./HueInput.svelte': {svelte: './dist/HueInput.svelte', types: './dist/HueInput.svelte.d.ts'},
-		'./library_item.js': {default: './dist/library_item.js', types: './dist/library_item.d.ts'},
-		'./Library.svelte': {svelte: './dist/Library.svelte', types: './dist/Library.svelte.d.ts'},
+		'./helpers.js': {
+			default: './dist/helpers.js',
+			types: './dist/helpers.d.ts',
+		},
+		'./HueInput.svelte': {
+			svelte: './dist/HueInput.svelte',
+			types: './dist/HueInput.svelte.d.ts',
+		},
+		'./library_item.js': {
+			default: './dist/library_item.js',
+			types: './dist/library_item.d.ts',
+		},
+		'./Library.svelte': {
+			svelte: './dist/Library.svelte',
+			types: './dist/Library.svelte.d.ts',
+		},
 		'./LibraryFooter.svelte': {
 			svelte: './dist/LibraryFooter.svelte',
 			types: './dist/LibraryFooter.svelte.d.ts',
@@ -124,7 +173,10 @@ export const package_json = {
 			svelte: './dist/LibraryVocab.svelte',
 			types: './dist/LibraryVocab.svelte.d.ts',
 		},
-		'./package_json.js': {default: './dist/package_json.js', types: './dist/package_json.d.ts'},
+		'./package_json.js': {
+			default: './dist/package_json.js',
+			types: './dist/package_json.d.ts',
+		},
 		'./PackageDetails.svelte': {
 			svelte: './dist/PackageDetails.svelte',
 			types: './dist/PackageDetails.svelte.d.ts',
@@ -137,8 +189,14 @@ export const package_json = {
 			svelte: './dist/PendingButton.svelte',
 			types: './dist/PendingButton.svelte.d.ts',
 		},
-		'./Redirect.svelte': {svelte: './dist/Redirect.svelte', types: './dist/Redirect.svelte.d.ts'},
-		'./Teleport.svelte': {svelte: './dist/Teleport.svelte', types: './dist/Teleport.svelte.d.ts'},
+		'./Redirect.svelte': {
+			svelte: './dist/Redirect.svelte',
+			types: './dist/Redirect.svelte.d.ts',
+		},
+		'./Teleport.svelte': {
+			svelte: './dist/Teleport.svelte',
+			types: './dist/Teleport.svelte.d.ts',
+		},
 	},
 } satisfies PackageJson;
 
