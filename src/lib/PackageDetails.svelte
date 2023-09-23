@@ -16,7 +16,8 @@
 {#if has_library}
 	<section>
 		<code class="chip"
-			>npm i -D&nbsp;<a href="https://npmjs.com/package/@fuz.dev/fuz">{package_json.name}</a></code
+			>npm i -D&nbsp;<a href="https://npmjs.com/package/{package_json.name}">{package_json.name}</a
+			></code
 		>
 	</section>
 {/if}
