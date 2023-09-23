@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type {PackageJson} from '@feltjs/gro/util/package_json.js';
+	import type {PackageJson} from '@grogarden/gro/package_json.js';
 
 	export let package_json: PackageJson;
 

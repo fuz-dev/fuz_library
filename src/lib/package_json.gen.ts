@@ -1,6 +1,6 @@
-import type {Gen} from '@feltjs/gro/gen/gen.js';
-import {to_root_path} from '@feltjs/gro/util/paths.js';
-import {load_package_json} from '@feltjs/gro/util/package_json.js';
+import type {Gen} from '@grogarden/gro';
+import {to_root_path} from '@grogarden/gro/paths.js';
+import {load_package_json} from '@grogarden/gro/package_json.js';
 
 // TODO this is temporary, see the comments generated below
 
@@ -16,7 +16,7 @@ export const gen: Gen = async ({origin_id}) => {
 
 // TODO should this be \`package_json\` instead of \`package_json\`? problem is "package" is a reserved word
 
-import type {PackageJson} from '@feltjs/gro/util/package_json.js';
+import type {PackageJson} from '@grogarden/gro/package_json.js';
 
 export const package_json = ${serialized} satisfies PackageJson;
 

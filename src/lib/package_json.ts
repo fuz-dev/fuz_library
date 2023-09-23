@@ -5,7 +5,7 @@
 
 // TODO should this be `package_json` instead of `package_json`? problem is "package" is a reserved word
 
-import type {PackageJson} from '@feltjs/gro/util/package_json.js';
+import type {PackageJson} from '@grogarden/gro/package_json.js';
 
 export const package_json = {
 	name: '@fuz.dev/fuz-library',
@@ -34,8 +34,8 @@ export const package_json = {
 	devDependencies: {
 		'@changesets/changelog-git': '^0.1.14',
 		'@feltjs/eslint-config': '^0.4.0',
-		'@feltjs/gro': '^0.83.0',
 		'@fuz.dev/fuz': '^0.69.1',
+		'@grogarden/gro': '^0.85.0',
 		'@grogarden/util': '^0.13.1',
 		'@sveltejs/adapter-static': '^2.0.3',
 		'@sveltejs/kit': '^1.25.0',
