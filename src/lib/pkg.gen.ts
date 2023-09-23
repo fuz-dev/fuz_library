@@ -2,6 +2,8 @@ import type {Gen} from '@feltjs/gro/gen/gen.js';
 import {to_root_path} from '@feltjs/gro/util/paths.js';
 import {load_package_json} from '@feltjs/gro/util/package_json.js';
 
+// TODO this is temporary, see the comments generated below
+
 export const gen: Gen = async ({origin_id}) => {
 	const package_json = await load_package_json();
 
