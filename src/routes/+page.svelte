@@ -1,10 +1,15 @@
 <script lang="ts">
-	import PackageHeader from '$lib/PackageHeader.svelte';
+	import {base} from '$app/paths';
+
+	import PackageDetails from '$lib/PackageDetails.svelte';
 	import {pkg} from '$lib/pkg';
 </script>
 
 <main class="prose">
-	<PackageHeader {pkg} />
+	<PackageDetails {pkg} />
+	<section>
+		<a class="library-link panel" href="{base}/library">library</a>
+	</section>
 </main>
 
 <style>

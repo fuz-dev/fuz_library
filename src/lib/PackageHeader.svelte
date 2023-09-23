@@ -1,8 +1,12 @@
 <script lang="ts">
-	import {base} from '$app/paths';
 	import type {PackageJson} from '@feltjs/gro/util/package_json.js';
 
 	export let pkg: PackageJson;
+
+	// TODO maybe move this to a wrapper?
+	$: has_library = !!pkg.exports;
+
+	console.log(`pkg`, pkg);
 </script>
 
 <section>
@@ -11,14 +15,13 @@
 <section>
 	<blockquote>{pkg.description}</blockquote>
 </section>
-<section>
-	<code class="chip"
-		>npm i -D&nbsp;<a href="https://npmjs.com/package/@fuz.dev/fuz">@fuz.dev/fuz</a></code
-	>
-</section>
-<section>
-	<a class="library-link panel" href="{base}/library">library</a>
-</section>
+{#if has_library}
+	<section>
+		<code class="chip"
+			>npm i -D&nbsp;<a href="https://npmjs.com/package/@fuz.dev/fuz">{pkg.name}</a></code
+		>
+	</section>
+{/if}
 
 <style>
 	section {
