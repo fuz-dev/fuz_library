@@ -168,6 +168,10 @@
       "svelte": "./dist/LibraryVocab.svelte",
       "types": "./dist/LibraryVocab.svelte.d.ts"
     },
+    "./package_json.js": {
+      "default": "./dist/package_json.js",
+      "types": "./dist/package_json.d.ts"
+    },
     "./PackageDetails.svelte": {
       "svelte": "./dist/PackageDetails.svelte",
       "types": "./dist/PackageDetails.svelte.d.ts"
@@ -179,10 +183,6 @@
     "./PendingButton.svelte": {
       "svelte": "./dist/PendingButton.svelte",
       "types": "./dist/PendingButton.svelte.d.ts"
-    },
-    "./pkg.js": {
-      "default": "./dist/pkg.js",
-      "types": "./dist/pkg.d.ts"
     },
     "./Redirect.svelte": {
       "svelte": "./dist/Redirect.svelte",

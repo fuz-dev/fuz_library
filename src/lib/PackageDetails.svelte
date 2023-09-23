@@ -1,24 +1,22 @@
 <script lang="ts">
 	import type {PackageJson} from '@feltjs/gro/util/package_json.js';
 
-	export let pkg: PackageJson;
+	export let package_json: PackageJson;
 
-	// TODO maybe move this to a wrapper?
-	$: has_library = !!pkg.exports;
-
-	console.log(`pkg`, pkg);
+	// TODO refactor
+	$: has_library = !!package_json.exports;
 </script>
 
 <section>
-	<h1>{pkg.name}</h1>
+	<h1>{package_json.name}</h1>
 </section>
 <section>
-	<blockquote>{pkg.description}</blockquote>
+	<blockquote>{package_json.description}</blockquote>
 </section>
 {#if has_library}
 	<section>
 		<code class="chip"
-			>npm i -D&nbsp;<a href="https://npmjs.com/package/@fuz.dev/fuz">{pkg.name}</a></code
+			>npm i -D&nbsp;<a href="https://npmjs.com/package/@fuz.dev/fuz">{package_json.name}</a></code
 		>
 	</section>
 {/if}
@@ -36,15 +34,5 @@
 		text-align: center;
 		font-size: var(--size_lg);
 		white-space: nowrap;
-	}
-	.panel {
-		padding: var(--spacing_xl2);
-		font-size: var(--size_xl);
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-	}
-	.library-link {
-		font-size: var(--size_xl3);
 	}
 </style>
