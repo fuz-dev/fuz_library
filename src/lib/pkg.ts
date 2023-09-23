@@ -3,16 +3,18 @@
 // TODO probably change to import `package.json` directly without using codegen,
 // for now this is convenient to avoid the complexity (exports, types, JSON import assertion)
 
+// TODO should this be `package_json` instead of `pkg`?
+
 import type {PackageJson} from '@feltjs/gro/util/package_json.js';
 
 export const pkg = {
-	name: '@fuz.dev/library',
-	description: 'library components and helpers for Svelte, SvelteKit, and Fuz',
+	name: '@fuz.dev/fuz-library',
+	description: 'components and helpers for Svelte and SvelteKit with Fuz',
 	version: '0.0.1',
 	license: 'MIT',
 	type: 'module',
 	homepage: 'https://library.fuz.dev/',
-	repository: 'https://github.com/fuz-dev/library',
+	repository: 'https://github.com/fuz-dev/fuz-library',
 	author: {name: 'Ryan Atkinson', email: 'mail@ryanatkn.com', url: 'https://www.ryanatkn.com/'},
 	engines: {node: '>=20.5'},
 	scripts: {

@@ -11,6 +11,8 @@ export const gen: Gen = async ({origin_id}) => {
 // TODO probably change to import \`package.json\` directly without using codegen,
 // for now this is convenient to avoid the complexity (exports, types, JSON import assertion)
 
+// TODO should this be \`package_json\` instead of \`pkg\`? problem is "package" is a reserved word
+
 import type {PackageJson} from '@feltjs/gro/util/package_json.js';
 
 export const pkg = ${JSON.stringify(package_json)} satisfies PackageJson;

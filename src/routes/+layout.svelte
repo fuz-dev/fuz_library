@@ -6,7 +6,7 @@
 </script>
 
 <svelte:head>
-	<title>@fuz.dev/library</title>
+	<title>@fuz.dev/fuz-library</title>
 </svelte:head>
 
 <Themed>
