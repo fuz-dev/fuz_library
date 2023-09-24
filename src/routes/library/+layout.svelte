@@ -22,6 +22,7 @@
 
 	// TODO factor this code out and publish the layout
 
+	// TODO BLOCK remove context usage?
 	// TODO hacky to avoid a circular dependency problem
 	setContext('library_items_by_name', library_items_by_name);
 </script>
