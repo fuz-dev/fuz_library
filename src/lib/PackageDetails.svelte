@@ -6,45 +6,48 @@
 	// TODO think through with other presentations - Details, Summary, Card
 
 	// TODO refactor
-	$: has_library = !!package_json.name && !!package_json.exports;
+
+	$: repository = package_json.repository
+		? typeof package_json.repository === 'string'
+			? package_json.repository
+			: package_json.repository.url
+		: null;
+
+	$: published = !package_json.private && !!package_json.exports;
+	$: npm_url = published ? 'https://www.npmjs.com/package/' + package_json.name : null;
 </script>
 
 <section>
 	<!-- TODO h1 is tricky here, maybe should be h2? probably too much complexity to customize, maybe rename to `PackagePage`? or a title slot? -->
 	<h1>{package_json.name}</h1>
-	<blockquote>⚠️ work in progress</blockquote>
 	{#if package_json.description}
 		<blockquote>{package_json.description}</blockquote>
 	{/if}
-	{#if package_json.version}
-		<div>version: {package_json.version}</div>
+	{#if npm_url}
+		<div class="spaced">
+			<code class="chip">npm i -D&nbsp;<a href={npm_url}>{package_json.name}</a></code>
+		</div>
 	{/if}
-	{#if package_json.license}
-		<div>license: {package_json.license}</div>
-	{/if}
-</section>
-{#if has_library}
-	<section>
-		<code class="chip"
-			>npm i -D&nbsp;<a href="https://npmjs.com/package/{package_json.name}">{package_json.name}</a
-			></code
-		>
-	</section>
-{/if}
-<!-- TODO better rendering, also show author, etc -->
-{#if package_json.repository}
-	<section>
-		repo:
-		{#if typeof package_json.repository === 'string'}
-			<a href={package_json.repository}>{package_json.repository}</a>
-		{:else}
-			{package_json.repository.type} -
-			<a href={package_json.repository.url}>{package_json.repository.url}</a>
-			<!-- {package_json.repository.directory} -->
+	<div class="box row spaced">
+		{#if package_json.version}
+			<div class="chip spaced_hz">version {package_json.version}</div>
 		{/if}
-	</section>
+		{#if package_json.license}
+			<div class="chip spaced_hz">license {package_json.license}</div>
+		{/if}
+	</div>
+	<div class="box row">
+		{#if repository}
+			<a class="chip spaced_hz" href={repository}>repo</a>
+		{/if}
+		{#if npm_url}
+			<a class="chip spaced_hz" href={npm_url}>npm</a>
+		{/if}
+	</div>
 	<!-- TODO more details behind a `<details>`, including author -->
-{/if}
+</section>
+
+<!-- TODO better rendering, also show author, etc -->
 
 <style>
 	section {
