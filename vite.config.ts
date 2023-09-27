@@ -1,11 +1,9 @@
 import type {UserConfig} from 'vite';
 import {sveltekit} from '@sveltejs/kit/vite';
-// TODO enable once published
-// import {fuz_code_vite_plugins} from '@fuz.dev/fuz-code/fuz_code_vite_plugins.js';
+import {remove_prism_css} from '@fuz.dev/fuz_code/remove_prism_css_vite_plugin.js';
 
 const config: UserConfig = {
-	plugins: [sveltekit()], // TODO enable once published `, ...fuz_code_vite_plugins`
-	ssr: {noExternal: ['@fuz.dev/fuz']},
+	plugins: [sveltekit(), remove_prism_css()],
 };
 
 export default config;
