@@ -7,10 +7,10 @@
 	export let name: string;
 
 	// TODO hacky to avoid a circular dependency problem
-	const library_items_by_name: any = getContext('library_items_by_name');
-	$: library_item = library_items_by_name.get(name);
+	const tomes_by_name: any = getContext('tomes_by_name');
+	$: tome = tomes_by_name.get(name);
 
-	$: ({path, path_is_active} = to_library_path_info(library_item.slug, $page.url.pathname));
+	$: ({path, path_is_active} = to_library_path_info(tome.slug, $page.url.pathname));
 </script>
 
 <h2 class="box" id={name}>

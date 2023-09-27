@@ -2,7 +2,7 @@
 	import Code from '@fuz.dev/fuz_code/Code.svelte';
 
 	import PendingAnimation from '$lib/PendingAnimation.svelte';
-	import LibraryItem from '$lib/LibraryItem.svelte';
+	import Tome from '$lib/Tome.svelte';
 
 	const LIBRARY_ITEM_NAME = 'PendingAnimation';
 
@@ -14,7 +14,7 @@
 	let pendingAnimation1Running = false;
 </script>
 
-<LibraryItem name={LIBRARY_ITEM_NAME}>
+<Tome name={LIBRARY_ITEM_NAME}>
 	<div class="prose box">
 		<section>
 			<Code content={`<PendingAnimation running={${pendingAnimation0Running}} />`} />
@@ -104,7 +104,7 @@
 			</PendingAnimation>
 		</section>
 	</div>
-</LibraryItem>
+</Tome>
 
 <style>
 	code button.inline {

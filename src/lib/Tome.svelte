@@ -1,13 +1,13 @@
 <script lang="ts">
-	import LibraryItemTitle from '$lib/LibraryItemTitle.svelte';
+	import TomeTitle from '$lib/TomeTitle.svelte';
 	import LibraryPanel from '$lib/LibraryPanel.svelte';
 
 	export let name: string;
 </script>
 
-<LibraryPanel classes="library_item">
+<LibraryPanel classes="tome">
 	<header>
-		<LibraryItemTitle {name} />
+		<TomeTitle {name} />
 		<slot name="header" />
 	</header>
 	<slot />

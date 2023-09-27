@@ -2,7 +2,7 @@
 	import Code from '@fuz.dev/fuz_code/Code.svelte';
 
 	import PendingButton from '$lib/PendingButton.svelte';
-	import LibraryItem from '$lib/LibraryItem.svelte';
+	import Tome from '$lib/Tome.svelte';
 
 	const LIBRARY_ITEM_NAME = 'PendingButton';
 
@@ -14,7 +14,7 @@
 		Extract a common thing to make arbitrary things not change width.
 	-->
 
-<LibraryItem name={LIBRARY_ITEM_NAME}>
+<Tome name={LIBRARY_ITEM_NAME}>
 	<div class="prose box">
 		<section class="box">
 			<blockquote class="text_align_center">
@@ -52,4 +52,4 @@
 			</PendingButton>
 		</section>
 	</div>
-</LibraryItem>
+</Tome>

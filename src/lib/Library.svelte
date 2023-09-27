@@ -1,21 +1,21 @@
 <script lang="ts">
-	import {get_library_items, type LibraryItemWithComponent} from '$lib/library_item';
+	import {get_tomes, type TomeWithComponent} from '$lib/tome';
 
-	export let items: LibraryItemWithComponent[] = get_library_items();
+	export let items: TomeWithComponent[] = get_tomes();
 </script>
 
-<div class="library_items">
+<div class="tomes">
 	{#each items as item (item)}
 		<svelte:component this={item.component} />
 	{/each}
 </div>
 
 <style>
-	.library_items {
+	.tomes {
 		width: 100%;
 	}
 	/* TODO hacky */
-	.library_items :global(.library_item) {
+	.tomes :global(.tome) {
 		margin-bottom: var(--spacing_xl9) !important;
 	}
 </style>

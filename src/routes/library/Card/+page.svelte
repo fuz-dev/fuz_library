@@ -3,14 +3,14 @@
 	import Code from '@fuz.dev/fuz_code/Code.svelte';
 
 	import Card from '$lib/Card.svelte';
-	import LibraryItem from '$lib/LibraryItem.svelte';
+	import Tome from '$lib/Tome.svelte';
 
 	const LIBRARY_ITEM_NAME = 'Card';
 
 	const href = `${base}/library`;
 </script>
 
-<LibraryItem name={LIBRARY_ITEM_NAME}>
+<Tome name={LIBRARY_ITEM_NAME}>
 	<div class="prose box">
 		<section>
 			<Code
@@ -111,7 +111,7 @@
 			</Card>
 		</section>
 	</div>
-</LibraryItem>
+</Tome>
 
 <style>
 	section {

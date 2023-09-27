@@ -4,34 +4,34 @@
 	import Breadcrumbs from '@fuz.dev/fuz/Breadcrumbs.svelte';
 
 	import LibraryMenu from '$lib/LibraryMenu.svelte';
-	import {library_items_by_name, get_library_items} from '$lib/library_item';
+	import {tomes_by_name, get_tomes} from '$lib/tome';
 	import LibraryPanel from '$lib/LibraryPanel.svelte';
 
-	let library_items = get_library_items();
-	console.log(`library_items`, library_items);
+	let tomes = get_tomes();
+	console.log(`tomes`, tomes);
 
 	onMount(async () => {
 		await init_items();
 	});
 
 	const init_items = async () => {
-		library_items = get_library_items();
+		tomes = get_tomes();
 	};
 
-	$: selected_item = library_items.find((c) => c.pathname === $page.url.pathname);
-	$: items_related_to_selected = selected_item?.related?.map((r) => library_items_by_name.get(r)!);
+	$: selected_item = tomes.find((c) => c.pathname === $page.url.pathname);
+	$: items_related_to_selected = selected_item?.related?.map((r) => tomes_by_name.get(r)!);
 
 	// TODO factor this code out and publish the layout
 
 	// TODO try to remove context usage?
 	// TODO hacky to avoid a circular dependency problem
-	setContext('library_items_by_name', library_items_by_name);
+	setContext('tomes_by_name', tomes_by_name);
 </script>
 
 <div class="layout width_md">
 	<div class="menu-wrapper">
 		<div class="menu width_sm">
-			<LibraryMenu items={get_library_items()} />
+			<LibraryMenu items={get_tomes()} />
 			{#if items_related_to_selected}
 				<LibraryMenu items={items_related_to_selected} let:category>
 					<h6>related {category}</h6>

@@ -1,12 +1,12 @@
 <script lang="ts">
 	import Code from '@fuz.dev/fuz_code/Code.svelte';
 
-	import LibraryItem from '$lib/LibraryItem.svelte';
+	import Tome from '$lib/Tome.svelte';
 
 	const LIBRARY_ITEM_NAME = 'elements';
 </script>
 
-<LibraryItem name={LIBRARY_ITEM_NAME}>
+<Tome name={LIBRARY_ITEM_NAME}>
 	<div class="prose box">
 		<blockquote>
 			styles for <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element"
@@ -134,4 +134,4 @@
 			</aside>
 		</aside>
 	</div>
-</LibraryItem>
+</Tome>

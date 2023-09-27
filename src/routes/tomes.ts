@@ -1,8 +1,4 @@
-import {
-	library_items_by_name,
-	init_library_item,
-	type LibraryItemWithComponent,
-} from '$lib/library_item';
+import {tomes_by_name, init_tome, type TomeWithComponent} from '$lib/tome';
 
 import PendingAnimation from '$routes/library/PendingAnimation/+page.svelte';
 import PendingButton from '$routes/library/PendingButton/+page.svelte';
@@ -16,7 +12,7 @@ import HueInput from '$routes/library/HueInput/+page.svelte';
 import Breadcrumbs from '$routes/library/Breadcrumbs/+page.svelte';
 import Card from '$routes/library/Card/+page.svelte';
 
-export const initial_library_items: LibraryItemWithComponent[] = [
+export const initial_tomes: TomeWithComponent[] = [
 	{
 		name: 'menu item',
 		slug: 'menu_item',
@@ -107,6 +103,6 @@ export const initial_library_items: LibraryItemWithComponent[] = [
 	},
 ];
 
-for (const item of initial_library_items) {
-	library_items_by_name.set(item.name, init_library_item(item));
+for (const item of initial_tomes) {
+	tomes_by_name.set(item.name, init_tome(item));
 }

@@ -3,7 +3,7 @@
 	import Code from '@fuz.dev/fuz_code/Code.svelte';
 
 	import Alert from '$lib/Alert.svelte';
-	import LibraryItem from '$lib/LibraryItem.svelte';
+	import Tome from '$lib/Tome.svelte';
 
 	const LIBRARY_ITEM_NAME = 'forms';
 
@@ -27,7 +27,7 @@
 	let checked2 = true;
 </script>
 
-<LibraryItem name={LIBRARY_ITEM_NAME}>
+<Tome name={LIBRARY_ITEM_NAME}>
 	<div class="prose box">
 		<Code
 			content={`<form>
@@ -399,4 +399,4 @@
 		</section>
 		<blockquote>TODO: add more <code>deselectable</code> signifiers?</blockquote>
 	</div>
-</LibraryItem>
+</Tome>

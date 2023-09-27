@@ -3,7 +3,7 @@
 
 	// TODO add contextmenu behavior
 
-	export let name: string; // TODO type, generate from `library_items`?
+	export let name: string; // TODO type, generate from `tomes`?
 
 	// TODO runes!
 </script>

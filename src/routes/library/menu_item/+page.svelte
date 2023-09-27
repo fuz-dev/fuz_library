@@ -2,7 +2,7 @@
 	import {swallow} from '@grogarden/util/dom.js';
 	import Code from '@fuz.dev/fuz_code/Code.svelte';
 
-	import LibraryItem from '$lib/LibraryItem.svelte';
+	import Tome from '$lib/Tome.svelte';
 
 	const LIBRARY_ITEM_NAME = 'menu item';
 
@@ -19,7 +19,7 @@
 	};
 </script>
 
-<LibraryItem name={LIBRARY_ITEM_NAME}>
+<Tome name={LIBRARY_ITEM_NAME}>
 	<section class="prose box">
 		<h3>
 			<code>.menu_item</code> CSS class
@@ -133,7 +133,7 @@
 			</li>
 		</ul>
 	</section>
-</LibraryItem>
+</Tome>
 
 <style>
 	section {

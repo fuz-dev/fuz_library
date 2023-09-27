@@ -2,14 +2,14 @@
 	import Code from '@fuz.dev/fuz_code/Code.svelte';
 
 	import HueInput from '$lib/HueInput.svelte';
-	import LibraryItem from '$lib/LibraryItem.svelte';
+	import Tome from '$lib/Tome.svelte';
 
 	const LIBRARY_ITEM_NAME = 'HueInput';
 
 	let hue: number;
 </script>
 
-<LibraryItem name={LIBRARY_ITEM_NAME}>
+<Tome name={LIBRARY_ITEM_NAME}>
 	<div class="prose" style:--color="hsl({hue} 62% 31%)">
 		<Code
 			content={`<HueInput
@@ -27,4 +27,4 @@
 			}}
 		/>
 	</div>
-</LibraryItem>
+</Tome>
