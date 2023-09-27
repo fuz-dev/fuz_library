@@ -1,12 +1,14 @@
 import type {Task} from '@grogarden/gro';
 import {z} from 'zod';
+import {writeFile} from 'node:fs/promises';
 
 import {fetch_packages} from '$lib/packages';
 
 // TODO refactor/rename
 export const package_urls = [
-	'https://www.fuz.dev/',
+	// 'https://www.fuz.dev/',
 	'https://www.grogarden.org/',
+	'https://code.fuz.dev/',
 	// 'https://felt.dev/',
 ];
 
@@ -30,6 +32,6 @@ export const task: Task<Args> = {
 		const packages = await fetch_packages(package_urls);
 		console.log(`packages`, packages);
 
-		return '// TODO\nexport const packages = ' + JSON.stringify(packages);
+		await writeFile('./src/lib/packages.json', JSON.stringify(packages, null, '\t'));
 	},
 };

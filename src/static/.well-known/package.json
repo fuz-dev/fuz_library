@@ -34,6 +34,7 @@
     "@sveltejs/adapter-static": "^2.0.3",
     "@sveltejs/kit": "^1.25.1",
     "@sveltejs/package": "^2.2.2",
+    "@types/node": "^20.7.0",
     "@typescript-eslint/eslint-plugin": "^6.7.3",
     "@typescript-eslint/parser": "^6.7.3",
     "eslint": "^8.50.0",
@@ -174,6 +175,9 @@
     "./PackageDetails.svelte": {
       "svelte": "./dist/PackageDetails.svelte",
       "types": "./dist/PackageDetails.svelte.d.ts"
+    },
+    "./packages.json": {
+      "default": "./dist/packages.json"
     },
     "./packages.task.js": {
       "default": "./dist/packages.task.js",
