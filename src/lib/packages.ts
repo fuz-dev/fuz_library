@@ -4,7 +4,6 @@ import {strip_end} from '@grogarden/util/string.js';
 
 export interface PackageItem {
 	host: Url;
-	url: Url;
 	package_json: PackageJson;
 }
 
@@ -19,7 +18,7 @@ export const fetch_packages = async (hosts: Url[]): Promise<PackageItem[]> => {
 		});
 		const json = await res.json();
 		const package_json = PackageJson.parse(json);
-		packages.push({host, url, package_json});
+		packages.push({host, package_json});
 		// TODO delay?
 	}
 	return packages;

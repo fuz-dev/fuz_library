@@ -179,6 +179,10 @@
     "./packages.json": {
       "default": "./dist/packages.json"
     },
+    "./packages.json.d.js": {
+      "default": "./dist/packages.json.d.js",
+      "types": "./dist/packages.json.d.d.ts"
+    },
     "./packages.task.js": {
       "default": "./dist/packages.task.js",
       "types": "./dist/packages.task.d.ts"

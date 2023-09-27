@@ -40,7 +40,7 @@
 	let connecting: Promise<boolean> | undefined;
 	let connecting_host: Host | undefined;
 	let resolve_connection: ((connected: boolean) => void) | undefined = undefined;
-	let connect_timeout: number | undefined;
+	let connect_timeout: any;
 	const CONNECT_TIMEOUT = 6000;
 
 	// Exported so users can pass `connect_on_mount=false` and then `tenant.connect()` manually.

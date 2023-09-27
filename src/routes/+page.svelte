@@ -2,11 +2,11 @@
 	import {base} from '$app/paths';
 
 	import PackageDetails from '$lib/PackageDetails.svelte';
-	import {package_json} from '$lib/package_json';
+	import packages from '$lib/packages.json';
 </script>
 
 <main class="prose">
-	<PackageDetails {package_json} />
+	<PackageDetails package_json={packages[0].package_json} />
 	<section>
 		<a class="library-link panel" href="{base}/library">library</a>
 	</section>
