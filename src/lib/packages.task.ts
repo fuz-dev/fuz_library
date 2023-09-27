@@ -10,6 +10,7 @@ export const package_hosts = [
 	// TODO add more
 	// 'https://www.fuz.dev/',
 	'https://www.grogarden.org/',
+	'https://template.fuz.dev/',
 	'https://code.fuz.dev/',
 	// 'https://felt.dev/',
 ];
