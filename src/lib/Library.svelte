@@ -1,7 +1,8 @@
 <script lang="ts">
-	import {get_tomes, type TomeWithComponent} from '$lib/tome';
+	import type {TomeWithComponent} from '$lib/tome';
+	import {tomes} from '$routes/tomes';
 
-	export let items: TomeWithComponent[] = get_tomes();
+	export let items: TomeWithComponent[] = tomes;
 </script>
 
 <div class="tomes">

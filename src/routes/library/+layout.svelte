@@ -1,22 +1,14 @@
 <script lang="ts">
 	import {page} from '$app/stores';
-	import {onMount, setContext} from 'svelte';
+	import {setContext} from 'svelte';
 	import Breadcrumbs from '@fuz.dev/fuz/Breadcrumbs.svelte';
 
 	import LibraryMenu from '$lib/LibraryMenu.svelte';
-	import {tomes_by_name, get_tomes} from '$lib/tome';
+	import {tomes_by_name} from '$lib/tome';
 	import LibraryPanel from '$lib/LibraryPanel.svelte';
+	import {tomes} from '$routes/tomes';
 
-	let tomes = get_tomes();
 	console.log(`tomes`, tomes);
-
-	onMount(async () => {
-		await init_items();
-	});
-
-	const init_items = async () => {
-		tomes = get_tomes();
-	};
 
 	$: selected_item = tomes.find((c) => c.pathname === $page.url.pathname);
 	$: items_related_to_selected = selected_item?.related?.map((r) => tomes_by_name.get(r)!);
@@ -31,7 +23,7 @@
 <div class="layout width_md">
 	<div class="menu-wrapper">
 		<div class="menu width_sm">
-			<LibraryMenu items={get_tomes()} />
+			<LibraryMenu items={tomes} />
 			{#if items_related_to_selected}
 				<LibraryMenu items={items_related_to_selected} let:category>
 					<h6>related {category}</h6>

@@ -1,4 +1,4 @@
-import {tomes_by_name, init_tome, type TomeWithComponent} from '$lib/tome';
+import type {TomeWithComponent} from '$lib/tome';
 
 import PendingAnimation from '$routes/library/PendingAnimation/+page.svelte';
 import PendingButton from '$routes/library/PendingButton/+page.svelte';
@@ -12,7 +12,7 @@ import HueInput from '$routes/library/HueInput/+page.svelte';
 import Breadcrumbs from '$routes/library/Breadcrumbs/+page.svelte';
 import Card from '$routes/library/Card/+page.svelte';
 
-export const initial_tomes: TomeWithComponent[] = [
+export const tomes: TomeWithComponent[] = [
 	{
 		name: 'menu item',
 		slug: 'menu_item',
@@ -102,7 +102,3 @@ export const initial_tomes: TomeWithComponent[] = [
 		related: ['Dialog'],
 	},
 ];
-
-for (const item of initial_tomes) {
-	tomes_by_name.set(item.name, init_tome(item));
-}
