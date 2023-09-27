@@ -4,9 +4,9 @@
 	import Breadcrumbs from '@fuz.dev/fuz/Breadcrumbs.svelte';
 
 	import LibraryMenu from '$lib/LibraryMenu.svelte';
-	import {tomes_by_name} from '$lib/tome';
 	import LibraryPanel from '$lib/LibraryPanel.svelte';
 	import {tomes} from '$routes/tomes';
+	import {tomes_by_name} from '$lib/tome';
 
 	console.log(`tomes`, tomes);
 

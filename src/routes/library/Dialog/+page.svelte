@@ -2,6 +2,7 @@
 	import {slide} from 'svelte/transition';
 	import {writable} from 'svelte/store';
 	import Code from '@fuz.dev/fuz_code/Code.svelte';
+	import {getContext} from 'svelte';
 
 	import Dialog from '$lib/Dialog.svelte';
 	import Dialogs from '$lib/Dialogs.svelte';
@@ -14,7 +15,8 @@
 	import Alert from '$lib/Alert.svelte';
 	import TomeDetails from '$lib/TomeDetails.svelte';
 	import Text from '$routes/library/Dialog/Text.svelte';
-	import {tomes_by_name} from '$lib/tome';
+
+	const tomes_by_name: any = getContext('tomes_by_name');
 
 	const LIBRARY_ITEM_NAME = 'Dialog';
 	const tome = tomes_by_name.get(LIBRARY_ITEM_NAME)!;

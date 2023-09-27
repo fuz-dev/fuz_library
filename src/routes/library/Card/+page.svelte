@@ -1,10 +1,12 @@
 <script lang="ts">
 	import {base} from '$app/paths';
 	import Code from '@fuz.dev/fuz_code/Code.svelte';
+	import {getContext} from 'svelte';
 
 	import Card from '$lib/Card.svelte';
 	import TomeDetails from '$lib/TomeDetails.svelte';
-	import {tomes_by_name} from '$lib/tome';
+
+	const tomes_by_name: any = getContext('tomes_by_name');
 
 	const LIBRARY_ITEM_NAME = 'Card';
 	const tome = tomes_by_name.get(LIBRARY_ITEM_NAME)!;
