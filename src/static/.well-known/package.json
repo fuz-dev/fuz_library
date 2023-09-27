@@ -136,10 +136,6 @@
       "svelte": "./dist/HueInput.svelte",
       "types": "./dist/HueInput.svelte.d.ts"
     },
-    "./tome.js": {
-      "default": "./dist/tome.js",
-      "types": "./dist/tome.d.ts"
-    },
     "./Library.svelte": {
       "svelte": "./dist/Library.svelte",
       "types": "./dist/Library.svelte.d.ts"
@@ -151,14 +147,6 @@
     "./LibraryHeader.svelte": {
       "svelte": "./dist/LibraryHeader.svelte",
       "types": "./dist/LibraryHeader.svelte.d.ts"
-    },
-    "./Tome.svelte": {
-      "svelte": "./dist/Tome.svelte",
-      "types": "./dist/Tome.svelte.d.ts"
-    },
-    "./TomeTitle.svelte": {
-      "svelte": "./dist/TomeTitle.svelte",
-      "types": "./dist/TomeTitle.svelte.d.ts"
     },
     "./LibraryMenu.svelte": {
       "svelte": "./dist/LibraryMenu.svelte",
@@ -210,6 +198,18 @@
     "./Teleport.svelte": {
       "svelte": "./dist/Teleport.svelte",
       "types": "./dist/Teleport.svelte.d.ts"
+    },
+    "./Tome.svelte": {
+      "svelte": "./dist/Tome.svelte",
+      "types": "./dist/Tome.svelte.d.ts"
+    },
+    "./tome.js": {
+      "default": "./dist/tome.js",
+      "types": "./dist/tome.d.ts"
+    },
+    "./TomeTitle.svelte": {
+      "svelte": "./dist/TomeTitle.svelte",
+      "types": "./dist/TomeTitle.svelte.d.ts"
     }
   }
 }
