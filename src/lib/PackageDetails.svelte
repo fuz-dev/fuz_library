@@ -5,13 +5,12 @@
 
 	// TODO think through with other presentations - Details, Summary, Card
 
-	// TODO refactor
-
 	$: repository = package_json.repository
 		? typeof package_json.repository === 'string'
 			? package_json.repository
 			: package_json.repository.url
 		: null;
+	$: license_url = repository ? repository + '/blob/main/LICENSE' : null;
 
 	$: published = !package_json.private && !!package_json.exports;
 	$: npm_url = published ? 'https://www.npmjs.com/package/' + package_json.name : null;
@@ -32,8 +31,8 @@
 		{#if package_json.version}
 			<div class="chip spaced_hz">version {package_json.version}</div>
 		{/if}
-		{#if package_json.license}
-			<div class="chip spaced_hz">license {package_json.license}</div>
+		{#if license_url}
+			<a class="chip spaced_hz" href={license_url}>license {package_json.license}</a>
 		{/if}
 	</div>
 	<div class="box row">
