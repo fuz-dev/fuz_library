@@ -120,6 +120,10 @@
       "svelte": "./dist/FeltWindowTenant.svelte",
       "types": "./dist/FeltWindowTenant.svelte.d.ts"
     },
+    "./fetch_packages.js": {
+      "default": "./dist/fetch_packages.js",
+      "types": "./dist/fetch_packages.d.ts"
+    },
     "./GithubLogo.svelte": {
       "svelte": "./dist/GithubLogo.svelte",
       "types": "./dist/GithubLogo.svelte.d.ts"
@@ -172,9 +176,9 @@
       "svelte": "./dist/LibraryVocab.svelte",
       "types": "./dist/LibraryVocab.svelte.d.ts"
     },
-    "./PackageDetails.svelte": {
-      "svelte": "./dist/PackageDetails.svelte",
-      "types": "./dist/PackageDetails.svelte.d.ts"
+    "./package_item.js": {
+      "default": "./dist/package_item.js",
+      "types": "./dist/package_item.d.ts"
     },
     "./packages.json": {
       "default": "./dist/packages.json"
@@ -187,9 +191,9 @@
       "default": "./dist/packages.task.js",
       "types": "./dist/packages.task.d.ts"
     },
-    "./packages.js": {
-      "default": "./dist/packages.js",
-      "types": "./dist/packages.d.ts"
+    "./PackageSummary.svelte": {
+      "svelte": "./dist/PackageSummary.svelte",
+      "types": "./dist/PackageSummary.svelte.d.ts"
     },
     "./PendingAnimation.svelte": {
       "svelte": "./dist/PendingAnimation.svelte",

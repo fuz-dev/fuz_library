@@ -4,7 +4,8 @@ import {z} from 'zod';
 import {writeFile} from 'node:fs/promises';
 import {Url} from '@grogarden/gro/paths.js';
 
-import {fetch_packages, type PackageItem} from '$lib/packages';
+import {fetch_packages} from '$lib/fetch_packages';
+import type {PackageItem} from '$lib/package_item';
 
 // TODO refactor/rename
 export const package_hosts = [

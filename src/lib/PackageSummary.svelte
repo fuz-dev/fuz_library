@@ -1,7 +1,9 @@
 <script lang="ts">
-	import type {PackageJson} from '@grogarden/gro/package_json.js';
+	import type {PackageItem} from '$lib/package_item';
 
-	export let package_json: PackageJson;
+	export let package_item: PackageItem;
+
+	$: ({package_json} = package_item);
 
 	// TODO think through with other presentations - Details, Summary, Card
 

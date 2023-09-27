@@ -15,7 +15,7 @@
 				"url": "https://www.ryanatkn.com/"
 			},
 			"engines": {
-				"node": ">=20.5"
+				"node": ">=20.7"
 			},
 			"scripts": {
 				"start": "gro dev",
@@ -24,7 +24,9 @@
 				"test": "gro test",
 				"deploy": "gro deploy"
 			},
-			"files": ["dist"],
+			"files": [
+				"dist"
+			],
 			"devDependencies": {
 				"@changesets/changelog-git": "^0.1.14",
 				"@feltjs/eslint-config": "^0.4.0",
@@ -56,7 +58,9 @@
 				"extends": "@feltjs"
 			},
 			"prettier": {
-				"plugins": ["prettier-plugin-svelte"],
+				"plugins": [
+					"prettier-plugin-svelte"
+				],
 				"useTabs": true,
 				"printWidth": 100,
 				"singleQuote": true,
@@ -119,6 +123,10 @@
 					"svelte": "./dist/FeltWindowTenant.svelte",
 					"types": "./dist/FeltWindowTenant.svelte.d.ts"
 				},
+				"./fetch_packages.js": {
+					"default": "./dist/fetch_packages.js",
+					"types": "./dist/fetch_packages.d.ts"
+				},
 				"./GithubLogo.svelte": {
 					"svelte": "./dist/GithubLogo.svelte",
 					"types": "./dist/GithubLogo.svelte.d.ts"
@@ -171,20 +179,24 @@
 					"svelte": "./dist/LibraryVocab.svelte",
 					"types": "./dist/LibraryVocab.svelte.d.ts"
 				},
-				"./PackageDetails.svelte": {
-					"svelte": "./dist/PackageDetails.svelte",
-					"types": "./dist/PackageDetails.svelte.d.ts"
+				"./package_item.js": {
+					"default": "./dist/package_item.js",
+					"types": "./dist/package_item.d.ts"
 				},
 				"./packages.json": {
 					"default": "./dist/packages.json"
+				},
+				"./packages.json.d.js": {
+					"default": "./dist/packages.json.d.js",
+					"types": "./dist/packages.json.d.d.ts"
 				},
 				"./packages.task.js": {
 					"default": "./dist/packages.task.js",
 					"types": "./dist/packages.task.d.ts"
 				},
-				"./packages.js": {
-					"default": "./dist/packages.js",
-					"types": "./dist/packages.d.ts"
+				"./PackageSummary.svelte": {
+					"svelte": "./dist/PackageSummary.svelte",
+					"types": "./dist/PackageSummary.svelte.d.ts"
 				},
 				"./PendingAnimation.svelte": {
 					"svelte": "./dist/PendingAnimation.svelte",
@@ -249,7 +261,9 @@
 				"vite",
 				"typescript"
 			],
-			"files": ["dist"],
+			"files": [
+				"dist"
+			],
 			"dependencies": {
 				"@grogarden/util": "^0.14.0",
 				"@ryanatkn/json-schema-to-typescript": "^11.1.5",
@@ -298,7 +312,9 @@
 				}
 			},
 			"prettier": {
-				"plugins": ["prettier-plugin-svelte"],
+				"plugins": [
+					"prettier-plugin-svelte"
+				],
 				"useTabs": true,
 				"printWidth": 100,
 				"singleQuote": true,
@@ -609,6 +625,73 @@
 		}
 	},
 	{
+		"host": "https://template.fuz.dev/",
+		"package_json": {
+			"name": "@fuz.dev/fuz_template",
+			"private": true,
+			"description": "a static web app and Node library template with TypeScript, Svelte, SvelteKit, Vite, esbuild, Fuz, and Gro",
+			"version": "0.0.1",
+			"type": "module",
+			"homepage": "https://template.fuz.dev/",
+			"repository": "https://github.com/fuz-dev/fuz_template",
+			"engines": {
+				"node": ">=20.5"
+			},
+			"scripts": {
+				"start": "gro dev",
+				"dev": "gro dev",
+				"build": "gro build",
+				"test": "gro test",
+				"deploy": "gro deploy"
+			},
+			"files": [
+				"dist"
+			],
+			"devDependencies": {
+				"@feltjs/eslint-config": "^0.4.0",
+				"@fuz.dev/fuz": "^0.69.1",
+				"@grogarden/gro": "^0.87.4",
+				"@grogarden/util": "^0.14.0",
+				"@sveltejs/adapter-static": "^2.0.3",
+				"@sveltejs/kit": "^1.25.1",
+				"@sveltejs/package": "^2.2.2",
+				"@typescript-eslint/eslint-plugin": "^6.7.3",
+				"@typescript-eslint/parser": "^6.7.3",
+				"eslint": "^8.50.0",
+				"eslint-plugin-svelte": "^2.33.2",
+				"prettier": "^3.0.3",
+				"prettier-plugin-svelte": "^3.0.3",
+				"svelte": "^4.2.1",
+				"svelte-check": "^3.5.2",
+				"svelte-preprocess-esbuild": "^3.0.1",
+				"tslib": "^2.6.2",
+				"typescript": "^5.2.2",
+				"uvu": "^0.5.6"
+			},
+			"eslintConfig": {
+				"root": true,
+				"extends": "@feltjs"
+			},
+			"prettier": {
+				"plugins": [
+					"prettier-plugin-svelte"
+				],
+				"useTabs": true,
+				"printWidth": 100,
+				"singleQuote": true,
+				"bracketSpacing": false,
+				"overrides": [
+					{
+						"files": "package.json",
+						"options": {
+							"useTabs": false
+						}
+					}
+				]
+			}
+		}
+	},
+	{
 		"host": "https://code.fuz.dev/",
 		"package_json": {
 			"name": "@fuz.dev/fuz_code",
@@ -633,7 +716,9 @@
 				"test": "gro test",
 				"deploy": "gro deploy"
 			},
-			"files": ["dist"],
+			"files": [
+				"dist"
+			],
 			"devDependencies": {
 				"@changesets/changelog-git": "^0.1.14",
 				"@feltjs/eslint-config": "^0.4.0",
@@ -664,7 +749,9 @@
 				"extends": "@feltjs"
 			},
 			"prettier": {
-				"plugins": ["prettier-plugin-svelte"],
+				"plugins": [
+					"prettier-plugin-svelte"
+				],
 				"useTabs": true,
 				"printWidth": 100,
 				"singleQuote": true,
