@@ -4,7 +4,7 @@ export interface LibraryItemData {
 	slug: string;
 	pathname: string;
 	name: string;
-	// TODO BLOCK ? summary: string;
+	// TODO ? summary: string;
 	category: string;
 	related: string[];
 }
