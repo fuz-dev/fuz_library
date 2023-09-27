@@ -1,5 +1,5 @@
 ---
-'@fuz.dev/fuz-library': minor
+'@fuz.dev/fuz_library': minor
 ---
 
 init

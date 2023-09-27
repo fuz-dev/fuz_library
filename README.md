@@ -1,4 +1,4 @@
-# @fuz.dev/fuz-library
+# @fuz.dev/fuz_library
 
 > components and helpers for
 > [Svelte](https://github.com/sveltejs/svelte)

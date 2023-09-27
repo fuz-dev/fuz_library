@@ -36,10 +36,10 @@
 	<section>
 		repo:
 		{#if typeof package_json.repository === 'string'}
-			{package_json.repository}
+			<a href={package_json.repository}>{package_json.repository}</a>
 		{:else}
 			{package_json.repository.type} -
-			{package_json.repository.url}
+			<a href={package_json.repository.url}>{package_json.repository.url}</a>
 			<!-- {package_json.repository.directory} -->
 		{/if}
 	</section>
