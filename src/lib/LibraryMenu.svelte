@@ -9,6 +9,8 @@
 	// itemsMenu floats alongside the docs, showing scrolled item as active
 	export let items: LibraryItemData[];
 
+	$: console.log(`items`, items);
+
 	let items_by_category: Record<string, LibraryItemData[]>;
 	$: items_by_category = items.reduce(
 		(result, c) => {

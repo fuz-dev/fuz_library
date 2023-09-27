@@ -8,6 +8,7 @@
 	import LibraryPanel from '$lib/LibraryPanel.svelte';
 
 	let library_items = get_library_items();
+	console.log(`library_items`, library_items);
 
 	onMount(async () => {
 		await init_items();
