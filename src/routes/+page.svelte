@@ -3,10 +3,13 @@
 
 	import PackageDetails from '$lib/PackageDetails.svelte';
 	import packages from '$lib/packages.json';
+
+	const root_package = packages[0];
+	const package_json = root_package.package_json as any; // TODO why is the type off?
 </script>
 
 <main class="prose">
-	<PackageDetails package_json={packages[0].package_json} />
+	<PackageDetails {package_json} />
 	<section>
 		<a class="library-link panel" href="{base}/library">library</a>
 	</section>

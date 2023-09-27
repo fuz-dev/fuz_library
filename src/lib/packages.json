@@ -24,9 +24,7 @@
 				"test": "gro test",
 				"deploy": "gro deploy"
 			},
-			"files": [
-				"dist"
-			],
+			"files": ["dist"],
 			"devDependencies": {
 				"@changesets/changelog-git": "^0.1.14",
 				"@feltjs/eslint-config": "^0.4.0",
@@ -58,9 +56,7 @@
 				"extends": "@feltjs"
 			},
 			"prettier": {
-				"plugins": [
-					"prettier-plugin-svelte"
-				],
+				"plugins": ["prettier-plugin-svelte"],
 				"useTabs": true,
 				"printWidth": 100,
 				"singleQuote": true,
@@ -253,9 +249,7 @@
 				"vite",
 				"typescript"
 			],
-			"files": [
-				"dist"
-			],
+			"files": ["dist"],
 			"dependencies": {
 				"@grogarden/util": "^0.14.0",
 				"@ryanatkn/json-schema-to-typescript": "^11.1.5",
@@ -304,9 +298,7 @@
 				}
 			},
 			"prettier": {
-				"plugins": [
-					"prettier-plugin-svelte"
-				],
+				"plugins": ["prettier-plugin-svelte"],
 				"useTabs": true,
 				"printWidth": 100,
 				"singleQuote": true,
@@ -641,9 +633,7 @@
 				"test": "gro test",
 				"deploy": "gro deploy"
 			},
-			"files": [
-				"dist"
-			],
+			"files": ["dist"],
 			"devDependencies": {
 				"@changesets/changelog-git": "^0.1.14",
 				"@feltjs/eslint-config": "^0.4.0",
@@ -674,9 +664,7 @@
 				"extends": "@feltjs"
 			},
 			"prettier": {
-				"plugins": [
-					"prettier-plugin-svelte"
-				],
+				"plugins": ["prettier-plugin-svelte"],
 				"useTabs": true,
 				"printWidth": 100,
 				"singleQuote": true,
