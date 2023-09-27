@@ -12,7 +12,7 @@ export const package_hosts = [
 	'https://www.grogarden.org/',
 	'https://template.fuz.dev/',
 	'https://code.fuz.dev/',
-	// 'https://felt.dev/',
+	// 'https://www.felt.dev/',
 ];
 
 export const Args = z
