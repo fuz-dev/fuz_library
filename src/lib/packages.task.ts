@@ -7,6 +7,7 @@ import {fetch_packages, type PackageItem} from '$lib/packages';
 
 // TODO refactor/rename
 export const package_hosts = [
+	// TODO add more
 	// 'https://www.fuz.dev/',
 	'https://www.grogarden.org/',
 	'https://code.fuz.dev/',
@@ -21,8 +22,6 @@ export const Args = z
 	})
 	.strict();
 export type Args = z.infer<typeof Args>;
-
-// TODO BLOCK retrieve data from ${package_url}/.well-known/package.json
 
 export const task: Task<Args> = {
 	Args,
