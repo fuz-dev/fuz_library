@@ -2,6 +2,7 @@ import type {Task} from '@grogarden/gro';
 import {load_package_json} from '@grogarden/gro/package_json.js';
 import {z} from 'zod';
 import {writeFile} from 'node:fs/promises';
+import {Url} from '@grogarden/gro/paths.js';
 
 import {fetch_packages, type PackageItem} from '$lib/packages';
 
@@ -18,7 +19,7 @@ export const package_hosts = [
 export const Args = z
 	.object({
 		_: z
-			.array(z.string(), {description: 'package host URLs, the paths containing .well-known'})
+			.array(Url, {description: 'package host URLs, the paths containing .well-known'})
 			.default(package_hosts),
 	})
 	.strict();
