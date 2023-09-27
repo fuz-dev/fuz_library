@@ -1,7 +1,7 @@
 <script lang="ts">
 	import {swallow} from '@grogarden/util/dom.js';
+	import Code from '@fuz.dev/fuz_code/Code.svelte';
 
-	import Code from '$routes/Code.svelte';
 	import LibraryItem from '$lib/LibraryItem.svelte';
 
 	const LIBRARY_ITEM_NAME = 'menu item';

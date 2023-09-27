@@ -1,8 +1,8 @@
 <script lang="ts">
 	import {fly} from 'svelte/transition';
+	import Code from '@fuz.dev/fuz_code/Code.svelte';
 
 	import Alert from '$lib/Alert.svelte';
-	import Code from '$routes/Code.svelte';
 	import LibraryItem from '$lib/LibraryItem.svelte';
 
 	const LIBRARY_ITEM_NAME = 'forms';

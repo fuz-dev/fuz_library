@@ -9,8 +9,11 @@
 <!-- <h1>@fuz.dev/fuz</h1> -->
 <!-- TODO publish and link the above to npm -->
 
-<section>
-	<blockquote>{item.tagline}</blockquote>
+<section class="prose">
+	<h2>{item.name}</h2>
+	<p>
+		<span class="chip">{item.category}</span>
+	</p>
 </section>
 <section>
 	<code class="chip"

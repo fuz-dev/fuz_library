@@ -1,6 +1,7 @@
 <script lang="ts">
 	import {slide} from 'svelte/transition';
 	import {writable} from 'svelte/store';
+	import Code from '@fuz.dev/fuz_code/Code.svelte';
 
 	import Dialog from '$lib/Dialog.svelte';
 	import Dialogs from '$lib/Dialogs.svelte';
@@ -12,7 +13,6 @@
 	} from '$lib/dialog';
 	import Alert from '$lib/Alert.svelte';
 	import LibraryItem from '$lib/LibraryItem.svelte';
-	import Code from '$routes/Code.svelte';
 	import Text from '$routes/library/Dialog/Text.svelte';
 
 	const LIBRARY_ITEM_NAME = 'Dialog';

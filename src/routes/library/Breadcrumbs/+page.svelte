@@ -1,6 +1,7 @@
 <script lang="ts">
+	import Code from '@fuz.dev/fuz_code/Code.svelte';
+
 	import Breadcrumbs from '$lib/Breadcrumbs.svelte';
-	import Code from '$routes/Code.svelte';
 	import LibraryItem from '$lib/LibraryItem.svelte';
 	import BreadcrumbsExample from '$routes/library/Breadcrumbs/BreadcrumbsExample.svelte';
 

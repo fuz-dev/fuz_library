@@ -1,5 +1,6 @@
 <script lang="ts">
-	import Code from '$routes/Code.svelte';
+	import Code from '@fuz.dev/fuz_code/Code.svelte';
+
 	import LibraryItem from '$lib/LibraryItem.svelte';
 
 	const LIBRARY_ITEM_NAME = 'elements';

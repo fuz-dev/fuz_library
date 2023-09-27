@@ -1,7 +1,8 @@
 <script lang="ts">
+	import Code from '@fuz.dev/fuz_code/Code.svelte';
+
 	import Redirect from '$lib/Redirect.svelte';
 	import LibraryItem from '$lib/LibraryItem.svelte';
-	import Code from '$routes/Code.svelte';
 
 	const LIBRARY_ITEM_NAME = 'Redirect';
 </script>

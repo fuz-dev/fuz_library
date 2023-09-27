@@ -1,8 +1,8 @@
 <script lang="ts">
 	import {base} from '$app/paths';
+	import Code from '@fuz.dev/fuz_code/Code.svelte';
 
 	import Card from '$lib/Card.svelte';
-	import Code from '$routes/Code.svelte';
 	import LibraryItem from '$lib/LibraryItem.svelte';
 
 	const LIBRARY_ITEM_NAME = 'Card';
