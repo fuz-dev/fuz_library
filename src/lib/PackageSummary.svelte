@@ -12,12 +12,15 @@
 			? package_json.repository
 			: package_json.repository.url
 		: null;
+
 	$: license_url = repository ? repository + '/blob/main/LICENSE' : null;
-	$: changelog_url = repository ? repository + '/blob/main/CHANGELOG.md' : null;
 
 	$: published =
 		!package_json.private && !!package_json.exports && package_json.version !== '0.0.1';
+
 	$: npm_url = published ? 'https://www.npmjs.com/package/' + package_json.name : null;
+
+	$: changelog_url = published && repository ? repository + '/blob/main/CHANGELOG.md' : null;
 </script>
 
 <section>
@@ -32,7 +35,7 @@
 		</div>
 	{/if}
 	<div class="box row spaced">
-		{#if published && changelog_url}
+		{#if changelog_url}
 			<a class="chip spaced_hz" href={changelog_url}>version {package_json.version}</a>
 		{/if}
 		{#if license_url}
