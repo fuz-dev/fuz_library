@@ -2,12 +2,14 @@
 	import Code from '@fuz.dev/fuz_code/Code.svelte';
 
 	import Redirect from '$lib/Redirect.svelte';
-	import Tome from '$lib/Tome.svelte';
+	import TomeDetails from '$lib/TomeDetails.svelte';
+	import {tomes_by_name} from '$lib/tome';
 
 	const LIBRARY_ITEM_NAME = 'Redirect';
+	const tome = tomes_by_name.get(LIBRARY_ITEM_NAME)!;
 </script>
 
-<Tome name={LIBRARY_ITEM_NAME}>
+<TomeDetails {tome}>
 	<div class="box prose">
 		<p>
 			Adds a redirect for a page using <a
@@ -43,7 +45,7 @@
 			</Redirect>
 		</section>
 	</div>
-</Tome>
+</TomeDetails>
 
 <style>
 	section {

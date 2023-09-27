@@ -2,15 +2,17 @@
 	import Code from '@fuz.dev/fuz_code/Code.svelte';
 
 	import Alert from '$lib/Alert.svelte';
-	import Tome from '$lib/Tome.svelte';
+	import TomeDetails from '$lib/TomeDetails.svelte';
+	import {tomes_by_name} from '$lib/tome';
 
 	const LIBRARY_ITEM_NAME = 'Alert';
+	const tome = tomes_by_name.get(LIBRARY_ITEM_NAME)!;
 
 	let clicks = 0;
 	$: dots = Array.from({length: clicks}).reduce((r, _) => r + '.', '');
 </script>
 
-<Tome name={LIBRARY_ITEM_NAME}>
+<TomeDetails {tome}>
 	<div class="prose">
 		<section>
 			<Code content={`<Alert>:-)</Alert>`} />
@@ -104,4 +106,4 @@
 			</Alert>
 		</section>
 	</div>
-</Tome>
+</TomeDetails>

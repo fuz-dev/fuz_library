@@ -2,9 +2,11 @@
 	import {swallow} from '@grogarden/util/dom.js';
 	import Code from '@fuz.dev/fuz_code/Code.svelte';
 
-	import Tome from '$lib/Tome.svelte';
+	import TomeDetails from '$lib/TomeDetails.svelte';
+	import {tomes_by_name} from '$lib/tome';
 
 	const LIBRARY_ITEM_NAME = 'menu item';
+	const tome = tomes_by_name.get(LIBRARY_ITEM_NAME)!;
 
 	// TODO `role="menuitem"` ?
 
@@ -19,7 +21,7 @@
 	};
 </script>
 
-<Tome name={LIBRARY_ITEM_NAME}>
+<TomeDetails {tome}>
 	<section class="prose box">
 		<h3>
 			<code>.menu_item</code> CSS class
@@ -133,7 +135,7 @@
 			</li>
 		</ul>
 	</section>
-</Tome>
+</TomeDetails>
 
 <style>
 	section {

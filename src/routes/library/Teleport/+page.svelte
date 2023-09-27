@@ -2,16 +2,18 @@
 	import Code from '@fuz.dev/fuz_code/Code.svelte';
 
 	import Teleport from '$lib/Teleport.svelte';
-	import Tome from '$lib/Tome.svelte';
+	import TomeDetails from '$lib/TomeDetails.svelte';
+	import {tomes_by_name} from '$lib/tome';
 
 	const LIBRARY_ITEM_NAME = 'Teleport';
+	const tome = tomes_by_name.get(LIBRARY_ITEM_NAME)!;
 
 	let swap = true;
 	let teleport_1: HTMLElement | undefined = undefined;
 	let teleport_2: HTMLElement | undefined = undefined;
 </script>
 
-<Tome name={LIBRARY_ITEM_NAME}>
+<TomeDetails {tome}>
 	<section class="prose width_sm">
 		<aside>
 			<p>
@@ -49,7 +51,7 @@
 		</div>
 		<button on:click={() => (swap = !swap)}> teleport the bunny </button>
 	</section>
-</Tome>
+</TomeDetails>
 
 <style>
 	.teleports {

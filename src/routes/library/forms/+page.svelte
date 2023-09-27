@@ -3,9 +3,11 @@
 	import Code from '@fuz.dev/fuz_code/Code.svelte';
 
 	import Alert from '$lib/Alert.svelte';
-	import Tome from '$lib/Tome.svelte';
+	import TomeDetails from '$lib/TomeDetails.svelte';
+	import {tomes_by_name} from '$lib/tome';
 
 	const LIBRARY_ITEM_NAME = 'forms';
+	const tome = tomes_by_name.get(LIBRARY_ITEM_NAME)!;
 
 	// TODO extract this to where? (where is it used in the css? check all @keyframe)
 	const ANIMATION_DURATION_FAST = 91; // ms
@@ -27,7 +29,7 @@
 	let checked2 = true;
 </script>
 
-<Tome name={LIBRARY_ITEM_NAME}>
+<TomeDetails {tome}>
 	<div class="prose box">
 		<Code
 			content={`<form>
@@ -399,4 +401,4 @@
 		</section>
 		<blockquote>TODO: add more <code>deselectable</code> signifiers?</blockquote>
 	</div>
-</Tome>
+</TomeDetails>

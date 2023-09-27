@@ -3,22 +3,22 @@
 	import {slide} from 'svelte/transition';
 	import {base} from '$app/paths';
 
-	import type {TomeData} from '$lib/tome';
+	import type {Tome} from '$lib/tome';
 	import LibraryPanel from '$lib/LibraryPanel.svelte';
 
 	// itemsMenu floats alongside the docs, showing scrolled item as active
-	export let items: TomeData[];
+	export let items: Tome[];
 
 	$: console.log(`items`, items);
 
-	let items_by_category: Record<string, TomeData[]>;
+	let items_by_category: Record<string, Tome[]>;
 	$: items_by_category = items.reduce(
 		(result, c) => {
 			if (!(c.category in result)) result[c.category] = [];
 			result[c.category].push(c);
 			return result;
 		},
-		{} as Record<string, TomeData[]>,
+		{} as Record<string, Tome[]>,
 	);
 </script>
 

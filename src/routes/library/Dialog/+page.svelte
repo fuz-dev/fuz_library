@@ -12,10 +12,12 @@
 		to_dialog_params,
 	} from '$lib/dialog';
 	import Alert from '$lib/Alert.svelte';
-	import Tome from '$lib/Tome.svelte';
+	import TomeDetails from '$lib/TomeDetails.svelte';
 	import Text from '$routes/library/Dialog/Text.svelte';
+	import {tomes_by_name} from '$lib/tome';
 
 	const LIBRARY_ITEM_NAME = 'Dialog';
+	const tome = tomes_by_name.get(LIBRARY_ITEM_NAME)!;
 
 	let dialogOpen = false;
 	let dialogOverflowingOpen = false;
@@ -51,7 +53,7 @@
 	};
 </script>
 
-<Tome name={LIBRARY_ITEM_NAME}>
+<TomeDetails {tome}>
 	<div class="prose box width_full">
 		<Code
 			content={`<button on:click={() => (dialogOpen = true)}>
@@ -84,7 +86,7 @@
 		>
 		<button on:click={() => addDialogs(5)}>open many dialogs</button>
 	</div>
-</Tome>
+</TomeDetails>
 {#if dialogOpen}
 	<Dialog let:close on:close={() => (dialogOpen = false)}>
 		<div class="pane prose padded_xl box">

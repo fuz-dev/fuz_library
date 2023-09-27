@@ -2,13 +2,15 @@
 	import Code from '@fuz.dev/fuz_code/Code.svelte';
 
 	import Breadcrumbs from '$lib/Breadcrumbs.svelte';
-	import Tome from '$lib/Tome.svelte';
+	import TomeDetails from '$lib/TomeDetails.svelte';
 	import BreadcrumbsExample from '$routes/library/Breadcrumbs/BreadcrumbsExample.svelte';
+	import {tomes_by_name} from '$lib/tome';
 
 	const LIBRARY_ITEM_NAME = 'Breadcrumbs';
+	const tome = tomes_by_name.get(LIBRARY_ITEM_NAME)!;
 </script>
 
-<Tome name={LIBRARY_ITEM_NAME}>
+<TomeDetails {tome}>
 	<div class="prose box">
 		<section>
 			<Code content={`<Breadcrumbs />`} />
@@ -25,7 +27,7 @@
 			<BreadcrumbsExample selected_path="/a/b" />
 		</section>
 	</div>
-</Tome>
+</TomeDetails>
 
 <style>
 	section {

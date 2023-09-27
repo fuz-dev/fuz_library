@@ -151,9 +151,9 @@
 					"svelte": "./dist/LibraryHeader.svelte",
 					"types": "./dist/LibraryHeader.svelte.d.ts"
 				},
-				"./Tome.svelte": {
-					"svelte": "./dist/Tome.svelte",
-					"types": "./dist/Tome.svelte.d.ts"
+				"./TomeDetails.svelte": {
+					"svelte": "./dist/TomeDetails.svelte",
+					"types": "./dist/TomeDetails.svelte.d.ts"
 				},
 				"./TomeTitle.svelte": {
 					"svelte": "./dist/TomeTitle.svelte",

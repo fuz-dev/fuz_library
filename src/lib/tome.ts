@@ -1,15 +1,17 @@
 import type {ComponentType} from 'svelte';
+import {z} from 'zod';
 
-export interface TomeData {
-	slug: string;
-	pathname: string;
-	name: string;
-	// TODO ? summary: string;
-	category: string;
-	related: string[];
-}
+export const Tome = z.object({
+	slug: z.string(),
+	pathname: z.string(),
+	name: z.string(),
+	// TODO ? summary: z.string(),
+	category: z.string(),
+	related: z.array(z.string()),
+});
+export type Tome = z.infer<typeof Tome>;
 
-export type TomeWithComponent = TomeData & {component: ComponentType};
+export type TomeWithComponent = Tome & {component: ComponentType};
 
 /**
  * For now, mutate this directly to set up the library items.

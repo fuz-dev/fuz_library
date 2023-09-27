@@ -1,9 +1,9 @@
 <script lang="ts">
 	import {base} from '$app/paths';
 
-	import type {TomeData} from '$lib/tome';
+	import type {Tome} from '$lib/tome';
 
-	export let item: TomeData; // friendly user zystem
+	export let item: Tome; // friendly user zystem
 </script>
 
 <!-- <h1>@fuz.dev/fuz</h1> -->
