@@ -7,6 +7,7 @@
 	import LibraryPanel from '$lib/LibraryPanel.svelte';
 	import {tomes} from '$routes/tomes.js';
 	import {set_tomes, tomes_by_name} from '$lib/tome.js';
+	import LibraryFooter from '$lib/LibraryFooter.svelte';
 
 	// TODO BLOCK
 	for (const tome of tomes) tomes_by_name.set(tome.name, tome);
@@ -28,6 +29,7 @@
 </script>
 
 <main>
+	<nav><Breadcrumbs>🧶</Breadcrumbs></nav>
 	<div class="layout width_md">
 		<div class="menu_wrapper">
 			<div class="menu width_sm">
@@ -51,6 +53,7 @@
 			</div></LibraryPanel
 		>
 		<slot />
+		<section class="box"><LibraryFooter /></section>
 		<section class="box">
 			<Breadcrumbs>🧶</Breadcrumbs>
 		</section>
@@ -68,6 +71,9 @@
 	}
 	.layout {
 		position: relative;
+	}
+	nav {
+		font-size: var(--size_xl);
 	}
 	.menu_wrapper {
 		position: absolute;
