@@ -28,8 +28,8 @@
 </script>
 
 <main>
-	<div class="width_md">
-		<div class="menu-wrapper">
+	<div class="layout width_md">
+		<div class="menu_wrapper">
 			<div class="menu width_sm">
 				<LibraryMenu items={tomes} />
 				{#if items_related_to_selected}
@@ -66,7 +66,10 @@
 		align-items: center;
 		padding-bottom: var(--spacing_xl5);
 	}
-	.menu-wrapper {
+	.layout {
+		position: relative;
+	}
+	.menu_wrapper {
 		position: absolute;
 		left: 0;
 		top: 0;
@@ -78,7 +81,7 @@
 		top: 0;
 	}
 	@media (max-width: 1200px) {
-		.menu-wrapper {
+		.menu_wrapper {
 			position: relative;
 			transform: none;
 			margin-bottom: var(--spacing_xl3);
