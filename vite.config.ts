@@ -4,6 +4,7 @@ import {remove_prism_css} from '@fuz.dev/fuz_code/remove_prism_css_vite_plugin.j
 
 const config: UserConfig = {
 	plugins: [sveltekit(), remove_prism_css()],
+	ssr: {noExternal: ['@fuz.dev/fuz']},
 };
 
 export default config;
