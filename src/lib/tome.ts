@@ -1,4 +1,4 @@
-import type {ComponentType} from 'svelte';
+import {getContext, type ComponentType, setContext} from 'svelte';
 import {z} from 'zod';
 
 export const Tome = z.object({
@@ -24,4 +24,18 @@ export const init_tome = <T extends TomeWithComponent>(item: T): T => {
 		item.pathname = `/library/${item.slug}`;
 	}
 	return item;
+};
+
+const TOMES_KEY = Symbol();
+
+export const get_tomes = (): Map<string, Tome> => getContext(TOMES_KEY);
+export const set_tomes = (tomes: Map<string, Tome>): Map<string, Tome> =>
+	setContext(TOMES_KEY, tomes);
+
+export const get_tome = (name: string): Tome => {
+	// TODO block should this use context or a global?
+	const tomes = get_tomes();
+	const tome = tomes.get(name);
+	if (!tome) throw Error('unable to find tome ' + name);
+	return tome;
 };

@@ -1,13 +1,15 @@
 <script lang="ts">
-	import type {TomeWithComponent} from '$lib/tome';
-	import {tomes} from '$routes/tomes';
+	import type {TomeWithComponent} from '$lib/tome.js';
+	import {tomes as default_tomes} from '$routes/tomes';
 
-	export let items: TomeWithComponent[] = tomes;
+	export let tomes: TomeWithComponent[] = default_tomes; // TODO BLOCK get from context or prop only
+
+	$: console.log(`Library items`, tomes);
 </script>
 
 <div class="tomes">
-	{#each items as item (item)}
-		<svelte:component this={item.component} />
+	{#each tomes as tome (tome)}
+		<svelte:component this={tome.component} />
 	{/each}
 </div>
 

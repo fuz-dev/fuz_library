@@ -1,15 +1,13 @@
 <script lang="ts">
 	import {fly} from 'svelte/transition';
 	import Code from '@fuz.dev/fuz_code/Code.svelte';
-	import {getContext} from 'svelte';
 
+	import {get_tome} from '$lib/tome.js';
 	import Alert from '$lib/Alert.svelte';
 	import TomeDetails from '$lib/TomeDetails.svelte';
 
-	const tomes_by_name: any = getContext('tomes_by_name');
-
 	const LIBRARY_ITEM_NAME = 'forms';
-	const tome = tomes_by_name.get(LIBRARY_ITEM_NAME)!;
+	const tome = get_tome(LIBRARY_ITEM_NAME);
 
 	// TODO extract this to where? (where is it used in the css? check all @keyframe)
 	const ANIMATION_DURATION_FAST = 91; // ms

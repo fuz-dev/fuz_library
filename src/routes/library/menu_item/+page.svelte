@@ -1,14 +1,12 @@
 <script lang="ts">
 	import {swallow} from '@grogarden/util/dom.js';
 	import Code from '@fuz.dev/fuz_code/Code.svelte';
-	import {getContext} from 'svelte';
 
+	import {get_tome} from '$lib/tome.js';
 	import TomeDetails from '$lib/TomeDetails.svelte';
 
-	const tomes_by_name: any = getContext('tomes_by_name');
-
 	const LIBRARY_ITEM_NAME = 'menu item';
-	const tome = tomes_by_name.get(LIBRARY_ITEM_NAME)!;
+	const tome = get_tome(LIBRARY_ITEM_NAME);
 
 	// TODO `role="menuitem"` ?
 

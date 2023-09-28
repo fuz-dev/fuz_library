@@ -1,7 +1,7 @@
 <script lang="ts">
 	import {base} from '$app/paths';
 
-	import type {Tome} from '$lib/tome';
+	import type {Tome} from '$lib/tome.js';
 
 	export let item: Tome; // friendly user zystem
 </script>

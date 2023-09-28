@@ -1,14 +1,14 @@
 <script lang="ts">
 	import Code from '@fuz.dev/fuz_code/Code.svelte';
-	import {getContext} from 'svelte';
 
+	import {get_tome} from '$lib/tome.js';
 	import Alert from '$lib/Alert.svelte';
 	import TomeDetails from '$lib/TomeDetails.svelte';
 
-	const tomes_by_name: any = getContext('tomes_by_name');
-
 	const LIBRARY_ITEM_NAME = 'Alert';
-	const tome = tomes_by_name.get(LIBRARY_ITEM_NAME)!;
+	const tome = get_tome(LIBRARY_ITEM_NAME);
+
+	console.log(`tome`, LIBRARY_ITEM_NAME, tome);
 
 	let clicks = 0;
 	$: dots = Array.from({length: clicks}).reduce((r, _) => r + '.', '');

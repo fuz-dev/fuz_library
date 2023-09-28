@@ -1,16 +1,18 @@
 <script lang="ts">
 	import TomeTitle from '$lib/TomeTitle.svelte';
 	import LibraryPanel from '$lib/LibraryPanel.svelte';
-	import type {Tome} from '$lib/tome';
+	import type {Tome} from '$lib/tome.js';
 
 	// TODO component name?
 
 	export let tome: Tome;
+
+	$: console.log(`tome`, tome);
 </script>
 
 <LibraryPanel classes="tome_details">
 	<header>
-		<TomeTitle name={tome.name} />
+		<TomeTitle {tome} />
 		<slot name="header" />
 	</header>
 	<slot />

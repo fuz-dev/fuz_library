@@ -1,4 +1,4 @@
-import type {TomeWithComponent} from '$lib/tome';
+import type {TomeWithComponent} from '$lib/tome.js';
 
 import PendingAnimation from '$routes/library/PendingAnimation/+page.svelte';
 import PendingButton from '$routes/library/PendingButton/+page.svelte';

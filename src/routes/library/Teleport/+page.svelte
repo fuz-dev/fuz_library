@@ -1,14 +1,12 @@
 <script lang="ts">
 	import Code from '@fuz.dev/fuz_code/Code.svelte';
-	import {getContext} from 'svelte';
 
+	import {get_tome} from '$lib/tome.js';
 	import Teleport from '$lib/Teleport.svelte';
 	import TomeDetails from '$lib/TomeDetails.svelte';
 
-	const tomes_by_name: any = getContext('tomes_by_name');
-
 	const LIBRARY_ITEM_NAME = 'Teleport';
-	const tome = tomes_by_name.get(LIBRARY_ITEM_NAME)!;
+	const tome = get_tome(LIBRARY_ITEM_NAME);
 
 	let swap = true;
 	let teleport_1: HTMLElement | undefined = undefined;

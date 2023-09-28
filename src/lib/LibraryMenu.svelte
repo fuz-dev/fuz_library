@@ -3,7 +3,7 @@
 	import {slide} from 'svelte/transition';
 	import {base} from '$app/paths';
 
-	import type {Tome} from '$lib/tome';
+	import type {Tome} from '$lib/tome.js';
 	import LibraryPanel from '$lib/LibraryPanel.svelte';
 
 	// itemsMenu floats alongside the docs, showing scrolled item as active
