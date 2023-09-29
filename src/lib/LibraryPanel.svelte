@@ -1,8 +1,4 @@
-<script lang="ts">
-	export let classes = '';
-</script>
-
-<div class="library_panel panel {classes}">
+<div class="library_panel panel">
 	<slot />
 </div>
 

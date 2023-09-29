@@ -6,8 +6,6 @@
 
 	export let tome: Tome;
 
-	// TODO hacky to avoid a circular dependency problem
-
 	$: ({path, path_is_active} = to_library_path_info(tome.slug, $page.url.pathname));
 </script>
 

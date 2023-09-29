@@ -8,10 +8,11 @@
 	export let tome: Tome;
 </script>
 
-<LibraryPanel classes="tome_details">
+<LibraryPanel>
 	<header>
-		<TomeTitle {tome} />
-		<slot name="header" />
+		<slot name="header">
+			<TomeTitle {tome} />
+		</slot>
 	</header>
 	<slot />
 </LibraryPanel>
