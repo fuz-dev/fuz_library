@@ -1,50 +1,16 @@
 <script lang="ts">
-	import {base} from '$app/paths';
+	import LibraryPanel from '$lib/LibraryPanel.svelte';
 
-	import type {Tome} from '$lib/tome.js';
-
-	export let item: Tome; // friendly user zystem
-
-	// TODO BLOCK should these be part of `Tome`? `package_json`?
-	export let npm_url = 'https://npmjs.com/package/@fuz.dev/fuz_library';
-	export let package_json_name = '@fuz.dev/fuz_library';
+	export let pkg_npm_url: string;
+	export let pkg_name: string;
+	export let pkg_repo_url: string;
 </script>
 
-<section class="prose">
-	<h2>{item.name}</h2>
-	<p>
-		<span class="chip">{item.category}</span>
-	</p>
-</section>
-<section>
-	<code class="chip">npm i -D&nbsp;<a class="chip" href={npm_url}>{package_json_name}</a></code>
-</section>
-<section>
-	<a class="library-link panel" href="{base}/library">library</a>
-</section>
-
-<style>
-	section {
-		padding: var(--spacing_xl2);
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-	}
-	code {
-		display: flex;
-		align-items: center;
-		text-align: center;
-		font-size: var(--size_lg);
-		white-space: nowrap;
-	}
-	.panel {
-		padding: var(--spacing_xl2);
-		font-size: var(--size_xl);
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-	}
-	.library-link {
-		font-size: var(--size_xl3);
-	}
-</style>
+<LibraryPanel>
+	<div class="prose box text_align_center">
+		<code class="box row padded_md panel spaced"
+			>npm i -D&nbsp;<a href={pkg_npm_url}>{pkg_name}</a>
+		</code>
+		<a class="chip" href={pkg_repo_url}>repo</a>
+	</div></LibraryPanel
+>

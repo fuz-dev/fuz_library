@@ -1,20 +1,19 @@
 <script lang="ts">
 	import GithubLogo from '$lib/GithubLogo.svelte';
 
-	// TODO BLOCK source this data
-	export let repo_url = 'https://github.com/fuz-dev/fuz_library';
-	export let org_url = 'https://github.com/fuz-dev';
-	export let website_url = 'https://www.fuz.dev/';
-	export let website_url_text = 'fuz.dev';
+	export let pkg_repo_url: string;
+	export let pkg_org_url: string;
+	export let pkg_website_url: string;
+	export let pkg_website_name: string;
 </script>
 
 <footer class="prose panel padded_lg">
-	<slot><a class="emoji" href={org_url} rel="me">🧶</a></slot>
+	<slot><a class="emoji" href={pkg_org_url} rel="me">🧶</a></slot>
 	<div class="social">
-		<a href={repo_url} rel="me"><slot name="logo"><GithubLogo /></slot></a>
+		<a href={pkg_repo_url} rel="me"><slot name="logo"><GithubLogo /></slot></a>
 	</div>
 	<p>
-		<a href={website_url} rel="me">{website_url_text}</a>
+		<a href={pkg_website_url} rel="me">{pkg_website_name}</a>
 	</p>
 </footer>
 

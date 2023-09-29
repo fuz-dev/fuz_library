@@ -3,7 +3,7 @@
 	import Breadcrumbs from '@fuz.dev/fuz/Breadcrumbs.svelte';
 
 	import LibraryMenu from '$lib/LibraryMenu.svelte';
-	import LibraryPanel from '$lib/LibraryPanel.svelte';
+	import LibraryHeader from '$lib/LibraryHeader.svelte';
 	import LibraryFooter from '$lib/LibraryFooter.svelte';
 	import {set_tomes} from '$lib/tome.js';
 	import {tomes} from '$routes/library/tomes.js';
@@ -15,6 +15,14 @@
 	$: items_related_to_selected = selected_item?.related?.map((r) => tomes_by_name.get(r)!);
 
 	// TODO factor this code out and publish the layout
+
+	// TODO source from package_json
+	const pkg_npm_url = 'https://npmjs.com/package/@fuz.dev/fuz_library';
+	const pkg_name = '@fuz.dev/fuz_library';
+	const pkg_repo_url = 'https://github.com/fuz-dev/fuz_library';
+	const pkg_org_url = 'https://github.com/fuz-dev';
+	const pkg_website_url = 'https://www.fuz.dev/';
+	const pkg_website_name = 'fuz.dev';
 </script>
 
 <main>
@@ -30,20 +38,12 @@
 				{/if}
 			</div>
 		</div>
-		<LibraryPanel>
-			<div class="prose box text_align_center">
-				<code class="box row padded_md panel spaced"
-					>npm i -D&nbsp;<a href="https://www.npmjs.com/package/@fuz.dev/fuz_library"
-						>@fuz.dev/fuz_library</a
-					>
-				</code>
-				<a class="padded_md panel" href="https://github.com/fuz-dev/fuz_library"
-					>github.com/fuz-dev/fuz_library</a
-				>
-			</div></LibraryPanel
-		>
+		<LibraryHeader {pkg_npm_url} {pkg_name} {pkg_repo_url} />
+
 		<slot />
-		<section class="box"><LibraryFooter /></section>
+		<section class="box">
+			<LibraryFooter {pkg_repo_url} {pkg_org_url} {pkg_website_url} {pkg_website_name} />
+		</section>
 		<section class="box">
 			<Breadcrumbs>🧶</Breadcrumbs>
 		</section>
