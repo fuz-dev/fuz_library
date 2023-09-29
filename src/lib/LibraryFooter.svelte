@@ -1,16 +1,17 @@
 <script lang="ts">
 	import GithubLogo from '$lib/GithubLogo.svelte';
+
+	const repo_url = 'https://github.com/fuz-dev/fuz_library';
+	const org_url = 'https://github.com/fuz-dev';
 </script>
 
 <footer class="prose panel padded_lg">
-	<slot><a href="https://github.com/fuz-dev">🧶</a></slot>
+	<slot><a href={org_url}>🧶</a></slot>
 	<div class="social">
-		<a href="https://github.com/fuz-dev/fuz" rel="me">
-			<GithubLogo />
-		</a>
+		<a href={repo_url} rel="me"><slot name="logo"><GithubLogo /></slot></a>
 	</div>
 	<p>
-		<a href="https://docs.fuz.dev/">docs.fuz.dev</a>
+		<a href="https://www.fuz.dev/">fuz.dev</a>
 	</p>
 </footer>
 
