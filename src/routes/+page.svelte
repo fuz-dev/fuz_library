@@ -1,28 +1,17 @@
 <script lang="ts">
-	import Alert from '@fuz.dev/fuz/Alert.svelte';
 	import {base} from '$app/paths';
 
-	import Header from '$routes/Header.svelte';
-	import Mreows from '$routes/Mreows.svelte';
+	import PackageSummary from '$lib/PackageSummary.svelte';
+	import packages from '$lib/packages.json';
 
-	let mreows: Array<{icon: string}> | undefined;
+	const root_package = packages[0];
 </script>
 
 <main class="prose">
-	<section class="box">
-		<Header />
-		<Alert>
-			<span slot="icon"
-				>{#if mreows}{mreows[0].icon}{:else}✨{/if}</span
-			><span
-				>hello, welcome to <a href="https://github.com/fuz-dev/template">@fuz.dev/template</a></span
-			>
-		</Alert>
-		<p>
-			here's an <a href="{base}/route">example route</a>
-		</p>
+	<PackageSummary package_item={root_package} />
+	<section>
+		<a class="library-link panel" href="{base}/library">library</a>
 	</section>
-	<Mreows bind:mreows />
 </main>
 
 <style>
@@ -31,5 +20,12 @@
 		flex-direction: column;
 		align-items: center;
 		margin: 0 auto;
+	}
+	.library-link {
+		font-size: var(--size_xl3);
+		padding: var(--spacing_xl2);
+		display: flex;
+		flex-direction: column;
+		align-items: center;
 	}
 </style>

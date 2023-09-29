@@ -1,0 +1,16 @@
+<script lang="ts">
+	import {page} from '$app/stores';
+
+	import type {Tome} from '$lib/tome.js';
+	import {to_library_path_info} from '$lib/helpers.js';
+
+	export let tome: Tome;
+
+	// TODO hacky to avoid a circular dependency problem
+
+	$: ({path, path_is_active} = to_library_path_info(tome.slug, $page.url.pathname));
+</script>
+
+<h2 class="box" id={tome.name}>
+	{#if path_is_active}{tome.name}{:else}<a href={path}>{tome.name}</a>{/if}
+</h2>

@@ -1,0 +1,96 @@
+<script lang="ts">
+	import {page} from '$app/stores';
+	import Breadcrumbs from '@fuz.dev/fuz/Breadcrumbs.svelte';
+
+	import LibraryMenu from '$lib/LibraryMenu.svelte';
+	import LibraryHeader from '$lib/LibraryHeader.svelte';
+	import LibraryFooter from '$lib/LibraryFooter.svelte';
+	import {set_tomes} from '$lib/tome.js';
+	import {tomes} from '$routes/library/tomes.js';
+
+	const tomes_by_name = new Map(tomes.map((t) => [t.name, t]));
+	set_tomes(tomes_by_name);
+
+	$: selected_item = tomes.find((c) => c.pathname === $page.url.pathname);
+	$: items_related_to_selected = selected_item?.related?.map((r) => tomes_by_name.get(r)!);
+
+	// TODO factor this code out and publish the layout
+
+	// TODO source from package_json
+	const pkg_npm_url = 'https://npmjs.com/package/@fuz.dev/fuz_library';
+	const pkg_name = '@fuz.dev/fuz_library';
+	const pkg_repo_url = 'https://github.com/fuz-dev/fuz_library';
+	const pkg_org_url = 'https://github.com/fuz-dev';
+	const pkg_website_url = 'https://www.fuz.dev/';
+	const pkg_website_name = 'fuz.dev';
+</script>
+
+<main>
+	<nav><Breadcrumbs>🧶</Breadcrumbs></nav>
+	<div class="layout width_md">
+		<div class="menu_wrapper">
+			<div class="menu width_sm">
+				<LibraryMenu items={tomes} />
+				{#if items_related_to_selected}
+					<LibraryMenu items={items_related_to_selected} let:category>
+						<h6>related {category}</h6>
+					</LibraryMenu>
+				{/if}
+			</div>
+		</div>
+		<LibraryHeader {pkg_npm_url} {pkg_name} {pkg_repo_url} />
+
+		<slot />
+		<section class="box">
+			<LibraryFooter {pkg_repo_url} {pkg_org_url} {pkg_website_url} {pkg_website_name} />
+		</section>
+		<section class="box">
+			<Breadcrumbs>🧶</Breadcrumbs>
+		</section>
+	</div>
+</main>
+
+<style>
+	main {
+		width: 100%;
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		padding-bottom: var(--spacing_xl5);
+	}
+	.layout {
+		position: relative;
+	}
+	nav {
+		font-size: var(--size_xl);
+	}
+	.menu_wrapper {
+		position: absolute;
+		left: 0;
+		top: 0;
+		height: 100%;
+		transform: translate3d(calc(-100% - var(--spacing_sm)), 0, 0);
+	}
+	.menu {
+		position: sticky;
+		top: 0;
+	}
+	@media (max-width: 1200px) {
+		.menu_wrapper {
+			position: relative;
+			transform: none;
+			margin-bottom: var(--spacing_xl3);
+		}
+	}
+	section {
+		padding: var(--spacing_xl2);
+	}
+	h6 {
+		margin-bottom: var(--spacing_md);
+		margin-top: var(--spacing_xl3);
+	}
+	h6:first-child {
+		margin-top: 0;
+	}
+</style>

@@ -1,0 +1,57 @@
+<script lang="ts">
+	import Code from '@fuz.dev/fuz_code/Code.svelte';
+
+	import {get_tome} from '$lib/tome.js';
+	import PendingButton from '$lib/PendingButton.svelte';
+	import TomeDetails from '$lib/TomeDetails.svelte';
+
+	const LIBRARY_ITEM_NAME = 'PendingButton';
+	const tome = get_tome(LIBRARY_ITEM_NAME);
+
+	let pending_1 = false;
+	let pending_2 = true;
+</script>
+
+<!-- TODO maybe PendingButton shouldn't be a component? action? Or renderless maybe?
+		Extract a common thing to make arbitrary things not change width.
+	-->
+
+<TomeDetails {tome}>
+	<div class="prose box">
+		<section class="box">
+			<blockquote class="text_align_center">
+				<p><code>PendingButton</code> preserves the normal width of the button while animating.</p>
+				<p>This component may be replaced with an action in the future.</p>
+			</blockquote>
+			<button
+				on:click={() => {
+					pending_1 = !pending_1;
+					pending_2 = !pending_2;
+				}}>toggle the pending status of the buttons below</button
+			>
+
+			<Code
+				content={`<PendingButton
+	pending={${pending_1}}
+	on:click={() => (pending_1 = !pending_1)}
+>
+	do something async
+</PendingButton>`}
+			/>
+			<PendingButton pending={pending_1} on:click={() => (pending_1 = !pending_1)}>
+				do something async
+			</PendingButton>
+			<Code
+				content={`<PendingButton
+	pending={${pending_2}}
+	on:click={() => (pending_2 = !pending_2)}
+>
+	do another
+</PendingButton>`}
+			/>
+			<PendingButton pending={pending_2} on:click={() => (pending_2 = !pending_2)}>
+				do another
+			</PendingButton>
+		</section>
+	</div>
+</TomeDetails>
