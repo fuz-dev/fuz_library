@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Library from '$lib/Library.svelte';
-	import {get_tomes} from '$lib/tome';
+	import {get_tomes} from '$lib/tome.js';
 
 	const tomes = get_tomes();
 </script>

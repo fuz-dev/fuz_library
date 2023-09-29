@@ -2,7 +2,7 @@ import {PackageJson} from '@grogarden/gro/package_json.js';
 import type {Url} from '@grogarden/gro/paths.js';
 import {strip_end} from '@grogarden/util/string.js';
 
-import type {PackageItem} from '$lib/package_item';
+import type {PackageItem} from '$lib/package_item.js';
 
 /* eslint-disable no-await-in-loop */
 

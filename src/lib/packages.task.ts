@@ -4,8 +4,8 @@ import {z} from 'zod';
 import {writeFile} from 'node:fs/promises';
 import {Url} from '@grogarden/gro/paths.js';
 
-import {fetch_packages} from '$lib/fetch_packages';
-import type {PackageItem} from '$lib/package_item';
+import {fetch_packages} from '$lib/fetch_packages.js';
+import type {PackageItem} from '$lib/package_item.js';
 
 // TODO refactor/rename
 export const default_package_urls = [

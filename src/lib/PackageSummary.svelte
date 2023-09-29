@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type {PackageItem} from '$lib/package_item';
+	import type {PackageItem} from '$lib/package_item.js';
 
 	export let package_item: PackageItem;
 
