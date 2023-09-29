@@ -8,7 +8,7 @@ import {fetch_packages} from '$lib/fetch_packages';
 import type {PackageItem} from '$lib/package_item';
 
 // TODO refactor/rename
-export const package_hosts = [
+export const default_package_urls = [
 	// TODO add more
 	// 'https://www.fuz.dev/',
 	'https://www.grogarden.org/',
@@ -21,7 +21,7 @@ export const Args = z
 	.object({
 		_: z
 			.array(Url, {description: 'package host URLs, the paths containing .well-known'})
-			.default(package_hosts),
+			.default(default_package_urls),
 	})
 	.strict();
 export type Args = z.infer<typeof Args>;
@@ -30,13 +30,11 @@ export const task: Task<Args> = {
 	Args,
 	summary: 'downloads metadata for the given packages',
 	run: async ({args}) => {
-		const {_: urls} = args;
-
-		console.log(`urls`, urls);
+		const {_: package_urls} = args;
 
 		const root_package_json = await load_package_json();
 
-		const fetched_packages = await fetch_packages(package_hosts);
+		const fetched_packages = await fetch_packages(package_urls);
 
 		const packages: PackageItem[] = [
 			{host: 'https://library.fuz.dev/', package_json: root_package_json},
