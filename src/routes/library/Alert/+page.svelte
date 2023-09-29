@@ -8,8 +8,6 @@
 	const LIBRARY_ITEM_NAME = 'Alert';
 	const tome = get_tome(LIBRARY_ITEM_NAME);
 
-	console.log(`tome`, LIBRARY_ITEM_NAME, tome);
-
 	let clicks = 0;
 	$: dots = Array.from({length: clicks}).reduce((r, _) => r + '.', '');
 </script>

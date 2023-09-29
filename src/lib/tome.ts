@@ -11,7 +11,7 @@ export const Tome = z.object({
 });
 export type Tome = z.infer<typeof Tome>;
 
-export type TomeWithComponent = Tome & {component: ComponentType}; // TODO BLOCK delete this?
+export type TomeWithComponent = Tome & {component: ComponentType}; // TODO delete this?
 
 /**
  * For now, mutate this directly to set up the library items.
