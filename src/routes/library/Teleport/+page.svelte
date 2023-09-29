@@ -17,11 +17,6 @@
 	<section class="prose width_sm">
 		<aside>
 			<p>
-				The<code>Dialog</code> uses the <code>Teleport</code> to mount itself to a top-level DOM
-				element, instead of the location that the <code>Dialog</code> component appears in code, solving
-				various issues like unwanted style inheritance.
-			</p>
-			<p>
 				The <code>Teleport</code> can be used to relocate other elements too, in the rare cases that's
 				useful.
 			</p>

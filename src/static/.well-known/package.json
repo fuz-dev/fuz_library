@@ -100,18 +100,6 @@
       "svelte": "./dist/DevmodeControls.svelte",
       "types": "./dist/DevmodeControls.svelte.d.ts"
     },
-    "./Dialog.svelte": {
-      "svelte": "./dist/Dialog.svelte",
-      "types": "./dist/Dialog.svelte.d.ts"
-    },
-    "./dialog.js": {
-      "default": "./dist/dialog.js",
-      "types": "./dist/dialog.d.ts"
-    },
-    "./Dialogs.svelte": {
-      "svelte": "./dist/Dialogs.svelte",
-      "types": "./dist/Dialogs.svelte.d.ts"
-    },
     "./FeltWindowHost.svelte": {
       "svelte": "./dist/FeltWindowHost.svelte",
       "types": "./dist/FeltWindowHost.svelte.d.ts"
