@@ -52,14 +52,15 @@ export const tomes: TomeWithComponent[] = [
 		component: HueInput,
 		related: [], // TODO externals?
 	},
-	{
-		name: 'Library',
-		slug: 'Library',
-		pathname: '',
-		category: 'components',
-		component: Library,
-		related: [],
-	},
+	// TODO implement
+	// {
+	// 	name: 'Library',
+	// 	slug: 'Library',
+	// 	pathname: '',
+	// 	category: 'components',
+	// 	component: Library,
+	// 	related: [],
+	// },
 	{
 		name: 'PendingAnimation',
 		slug: 'PendingAnimation',
