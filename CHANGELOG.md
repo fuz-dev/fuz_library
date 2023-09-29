@@ -1,5 +1,11 @@
 # @fuz.dev/fuz_library
 
+## 0.3.1
+
+### Patch Changes
+
+- 3664d50: add .js extensions to lib imports
+
 ## 0.3.0
 
 ### Minor Changes
