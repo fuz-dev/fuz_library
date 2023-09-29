@@ -1,5 +1,11 @@
 # @fuz.dev/fuz_library
 
+## 0.4.0
+
+### Minor Changes
+
+- e7180b8: fix some snake_cases
+
 ## 0.3.1
 
 ### Patch Changes
