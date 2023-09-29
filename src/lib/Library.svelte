@@ -1,10 +1,7 @@
 <script lang="ts">
 	import type {TomeWithComponent} from '$lib/tome.js';
-	import {tomes as default_tomes} from '$routes/tomes';
 
-	export let tomes: TomeWithComponent[] = default_tomes; // TODO BLOCK get from context or prop only
-
-	$: console.log(`Library items`, tomes);
+	export let tomes: TomeWithComponent[];
 </script>
 
 <div class="tomes">
