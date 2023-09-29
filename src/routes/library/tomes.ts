@@ -3,7 +3,7 @@ import PendingAnimation from '$routes/library/PendingAnimation/+page.svelte';
 import PendingButton from '$routes/library/PendingButton/+page.svelte';
 import Teleport from '$routes/library/Teleport/+page.svelte';
 import Alert from '$routes/library/Alert/+page.svelte';
-import Library from '$routes/library/Library/+page.svelte';
+// import Library from '$routes/library/Library/+page.svelte';
 // import menu_item from '$routes/library/menu_item/+page.svelte';
 import Redirect from '$routes/library/Redirect/+page.svelte';
 import HueInput from '$routes/library/HueInput/+page.svelte';
