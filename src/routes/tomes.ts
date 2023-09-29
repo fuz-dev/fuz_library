@@ -13,14 +13,14 @@ import Breadcrumbs from '$routes/library/Breadcrumbs/+page.svelte';
 import Card from '$routes/library/Card/+page.svelte';
 
 export const tomes: TomeWithComponent[] = [
-	{
-		name: 'menu item',
-		slug: 'menu_item',
-		pathname: '',
-		category: 'styles',
-		component: menu_item,
-		related: [],
-	},
+	// {
+	// 	name: 'menu item',
+	// 	slug: 'menu_item',
+	// 	pathname: '',
+	// 	category: 'styles',
+	// 	component: menu_item,
+	// 	related: [],
+	// },
 	{
 		name: 'Alert',
 		slug: 'Alert',

@@ -43,9 +43,10 @@
 		</div>
 		<LibraryPanel>
 			<div class="prose box text_align_center">
-				<blockquote class="width_sm">friendly user zystem</blockquote>
-				<code class="box padded_md panel"
-					>npm i -D <a href="https://www.npmjs.com/package/@fuz.dev/fuz">@fuz.dev/fuz_library</a>
+				<code class="box row padded_md panel spaced"
+					>npm i -D&nbsp;<a href="https://www.npmjs.com/package/@fuz.dev/fuz"
+						>@fuz.dev/fuz_library</a
+					>
 				</code>
 				<a class="padded_md panel" href="https://github.com/fuz-dev/fuz_library"
 					>github.com/fuz-dev/fuz_library</a
