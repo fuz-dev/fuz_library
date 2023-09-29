@@ -1,7 +1,7 @@
 <script lang="ts">
-	import type {TomeWithComponent} from '$lib/tome.js';
+	import type {Tome} from '$lib/tome.js';
 
-	export let tomes: TomeWithComponent[];
+	export let tomes: Tome[];
 </script>
 
 <div class="tomes">

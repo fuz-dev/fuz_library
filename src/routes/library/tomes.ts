@@ -1,4 +1,4 @@
-import {init_tome, type TomeWithComponent} from '$lib/tome.js';
+import {init_tome, type Tome} from '$lib/tome.js';
 import PendingAnimation from '$routes/library/PendingAnimation/+page.svelte';
 import PendingButton from '$routes/library/PendingButton/+page.svelte';
 import Teleport from '$routes/library/Teleport/+page.svelte';
@@ -10,7 +10,7 @@ import HueInput from '$routes/library/HueInput/+page.svelte';
 import Breadcrumbs from '$routes/library/Breadcrumbs/+page.svelte';
 import Card from '$routes/library/Card/+page.svelte';
 
-export const tomes: TomeWithComponent[] = [
+export const tomes: Tome[] = [
 	// TODO maybe? or do styles like this belong elsewhere?
 	// {
 	// 	name: 'menu item',
