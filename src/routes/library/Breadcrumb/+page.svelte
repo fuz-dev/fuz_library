@@ -2,29 +2,29 @@
 	import Code from '@fuz.dev/fuz_code/Code.svelte';
 
 	import {get_tome} from '$lib/tome.js';
-	import Breadcrumbs from '$lib/Breadcrumbs.svelte';
+	import Breadcrumb from '$lib/Breadcrumb.svelte';
 	import TomeDetails from '$lib/TomeDetails.svelte';
-	import BreadcrumbsExample from '$routes/library/Breadcrumbs/BreadcrumbsExample.svelte';
+	import BreadcrumbExample from '$routes/library/Breadcrumb/BreadcrumbExample.svelte';
 
-	const LIBRARY_ITEM_NAME = 'Breadcrumbs';
+	const LIBRARY_ITEM_NAME = 'Breadcrumb';
 	const tome = get_tome(LIBRARY_ITEM_NAME);
 </script>
 
 <TomeDetails {tome}>
 	<div class="prose box">
 		<section>
-			<Code content={`<Breadcrumbs />`} />
-			<Breadcrumbs />
+			<Code content={`<Breadcrumb />`} />
+			<Breadcrumb />
 		</section>
 		<section>
-			<Code content={`<Breadcrumbs>🏠</Breadcrumbs>`} />
-			<Breadcrumbs>🏠</Breadcrumbs>
+			<Code content={`<Breadcrumb>🏠</Breadcrumb>`} />
+			<Breadcrumb>🏠</Breadcrumb>
 		</section>
 		<section>
 			<Code
-				content={`<Breadcrumbs\n\tpath="/a/b/c"\n\tselected_path="/a/b"\n\tbase_path="/library/Breadcrumbs"\n>\n\t🔡\n\t<div slot="separator">.</div>\n</Breadcrumbs>`}
+				content={`<Breadcrumb\n\tpath="/a/b/c"\n\tselected_path="/a/b"\n\tbase_path="/library/Breadcrumb"\n>\n\t🔡\n\t<div slot="separator">.</div>\n</Breadcrumb>`}
 			/>
-			<BreadcrumbsExample selected_path="/a/b" />
+			<BreadcrumbExample selected_path="/a/b" />
 		</section>
 	</div>
 </TomeDetails>

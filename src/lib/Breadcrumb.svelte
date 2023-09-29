@@ -17,7 +17,7 @@
 	$: root_path = final_base_path || '/';
 </script>
 
-<div class="breadcrumbs">
+<div class="breadcrumb">
 	<!-- The default/only slot is the content for the root "/" link. -->
 	<a href={root_path} class:selected={root_path === final_selected_path}><slot>•</slot></a
 	>{#each path_pieces as pathPiece}{#if pathPiece.type === 'piece'}<a
@@ -27,7 +27,7 @@
 </div>
 
 <style>
-	.breadcrumbs {
+	.breadcrumb {
 		text-align: center;
 		display: flex;
 		flex-wrap: wrap;

@@ -82,9 +82,9 @@
 					"default": "./dist/alert.js",
 					"types": "./dist/alert.d.ts"
 				},
-				"./Breadcrumbs.svelte": {
-					"svelte": "./dist/Breadcrumbs.svelte",
-					"types": "./dist/Breadcrumbs.svelte.d.ts"
+				"./Breadcrumb.svelte": {
+					"svelte": "./dist/Breadcrumb.svelte",
+					"types": "./dist/Breadcrumb.svelte.d.ts"
 				},
 				"./Card.svelte": {
 					"svelte": "./dist/Card.svelte",

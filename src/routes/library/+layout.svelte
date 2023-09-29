@@ -1,7 +1,7 @@
 <script lang="ts">
 	import {page} from '$app/stores';
-	import Breadcrumbs from '@fuz.dev/fuz/Breadcrumbs.svelte';
 
+	import Breadcrumb from '$lib/Breadcrumb.svelte';
 	import LibraryMenu from '$lib/LibraryMenu.svelte';
 	import LibraryHeader from '$lib/LibraryHeader.svelte';
 	import LibraryFooter from '$lib/LibraryFooter.svelte';
@@ -26,16 +26,18 @@
 </script>
 
 <main>
-	<nav><Breadcrumbs>🧶</Breadcrumbs></nav>
+	<nav><Breadcrumb>🧶</Breadcrumb></nav>
 	<div class="layout width_md">
 		<div class="menu_wrapper">
-			<div class="menu width_sm">
-				<LibraryMenu items={tomes} />
-				{#if items_related_to_selected}
-					<LibraryMenu items={items_related_to_selected} let:category>
-						<h6>related {category}</h6>
-					</LibraryMenu>
-				{/if}
+			<div class="box">
+				<div class="menu width_sm">
+					<LibraryMenu items={tomes} />
+					{#if items_related_to_selected}
+						<LibraryMenu items={items_related_to_selected} let:category>
+							<h6>related {category}</h6>
+						</LibraryMenu>
+					{/if}
+				</div>
 			</div>
 		</div>
 		<LibraryHeader {pkg_npm_url} {pkg_name} {pkg_repo_url} />
@@ -45,7 +47,7 @@
 			<LibraryFooter {pkg_repo_url} {pkg_org_url} {pkg_website_url} {pkg_website_name} />
 		</section>
 		<section class="box">
-			<Breadcrumbs>🧶</Breadcrumbs>
+			<Breadcrumb>🧶</Breadcrumb>
 		</section>
 	</div>
 </main>

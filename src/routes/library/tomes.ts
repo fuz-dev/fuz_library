@@ -7,7 +7,7 @@ import Alert from '$routes/library/Alert/+page.svelte';
 // import menu_item from '$routes/library/menu_item/+page.svelte';
 import Redirect from '$routes/library/Redirect/+page.svelte';
 import HueInput from '$routes/library/HueInput/+page.svelte';
-import Breadcrumbs from '$routes/library/Breadcrumbs/+page.svelte';
+import Breadcrumb from '$routes/library/Breadcrumb/+page.svelte';
 import Card from '$routes/library/Card/+page.svelte';
 
 export const tomes: Tome[] = [
@@ -29,11 +29,11 @@ export const tomes: Tome[] = [
 		related: ['Card'],
 	},
 	{
-		name: 'Breadcrumbs',
-		slug: 'Breadcrumbs',
+		name: 'Breadcrumb',
+		slug: 'Breadcrumb',
 		pathname: '',
 		category: 'components',
-		component: Breadcrumbs,
+		component: Breadcrumb,
 		related: ['Redirect'],
 	},
 	{
@@ -83,7 +83,7 @@ export const tomes: Tome[] = [
 		pathname: '',
 		category: 'components',
 		component: Redirect,
-		related: ['Breadcrumbs'],
+		related: ['Breadcrumb'],
 	},
 	{
 		name: 'Teleport',
