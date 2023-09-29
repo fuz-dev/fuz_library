@@ -11,7 +11,7 @@ export const Tome = z.object({
 });
 export type Tome = z.infer<typeof Tome>;
 
-export type TomeWithComponent = Tome & {component: ComponentType};
+export type TomeWithComponent = Tome & {component: ComponentType}; // TODO BLOCK delete this?
 
 /**
  * For now, mutate this directly to set up the library items.
@@ -28,12 +28,11 @@ export const init_tome = <T extends TomeWithComponent>(item: T): T => {
 
 const TOMES_KEY = Symbol();
 
-export const get_tomes = (): Map<string, Tome> => getContext(TOMES_KEY);
-export const set_tomes = (tomes: Map<string, Tome>): Map<string, Tome> =>
+export const get_tomes = (): Map<string, TomeWithComponent> => getContext(TOMES_KEY);
+export const set_tomes = (tomes: Map<string, TomeWithComponent>): Map<string, TomeWithComponent> =>
 	setContext(TOMES_KEY, tomes);
 
-export const get_tome = (name: string): Tome => {
-	// TODO block should this use context or a global?
+export const get_tome = (name: string): TomeWithComponent => {
 	const tomes = get_tomes();
 	const tome = tomes.get(name);
 	if (!tome) throw Error('unable to find tome ' + name);

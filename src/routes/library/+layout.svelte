@@ -1,19 +1,15 @@
 <script lang="ts">
 	import {page} from '$app/stores';
-	import {setContext} from 'svelte';
 	import Breadcrumbs from '@fuz.dev/fuz/Breadcrumbs.svelte';
 
 	import LibraryMenu from '$lib/LibraryMenu.svelte';
 	import LibraryPanel from '$lib/LibraryPanel.svelte';
-	import {tomes} from '$routes/tomes.js';
-	import {set_tomes, tomes_by_name} from '$lib/tome.js';
 	import LibraryFooter from '$lib/LibraryFooter.svelte';
+	import {set_tomes} from '$lib/tome.js';
+	import {tomes} from '$routes/tomes.js';
 
-	// TODO BLOCK
-	for (const tome of tomes) tomes_by_name.set(tome.name, tome);
+	const tomes_by_name = new Map(tomes.map((t) => [t.name, t]));
 	set_tomes(tomes_by_name);
-
-	console.log(`tomes`, tomes);
 
 	$: selected_item = tomes.find((c) => c.pathname === $page.url.pathname);
 	$: console.log(`selected_item`, selected_item);
@@ -21,11 +17,6 @@
 	$: console.log(`items_related_to_selected`, items_related_to_selected);
 
 	// TODO factor this code out and publish the layout
-
-	// TODO try to remove context usage?
-	// TODO hacky to avoid a circular dependency problem
-	console.log(`tomes_by_name`, tomes_by_name);
-	setContext('tomes_by_name', tomes_by_name);
 </script>
 
 <main>

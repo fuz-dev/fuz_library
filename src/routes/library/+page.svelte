@@ -1,8 +1,8 @@
 <script lang="ts">
 	import Library from '$lib/Library.svelte';
-	import {tomes} from '$routes/tomes';
+	import {get_tomes} from '$lib/tome';
 
-	// TODO BLOCK `getContext('tomes_by_name')` ?
+	const tomes = get_tomes();
 </script>
 
-<Library {tomes} />
+<Library tomes={Array.from(tomes.values())} />

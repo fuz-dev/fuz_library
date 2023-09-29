@@ -1,5 +1,4 @@
-import type {TomeWithComponent} from '$lib/tome.js';
-
+import {init_tome, type TomeWithComponent} from '$lib/tome.js';
 import PendingAnimation from '$routes/library/PendingAnimation/+page.svelte';
 import PendingButton from '$routes/library/PendingButton/+page.svelte';
 import Teleport from '$routes/library/Teleport/+page.svelte';
@@ -94,3 +93,5 @@ export const tomes: TomeWithComponent[] = [
 		related: [], // TODO external `Dialog`
 	},
 ];
+
+for (const t of tomes) init_tome(t);
