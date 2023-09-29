@@ -4,10 +4,11 @@
 	import type {Tome} from '$lib/tome.js';
 
 	export let item: Tome; // friendly user zystem
-</script>
 
-<!-- <h1>@fuz.dev/fuz</h1> -->
-<!-- TODO publish and link the above to npm -->
+	// TODO BLOCK should these be part of `Tome`? `package_json`?
+	export let npm_url = 'https://npmjs.com/package/@fuz.dev/fuz_library';
+	export let package_json_name = '@fuz.dev/fuz_library';
+</script>
 
 <section class="prose">
 	<h2>{item.name}</h2>
@@ -16,10 +17,7 @@
 	</p>
 </section>
 <section>
-	<code class="chip"
-		>npm i -D&nbsp;<a class="chip" href="https://npmjs.com/package/@fuz.dev/fuz">@fuz.dev/fuz</a
-		></code
-	>
+	<code class="chip">npm i -D&nbsp;<a class="chip" href={npm_url}>{package_json_name}</a></code>
 </section>
 <section>
 	<a class="library-link panel" href="{base}/library">library</a>
