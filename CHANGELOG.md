@@ -1,5 +1,11 @@
 # @fuz.dev/fuz_library
 
+## 0.2.1
+
+### Patch Changes
+
+- b890cdf: replace `TomeTitle` with header slot in `TomeDetails`
+
 ## 0.2.0
 
 ### Minor Changes
