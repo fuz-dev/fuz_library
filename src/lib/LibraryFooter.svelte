@@ -6,7 +6,7 @@
 </script>
 
 <footer class="prose panel padded_lg">
-	<slot><a href={org_url}>🧶</a></slot>
+	<slot><a class="emoji" href={org_url}>🧶</a></slot>
 	<div class="social">
 		<a href={repo_url} rel="me"><slot name="logo"><GithubLogo /></slot></a>
 	</div>
@@ -36,5 +36,8 @@
 	}
 	.social a:hover {
 		--border_color: var(--color_1);
+	}
+	.emoji {
+		margin-bottom: var(--spacing_sm);
 	}
 </style>
