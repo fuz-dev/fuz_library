@@ -1,10 +1,10 @@
 <script lang="ts">
 	import GithubLogo from '$lib/GithubLogo.svelte';
 
-	const repo_url = 'https://github.com/fuz-dev/fuz_library';
-	const org_url = 'https://github.com/fuz-dev';
-	const website_url = 'https://www.fuz.dev/';
-	const website_url_text = 'fuz.dev';
+	export let repo_url = 'https://github.com/fuz-dev/fuz_library';
+	export let org_url = 'https://github.com/fuz-dev';
+	export let website_url = 'https://www.fuz.dev/';
+	export let website_url_text = 'fuz.dev';
 </script>
 
 <footer class="prose panel padded_lg">
