@@ -1,5 +1,11 @@
 # @fuz.dev/fuz_library
 
+## 0.3.0
+
+### Minor Changes
+
+- a66e0ce: rename `Breadcrumb` to `Breadcrumb` to match w3c APG
+
 ## 0.2.1
 
 ### Patch Changes
