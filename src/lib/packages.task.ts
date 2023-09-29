@@ -17,7 +17,7 @@ export const default_package_urls = [
 	// 'https://www.felt.dev/',
 ];
 
-// TODO maybe support `--check` for CI, extend `gro check` with it
+// TODO maybe support `--check` for CI
 export const Args = z
 	.object({
 		_: z
