@@ -22,7 +22,7 @@
 	const dispatch = createEventDispatcher<{message: ReceivedMessage}>();
 
 	// Exported for external usage.
-	export const postMessage = (message: SentMessage): void => {
+	export const post_message = (message: SentMessage): void => {
 		if (!tenant) return; // maybe log a warning
 		if (tenant instanceof ServiceWorker || tenant instanceof MessagePort) {
 			tenant.postMessage(message);
@@ -36,7 +36,7 @@
 		const message = e.data;
 		if (!message) return;
 		if (message.type === 'felt.connect') {
-			postMessage({type: 'felt.connected'});
+			post_message({type: 'felt.connected'});
 		}
 		if (message.type) {
 			dispatch('message', e.data);

@@ -11,8 +11,10 @@
 	const tomes_by_name = new Map(tomes.map((t) => [t.name, t]));
 	set_tomes(tomes_by_name);
 
-	$: selected_item = tomes.find((c) => c.pathname === $page.url.pathname);
-	$: items_related_to_selected = selected_item?.related?.map((r) => tomes_by_name.get(r)!);
+	$: selected_tome = tomes.find((c) => c.pathname === $page.url.pathname);
+	$: tomes_related_to_selected = selected_tome?.related
+		?.map((r) => tomes_by_name.get(r)!)
+		.filter(Boolean);
 
 	// TODO factor this code out and publish the layout
 
@@ -31,9 +33,9 @@
 		<div class="menu_wrapper">
 			<div class="box">
 				<div class="menu width_sm">
-					<LibraryMenu items={tomes} />
-					{#if items_related_to_selected}
-						<LibraryMenu items={items_related_to_selected} let:category>
+					<LibraryMenu {tomes} />
+					{#if tomes_related_to_selected}
+						<LibraryMenu tomes={tomes_related_to_selected} let:category>
 							<h6>related {category}</h6>
 						</LibraryMenu>
 					{/if}

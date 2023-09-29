@@ -6,11 +6,11 @@
 	import type {Tome} from '$lib/tome.js';
 	import LibraryPanel from '$lib/LibraryPanel.svelte';
 
-	// itemsMenu floats alongside the docs, showing scrolled item as active
-	export let items: Tome[];
+	// LibraryMenu floats alongside the docs, showing scrolled item as active
+	export let tomes: Tome[];
 
-	let items_by_category: Record<string, Tome[]>;
-	$: items_by_category = items.reduce(
+	let tomes_by_category: Record<string, Tome[]>;
+	$: tomes_by_category = tomes.reduce(
 		(result, c) => {
 			if (!(c.category in result)) result[c.category] = [];
 			result[c.category].push(c);
@@ -20,15 +20,15 @@
 	);
 </script>
 
-{#each Object.entries(items_by_category) as [category, items] (category)}
+{#each Object.entries(tomes_by_category) as [category, tomes] (category)}
 	<div transition:slide>
 		<LibraryPanel>
-			<div class="library-menu">
+			<div class="library_menu">
 				<slot {category}>
 					<h6>{category}</h6>
 				</slot>
 				<menu>
-					{#each items as item (item.slug)}
+					{#each tomes as item (item.slug)}
 						<li role="none" transition:slide>
 							<a
 								href="{base}/library/{item.slug}"
@@ -43,7 +43,7 @@
 {/each}
 
 <style>
-	.library-menu,
+	.library_menu,
 	menu {
 		width: 100%;
 	}
