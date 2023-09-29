@@ -6,7 +6,7 @@
 	import LibraryPanel from '$lib/LibraryPanel.svelte';
 	import LibraryFooter from '$lib/LibraryFooter.svelte';
 	import {set_tomes} from '$lib/tome.js';
-	import {tomes} from '$routes/tomes.js';
+	import {tomes} from '$routes/library/tomes.js';
 
 	const tomes_by_name = new Map(tomes.map((t) => [t.name, t]));
 	set_tomes(tomes_by_name);
