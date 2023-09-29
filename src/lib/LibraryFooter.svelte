@@ -1,6 +1,7 @@
 <script lang="ts">
 	import GithubLogo from '$lib/GithubLogo.svelte';
 
+	// TODO BLOCK source this data
 	export let repo_url = 'https://github.com/fuz-dev/fuz_library';
 	export let org_url = 'https://github.com/fuz-dev';
 	export let website_url = 'https://www.fuz.dev/';

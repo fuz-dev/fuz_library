@@ -9,7 +9,7 @@
 	$: ({pathname} = $page.url);
 	$: root = pathname === '/';
 
-	// TODO this is a hack to hide the nav for the mural when it's iframed, what's a better way?
+	// TODO BLOCK this is a hack to hide the nav for the mural when it's iframed, what's a better way?
 	const iframed = is_iframed();
 	$: enabled = !iframed || pathname !== '/sketch/mural';
 </script>
