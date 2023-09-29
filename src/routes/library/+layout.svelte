@@ -33,7 +33,7 @@
 		<LibraryPanel>
 			<div class="prose box text_align_center">
 				<code class="box row padded_md panel spaced"
-					>npm i -D&nbsp;<a href="https://www.npmjs.com/package/@fuz.dev/fuz"
+					>npm i -D&nbsp;<a href="https://www.npmjs.com/package/@fuz.dev/fuz_library"
 						>@fuz.dev/fuz_library</a
 					>
 				</code>
