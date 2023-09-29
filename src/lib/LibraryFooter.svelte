@@ -3,15 +3,17 @@
 
 	const repo_url = 'https://github.com/fuz-dev/fuz_library';
 	const org_url = 'https://github.com/fuz-dev';
+	const website_url = 'https://www.fuz.dev/';
+	const website_url_text = 'fuz.dev';
 </script>
 
 <footer class="prose panel padded_lg">
-	<slot><a class="emoji" href={org_url}>🧶</a></slot>
+	<slot><a class="emoji" href={org_url} rel="me">🧶</a></slot>
 	<div class="social">
 		<a href={repo_url} rel="me"><slot name="logo"><GithubLogo /></slot></a>
 	</div>
 	<p>
-		<a href="https://www.fuz.dev/">fuz.dev</a>
+		<a href={website_url} rel="me">{website_url_text}</a>
 	</p>
 </footer>
 
