@@ -6,8 +6,6 @@
 	// TODO component name?
 
 	export let tome: Tome;
-
-	$: console.log(`tome`, tome);
 </script>
 
 <LibraryPanel classes="tome_details">

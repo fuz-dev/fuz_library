@@ -12,9 +12,7 @@
 	set_tomes(tomes_by_name);
 
 	$: selected_item = tomes.find((c) => c.pathname === $page.url.pathname);
-	$: console.log(`selected_item`, selected_item);
 	$: items_related_to_selected = selected_item?.related?.map((r) => tomes_by_name.get(r)!);
-	$: console.log(`items_related_to_selected`, items_related_to_selected);
 
 	// TODO factor this code out and publish the layout
 </script>
