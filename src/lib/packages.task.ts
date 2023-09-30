@@ -51,7 +51,7 @@ export const task: Task<Args> = {
 			await writeFile(
 				types_out_path,
 				`declare module '$lib/packages.json' {
-	import type {Package} from '@fuz.dev/fuz_library/package_item.js';
+	import type {Package} from '@fuz.dev/fuz_library/package.js';
 	const data: Package[];
 	export default data;
 }
