@@ -1,9 +1,9 @@
 <script lang="ts">
-	import type {PackageItem} from '$lib/package_item.js';
+	import type {Package} from '$lib/package.js';
 
-	export let package_item: PackageItem;
+	export let pkg: Package;
 
-	$: ({package_json} = package_item);
+	$: ({package_json} = pkg);
 
 	// TODO think through with other presentations - Details, Summary, Card
 

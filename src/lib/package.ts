@@ -3,7 +3,7 @@ import type {Url} from '@grogarden/gro/paths.js';
 
 // TODO rename ? `Tome` was `LibraryItem`
 
-export interface PackageItem {
+export interface Package {
 	host: Url;
 	package_json: PackageJson;
 }

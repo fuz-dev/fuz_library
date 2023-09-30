@@ -155,9 +155,9 @@
       "svelte": "./dist/LibraryVocab.svelte",
       "types": "./dist/LibraryVocab.svelte.d.ts"
     },
-    "./package_item.js": {
-      "default": "./dist/package_item.js",
-      "types": "./dist/package_item.d.ts"
+    "./package.js": {
+      "default": "./dist/package.js",
+      "types": "./dist/package.d.ts"
     },
     "./packages.json": {
       "default": "./dist/packages.json"

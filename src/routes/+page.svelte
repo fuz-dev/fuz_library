@@ -8,7 +8,7 @@
 </script>
 
 <main class="prose">
-	<PackageSummary package_item={root_package} />
+	<PackageSummary package={root_package} />
 	<section>
 		<a class="library-link panel" href="{base}/library">library</a>
 	</section>

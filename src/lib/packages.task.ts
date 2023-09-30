@@ -5,7 +5,7 @@ import {writeFile} from 'node:fs/promises';
 import {Url} from '@grogarden/gro/paths.js';
 
 import {fetch_packages} from '$lib/fetch_packages.js';
-import type {PackageItem} from '$lib/package_item.js';
+import type {Package} from '$lib/package.js';
 
 // TODO refactor/rename
 export const default_package_urls = [
@@ -37,7 +37,7 @@ export const task: Task<Args> = {
 
 		const fetched_packages = await fetch_packages(package_urls);
 
-		const packages: PackageItem[] = [
+		const packages: Package[] = [
 			{host: 'https://library.fuz.dev/', package_json: root_package_json},
 		].concat(fetched_packages);
 
