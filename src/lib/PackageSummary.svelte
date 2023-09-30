@@ -11,6 +11,7 @@
 
 	// TODO think through with other presentations - Details, Summary, Card
 
+	// TODO hacky
 	const parse_repo = (r: string | null | undefined) => {
 		if (!r) return null;
 		return strip_start(strip_end(r, '.git'), 'git+');
@@ -43,22 +44,18 @@
 </script>
 
 <div class="package_summary">
-	<!-- TODO h1 is tricky here, maybe should be h2? probably too much complexity to customize, maybe rename to `PackagePage`? or a title slot? -->
-	<header class="spaced">{repo_name}</header>
+	<header class="spaced"><slot {repo_name}><div class="repo_name">{repo_name}</div></slot></header>
 	{#if package_json.description}
 		<blockquote class="spaced">{package_json.description}</blockquote>
+	{/if}
+	{#if npm_url}
+		<div class="spaced">
+			<code class="size_lg chip box"><a href={npm_url}>{package_json.name}</a></code>
+		</div>
 	{/if}
 	{#if package_json.homepage}
 		<div class="spaced">
 			<a class="chip" href={package_json.homepage}>{format_host(package_json.homepage)}</a>
-		</div>
-	{/if}
-	{#if npm_url}
-		<div class="spaced">
-			<code class="chip box"
-				><div>npm i -D</div>
-				<a href={npm_url}>{package_json.name}</a></code
-			>
 		</div>
 	{/if}
 	<div class="box row spaced">
@@ -86,8 +83,10 @@
 		align-items: center;
 		text-align: center;
 	}
-	header {
-		font-size: var(--size_xl);
+	.repo_name {
+		/* same as h1 by default (maybe add .h1 utility class?) */
+		font-size: var(--size_xl3);
+		font-weight: 300;
 	}
 	code {
 		display: flex;
@@ -97,5 +96,8 @@
 	}
 	.chip {
 		margin: 0 var(--spacing_xs2);
+	}
+	.size_lg {
+		font-size: var(--size_lg);
 	}
 </style>
