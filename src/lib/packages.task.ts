@@ -1,7 +1,7 @@
 import type {Task} from '@grogarden/gro';
-import {load_package_json} from '@grogarden/gro/package_json.js';
+import type {PackageJson} from '@grogarden/gro/package_json.js';
 import {z} from 'zod';
-import {writeFile} from 'node:fs/promises';
+import {readFile, writeFile} from 'node:fs/promises';
 import {Url} from '@grogarden/gro/paths.js';
 import {format_file} from '@grogarden/gro/format_file.js';
 import {exists} from '@grogarden/gro/exists.js';
@@ -35,10 +35,16 @@ export const task: Task<Args> = {
 
 		const fetched_packages = await fetch_packages(package_urls, log);
 
-		const root_package_json = await load_package_json();
+		const local_package_json_path = 'src/static/.well-known/package.json'; // TODO read svelte config
+		let local_package_json: PackageJson | undefined;
+		if (await exists(local_package_json_path)) {
+			try {
+				local_package_json = JSON.parse(await readFile(local_package_json_path, 'utf8'));
+			} catch (err) {}
+		}
 
-		const packages: Package[] = root_package_json.homepage
-			? [{url: root_package_json.homepage, package_json: root_package_json}].concat(
+		const packages: Package[] = local_package_json?.homepage
+			? [{url: local_package_json.homepage, package_json: local_package_json}].concat(
 					fetched_packages,
 			  )
 			: fetched_packages;

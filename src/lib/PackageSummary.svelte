@@ -24,6 +24,8 @@
 			: null,
 	);
 
+	const format_host = (homepage: string): string => strip_start(new URL(homepage).host, 'www.');
+
 	// TODO for detail view
 	// $: license_url = license && repository ? repository + '/blob/main/LICENSE' : null;
 
@@ -48,7 +50,7 @@
 	{/if}
 	{#if package_json.homepage}
 		<div class="spaced">
-			<a class="chip" href={package_json.homepage}>{new URL(package_json.homepage).host}</a>
+			<a class="chip" href={package_json.homepage}>{format_host(package_json.homepage)}</a>
 		</div>
 	{/if}
 	{#if npm_url}
