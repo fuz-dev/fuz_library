@@ -1,5 +1,12 @@
 # @fuz.dev/fuz_library
 
+## 0.5.0
+
+### Minor Changes
+
+- 8f66d82: improve `PackageSummary` and rename `PackageItem` to `Package`
+- 8f66d82: rename `PackageItem` to `Package`
+
 ## 0.4.0
 
 ### Minor Changes
