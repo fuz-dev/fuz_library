@@ -46,9 +46,10 @@ export const task: Task<Args> = {
 		const out_path = './src/lib/packages.json';
 		await writeFile(out_path, await format_file(out_path, JSON.stringify(packages)));
 
-		if (!(await exists(out_path + '.d.ts'))) {
+		const types_out_path = out_path + '.d.ts';
+		if (!(await exists(types_out_path))) {
 			await writeFile(
-				out_path,
+				types_out_path,
 				`declare module '$lib/packages.json' {
 	import type {Package} from '@fuz.dev/fuz_library/package_item.js';
 	const data: Package[];
