@@ -18,7 +18,7 @@
 
 	// TODO factor this code out and publish the layout
 
-	// TODO source from package_json
+	// TODO BLOCK source from package_json
 	const pkg_npm_url = 'https://npmjs.com/package/@fuz.dev/fuz_library';
 	const pkg_name = '@fuz.dev/fuz_library';
 	const pkg_repo_url = 'https://github.com/fuz-dev/fuz_library';
