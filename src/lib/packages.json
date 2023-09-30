@@ -1,6 +1,6 @@
 [
 	{
-		"host": "https://library.fuz.dev/",
+		"url": "https://library.fuz.dev/",
 		"package_json": {
 			"name": "@fuz.dev/fuz_library",
 			"description": "components and helpers for Svelte and SvelteKit with Fuz",
@@ -14,9 +14,7 @@
 				"email": "mail@ryanatkn.com",
 				"url": "https://www.ryanatkn.com/"
 			},
-			"engines": {
-				"node": ">=20.7"
-			},
+			"engines": {"node": ">=20.7"},
 			"scripts": {
 				"start": "gro dev",
 				"dev": "gro dev",
@@ -24,9 +22,7 @@
 				"test": "gro test",
 				"deploy": "gro deploy"
 			},
-			"files": [
-				"dist"
-			],
+			"files": ["dist"],
 			"devDependencies": {
 				"@changesets/changelog-git": "^0.1.14",
 				"@feltjs/eslint-config": "^0.4.0",
@@ -53,55 +49,28 @@
 				"typescript": "^5.2.2",
 				"uvu": "^0.5.6"
 			},
-			"eslintConfig": {
-				"root": true,
-				"extends": "@feltjs",
-				"rules": {
-					"no-console": 1
-				}
-			},
+			"eslintConfig": {"root": true, "extends": "@feltjs", "rules": {"no-console": 1}},
 			"prettier": {
-				"plugins": [
-					"prettier-plugin-svelte"
-				],
+				"plugins": ["prettier-plugin-svelte"],
 				"useTabs": true,
 				"printWidth": 100,
 				"singleQuote": true,
 				"bracketSpacing": false,
-				"overrides": [
-					{
-						"files": "package.json",
-						"options": {
-							"useTabs": false
-						}
-					}
-				]
+				"overrides": [{"files": "package.json", "options": {"useTabs": false}}]
 			},
 			"exports": {
-				"./Alert.svelte": {
-					"svelte": "./dist/Alert.svelte",
-					"types": "./dist/Alert.svelte.d.ts"
-				},
-				"./alert.js": {
-					"default": "./dist/alert.js",
-					"types": "./dist/alert.d.ts"
-				},
+				"./Alert.svelte": {"svelte": "./dist/Alert.svelte", "types": "./dist/Alert.svelte.d.ts"},
+				"./alert.js": {"default": "./dist/alert.js", "types": "./dist/alert.d.ts"},
 				"./Breadcrumb.svelte": {
 					"svelte": "./dist/Breadcrumb.svelte",
 					"types": "./dist/Breadcrumb.svelte.d.ts"
 				},
-				"./Card.svelte": {
-					"svelte": "./dist/Card.svelte",
-					"types": "./dist/Card.svelte.d.ts"
-				},
+				"./Card.svelte": {"svelte": "./dist/Card.svelte", "types": "./dist/Card.svelte.d.ts"},
 				"./CopyToClipboard.svelte": {
 					"svelte": "./dist/CopyToClipboard.svelte",
 					"types": "./dist/CopyToClipboard.svelte.d.ts"
 				},
-				"./devmode.js": {
-					"default": "./dist/devmode.js",
-					"types": "./dist/devmode.d.ts"
-				},
+				"./devmode.js": {"default": "./dist/devmode.js", "types": "./dist/devmode.d.ts"},
 				"./DevmodeControls.svelte": {
 					"svelte": "./dist/DevmodeControls.svelte",
 					"types": "./dist/DevmodeControls.svelte.d.ts"
@@ -122,10 +91,7 @@
 					"svelte": "./dist/GithubLogo.svelte",
 					"types": "./dist/GithubLogo.svelte.d.ts"
 				},
-				"./helpers.js": {
-					"default": "./dist/helpers.js",
-					"types": "./dist/helpers.d.ts"
-				},
+				"./helpers.js": {"default": "./dist/helpers.js", "types": "./dist/helpers.d.ts"},
 				"./HueInput.svelte": {
 					"svelte": "./dist/HueInput.svelte",
 					"types": "./dist/HueInput.svelte.d.ts"
@@ -158,13 +124,8 @@
 					"svelte": "./dist/LibraryVocab.svelte",
 					"types": "./dist/LibraryVocab.svelte.d.ts"
 				},
-				"./package.js": {
-					"default": "./dist/package.js",
-					"types": "./dist/package.d.ts"
-				},
-				"./packages.json": {
-					"default": "./dist/packages.json"
-				},
+				"./package.js": {"default": "./dist/package.js", "types": "./dist/package.d.ts"},
+				"./packages.json": {"default": "./dist/packages.json"},
 				"./packages.json.d.js": {
 					"default": "./dist/packages.json.d.js",
 					"types": "./dist/packages.json.d.d.ts"
@@ -193,10 +154,7 @@
 					"svelte": "./dist/Teleport.svelte",
 					"types": "./dist/Teleport.svelte.d.ts"
 				},
-				"./tome.js": {
-					"default": "./dist/tome.js",
-					"types": "./dist/tome.d.ts"
-				},
+				"./tome.js": {"default": "./dist/tome.js", "types": "./dist/tome.d.ts"},
 				"./TomeDetails.svelte": {
 					"svelte": "./dist/TomeDetails.svelte",
 					"types": "./dist/TomeDetails.svelte.d.ts"
@@ -214,9 +172,7 @@
 			"name": "@grogarden/gro",
 			"description": "task runner and toolkit extending SvelteKit",
 			"version": "0.92.3",
-			"bin": {
-				"gro": "dist/gro.js"
-			},
+			"bin": {"gro": "dist/gro.js"},
 			"license": "MIT",
 			"homepage": "https://www.grogarden.org/",
 			"author": {
@@ -224,18 +180,10 @@
 				"email": "mail@ryanatkn.com",
 				"url": "https://www.ryanatkn.com/"
 			},
-			"repository": {
-				"type": "git",
-				"url": "git+https://github.com/grogarden/gro.git"
-			},
-			"bugs": {
-				"url": "https://github.com/grogarden/gro/issues",
-				"email": "mail@ryanatkn.com"
-			},
+			"repository": {"type": "git", "url": "git+https://github.com/grogarden/gro.git"},
+			"bugs": {"url": "https://github.com/grogarden/gro/issues", "email": "mail@ryanatkn.com"},
 			"type": "module",
-			"engines": {
-				"node": ">=20.7"
-			},
+			"engines": {"node": ">=20.7"},
 			"scripts": {
 				"build": "rm -rf .gro dist && svelte-package && chmod +x ./dist/gro.js && npm link -f",
 				"start": "gro dev",
@@ -252,9 +200,7 @@
 				"vite",
 				"typescript"
 			],
-			"files": [
-				"dist"
-			],
+			"files": ["dist"],
 			"dependencies": {
 				"@grogarden/util": "^0.15.0",
 				"@ryanatkn/json-schema-to-typescript": "^11.1.5",
@@ -269,10 +215,7 @@
 				"tslib": "^2.6.2",
 				"zod": "^3.22.2"
 			},
-			"peerDependencies": {
-				"esbuild": "^0.18",
-				"svelte": "^4"
-			},
+			"peerDependencies": {"esbuild": "^0.18", "svelte": "^4"},
 			"devDependencies": {
 				"@changesets/changelog-git": "^0.1.14",
 				"@changesets/types": "^5.2.1",
@@ -295,83 +238,38 @@
 				"typescript": "^5.2.2",
 				"uvu": "^0.5.6"
 			},
-			"eslintConfig": {
-				"root": true,
-				"extends": "@feltjs",
-				"rules": {
-					"no-console": 1
-				}
-			},
+			"eslintConfig": {"root": true, "extends": "@feltjs", "rules": {"no-console": 1}},
 			"prettier": {
-				"plugins": [
-					"prettier-plugin-svelte"
-				],
+				"plugins": ["prettier-plugin-svelte"],
 				"useTabs": true,
 				"printWidth": 100,
 				"singleQuote": true,
 				"bracketSpacing": false,
-				"overrides": [
-					{
-						"files": "package.json",
-						"options": {
-							"useTabs": false
-						}
-					}
-				]
+				"overrides": [{"files": "package.json", "options": {"useTabs": false}}]
 			},
 			"exports": {
-				".": {
-					"default": "./dist/index.js",
-					"types": "./dist/index.d.ts"
-				},
-				"./args.js": {
-					"default": "./dist/args.js",
-					"types": "./dist/args.d.ts"
-				},
-				"./build.task.js": {
-					"default": "./dist/build.task.js",
-					"types": "./dist/build.task.d.ts"
-				},
+				".": {"default": "./dist/index.js", "types": "./dist/index.d.ts"},
+				"./args.js": {"default": "./dist/args.js", "types": "./dist/args.d.ts"},
+				"./build.task.js": {"default": "./dist/build.task.js", "types": "./dist/build.task.d.ts"},
 				"./changeset.task.js": {
 					"default": "./dist/changeset.task.js",
 					"types": "./dist/changeset.task.d.ts"
 				},
-				"./check.task.js": {
-					"default": "./dist/check.task.js",
-					"types": "./dist/check.task.d.ts"
-				},
-				"./clean.task.js": {
-					"default": "./dist/clean.task.js",
-					"types": "./dist/clean.task.d.ts"
-				},
-				"./clean.js": {
-					"default": "./dist/clean.js",
-					"types": "./dist/clean.d.ts"
-				},
-				"./cli.js": {
-					"default": "./dist/cli.js",
-					"types": "./dist/cli.d.ts"
-				},
+				"./check.task.js": {"default": "./dist/check.task.js", "types": "./dist/check.task.d.ts"},
+				"./clean.task.js": {"default": "./dist/clean.task.js", "types": "./dist/clean.task.d.ts"},
+				"./clean.js": {"default": "./dist/clean.js", "types": "./dist/clean.d.ts"},
+				"./cli.js": {"default": "./dist/cli.js", "types": "./dist/cli.d.ts"},
 				"./commit.task.js": {
 					"default": "./dist/commit.task.js",
 					"types": "./dist/commit.task.d.ts"
 				},
-				"./config.js": {
-					"default": "./dist/config.js",
-					"types": "./dist/config.d.ts"
-				},
+				"./config.js": {"default": "./dist/config.js", "types": "./dist/config.d.ts"},
 				"./deploy.task.js": {
 					"default": "./dist/deploy.task.js",
 					"types": "./dist/deploy.task.d.ts"
 				},
-				"./dev.task.js": {
-					"default": "./dist/dev.task.js",
-					"types": "./dist/dev.task.d.ts"
-				},
-				"./env.js": {
-					"default": "./dist/env.js",
-					"types": "./dist/env.d.ts"
-				},
+				"./dev.task.js": {"default": "./dist/dev.task.js", "types": "./dist/dev.task.d.ts"},
+				"./env.js": {"default": "./dist/env.js", "types": "./dist/env.d.ts"},
 				"./esbuild_helpers.js": {
 					"default": "./dist/esbuild_helpers.js",
 					"types": "./dist/esbuild_helpers.d.ts"
@@ -400,10 +298,7 @@
 					"default": "./dist/esbuild_plugin_sveltekit_shim_env.js",
 					"types": "./dist/esbuild_plugin_sveltekit_shim_env.d.ts"
 				},
-				"./exists.js": {
-					"default": "./dist/exists.js",
-					"types": "./dist/exists.d.ts"
-				},
+				"./exists.js": {"default": "./dist/exists.js", "types": "./dist/exists.d.ts"},
 				"./exports.task.js": {
 					"default": "./dist/exports.task.js",
 					"types": "./dist/exports.task.d.ts"
@@ -420,26 +315,14 @@
 					"default": "./dist/format.task.js",
 					"types": "./dist/format.task.d.ts"
 				},
-				"./gen_module.js": {
-					"default": "./dist/gen_module.js",
-					"types": "./dist/gen_module.d.ts"
-				},
+				"./gen_module.js": {"default": "./dist/gen_module.js", "types": "./dist/gen_module.d.ts"},
 				"./gen_schemas.js": {
 					"default": "./dist/gen_schemas.js",
 					"types": "./dist/gen_schemas.d.ts"
 				},
-				"./gen.task.js": {
-					"default": "./dist/gen.task.js",
-					"types": "./dist/gen.task.d.ts"
-				},
-				"./gen.js": {
-					"default": "./dist/gen.js",
-					"types": "./dist/gen.d.ts"
-				},
-				"./git.js": {
-					"default": "./dist/git.js",
-					"types": "./dist/git.d.ts"
-				},
+				"./gen.task.js": {"default": "./dist/gen.task.js", "types": "./dist/gen.task.d.ts"},
+				"./gen.js": {"default": "./dist/gen.js", "types": "./dist/gen.d.ts"},
+				"./git.js": {"default": "./dist/git.js", "types": "./dist/git.d.ts"},
 				"./gro_plugin_gen.js": {
 					"default": "./dist/gro_plugin_gen.js",
 					"types": "./dist/gro_plugin_gen.d.ts"
@@ -460,62 +343,26 @@
 					"default": "./dist/gro.config.default.js",
 					"types": "./dist/gro.config.default.d.ts"
 				},
-				"./gro.js": {
-					"default": "./dist/gro.js",
-					"types": "./dist/gro.d.ts"
-				},
-				"./hash.js": {
-					"default": "./dist/hash.js",
-					"types": "./dist/hash.d.ts"
-				},
-				"./input_path.js": {
-					"default": "./dist/input_path.js",
-					"types": "./dist/input_path.d.ts"
-				},
+				"./gro.js": {"default": "./dist/gro.js", "types": "./dist/gro.d.ts"},
+				"./hash.js": {"default": "./dist/hash.js", "types": "./dist/hash.d.ts"},
+				"./input_path.js": {"default": "./dist/input_path.js", "types": "./dist/input_path.d.ts"},
 				"./invoke_task.js": {
 					"default": "./dist/invoke_task.js",
 					"types": "./dist/invoke_task.d.ts"
 				},
-				"./invoke.js": {
-					"default": "./dist/invoke.js",
-					"types": "./dist/invoke.d.ts"
-				},
-				"./lint.task.js": {
-					"default": "./dist/lint.task.js",
-					"types": "./dist/lint.task.d.ts"
-				},
-				"./loader.js": {
-					"default": "./dist/loader.js",
-					"types": "./dist/loader.d.ts"
-				},
-				"./module.js": {
-					"default": "./dist/module.js",
-					"types": "./dist/module.d.ts"
-				},
-				"./modules.js": {
-					"default": "./dist/modules.js",
-					"types": "./dist/modules.d.ts"
-				},
+				"./invoke.js": {"default": "./dist/invoke.js", "types": "./dist/invoke.d.ts"},
+				"./lint.task.js": {"default": "./dist/lint.task.js", "types": "./dist/lint.task.d.ts"},
+				"./loader.js": {"default": "./dist/loader.js", "types": "./dist/loader.d.ts"},
+				"./module.js": {"default": "./dist/module.js", "types": "./dist/module.d.ts"},
+				"./modules.js": {"default": "./dist/modules.js", "types": "./dist/modules.d.ts"},
 				"./package_json.js": {
 					"default": "./dist/package_json.js",
 					"types": "./dist/package_json.d.ts"
 				},
-				"./path.js": {
-					"default": "./dist/path.js",
-					"types": "./dist/path.d.ts"
-				},
-				"./paths.js": {
-					"default": "./dist/paths.js",
-					"types": "./dist/paths.d.ts"
-				},
-				"./plugin.js": {
-					"default": "./dist/plugin.js",
-					"types": "./dist/plugin.d.ts"
-				},
-				"./print_task.js": {
-					"default": "./dist/print_task.js",
-					"types": "./dist/print_task.d.ts"
-				},
+				"./path.js": {"default": "./dist/path.js", "types": "./dist/path.d.ts"},
+				"./paths.js": {"default": "./dist/paths.js", "types": "./dist/paths.d.ts"},
+				"./plugin.js": {"default": "./dist/plugin.js", "types": "./dist/plugin.d.ts"},
+				"./print_task.js": {"default": "./dist/print_task.js", "types": "./dist/print_task.d.ts"},
 				"./publish.task.js": {
 					"default": "./dist/publish.task.js",
 					"types": "./dist/publish.task.d.ts"
@@ -524,22 +371,10 @@
 					"default": "./dist/resolve_specifier.js",
 					"types": "./dist/resolve_specifier.d.ts"
 				},
-				"./run_gen.js": {
-					"default": "./dist/run_gen.js",
-					"types": "./dist/run_gen.d.ts"
-				},
-				"./run_task.js": {
-					"default": "./dist/run_task.js",
-					"types": "./dist/run_task.d.ts"
-				},
-				"./schema.js": {
-					"default": "./dist/schema.js",
-					"types": "./dist/schema.d.ts"
-				},
-				"./search_fs.js": {
-					"default": "./dist/search_fs.js",
-					"types": "./dist/search_fs.d.ts"
-				},
+				"./run_gen.js": {"default": "./dist/run_gen.js", "types": "./dist/run_gen.d.ts"},
+				"./run_task.js": {"default": "./dist/run_task.js", "types": "./dist/run_task.d.ts"},
+				"./schema.js": {"default": "./dist/schema.js", "types": "./dist/schema.d.ts"},
+				"./search_fs.js": {"default": "./dist/search_fs.js", "types": "./dist/search_fs.d.ts"},
 				"./sveltekit_config.js": {
 					"default": "./dist/sveltekit_config.js",
 					"types": "./dist/sveltekit_config.d.ts"
@@ -576,26 +411,14 @@
 					"default": "./dist/sveltekit_sync.js",
 					"types": "./dist/sveltekit_sync.d.ts"
 				},
-				"./sync.task.js": {
-					"default": "./dist/sync.task.js",
-					"types": "./dist/sync.task.d.ts"
-				},
+				"./sync.task.js": {"default": "./dist/sync.task.js", "types": "./dist/sync.task.d.ts"},
 				"./task_module.js": {
 					"default": "./dist/task_module.js",
 					"types": "./dist/task_module.d.ts"
 				},
-				"./task.js": {
-					"default": "./dist/task.js",
-					"types": "./dist/task.d.ts"
-				},
-				"./test.task.js": {
-					"default": "./dist/test.task.js",
-					"types": "./dist/test.task.d.ts"
-				},
-				"./throttle.js": {
-					"default": "./dist/throttle.js",
-					"types": "./dist/throttle.d.ts"
-				},
+				"./task.js": {"default": "./dist/task.js", "types": "./dist/task.d.ts"},
+				"./test.task.js": {"default": "./dist/test.task.js", "types": "./dist/test.task.d.ts"},
+				"./throttle.js": {"default": "./dist/throttle.js", "types": "./dist/throttle.d.ts"},
 				"./type_imports.js": {
 					"default": "./dist/type_imports.js",
 					"types": "./dist/type_imports.d.ts"
@@ -608,10 +431,7 @@
 					"default": "./dist/upgrade.task.js",
 					"types": "./dist/upgrade.task.d.ts"
 				},
-				"./watch_dir.js": {
-					"default": "./dist/watch_dir.js",
-					"types": "./dist/watch_dir.d.ts"
-				}
+				"./watch_dir.js": {"default": "./dist/watch_dir.js", "types": "./dist/watch_dir.d.ts"}
 			}
 		}
 	},
@@ -625,9 +445,7 @@
 			"type": "module",
 			"homepage": "https://template.fuz.dev/",
 			"repository": "https://github.com/fuz-dev/fuz_template",
-			"engines": {
-				"node": ">=20.7"
-			},
+			"engines": {"node": ">=20.7"},
 			"scripts": {
 				"start": "gro dev",
 				"dev": "gro dev",
@@ -635,9 +453,7 @@
 				"test": "gro test",
 				"deploy": "gro deploy"
 			},
-			"files": [
-				"dist"
-			],
+			"files": ["dist"],
 			"devDependencies": {
 				"@feltjs/eslint-config": "^0.4.0",
 				"@fuz.dev/fuz": "^0.69.1",
@@ -660,26 +476,14 @@
 				"typescript": "^5.2.2",
 				"uvu": "^0.5.6"
 			},
-			"eslintConfig": {
-				"root": true,
-				"extends": "@feltjs"
-			},
+			"eslintConfig": {"root": true, "extends": "@feltjs"},
 			"prettier": {
-				"plugins": [
-					"prettier-plugin-svelte"
-				],
+				"plugins": ["prettier-plugin-svelte"],
 				"useTabs": true,
 				"printWidth": 100,
 				"singleQuote": true,
 				"bracketSpacing": false,
-				"overrides": [
-					{
-						"files": "package.json",
-						"options": {
-							"useTabs": false
-						}
-					}
-				]
+				"overrides": [{"files": "package.json", "options": {"useTabs": false}}]
 			}
 		}
 	},
@@ -698,9 +502,7 @@
 				"email": "mail@ryanatkn.com",
 				"url": "https://www.ryanatkn.com/"
 			},
-			"engines": {
-				"node": ">=20.7"
-			},
+			"engines": {"node": ">=20.7"},
 			"scripts": {
 				"start": "gro dev",
 				"dev": "gro dev",
@@ -708,9 +510,7 @@
 				"test": "gro test",
 				"deploy": "gro deploy"
 			},
-			"files": [
-				"dist"
-			],
+			"files": ["dist"],
 			"devDependencies": {
 				"@changesets/changelog-git": "^0.1.14",
 				"@feltjs/eslint-config": "^0.4.0",
@@ -736,35 +536,18 @@
 				"typescript": "^5.2.2",
 				"uvu": "^0.5.6"
 			},
-			"eslintConfig": {
-				"root": true,
-				"extends": "@feltjs"
-			},
+			"eslintConfig": {"root": true, "extends": "@feltjs"},
 			"prettier": {
-				"plugins": [
-					"prettier-plugin-svelte"
-				],
+				"plugins": ["prettier-plugin-svelte"],
 				"useTabs": true,
 				"printWidth": 100,
 				"singleQuote": true,
 				"bracketSpacing": false,
-				"overrides": [
-					{
-						"files": "package.json",
-						"options": {
-							"useTabs": false
-						}
-					}
-				]
+				"overrides": [{"files": "package.json", "options": {"useTabs": false}}]
 			},
 			"exports": {
-				"./Code.svelte": {
-					"svelte": "./dist/Code.svelte",
-					"types": "./dist/Code.svelte.d.ts"
-				},
-				"./prism.css": {
-					"default": "./dist/prism.css"
-				},
+				"./Code.svelte": {"svelte": "./dist/Code.svelte", "types": "./dist/Code.svelte.d.ts"},
+				"./prism.css": {"default": "./dist/prism.css"},
 				"./remove_prism_css_vite_plugin.js": {
 					"default": "./dist/remove_prism_css_vite_plugin.js",
 					"types": "./dist/remove_prism_css_vite_plugin.d.ts"

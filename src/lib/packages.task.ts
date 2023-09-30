@@ -3,6 +3,7 @@ import {load_package_json} from '@grogarden/gro/package_json.js';
 import {z} from 'zod';
 import {writeFile} from 'node:fs/promises';
 import {Url} from '@grogarden/gro/paths.js';
+import {format_file} from '@grogarden/gro/format_file.js';
 
 import {fetch_packages} from '$lib/fetch_packages.js';
 import type {Package} from '$lib/package.js';
@@ -38,9 +39,12 @@ export const task: Task<Args> = {
 		const fetched_packages = await fetch_packages(package_urls, log);
 
 		const packages: Package[] = [
-			{host: 'https://library.fuz.dev/', package_json: root_package_json},
+			{url: 'https://library.fuz.dev/', package_json: root_package_json},
 		].concat(fetched_packages);
 
-		await writeFile('./src/lib/packages.json', JSON.stringify(packages, null, '\t'));
+		await writeFile(
+			'./src/lib/packages.json',
+			await format_file('packages.json', JSON.stringify(packages)),
+		);
 	},
 };
