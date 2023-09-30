@@ -4,6 +4,8 @@
 
 	import Breadcrumb from '$lib/Breadcrumb.svelte';
 
+	// TODO @fuz.dev/fuz_contextmenu
+
 	// TODO this could be a prop passed by `Breadcrumb`, is commonly needed
 	$: ({pathname} = $page.url);
 	$: root = pathname === '/';

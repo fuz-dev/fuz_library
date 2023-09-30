@@ -29,7 +29,7 @@ export type Args = z.infer<typeof Args>;
 
 export const task: Task<Args> = {
 	Args,
-	summary: 'downloads metadata for the given packages',
+	summary: 'download metadata for the given packages',
 	run: async ({args}) => {
 		const {_: package_urls} = args;
 

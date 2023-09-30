@@ -23,9 +23,9 @@
 	$: changelog_url = published && repository ? repository + '/blob/main/CHANGELOG.md' : null;
 </script>
 
-<section>
+<div class="package_summary">
 	<!-- TODO h1 is tricky here, maybe should be h2? probably too much complexity to customize, maybe rename to `PackagePage`? or a title slot? -->
-	<h1>{package_json.name}</h1>
+	<header>{package_json.name}</header>
 	{#if package_json.description}
 		<blockquote>{package_json.description}</blockquote>
 	{/if}
@@ -51,12 +51,12 @@
 		{/if}
 	</div>
 	<!-- TODO more details behind a `<details>`, including author -->
-</section>
+</div>
 
 <!-- TODO better rendering, also show author, etc -->
 
 <style>
-	section {
+	.package_summary {
 		padding: var(--spacing_xl2);
 		display: flex;
 		flex-direction: column;
