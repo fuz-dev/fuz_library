@@ -4,11 +4,11 @@
 	import PackageSummary from '$lib/PackageSummary.svelte';
 	import packages from '$lib/packages.json';
 
-	const root_package = packages[0];
+	const root_pkg = packages[0];
 </script>
 
 <main class="prose">
-	<PackageSummary package_item={root_package} />
+	<PackageSummary pkg={root_pkg} />
 	<section>
 		<a class="library-link panel" href="{base}/library">library</a>
 	</section>

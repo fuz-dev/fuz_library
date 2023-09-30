@@ -1,5 +1,5 @@
 declare module '$lib/packages.json' {
-	import type {PackageItem} from '$lib/package_item.js';
-	const data: PackageItem[];
+	import type {Package} from '$lib/package.js';
+	const data: Package[];
 	export default data;
 }
