@@ -1,5 +1,11 @@
 # @fuz.dev/fuz_library
 
+## 0.5.1
+
+### Patch Changes
+
+- ee263ae: change packages task to init the json types
+
 ## 0.5.0
 
 ### Minor Changes
