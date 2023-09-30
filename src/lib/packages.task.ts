@@ -4,6 +4,7 @@ import {z} from 'zod';
 import {writeFile} from 'node:fs/promises';
 import {Url} from '@grogarden/gro/paths.js';
 import {format_file} from '@grogarden/gro/format_file.js';
+import {exists} from '@grogarden/gro/exists.js';
 
 import {fetch_packages} from '$lib/fetch_packages.js';
 import type {Package} from '$lib/package.js';
@@ -42,9 +43,19 @@ export const task: Task<Args> = {
 			{url: 'https://library.fuz.dev/', package_json: root_package_json},
 		].concat(fetched_packages);
 
-		await writeFile(
-			'./src/lib/packages.json',
-			await format_file('packages.json', JSON.stringify(packages)),
-		);
+		const out_path = './src/lib/packages.json';
+		await writeFile(out_path, await format_file(out_path, JSON.stringify(packages)));
+
+		if (!(await exists(out_path + '.d.ts'))) {
+			await writeFile(
+				out_path,
+				`declare module '$lib/packages.json' {
+	import type {Package} from '@fuz.dev/fuz_library/package_item.js';
+	const data: Package[];
+	export default data;
+}
+`,
+			);
+		}
 	},
 };
