@@ -1,5 +1,11 @@
 # @fuz.dev/fuz_library
 
+## 0.5.3
+
+### Patch Changes
+
+- 4c4fd83: fix packages task again
+
 ## 0.5.2
 
 ### Patch Changes
