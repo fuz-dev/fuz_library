@@ -30,12 +30,12 @@ export type Args = z.infer<typeof Args>;
 export const task: Task<Args> = {
 	Args,
 	summary: 'download metadata for the given packages',
-	run: async ({args}) => {
+	run: async ({args, log}) => {
 		const {_: package_urls} = args;
 
 		const root_package_json = await load_package_json();
 
-		const fetched_packages = await fetch_packages(package_urls);
+		const fetched_packages = await fetch_packages(package_urls, log);
 
 		const packages: Package[] = [
 			{host: 'https://library.fuz.dev/', package_json: root_package_json},
