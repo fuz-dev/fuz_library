@@ -3,6 +3,6 @@ import type {Url} from '@grogarden/gro/paths.js';
 
 // TODO rename ? `Tome` was `LibraryItem`, maybe `Pkg` so it's consistent? then `pkgs` etc
 export interface Package {
-	host: Url;
+	url: Url;
 	package_json: PackageJson;
 }

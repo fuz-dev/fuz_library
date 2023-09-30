@@ -17,7 +17,7 @@ export const fetch_packages = async (hosts: Url[], log?: Logger): Promise<Packag
 		});
 		const json = await res.json();
 		const package_json = PackageJson.parse(json);
-		packages.push({host, package_json});
+		packages.push({url: host, package_json});
 		// TODO delay?
 	}
 	return packages;
