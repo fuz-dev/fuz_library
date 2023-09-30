@@ -24,13 +24,15 @@
 				"test": "gro test",
 				"deploy": "gro deploy"
 			},
-			"files": ["dist"],
+			"files": [
+				"dist"
+			],
 			"devDependencies": {
 				"@changesets/changelog-git": "^0.1.14",
 				"@feltjs/eslint-config": "^0.4.0",
 				"@fuz.dev/fuz": "^0.70.0",
 				"@fuz.dev/fuz_code": "^0.2.0",
-				"@grogarden/gro": "^0.92.2",
+				"@grogarden/gro": "^0.92.3",
 				"@grogarden/util": "^0.15.0",
 				"@sveltejs/adapter-static": "^2.0.3",
 				"@sveltejs/kit": "^1.25.1",
@@ -59,7 +61,9 @@
 				}
 			},
 			"prettier": {
-				"plugins": ["prettier-plugin-svelte"],
+				"plugins": [
+					"prettier-plugin-svelte"
+				],
 				"useTabs": true,
 				"printWidth": 100,
 				"singleQuote": true,
@@ -205,7 +209,7 @@
 		}
 	},
 	{
-		"host": "https://www.grogarden.org/",
+		"url": "https://www.grogarden.org/",
 		"package_json": {
 			"name": "@grogarden/gro",
 			"description": "task runner and toolkit extending SvelteKit",
@@ -248,7 +252,9 @@
 				"vite",
 				"typescript"
 			],
-			"files": ["dist"],
+			"files": [
+				"dist"
+			],
 			"dependencies": {
 				"@grogarden/util": "^0.15.0",
 				"@ryanatkn/json-schema-to-typescript": "^11.1.5",
@@ -297,7 +303,9 @@
 				}
 			},
 			"prettier": {
-				"plugins": ["prettier-plugin-svelte"],
+				"plugins": [
+					"prettier-plugin-svelte"
+				],
 				"useTabs": true,
 				"printWidth": 100,
 				"singleQuote": true,
@@ -608,7 +616,7 @@
 		}
 	},
 	{
-		"host": "https://template.fuz.dev/",
+		"url": "https://template.fuz.dev/",
 		"package_json": {
 			"name": "@fuz.dev/fuz_template",
 			"private": true,
@@ -627,7 +635,9 @@
 				"test": "gro test",
 				"deploy": "gro deploy"
 			},
-			"files": ["dist"],
+			"files": [
+				"dist"
+			],
 			"devDependencies": {
 				"@feltjs/eslint-config": "^0.4.0",
 				"@fuz.dev/fuz": "^0.69.1",
@@ -655,7 +665,9 @@
 				"extends": "@feltjs"
 			},
 			"prettier": {
-				"plugins": ["prettier-plugin-svelte"],
+				"plugins": [
+					"prettier-plugin-svelte"
+				],
 				"useTabs": true,
 				"printWidth": 100,
 				"singleQuote": true,
@@ -672,7 +684,7 @@
 		}
 	},
 	{
-		"host": "https://code.fuz.dev/",
+		"url": "https://code.fuz.dev/",
 		"package_json": {
 			"name": "@fuz.dev/fuz_code",
 			"description": "syntax highlighting using prismjs for Svelte, SvelteKit, TypeScript, and Fuz",
@@ -696,7 +708,9 @@
 				"test": "gro test",
 				"deploy": "gro deploy"
 			},
-			"files": ["dist"],
+			"files": [
+				"dist"
+			],
 			"devDependencies": {
 				"@changesets/changelog-git": "^0.1.14",
 				"@feltjs/eslint-config": "^0.4.0",
@@ -727,7 +741,9 @@
 				"extends": "@feltjs"
 			},
 			"prettier": {
-				"plugins": ["prettier-plugin-svelte"],
+				"plugins": [
+					"prettier-plugin-svelte"
+				],
 				"useTabs": true,
 				"printWidth": 100,
 				"singleQuote": true,
