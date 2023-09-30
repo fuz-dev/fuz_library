@@ -2,4 +2,4 @@
 '@fuz.dev/fuz_library': minor
 ---
 
-update packages
+rename `PackageItem` to `Package`
