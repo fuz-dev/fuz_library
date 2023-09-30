@@ -1,5 +1,11 @@
 # @fuz.dev/fuz_library
 
+## 0.5.5
+
+### Patch Changes
+
+- 1e7455a: use .well-known package.json in packages task
+
 ## 0.5.4
 
 ### Patch Changes
