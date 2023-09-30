@@ -1,54 +1,75 @@
 <script lang="ts">
+	import {strip_start, strip_end} from '@grogarden/util/string.js';
+
 	import type {Package} from '$lib/package.js';
 
-	export let pkg: Package;
+	export let pkg: Package; // TODO normalized version with cached primitives?
 
 	$: ({package_json} = pkg);
 
+	$: ({name} = package_json);
+
 	// TODO think through with other presentations - Details, Summary, Card
 
-	$: repository = package_json.repository
-		? typeof package_json.repository === 'string'
-			? package_json.repository
-			: package_json.repository.url
-		: null;
+	const parse_repo = (r: string | null | undefined) => {
+		if (!r) return null;
+		return strip_start(strip_end(r, '.git'), 'git+');
+	};
 
-	$: license_url = repository ? repository + '/blob/main/LICENSE' : null;
+	$: repo = parse_repo(
+		package_json.repository
+			? typeof package_json.repository === 'string'
+				? package_json.repository
+				: package_json.repository.url
+			: null,
+	);
+
+	// TODO for detail view
+	// $: license_url = license && repository ? repository + '/blob/main/LICENSE' : null;
 
 	$: published =
 		!package_json.private && !!package_json.exports && package_json.version !== '0.0.1';
 
-	$: npm_url = published ? 'https://www.npmjs.com/package/' + package_json.name : null;
+	$: npm_url = published
+		? 'https://www.npmjs.com/package/' + encodeURIComponent(package_json.name)
+		: null;
 
-	$: changelog_url = published && repository ? repository + '/blob/main/CHANGELOG.md' : null;
+	$: changelog_url = published && repo ? repo + '/blob/main/CHANGELOG.md' : null;
+
+	// TODO proper parsing
+	$: repo_name = name[0] === '@' ? name.split('/')[1] : name;
 </script>
 
 <div class="package_summary">
 	<!-- TODO h1 is tricky here, maybe should be h2? probably too much complexity to customize, maybe rename to `PackagePage`? or a title slot? -->
-	<header>{package_json.name}</header>
+	<header class="spaced">{repo_name}</header>
 	{#if package_json.description}
-		<blockquote>{package_json.description}</blockquote>
+		<blockquote class="spaced">{package_json.description}</blockquote>
+	{/if}
+	{#if package_json.homepage}
+		<div class="spaced">
+			<a class="chip" href={package_json.homepage}>{new URL(package_json.homepage).host}</a>
+		</div>
 	{/if}
 	{#if npm_url}
 		<div class="spaced">
-			<code class="chip">npm i -D&nbsp;<a href={npm_url}>{package_json.name}</a></code>
+			<code class="chip box"
+				><div>npm i -D</div>
+				<a href={npm_url}>{package_json.name}</a></code
+			>
 		</div>
 	{/if}
 	<div class="box row spaced">
+		{#if repo}
+			<a class="chip" href={repo}>repo</a>
+		{/if}
 		{#if changelog_url}
-			<a class="chip spaced_hz" href={changelog_url}>version {package_json.version}</a>
+			<a class="chip" title="version" href={changelog_url}>{package_json.version}</a>
 		{/if}
-		{#if license_url}
-			<a class="chip spaced_hz" href={license_url}>license {package_json.license}</a>
-		{/if}
-	</div>
-	<div class="box row">
-		{#if repository}
-			<a class="chip spaced_hz" href={repository}>repo</a>
-		{/if}
-		{#if npm_url}
-			<a class="chip spaced_hz" href={npm_url}>npm</a>
-		{/if}
+		<!-- TODO for detail view -->
+		<!-- {#if license_url}
+			<a class="chip" title="license" href={license_url}>{license}</a>
+		{/if} -->
 	</div>
 	<!-- TODO more details behind a `<details>`, including author -->
 </div>
@@ -61,12 +82,18 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+		text-align: center;
+	}
+	header {
+		font-size: var(--size_xl);
 	}
 	code {
 		display: flex;
 		align-items: center;
 		text-align: center;
-		font-size: var(--size_lg);
 		white-space: nowrap;
+	}
+	.chip {
+		margin: 0 var(--spacing_xs2);
 	}
 </style>
