@@ -1,5 +1,11 @@
 # @fuz.dev/fuz_library
 
+## 0.5.6
+
+### Patch Changes
+
+- 67a986c: improve `PackageSummary`
+
 ## 0.5.5
 
 ### Patch Changes
