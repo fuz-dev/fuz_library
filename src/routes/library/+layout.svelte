@@ -41,7 +41,7 @@
 		<LibraryHeader {pkg} />
 		<slot />
 		<section class="box">
-			<LibraryFooter {pkg} />
+			<LibraryFooter {pkg} root_url="https://www.fuz.dev/" />
 		</section>
 		<section class="box">
 			<Breadcrumb>🧶</Breadcrumb>

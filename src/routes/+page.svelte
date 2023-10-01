@@ -21,7 +21,7 @@
 		<a class="library-link panel" href="{base}/library">library</a>
 	</section>
 	<section class="box">
-		<LibraryFooter {pkg} />
+		<LibraryFooter {pkg} root_url="https://www.fuz.dev/" />
 	</section>
 </main>
 

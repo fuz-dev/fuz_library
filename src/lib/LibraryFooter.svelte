@@ -1,14 +1,16 @@
 <script lang="ts">
+	import type {Url} from '@grogarden/gro/paths.js';
+
 	import GithubLogo from '$lib/GithubLogo.svelte';
 	import {format_host, parse_org_url, type PackageMeta} from '$lib/package.js';
 
 	export let pkg: PackageMeta;
+	export let root_url: Url | null = null;
+	export let emoji = '🧶';
 
-	$: ({repo_url, homepage_url} = pkg);
+	$: ({repo_url} = pkg);
 
 	$: org_url = parse_org_url(pkg);
-
-	const emoji = '🧶';
 </script>
 
 <footer class="panel padded_lg">
@@ -18,9 +20,9 @@
 	<div class="social">
 		<a href={repo_url} rel="me"><slot name="logo"><GithubLogo /></slot></a>
 	</div>
-	{#if homepage_url}
+	{#if root_url}
 		<div>
-			<a href={homepage_url} rel="me">{format_host(homepage_url)}</a>
+			<a href={root_url} rel="me">{format_host(root_url)}</a>
 		</div>
 	{/if}
 </footer>
