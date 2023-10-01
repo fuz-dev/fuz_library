@@ -53,7 +53,7 @@ export const parse_package_meta = (url: Url, package_json: PackageJson): Package
 	const changelog_url = published && repo_url ? repo_url + '/blob/main/CHANGELOG.md' : null;
 
 	// TODO proper parsing
-	const repo_name = name[0] === '@' ? name.split('/')[1] : name;
+	const repo_name = parse_repo_name(name);
 
 	return {
 		url,
@@ -67,6 +67,9 @@ export const parse_package_meta = (url: Url, package_json: PackageJson): Package
 		published,
 	};
 };
+
+export const parse_repo_name = (name: string): string =>
+	name[0] === '@' ? name.split('/')[1] : name;
 
 export const format_host = (url: string): string => strip_start(new URL(url).host, 'www.');
 
