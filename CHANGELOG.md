@@ -1,5 +1,11 @@
 # @fuz.dev/fuz_library
 
+## 0.6.1
+
+### Patch Changes
+
+- 3717ed5: tweak footer padding
+
 ## 0.6.0
 
 ### Minor Changes
