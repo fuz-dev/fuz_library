@@ -1,36 +1,40 @@
 <script lang="ts">
 	import {base} from '$app/paths';
 
-	import PackageSummary from '$lib/PackageSummary.svelte';
+	import LibraryHeader from '$lib/LibraryHeader.svelte';
 	import LibraryFooter from '$lib/LibraryFooter.svelte';
 	import {parse_package_meta} from '$lib/package.js';
-	import packages from '$lib/packages.json'; // TODO instead import `.well-known/package.json`? SvelteKit is warning
 
-	const root_pkg = packages[0];
-
-	const pkg = parse_package_meta(root_pkg.url, root_pkg.package_json);
+	// TODO SvelteKit warns about this but we put `/static` in `/src` because of what it's saying,
+	/// maybe change to import as the first item from `packages`
+	import package_json from '../static/.well-known/package.json';
+	const pkg = parse_package_meta(package_json.homepage, package_json);
 </script>
 
-<main>
-	<section>
-		<div class="summary_wrapper box panel">
-			<PackageSummary {pkg} />
-		</div>
-	</section>
-	<section>
-		<a class="library-link panel" href="{base}/library">library</a>
-	</section>
-	<section class="box">
-		<LibraryFooter {pkg} root_url="https://www.fuz.dev/" />
-	</section>
+<main class="box width_full">
+	<div class="box width_md">
+		<section>
+			<LibraryHeader {pkg} />
+		</section>
+		<section>
+			<a class="library-link panel" href="{base}/library">library</a>
+		</section>
+		<section>
+			<LibraryFooter {pkg} root_url="https://www.fuz.dev/" />
+		</section>
+	</div>
 </main>
 
 <style>
 	main {
+		margin-bottom: var(--spacing_xl5);
+	}
+	section {
+		margin-top: var(--spacing_xl3);
+		margin-bottom: var(--spacing_xl3);
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		margin: 0 auto;
 	}
 	.library-link {
 		font-size: var(--size_xl3);
@@ -38,11 +42,5 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-	}
-	.summary_wrapper {
-		margin-top: var(--spacing_xl);
-	}
-	section {
-		margin-bottom: var(--spacing_xl5);
 	}
 </style>
