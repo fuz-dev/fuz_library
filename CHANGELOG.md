@@ -1,5 +1,11 @@
 # @fuz.dev/fuz_library
 
+## 0.7.0
+
+### Minor Changes
+
+- c221255: add peer deps
+
 ## 0.6.1
 
 ### Patch Changes
