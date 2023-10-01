@@ -1,4 +1,5 @@
 <script lang="ts">
+	import {page} from '$app/stores';
 	import {format_host, type PackageMeta} from '$lib/package.js';
 
 	export let pkg: PackageMeta; // TODO normalized version with cached primitives?
@@ -18,7 +19,9 @@
 	{/if}
 	{#if homepage_url}
 		<div class="spaced">
-			<a class="chip" href={homepage_url}>{format_host(homepage_url)}</a>
+			<a class="chip" class:active={homepage_url === $page.url.href} href={homepage_url}
+				>{format_host(homepage_url)}</a
+			>
 		</div>
 	{/if}
 	<div class="box row spaced">
