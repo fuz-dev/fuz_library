@@ -2,12 +2,12 @@
 	import {base} from '$app/paths';
 
 	import PackageSummary from '$lib/PackageSummary.svelte';
-	import {parse_package} from '$lib/package.js';
-	import packages from '$lib/packages.json';
+	import {parse_package_meta} from '$lib/package.js';
+	import packages from '$lib/packages.json'; // TODO instead import `.well-known/package.json`? SvelteKit is warning
 
 	const root_pkg = packages[0];
 
-	const pkg = parse_package(root_pkg.url, root_pkg.package_json);
+	const pkg = parse_package_meta(root_pkg.url, root_pkg.package_json);
 </script>
 
 <main class="prose">

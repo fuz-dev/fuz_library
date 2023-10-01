@@ -1,7 +1,7 @@
 <script lang="ts">
-	import {format_host, type Package} from '$lib/package.js';
+	import {format_host, type PackageMeta} from '$lib/package.js';
 
-	export let pkg: Package; // TODO normalized version with cached primitives?
+	export let pkg: PackageMeta; // TODO normalized version with cached primitives?
 
 	$: ({package_json, npm_url, repo_name, repo_url, changelog_url, homepage_url} = pkg);
 </script>

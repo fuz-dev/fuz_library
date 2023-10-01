@@ -3,6 +3,11 @@ import type {Url} from '@grogarden/gro/paths.js';
 import {strip_start, strip_end} from '@grogarden/util/string.js';
 
 export interface Package {
+	url: string;
+	package_json: PackageJson;
+}
+
+export interface PackageMeta {
 	url: Url;
 	package_json: PackageJson;
 	name: string; // '@fuz.dev/fuz_library';
@@ -15,7 +20,7 @@ export interface Package {
 	published: boolean;
 }
 
-export const parse_package = (url: Url, package_json: PackageJson): Package => {
+export const parse_package_meta = (url: Url, package_json: PackageJson): PackageMeta => {
 	const {name} = package_json;
 
 	// TODO think through with other presentations - Details, Summary, Card

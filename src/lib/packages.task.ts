@@ -6,7 +6,8 @@ import {Url} from '@grogarden/gro/paths.js';
 import {format_file} from '@grogarden/gro/format_file.js';
 import {exists} from '@grogarden/gro/exists.js';
 
-import {fetch_packages, type FetchedPackage} from '$lib/fetch_packages.js';
+import {fetch_packages} from '$lib/fetch_packages.js';
+import type {Package} from '$lib/package.js';
 
 export const default_package_urls = ['https://www.grogarden.org/', 'https://template.fuz.dev/'];
 
@@ -42,7 +43,7 @@ export const task: Task<Args> = {
 			} catch (err) {}
 		}
 
-		const packages: FetchedPackage[] = local_package_json?.homepage
+		const packages: Package[] = local_package_json?.homepage
 			? [{url: local_package_json.homepage, package_json: local_package_json}].concat(
 					fetched_packages,
 			  )
