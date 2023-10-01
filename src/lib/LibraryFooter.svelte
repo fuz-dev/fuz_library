@@ -21,7 +21,7 @@
 		<a href={repo_url} rel="me"><slot name="logo"><GithubLogo /></slot></a>
 	</div>
 	{#if root_url}
-		<div>
+		<div class="root_url">
 			<a href={root_url} rel="me">{format_host(root_url)}</a>
 		</div>
 	{/if}
@@ -36,7 +36,6 @@
 	}
 	.social {
 		display: flex;
-		margin-bottom: var(--spacing_md);
 	}
 	.social a {
 		--border_width: var(--border_width_4);
@@ -48,6 +47,10 @@
 	}
 	.social a:hover {
 		--border_color: var(--color_1);
+	}
+	.root_url {
+		/* TODO messy */
+		margin-top: var(--spacing_md);
 	}
 	.emoji {
 		margin-bottom: var(--spacing_sm);
