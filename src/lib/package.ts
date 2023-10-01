@@ -52,7 +52,6 @@ export const parse_package_meta = (url: Url, package_json: PackageJson): Package
 
 	const changelog_url = published && repo_url ? repo_url + '/blob/main/CHANGELOG.md' : null;
 
-	// TODO proper parsing
 	const repo_name = parse_repo_name(name);
 
 	return {
@@ -68,6 +67,7 @@ export const parse_package_meta = (url: Url, package_json: PackageJson): Package
 	};
 };
 
+// TODO proper parsing
 export const parse_repo_name = (name: string): string =>
 	name[0] === '@' ? name.split('/')[1] : name;
 
