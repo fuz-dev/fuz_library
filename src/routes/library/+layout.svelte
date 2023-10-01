@@ -7,6 +7,8 @@
 	import LibraryFooter from '$lib/LibraryFooter.svelte';
 	import {set_tomes} from '$lib/tome.js';
 	import {tomes} from '$routes/library/tomes.js';
+	import packages from '$lib/packages.json'; // TODO instead import `.well-known/package.json`? SvelteKit is warning
+	import {parse_package_meta} from '$lib/package.js';
 
 	const tomes_by_name = new Map(tomes.map((t) => [t.name, t]));
 	set_tomes(tomes_by_name);
@@ -18,35 +20,28 @@
 
 	// TODO factor this code out and publish the layout
 
-	// TODO BLOCK source from package_json
-	const pkg_npm_url = 'https://npmjs.com/package/@fuz.dev/fuz_library';
-	const pkg_name = '@fuz.dev/fuz_library';
-	const pkg_repo_url = 'https://github.com/fuz-dev/fuz_library';
-	const pkg_org_url = 'https://github.com/fuz-dev';
-	const pkg_website_url = 'https://www.fuz.dev/';
-	const pkg_website_name = 'fuz.dev';
+	const root_pkg = packages[0];
+
+	const pkg = parse_package_meta(root_pkg.url, root_pkg.package_json);
 </script>
 
 <main>
 	<nav><Breadcrumb>🧶</Breadcrumb></nav>
 	<div class="layout width_md">
 		<div class="menu_wrapper">
-			<div class="box">
-				<div class="menu width_sm">
-					<LibraryMenu {tomes} />
-					{#if tomes_related_to_selected}
-						<LibraryMenu tomes={tomes_related_to_selected} let:category>
-							<h6>related {category}</h6>
-						</LibraryMenu>
-					{/if}
-				</div>
+			<div class="menu width_sm">
+				<LibraryMenu {tomes} />
+				{#if tomes_related_to_selected}
+					<LibraryMenu tomes={tomes_related_to_selected} let:category>
+						<h6>related {category}</h6>
+					</LibraryMenu>
+				{/if}
 			</div>
 		</div>
-		<LibraryHeader {pkg_npm_url} {pkg_name} {pkg_repo_url} />
-
+		<LibraryHeader {pkg} />
 		<slot />
 		<section class="box">
-			<LibraryFooter {pkg_repo_url} {pkg_org_url} {pkg_website_url} {pkg_website_name} />
+			<LibraryFooter {pkg} />
 		</section>
 		<section class="box">
 			<Breadcrumb>🧶</Breadcrumb>

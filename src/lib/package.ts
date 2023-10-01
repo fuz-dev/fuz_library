@@ -3,7 +3,7 @@ import type {Url} from '@grogarden/gro/paths.js';
 import {strip_start, strip_end} from '@grogarden/util/string.js';
 
 export interface Package {
-	url: string;
+	url: Url;
 	package_json: PackageJson;
 }
 
@@ -12,11 +12,10 @@ export interface PackageMeta {
 	package_json: PackageJson;
 	name: string; // '@fuz.dev/fuz_library';
 	repo_name: string; // fuz_library
-	repo_url: string | null; // 'https://github.com/fuz-dev/fuz_library';
-	homepage_url: string | null; // 'https://www.fuz.dev/';
-	npm_url: string | null; // 'https://npmjs.com/package/@fuz.dev/fuz_library';
-	// org_url: string |null; // 'https://github.com/fuz-dev';
-	changelog_url: string | null;
+	repo_url: Url | null; // 'https://github.com/fuz-dev/fuz_library';
+	homepage_url: Url | null; // 'https://www.fuz.dev/';
+	npm_url: Url | null; // 'https://npmjs.com/package/@fuz.dev/fuz_library';
+	changelog_url: Url | null;
 	published: boolean;
 }
 
@@ -71,3 +70,12 @@ export const parse_package_meta = (url: Url, package_json: PackageJson): Package
 };
 
 export const format_host = (url: string): string => strip_start(new URL(url).host, 'www.');
+
+export const parse_org_url = (pkg: PackageMeta): string | null => {
+	const {repo_name, repo_url} = pkg;
+	const suffix = '/' + encodeURIComponent(repo_name);
+	if (repo_url?.endsWith(suffix)) {
+		return strip_end(repo_url, suffix);
+	}
+	return null;
+};
