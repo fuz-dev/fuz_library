@@ -1,5 +1,15 @@
 # @fuz.dev/fuz_library
 
+## 0.6.0
+
+### Minor Changes
+
+- 364ae7e: improve the library component API
+
+### Patch Changes
+
+- 364ae7e: use pkg as source of truth for library
+
 ## 0.5.6
 
 ### Patch Changes
