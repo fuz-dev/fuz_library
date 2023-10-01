@@ -13,9 +13,7 @@
 		<blockquote class="spaced">{package_json.description}</blockquote>
 	{/if}
 	{#if npm_url}
-		<div class="spaced">
-			<code class="size_lg chip box"><a href={npm_url}>{package_json.name}</a></code>
-		</div>
+		<a class="npm_url spaced chip box" href={npm_url}>{package_json.name}</a>
 	{/if}
 	{#if homepage_url}
 		<div class="spaced">
@@ -54,16 +52,13 @@
 		font-size: var(--size_xl3);
 		font-weight: 300;
 	}
-	code {
-		display: flex;
-		align-items: center;
-		text-align: center;
-		white-space: nowrap;
+	.npm_url {
+		font-size: var(--size_lg);
+		font-family: var(--font_family_mono);
+		margin-bottom: var(--spacing_lg);
 	}
 	.chip {
-		margin: 0 var(--spacing_xs2);
-	}
-	.size_lg {
-		font-size: var(--size_lg);
+		margin-left: var(--spacing_xs2);
+		margin-right: var(--spacing_xs2);
 	}
 </style>

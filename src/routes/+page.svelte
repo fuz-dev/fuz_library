@@ -10,7 +10,7 @@
 	const pkg = parse_package_meta(root_pkg.url, root_pkg.package_json);
 </script>
 
-<main class="prose">
+<main>
 	<PackageSummary {pkg} />
 	<section>
 		<a class="library-link panel" href="{base}/library">library</a>

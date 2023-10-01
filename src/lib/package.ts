@@ -46,6 +46,7 @@ export const parse_package_meta = (url: Url, package_json: PackageJson): Package
 	const published =
 		!package_json.private && !!package_json.exports && package_json.version !== '0.0.1';
 
+	// TODO generic registries
 	const npm_url = published
 		? 'https://www.npmjs.com/package/' + encodeURIComponent(package_json.name)
 		: null;
