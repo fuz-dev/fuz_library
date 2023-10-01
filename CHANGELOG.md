@@ -1,5 +1,11 @@
 # @fuz.dev/fuz_library
 
+## 0.8.0
+
+### Minor Changes
+
+- 615cde9: fix deps
+
 ## 0.7.0
 
 ### Minor Changes
