@@ -63,7 +63,6 @@ export const parse_package_meta = (url: Url, package_json: PackageJson): Package
 		repo_url,
 		homepage_url,
 		npm_url,
-		// org_url,
 		changelog_url,
 		published,
 	};
@@ -73,8 +72,9 @@ export const format_host = (url: string): string => strip_start(new URL(url).hos
 
 export const parse_org_url = (pkg: PackageMeta): string | null => {
 	const {repo_name, repo_url} = pkg;
+	if (!repo_url) return null;
 	const suffix = '/' + encodeURIComponent(repo_name);
-	if (repo_url?.endsWith(suffix)) {
+	if (repo_url.endsWith(suffix)) {
 		return strip_end(repo_url, suffix);
 	}
 	return null;
