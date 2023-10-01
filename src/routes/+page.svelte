@@ -2,6 +2,7 @@
 	import {base} from '$app/paths';
 
 	import PackageSummary from '$lib/PackageSummary.svelte';
+	import LibraryFooter from '$lib/LibraryFooter.svelte';
 	import {parse_package_meta} from '$lib/package.js';
 	import packages from '$lib/packages.json'; // TODO instead import `.well-known/package.json`? SvelteKit is warning
 
@@ -11,9 +12,16 @@
 </script>
 
 <main>
-	<PackageSummary {pkg} />
+	<section>
+		<div class="summary_wrapper box panel">
+			<PackageSummary {pkg} />
+		</div>
+	</section>
 	<section>
 		<a class="library-link panel" href="{base}/library">library</a>
+	</section>
+	<section class="box">
+		<LibraryFooter {pkg} />
 	</section>
 </main>
 
@@ -30,5 +38,11 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+	}
+	.summary_wrapper {
+		margin-top: var(--spacing_xl);
+	}
+	section {
+		margin-bottom: var(--spacing_xl5);
 	}
 </style>

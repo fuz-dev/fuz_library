@@ -7,11 +7,13 @@
 	$: ({repo_url, homepage_url} = pkg);
 
 	$: org_url = parse_org_url(pkg);
+
+	const emoji = '🧶';
 </script>
 
 <footer class="panel padded_lg">
 	<slot {org_url}
-		>{#if org_url}<a class="emoji" href={org_url} rel="me">🧶</a>{:else}🧶{/if}</slot
+		>{#if org_url}<a class="emoji" href={org_url} rel="me">{emoji}</a>{:else}{emoji}{/if}</slot
 	>
 	<div class="social">
 		<a href={repo_url} rel="me"><slot name="logo"><GithubLogo /></slot></a>
