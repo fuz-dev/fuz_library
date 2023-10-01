@@ -6,11 +6,12 @@ export interface Package {
 	url: Url;
 	package_json: PackageJson;
 	name: string; // '@fuz.dev/fuz_library';
-	npm_url: string; // 'https://npmjs.com/package/@fuz.dev/fuz_library';
-	repo_url: string; // 'https://github.com/fuz-dev/fuz_library';
-	org_url: string; // 'https://github.com/fuz-dev';
-	homepage_url: string; // 'https://www.fuz.dev/';
-	homepage_name: string; // 'fuz.dev';
+	repo_name: string; // fuz_library
+	repo_url: string | null; // 'https://github.com/fuz-dev/fuz_library';
+	homepage_url: string | null; // 'https://www.fuz.dev/';
+	npm_url: string | null; // 'https://npmjs.com/package/@fuz.dev/fuz_library';
+	// org_url: string |null; // 'https://github.com/fuz-dev';
+	changelog_url: string | null;
 	published: boolean;
 }
 
@@ -25,7 +26,7 @@ export const parse_package = (url: Url, package_json: PackageJson): Package => {
 		return strip_start(strip_end(r, '.git'), 'git+');
 	};
 
-	const repo = parse_repo(
+	const repo_url = parse_repo(
 		package_json.repository
 			? typeof package_json.repository === 'string'
 				? package_json.repository
@@ -33,7 +34,7 @@ export const parse_package = (url: Url, package_json: PackageJson): Package => {
 			: null,
 	);
 
-	const format_host = (homepage: string): string => strip_start(new URL(homepage).host, 'www.');
+	const homepage_url = package_json.homepage ?? null;
 
 	// TODO for detail view
 	// const license_url = license && repository ? repository + '/blob/main/LICENSE' : null;
@@ -45,7 +46,7 @@ export const parse_package = (url: Url, package_json: PackageJson): Package => {
 		? 'https://www.npmjs.com/package/' + encodeURIComponent(package_json.name)
 		: null;
 
-	const changelog_url = published && repo ? repo + '/blob/main/CHANGELOG.md' : null;
+	const changelog_url = published && repo_url ? repo_url + '/blob/main/CHANGELOG.md' : null;
 
 	// TODO proper parsing
 	const repo_name = name[0] === '@' ? name.split('/')[1] : name;
@@ -54,11 +55,14 @@ export const parse_package = (url: Url, package_json: PackageJson): Package => {
 		url,
 		package_json,
 		name,
-		npm_url,
+		repo_name,
 		repo_url,
-		org_url,
 		homepage_url,
-		homepage_name,
+		npm_url,
+		// org_url,
+		changelog_url,
 		published,
 	};
 };
+
+export const format_host = (url: string): string => strip_start(new URL(url).host, 'www.');

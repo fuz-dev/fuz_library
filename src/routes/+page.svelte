@@ -2,13 +2,16 @@
 	import {base} from '$app/paths';
 
 	import PackageSummary from '$lib/PackageSummary.svelte';
+	import {parse_package} from '$lib/package.js';
 	import packages from '$lib/packages.json';
 
 	const root_pkg = packages[0];
+
+	const pkg = parse_package(root_pkg.url, root_pkg.package_json);
 </script>
 
 <main class="prose">
-	<PackageSummary pkg={root_pkg} />
+	<PackageSummary {pkg} />
 	<section>
 		<a class="library-link panel" href="{base}/library">library</a>
 	</section>

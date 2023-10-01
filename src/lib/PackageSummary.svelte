@@ -1,9 +1,9 @@
 <script lang="ts">
-	import type {Package} from '$lib/package.js';
+	import {format_host, type Package} from '$lib/package.js';
 
 	export let pkg: Package; // TODO normalized version with cached primitives?
 
-	$: ({package_json, npm_url} = pkg);
+	$: ({package_json, npm_url, repo_name, repo_url, changelog_url, homepage_url} = pkg);
 </script>
 
 <div class="package_summary">
@@ -16,14 +16,14 @@
 			<code class="size_lg chip box"><a href={npm_url}>{package_json.name}</a></code>
 		</div>
 	{/if}
-	{#if package_json.homepage}
+	{#if homepage_url}
 		<div class="spaced">
-			<a class="chip" href={package_json.homepage}>{format_host(package_json.homepage)}</a>
+			<a class="chip" href={homepage_url}>{format_host(homepage_url)}</a>
 		</div>
 	{/if}
 	<div class="box row spaced">
-		{#if repo}
-			<a class="chip" href={repo}>repo</a>
+		{#if repo_url}
+			<a class="chip" href={repo_url}>repo</a>
 		{/if}
 		{#if changelog_url}
 			<a class="chip" title="version" href={changelog_url}>{package_json.version}</a>
