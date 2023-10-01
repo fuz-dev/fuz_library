@@ -6,7 +6,6 @@ import type {Logger} from '@grogarden/util/log.js';
 import type {Package} from '$lib/package.js';
 
 /* eslint-disable no-await-in-loop */
-
 export const fetch_packages = async (urls: Url[], log?: Logger): Promise<Package[]> => {
 	const packages: Package[] = [];
 	for (const url of urls) {

@@ -1,20 +1,30 @@
 <script lang="ts">
-	import GithubLogo from '$lib/GithubLogo.svelte';
+	import type {Url} from '@grogarden/gro/paths.js';
 
-	export let pkg_repo_url: string;
-	export let pkg_org_url: string;
-	export let pkg_website_url: string;
-	export let pkg_website_name: string;
+	import GithubLogo from '$lib/GithubLogo.svelte';
+	import {format_host, parse_org_url, type PackageMeta} from '$lib/package.js';
+
+	export let pkg: PackageMeta;
+	export let root_url: Url | null = null;
+	export let emoji = '🧶';
+
+	$: ({repo_url} = pkg);
+
+	$: org_url = parse_org_url(pkg);
 </script>
 
-<footer class="prose panel padded_lg">
-	<slot><a class="emoji" href={pkg_org_url} rel="me">🧶</a></slot>
+<footer class="panel padded_lg">
+	<slot {org_url}
+		>{#if org_url}<a class="emoji" href={org_url} rel="me">{emoji}</a>{:else}{emoji}{/if}</slot
+	>
 	<div class="social">
-		<a href={pkg_repo_url} rel="me"><slot name="logo"><GithubLogo /></slot></a>
+		<a href={repo_url} rel="me"><slot name="logo"><GithubLogo /></slot></a>
 	</div>
-	<p>
-		<a href={pkg_website_url} rel="me">{pkg_website_name}</a>
-	</p>
+	{#if root_url}
+		<div>
+			<a href={root_url} rel="me">{format_host(root_url)}</a>
+		</div>
+	{/if}
 </footer>
 
 <style>
