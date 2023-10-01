@@ -6,14 +6,6 @@
 
 	$: ({repo_url, homepage_url} = pkg);
 
-	// TODO BLOCK source from package_json
-	// const pkg_npm_url = 'https://npmjs.com/package/@fuz.dev/fuz_library';
-	// const pkg_name = '@fuz.dev/fuz_library';
-	// const pkg_repo_url = 'https://github.com/fuz-dev/fuz_library';
-	// const pkg_org_url = 'https://github.com/fuz-dev';
-	// const pkg_homepage_url = 'https://www.fuz.dev/';
-	// const pkg_website_name = 'fuz.dev';
-
 	$: org_url = parse_org_url(pkg);
 </script>
 
