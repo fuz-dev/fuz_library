@@ -1,5 +1,11 @@
 # @fuz.dev/fuz_library
 
+## 0.9.0
+
+### Minor Changes
+
+- 0ee0a40: upgrade @fuz.dev/fuz@0.72 from 0.70
+
 ## 0.8.0
 
 ### Minor Changes
