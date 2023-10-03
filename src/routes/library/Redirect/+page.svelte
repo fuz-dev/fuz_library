@@ -50,7 +50,7 @@
 <style>
 	section {
 		/* TODO make standard across library pages */
-		padding: var(--spacing_xl2);
+		padding: var(--spacing_2);
 		display: flex;
 		flex-direction: column;
 		align-items: center;

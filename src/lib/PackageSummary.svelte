@@ -49,14 +49,14 @@
 
 <style>
 	.package_summary {
-		padding: var(--spacing_xl2);
+		padding: var(--spacing_2);
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 	}
 	.repo_name {
 		/* same as h1 by default (maybe add .h1 utility class?) */
-		font-size: var(--size_xl3);
+		font-size: var(--size_3);
 		font-weight: 300;
 	}
 	.npm_url {

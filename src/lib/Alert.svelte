@@ -50,6 +50,6 @@
 		align-items: center;
 		justify-content: center;
 		padding-right: var(--spacing_md);
-		font-size: var(--size_xl2);
+		font-size: var(--size_2);
 	}
 </style>

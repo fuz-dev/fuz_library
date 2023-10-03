@@ -32,7 +32,7 @@
 <style>
 	section {
 		/* TODO not sure about this -- maybe make it a util class? or a component? */
-		padding: var(--spacing_xl2);
+		padding: var(--spacing_2);
 		display: flex;
 		flex-direction: column;
 		align-items: center;

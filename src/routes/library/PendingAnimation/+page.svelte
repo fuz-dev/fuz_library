@@ -44,7 +44,7 @@
 			<h3>custom slot</h3>
 			<Code
 				content={`<div
-	style:font-size="var(--size_xl6)"
+	style:font-size="var(--size_6)"
 	style:--animation_duration="var(--duration_6)"
 >
 	<PendingAnimation running={${pendingAnimation1Running}}>
@@ -64,7 +64,7 @@
 				{#if pendingAnimation1Running}pause animation{:else}play animation{/if}
 			</button>
 			<div
-				style:font-size="var(--size_xl6)"
+				style:font-size="var(--size_6)"
 				style:--animation_duration="var(--duration_6)"
 				style:text-align="center"
 			>
@@ -80,7 +80,7 @@
 	<div class="row box">
 		{${turtleSlot2a}}
 		{index}
-		<span style="font-size: var(--size_xl5)">
+		<span style="font-size: var(--size_5)">
 			{${turtleSlot2b}}
 		</span>}
 	</div>
@@ -99,7 +99,7 @@
 			</p>
 			<PendingAnimation running={frogsRunning} let:index>
 				<div class="row box">
-					<span style="font-size: var(--size_xl5)">{turtleSlot2a}</span>
+					<span style="font-size: var(--size_5)">{turtleSlot2a}</span>
 					<span class="index">{index}</span>
 					{turtleSlot2b}
 				</div>
@@ -114,13 +114,13 @@
 	}
 	section {
 		/* TODO not sure about this -- maybe make it a util class? or a component? */
-		padding: var(--spacing_xl2);
+		padding: var(--spacing_2);
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 	}
 	.index {
-		font-size: var(--size_xl3);
+		font-size: var(--size_3);
 		font-weight: 300;
 	}
 </style>

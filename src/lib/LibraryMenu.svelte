@@ -51,6 +51,6 @@
 		padding-bottom: var(--spacing_sm);
 	}
 	h6:not(:first-child) {
-		margin-top: var(--spacing_xl);
+		margin-top: var(--spacing_1);
 	}
 </style>

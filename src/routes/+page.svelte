@@ -27,18 +27,18 @@
 
 <style>
 	main {
-		margin-bottom: var(--spacing_xl5);
+		margin-bottom: var(--spacing_5);
 	}
 	section {
-		margin-top: var(--spacing_xl3);
-		margin-bottom: var(--spacing_xl3);
+		margin-top: var(--spacing_3);
+		margin-bottom: var(--spacing_3);
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 	}
 	.library-link {
-		font-size: var(--size_xl3);
-		padding: var(--spacing_xl2);
+		font-size: var(--size_3);
+		padding: var(--spacing_2);
 		display: flex;
 		flex-direction: column;
 		align-items: center;

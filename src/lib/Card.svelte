@@ -45,7 +45,7 @@
 		--icon_size: var(--icon_size_lg);
 		--icon_margin: var(--spacing_lg);
 		display: flex;
-		font-size: var(--size_xl2);
+		font-size: var(--size_2);
 		align-items: center;
 		justify-content: center;
 		padding: var(--spacing_lg);
@@ -91,7 +91,7 @@
 	}
 	@media (max-width: 460px) {
 		.card {
-			font-size: var(--size_xl);
+			font-size: var(--size_1);
 		}
 	}
 	@media (max-width: 380px) {
