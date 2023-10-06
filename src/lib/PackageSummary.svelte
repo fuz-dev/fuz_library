@@ -19,16 +19,16 @@
 		>
 	{/if}
 	{#if npm_url}
-		<slot name="npm_url" {npm_url}
-			><a class="npm_url spaced chip box" href={npm_url}>{name}</a></slot
-		>
+		<slot name="npm_url" {npm_url}><div class="npm_url spaced box">npm i -D {name}</div></slot>
 	{/if}
 	{#if homepage_url}
-		<div class="spaced">
-			<a class="chip" class:active={homepage_url === $page.url.href} href={homepage_url}
-				>{format_host(homepage_url)}</a
-			>
-		</div>
+		<slot name="homepage_url" {homepage_url}
+			><div class="spaced">
+				<a class="chip" class:active={homepage_url === $page.url.href} href={homepage_url}
+					>{format_host(homepage_url)}</a
+				>
+			</div></slot
+		>
 	{/if}
 	<div class="box row spaced">
 		{#if repo_url}
@@ -36,6 +36,9 @@
 		{/if}
 		{#if changelog_url}
 			<a class="chip" title="version" href={changelog_url}>{version}</a>
+		{/if}
+		{#if npm_url}
+			<a class="chip" href={npm_url}>npm</a>
 		{/if}
 		<!-- TODO for detail view -->
 		<!-- {#if license_url}
@@ -60,9 +63,7 @@
 		font-weight: 300;
 	}
 	.npm_url {
-		font-size: var(--size_lg);
 		font-family: var(--font_family_mono);
-		margin-bottom: var(--spacing_lg);
 	}
 	.chip {
 		margin-left: var(--spacing_xs2);
