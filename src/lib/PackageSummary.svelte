@@ -44,7 +44,7 @@
 	</div>
 	{#if npm_url}
 		<slot name="npm_url" {npm_url}
-			><blockquote class="npm_url spaced box">npm i -D {name}</blockquote></slot
+			><blockquote class="npm_url box">npm i -D {name}</blockquote></slot
 		>
 	{/if}
 	<!-- TODO more details behind a `<details>`, including author -->
@@ -54,15 +54,15 @@
 
 <style>
 	.package_summary {
-		padding: var(--spacing_2);
+		padding: var(--spacing_lg);
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+		max-width: var(--max_width, var(--width_sm));
 	}
 	.repo_name {
-		/* same as h1 by default (maybe add .h1 utility class?) */
-		font-size: var(--size_3);
-		font-weight: 300;
+		font-size: var(--size_2);
+		font-weight: 400;
 	}
 	.npm_url {
 		font-family: var(--font_family_mono);
