@@ -19,7 +19,9 @@
 		>
 	{/if}
 	{#if npm_url}
-		<slot name="npm_url" {npm_url}><div class="npm_url spaced box">npm i -D {name}</div></slot>
+		<slot name="npm_url" {npm_url}
+			><blockquote class="npm_url spaced box">npm i -D {name}</blockquote></slot
+		>
 	{/if}
 	{#if homepage_url}
 		<slot name="homepage_url" {homepage_url}

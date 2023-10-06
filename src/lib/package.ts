@@ -47,9 +47,7 @@ export const parse_package_meta = (url: Url, package_json: PackageJson): Package
 		!package_json.private && !!package_json.exports && package_json.version !== '0.0.1';
 
 	// TODO generic registries
-	const npm_url = published
-		? 'https://www.npmjs.com/package/' + encodeURIComponent(package_json.name)
-		: null;
+	const npm_url = published ? 'https://www.npmjs.com/package/' + package_json.name : null;
 
 	const changelog_url = published && repo_url ? repo_url + '/blob/main/CHANGELOG.md' : null;
 
@@ -77,7 +75,7 @@ export const format_host = (url: string): string => strip_start(new URL(url).hos
 export const parse_org_url = (pkg: PackageMeta): string | null => {
 	const {repo_name, repo_url} = pkg;
 	if (!repo_url) return null;
-	const suffix = '/' + encodeURIComponent(repo_name);
+	const suffix = '/' + repo_name;
 	if (repo_url.endsWith(suffix)) {
 		return strip_end(repo_url, suffix);
 	}
