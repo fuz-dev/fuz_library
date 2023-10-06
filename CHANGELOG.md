@@ -1,5 +1,11 @@
 # @fuz.dev/fuz_library
 
+## 0.10.1
+
+### Patch Changes
+
+- 82a4a9c: align PackageSummary npm text
+
 ## 0.10.0
 
 ### Minor Changes
