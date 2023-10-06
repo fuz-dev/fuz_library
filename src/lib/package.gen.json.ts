@@ -7,11 +7,11 @@ export const gen: Gen = async () => {
 	return [
 		{
 			filename: 'package.json',
-			// content: JSON.stringify(await load_package_json(), null, 2),
+			content: JSON.stringify(await load_package_json(), null, 2),
 			format: false,
-			content: await format_file('file.json', JSON.stringify(await load_package_json()), {
-				useTabs: false,
-			}),
+			// content: await format_file('file.json', JSON.stringify(await load_package_json()), {
+			// 	useTabs: false,
+			// }),
 		},
 		{
 			filename: 'package.json.d.ts',
