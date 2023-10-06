@@ -27,7 +27,7 @@
 		"@feltjs/eslint-config": "^0.4.0",
 		"@fuz.dev/fuz": "^0.72.1",
 		"@fuz.dev/fuz_code": "^0.3.0",
-		"@grogarden/gro": "^0.94.0",
+		"@grogarden/gro": "^0.94.1",
 		"@sveltejs/adapter-static": "^2.0.3",
 		"@sveltejs/kit": "^1.25.1",
 		"@sveltejs/package": "^2.2.2",
@@ -72,14 +72,6 @@
 		"./DevmodeControls.svelte": {
 			"svelte": "./dist/DevmodeControls.svelte",
 			"types": "./dist/DevmodeControls.svelte.d.ts"
-		},
-		"./FeltWindowHost.svelte": {
-			"svelte": "./dist/FeltWindowHost.svelte",
-			"types": "./dist/FeltWindowHost.svelte.d.ts"
-		},
-		"./FeltWindowTenant.svelte": {
-			"svelte": "./dist/FeltWindowTenant.svelte",
-			"types": "./dist/FeltWindowTenant.svelte.d.ts"
 		},
 		"./fetch_packages.js": {
 			"default": "./dist/fetch_packages.js",
