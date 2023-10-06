@@ -5,7 +5,7 @@ import {load_package_json} from '@grogarden/gro/package_json.js';
 // TODO refactor - maybe export this from Gro, or make a configured option
 export const gen: Gen = async () => {
 	return [
-		await format_file('file.json', JSON.stringify(await load_package_json())),
+		await format_file('file.json', JSON.stringify(await load_package_json()), {useTabs: false}),
 		{
 			filename: 'package.json.d.ts',
 			content: `declare module '$lib/package.json' {
