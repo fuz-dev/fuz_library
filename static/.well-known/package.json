@@ -161,13 +161,6 @@
       "svelte": "./dist/LibraryVocab.svelte",
       "types": "./dist/LibraryVocab.svelte.d.ts"
     },
-    "./package.json": {
-      "default": "./dist/package.json"
-    },
-    "./package.json.d.js": {
-      "default": "./dist/package.json.d.js",
-      "types": "./dist/package.json.d.d.ts"
-    },
     "./package.js": {
       "default": "./dist/package.js",
       "types": "./dist/package.d.ts"
