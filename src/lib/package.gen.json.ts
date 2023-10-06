@@ -9,7 +9,7 @@ export const gen: Gen = async () => {
 			filename: 'package.json',
 			// content: JSON.stringify(await load_package_json(), null, 2),
 			format: false,
-			content: await format_file('', JSON.stringify(await load_package_json()), {
+			content: await format_file('file.json', JSON.stringify(await load_package_json()), {
 				useTabs: false,
 			}),
 		},
