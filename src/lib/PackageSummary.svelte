@@ -44,7 +44,7 @@
 	</div>
 	{#if npm_url}
 		<slot name="npm_url" {npm_url}
-			><blockquote class="npm_url box">npm i -D {name}</blockquote></slot
+			><blockquote class="npm_url text_align_center">npm i -D {name}</blockquote></slot
 		>
 	{/if}
 	<!-- TODO more details behind a `<details>`, including author -->
