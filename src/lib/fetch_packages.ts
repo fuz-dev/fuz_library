@@ -9,7 +9,7 @@ import type {Package} from '$lib/package.js';
 export const fetch_packages = async (urls: Url[], log?: Logger): Promise<Package[]> => {
 	const packages: Package[] = [];
 	for (const url of urls) {
-		const package_json_url = strip_end(url, '/') + '/.well-known/package.json';
+		const package_json_url = strip_end(url, '/') + '/.well-known/package.json'; // TODO helper
 		log?.info('fetching', package_json_url);
 		const res = await fetch(package_json_url, {
 			headers: {'content-type': 'application/json', accept: 'application/json'},

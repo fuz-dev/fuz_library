@@ -35,7 +35,7 @@ export const task: Task<Args> = {
 
 		const fetched_packages = await fetch_packages(package_urls, log);
 
-		const local_package_json_path = 'src/static/.well-known/package.json'; // TODO read svelte config
+		const local_package_json_path = 'static/.well-known/package.json'; // TODO read svelte config
 		let local_package_json: PackageJson | undefined;
 		if (await exists(local_package_json_path)) {
 			try {

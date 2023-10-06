@@ -36,7 +36,7 @@
     "@feltjs/eslint-config": "^0.4.0",
     "@fuz.dev/fuz": "^0.72.1",
     "@fuz.dev/fuz_code": "^0.3.0",
-    "@grogarden/gro": "^0.93.1",
+    "@grogarden/gro": "^0.94.2",
     "@sveltejs/adapter-static": "^2.0.3",
     "@sveltejs/kit": "^1.25.1",
     "@sveltejs/package": "^2.2.2",
@@ -44,7 +44,7 @@
     "@typescript-eslint/eslint-plugin": "^6.7.4",
     "@typescript-eslint/parser": "^6.7.4",
     "eslint": "^8.50.0",
-    "eslint-plugin-svelte": "^2.33.2",
+    "eslint-plugin-svelte": "^2.34.0",
     "prettier": "^3.0.3",
     "prettier-plugin-svelte": "^3.0.3",
     "prism-svelte": "^0.5.0",
@@ -109,14 +109,6 @@
       "svelte": "./dist/DevmodeControls.svelte",
       "types": "./dist/DevmodeControls.svelte.d.ts"
     },
-    "./FeltWindowHost.svelte": {
-      "svelte": "./dist/FeltWindowHost.svelte",
-      "types": "./dist/FeltWindowHost.svelte.d.ts"
-    },
-    "./FeltWindowTenant.svelte": {
-      "svelte": "./dist/FeltWindowTenant.svelte",
-      "types": "./dist/FeltWindowTenant.svelte.d.ts"
-    },
     "./fetch_packages.js": {
       "default": "./dist/fetch_packages.js",
       "types": "./dist/fetch_packages.d.ts"
@@ -161,16 +153,17 @@
       "svelte": "./dist/LibraryVocab.svelte",
       "types": "./dist/LibraryVocab.svelte.d.ts"
     },
+    "./package.json": {
+      "default": "./dist/package.json",
+      "types": "./dist/package.json.d.ts"
+    },
     "./package.js": {
       "default": "./dist/package.js",
       "types": "./dist/package.d.ts"
     },
     "./packages.json": {
-      "default": "./dist/packages.json"
-    },
-    "./packages.json.d.js": {
-      "default": "./dist/packages.json.d.js",
-      "types": "./dist/packages.json.d.d.ts"
+      "default": "./dist/packages.json",
+      "types": "./dist/packages.json.d.ts"
     },
     "./packages.task.js": {
       "default": "./dist/packages.task.js",

@@ -18,17 +18,14 @@
 			><blockquote class="spaced text_align_center">{description}</blockquote></slot
 		>
 	{/if}
-	{#if npm_url}
-		<slot name="npm_url" {npm_url}
-			><a class="npm_url spaced chip box" href={npm_url}>{name}</a></slot
-		>
-	{/if}
 	{#if homepage_url}
-		<div class="spaced">
-			<a class="chip" class:active={homepage_url === $page.url.href} href={homepage_url}
-				>{format_host(homepage_url)}</a
-			>
-		</div>
+		<slot name="homepage_url" {homepage_url}
+			><div class="spaced">
+				<a class="chip" class:active={homepage_url === $page.url.href} href={homepage_url}
+					>{format_host(homepage_url)}</a
+				>
+			</div></slot
+		>
 	{/if}
 	<div class="box row spaced">
 		{#if repo_url}
@@ -37,11 +34,19 @@
 		{#if changelog_url}
 			<a class="chip" title="version" href={changelog_url}>{version}</a>
 		{/if}
+		{#if npm_url}
+			<a class="chip" href={npm_url}>npm</a>
+		{/if}
 		<!-- TODO for detail view -->
 		<!-- {#if license_url}
 			<a class="chip" title="license" href={license_url}>{license}</a>
 		{/if} -->
 	</div>
+	{#if npm_url}
+		<slot name="npm_url" {npm_url}
+			><blockquote class="npm_url box">npm i -D {name}</blockquote></slot
+		>
+	{/if}
 	<!-- TODO more details behind a `<details>`, including author -->
 </div>
 
@@ -49,20 +54,18 @@
 
 <style>
 	.package_summary {
-		padding: var(--spacing_2);
+		padding: var(--spacing_lg);
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+		max-width: var(--max_width, var(--width_sm));
 	}
 	.repo_name {
-		/* same as h1 by default (maybe add .h1 utility class?) */
-		font-size: var(--size_3);
-		font-weight: 300;
+		font-size: var(--size_2);
+		font-weight: 400;
 	}
 	.npm_url {
-		font-size: var(--size_lg);
 		font-family: var(--font_family_mono);
-		margin-bottom: var(--spacing_lg);
 	}
 	.chip {
 		margin-left: var(--spacing_xs2);
