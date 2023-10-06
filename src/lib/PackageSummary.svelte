@@ -18,11 +18,6 @@
 			><blockquote class="spaced text_align_center">{description}</blockquote></slot
 		>
 	{/if}
-	{#if npm_url}
-		<slot name="npm_url" {npm_url}
-			><blockquote class="npm_url spaced box">npm i -D {name}</blockquote></slot
-		>
-	{/if}
 	{#if homepage_url}
 		<slot name="homepage_url" {homepage_url}
 			><div class="spaced">
@@ -47,6 +42,11 @@
 			<a class="chip" title="license" href={license_url}>{license}</a>
 		{/if} -->
 	</div>
+	{#if npm_url}
+		<slot name="npm_url" {npm_url}
+			><blockquote class="npm_url spaced box">npm i -D {name}</blockquote></slot
+		>
+	{/if}
 	<!-- TODO more details behind a `<details>`, including author -->
 </div>
 

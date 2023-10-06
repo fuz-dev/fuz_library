@@ -161,16 +161,17 @@
       "svelte": "./dist/LibraryVocab.svelte",
       "types": "./dist/LibraryVocab.svelte.d.ts"
     },
+    "./package.json": {
+      "default": "./dist/package.json",
+      "types": "./dist/package.json.d.ts"
+    },
     "./package.js": {
       "default": "./dist/package.js",
       "types": "./dist/package.d.ts"
     },
     "./packages.json": {
-      "default": "./dist/packages.json"
-    },
-    "./packages.json.d.js": {
-      "default": "./dist/packages.json.d.js",
-      "types": "./dist/packages.json.d.d.ts"
+      "default": "./dist/packages.json",
+      "types": "./dist/packages.json.d.ts"
     },
     "./packages.task.js": {
       "default": "./dist/packages.task.js",
