@@ -1,5 +1,15 @@
 # @fuz.dev/fuz_library
 
+## 0.10.0
+
+### Minor Changes
+
+- 972bd86: fix exports
+
+### Patch Changes
+
+- 972bd86: improve PackageSummary
+
 ## 0.9.0
 
 ### Minor Changes
