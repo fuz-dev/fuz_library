@@ -1,6 +1,6 @@
 <script lang="ts">
 	import {page} from '$app/stores';
-	import {format_host, type PackageMeta} from '$lib/package.js';
+	import {format_host, type PackageMeta} from '$lib/package_meta.js';
 
 	export let pkg: PackageMeta; // TODO normalized version with cached primitives?
 

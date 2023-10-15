@@ -2,14 +2,13 @@ import type {PackageJson} from '@grogarden/gro/package_json.js';
 import type {Url} from '@grogarden/gro/paths.js';
 import {strip_start, strip_end} from '@grogarden/util/string.js';
 
+// TODO refactor/rethink
 export interface Package {
 	url: Url;
 	package_json: PackageJson;
 }
 
-export interface PackageMeta {
-	url: Url;
-	package_json: PackageJson;
+export interface PackageMeta extends Package {
 	name: string; // '@fuz.dev/fuz_library';
 	repo_name: string; // fuz_library
 	repo_url: Url | null; // 'https://github.com/fuz-dev/fuz_library';
