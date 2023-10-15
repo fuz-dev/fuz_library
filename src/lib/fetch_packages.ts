@@ -3,7 +3,7 @@ import type {Url} from '@grogarden/gro/paths.js';
 import {strip_end} from '@grogarden/util/string.js';
 import type {Logger} from '@grogarden/util/log.js';
 
-import type {Package} from '$lib/package.js';
+import type {Package} from '$lib/package_meta.js';
 
 /* eslint-disable no-await-in-loop */
 export const fetch_packages = async (urls: Url[], log?: Logger): Promise<Package[]> => {
