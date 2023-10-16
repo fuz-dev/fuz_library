@@ -1,5 +1,11 @@
 # @fuz.dev/fuz_library
 
+## 0.11.0
+
+### Minor Changes
+
+- 79c8148: change package.ts to be the mirrored package.json
+
 ## 0.10.1
 
 ### Patch Changes
