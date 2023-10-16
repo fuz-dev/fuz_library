@@ -1,83 +1,138 @@
 import type {PackageJson} from '@grogarden/gro/package_json.js';
-import type {Url} from '@grogarden/gro/paths.js';
-import {strip_start, strip_end} from '@grogarden/util/string.js';
 
-export interface Package {
-	url: Url;
-	package_json: PackageJson;
-}
-
-export interface PackageMeta {
-	url: Url;
-	package_json: PackageJson;
-	name: string; // '@fuz.dev/fuz_library';
-	repo_name: string; // fuz_library
-	repo_url: Url | null; // 'https://github.com/fuz-dev/fuz_library';
-	homepage_url: Url | null; // 'https://www.fuz.dev/';
-	npm_url: Url | null; // 'https://npmjs.com/package/@fuz.dev/fuz_library';
-	changelog_url: Url | null;
-	published: boolean;
-}
-
-export const parse_package_meta = (url: Url, package_json: PackageJson): PackageMeta => {
-	const {name} = package_json;
-
-	// TODO think through with other presentations - Details, Summary, Card
-
-	// TODO hacky
-	const parse_repo = (r: string | null | undefined) => {
-		if (!r) return null;
-		return strip_start(strip_end(r, '.git'), 'git+');
-	};
-
-	const repo_url = parse_repo(
-		package_json.repository
-			? typeof package_json.repository === 'string'
-				? package_json.repository
-				: package_json.repository.url
-			: null,
-	);
-
-	const homepage_url = package_json.homepage ?? null;
-
-	// TODO for detail view
-	// const license_url = license && repository ? repository + '/blob/main/LICENSE' : null;
-
-	const published =
-		!package_json.private && !!package_json.exports && package_json.version !== '0.0.1';
-
-	// TODO generic registries
-	const npm_url = published ? 'https://www.npmjs.com/package/' + package_json.name : null;
-
-	const changelog_url = published && repo_url ? repo_url + '/blob/main/CHANGELOG.md' : null;
-
-	const repo_name = parse_repo_name(name);
-
-	return {
-		url,
-		package_json,
-		name,
-		repo_name,
-		repo_url,
-		homepage_url,
-		npm_url,
-		changelog_url,
-		published,
-	};
-};
-
-// TODO proper parsing
-export const parse_repo_name = (name: string): string =>
-	name[0] === '@' ? name.split('/')[1] : name;
-
-export const format_host = (url: string): string => strip_start(new URL(url).host, 'www.');
-
-export const parse_org_url = (pkg: PackageMeta): string | null => {
-	const {repo_name, repo_url} = pkg;
-	if (!repo_url) return null;
-	const suffix = '/' + repo_name;
-	if (repo_url.endsWith(suffix)) {
-		return strip_end(repo_url, suffix);
-	}
-	return null;
-};
+export const package_json = {
+	name: '@fuz.dev/fuz_library',
+	description: 'components and helpers for Svelte, SvelteKit, and Fuz',
+	version: '0.10.1',
+	license: 'MIT',
+	type: 'module',
+	homepage: 'https://library.fuz.dev/',
+	repository: 'https://github.com/fuz-dev/fuz_library',
+	author: {name: 'Ryan Atkinson', email: 'mail@ryanatkn.com', url: 'https://www.ryanatkn.com/'},
+	engines: {node: '>=20.7'},
+	scripts: {
+		start: 'gro dev',
+		dev: 'gro dev',
+		build: 'gro build',
+		test: 'gro test',
+		deploy: 'gro deploy',
+	},
+	files: ['dist'],
+	dependencies: {'@grogarden/util': '^0.15.0'},
+	peerDependencies: {'@sveltejs/kit': '*', svelte: '*'},
+	devDependencies: {
+		'@changesets/changelog-git': '^0.1.14',
+		'@feltjs/eslint-config': '^0.4.0',
+		'@fuz.dev/fuz': '^0.72.1',
+		'@fuz.dev/fuz_code': '^0.3.0',
+		'@grogarden/gro': '^0.95.3',
+		'@sveltejs/adapter-static': '^2.0.3',
+		'@sveltejs/kit': '^1.25.2',
+		'@sveltejs/package': '^2.2.2',
+		'@types/node': '^20.8.6',
+		'@typescript-eslint/eslint-plugin': '^6.7.5',
+		'@typescript-eslint/parser': '^6.7.5',
+		eslint: '^8.51.0',
+		'eslint-plugin-svelte': '^2.34.0',
+		prettier: '^3.0.3',
+		'prettier-plugin-svelte': '^3.0.3',
+		'prism-svelte': '^0.5.0',
+		prismjs: '^1.29.0',
+		svelte: '^4.2.1',
+		'svelte-check': '^3.5.2',
+		tslib: '^2.6.2',
+		typescript: '^5.2.2',
+		uvu: '^0.5.6',
+		zod: '^3.22.4',
+	},
+	eslintConfig: {root: true, extends: '@feltjs', rules: {'no-console': 1}},
+	prettier: {
+		plugins: ['prettier-plugin-svelte'],
+		useTabs: true,
+		printWidth: 100,
+		singleQuote: true,
+		bracketSpacing: false,
+		overrides: [{files: 'package.json', options: {useTabs: false}}],
+	},
+	exports: {
+		'./Alert.svelte': {svelte: './dist/Alert.svelte', types: './dist/Alert.svelte.d.ts'},
+		'./alert.js': {default: './dist/alert.js', types: './dist/alert.d.ts'},
+		'./Breadcrumb.svelte': {
+			svelte: './dist/Breadcrumb.svelte',
+			types: './dist/Breadcrumb.svelte.d.ts',
+		},
+		'./Card.svelte': {svelte: './dist/Card.svelte', types: './dist/Card.svelte.d.ts'},
+		'./CopyToClipboard.svelte': {
+			svelte: './dist/CopyToClipboard.svelte',
+			types: './dist/CopyToClipboard.svelte.d.ts',
+		},
+		'./devmode.js': {default: './dist/devmode.js', types: './dist/devmode.d.ts'},
+		'./DevmodeControls.svelte': {
+			svelte: './dist/DevmodeControls.svelte',
+			types: './dist/DevmodeControls.svelte.d.ts',
+		},
+		'./fetch_packages.js': {
+			default: './dist/fetch_packages.js',
+			types: './dist/fetch_packages.d.ts',
+		},
+		'./GithubLogo.svelte': {
+			svelte: './dist/GithubLogo.svelte',
+			types: './dist/GithubLogo.svelte.d.ts',
+		},
+		'./helpers.js': {default: './dist/helpers.js', types: './dist/helpers.d.ts'},
+		'./HueInput.svelte': {svelte: './dist/HueInput.svelte', types: './dist/HueInput.svelte.d.ts'},
+		'./Library.svelte': {svelte: './dist/Library.svelte', types: './dist/Library.svelte.d.ts'},
+		'./LibraryFooter.svelte': {
+			svelte: './dist/LibraryFooter.svelte',
+			types: './dist/LibraryFooter.svelte.d.ts',
+		},
+		'./LibraryHeader.svelte': {
+			svelte: './dist/LibraryHeader.svelte',
+			types: './dist/LibraryHeader.svelte.d.ts',
+		},
+		'./LibraryMenu.svelte': {
+			svelte: './dist/LibraryMenu.svelte',
+			types: './dist/LibraryMenu.svelte.d.ts',
+		},
+		'./LibraryNav.svelte': {
+			svelte: './dist/LibraryNav.svelte',
+			types: './dist/LibraryNav.svelte.d.ts',
+		},
+		'./LibraryPanel.svelte': {
+			svelte: './dist/LibraryPanel.svelte',
+			types: './dist/LibraryPanel.svelte.d.ts',
+		},
+		'./LibraryVocab.svelte': {
+			svelte: './dist/LibraryVocab.svelte',
+			types: './dist/LibraryVocab.svelte.d.ts',
+		},
+		'./package_meta.js': {default: './dist/package_meta.js', types: './dist/package_meta.d.ts'},
+		'./package.gen.js': {default: './dist/package.gen.js', types: './dist/package.gen.d.ts'},
+		'./package.js': {default: './dist/package.js', types: './dist/package.d.ts'},
+		'./packages.json': {default: './dist/packages.json', types: './dist/packages.json.d.ts'},
+		'./packages.task.js': {default: './dist/packages.task.js', types: './dist/packages.task.d.ts'},
+		'./PackageSummary.svelte': {
+			svelte: './dist/PackageSummary.svelte',
+			types: './dist/PackageSummary.svelte.d.ts',
+		},
+		'./PendingAnimation.svelte': {
+			svelte: './dist/PendingAnimation.svelte',
+			types: './dist/PendingAnimation.svelte.d.ts',
+		},
+		'./PendingButton.svelte': {
+			svelte: './dist/PendingButton.svelte',
+			types: './dist/PendingButton.svelte.d.ts',
+		},
+		'./Redirect.svelte': {svelte: './dist/Redirect.svelte', types: './dist/Redirect.svelte.d.ts'},
+		'./Teleport.svelte': {svelte: './dist/Teleport.svelte', types: './dist/Teleport.svelte.d.ts'},
+		'./tome.js': {default: './dist/tome.js', types: './dist/tome.d.ts'},
+		'./TomeDetails.svelte': {
+			svelte: './dist/TomeDetails.svelte',
+			types: './dist/TomeDetails.svelte.d.ts',
+		},
+		'./TomeTitle.svelte': {
+			svelte: './dist/TomeTitle.svelte',
+			types: './dist/TomeTitle.svelte.d.ts',
+		},
+	},
+} satisfies PackageJson;

@@ -2,7 +2,7 @@
 	import type {Url} from '@grogarden/gro/paths.js';
 
 	import GithubLogo from '$lib/GithubLogo.svelte';
-	import {format_host, parse_org_url, type PackageMeta} from '$lib/package.js';
+	import {format_host, parse_org_url, type PackageMeta} from '$lib/package_meta.js';
 
 	export let pkg: PackageMeta;
 	export let root_url: Url | null = null;

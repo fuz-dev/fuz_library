@@ -8,7 +8,7 @@
 	import {set_tomes} from '$lib/tome.js';
 	import {tomes} from '$routes/library/tomes.js';
 	import packages from '$lib/packages.json'; // TODO instead import `.well-known/package.json`? SvelteKit is warning
-	import {parse_package_meta} from '$lib/package.js';
+	import {parse_package_meta} from '$lib/package_meta.js';
 
 	const tomes_by_name = new Map(tomes.map((t) => [t.name, t]));
 	set_tomes(tomes_by_name);
