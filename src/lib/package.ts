@@ -3,7 +3,7 @@ import type {PackageJson} from '@grogarden/gro/package_json.js';
 export const package_json = {
 	name: '@grogarden/gro',
 	description: 'task runner and toolkit extending SvelteKit',
-	version: '0.94.2',
+	version: '0.95.0',
 	bin: {gro: 'dist/gro.js'},
 	license: 'MIT',
 	homepage: 'https://www.grogarden.org/',
@@ -62,8 +62,6 @@ export const package_json = {
 		'eslint-plugin-svelte': '^2.34.0',
 		svelte: '^4.2.1',
 		'svelte-check': '^3.5.2',
-		'svelte-preprocess': '^5.0.4',
-		'svelte-preprocess-esbuild': '^3.0.1',
 		typescript: '^5.2.2',
 		uvu: '^0.5.6',
 	},
