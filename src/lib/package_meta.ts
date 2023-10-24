@@ -26,7 +26,7 @@ export const parse_package_meta = (url: Url, package_json: PackageJson): Package
 	// TODO hacky
 	const parse_repo = (r: string | null | undefined) => {
 		if (!r) return null;
-		return strip_start(strip_end(r, '.git'), 'git+');
+		return strip_end(strip_start(strip_end(r, '.git'), 'git+'), '/');
 	};
 
 	const repo_url = parse_repo(
