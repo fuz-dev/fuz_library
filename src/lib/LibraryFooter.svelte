@@ -6,7 +6,7 @@
 
 	export let pkg: PackageMeta;
 	export let root_url: Url | null = null;
-	export let emoji = '🧶';
+	export let emoji = '🧶'; // TODO get from `pkg.package_json.icon`?
 
 	$: ({repo_url} = pkg);
 
@@ -14,6 +14,7 @@
 </script>
 
 <footer class="panel padded_lg">
+	<!-- TODO it's weird for this to linkify the emoji to the org, maybe just Breadcrumb, or should that be a separate component? extend the Breadcrumb API? -->
 	<slot {org_url}
 		>{#if org_url}<a class="emoji" href={org_url} rel="me">{emoji}</a>{:else}{emoji}{/if}</slot
 	>
