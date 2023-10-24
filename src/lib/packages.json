@@ -4,7 +4,7 @@
 		"package_json": {
 			"name": "@fuz.dev/fuz_library",
 			"description": "components and helpers for Svelte, SvelteKit, and Fuz",
-			"version": "0.9.0",
+			"version": "0.11.1",
 			"license": "MIT",
 			"type": "module",
 			"homepage": "https://library.fuz.dev/",
@@ -28,16 +28,16 @@
 			"devDependencies": {
 				"@changesets/changelog-git": "^0.1.14",
 				"@feltjs/eslint-config": "^0.4.0",
-				"@fuz.dev/fuz": "^0.72.1",
-				"@fuz.dev/fuz_code": "^0.3.0",
-				"@grogarden/gro": "^0.94.2",
+				"@fuz.dev/fuz": "^0.73.0",
+				"@fuz.dev/fuz_code": "^0.3.1",
+				"@grogarden/gro": "^0.95.3",
 				"@sveltejs/adapter-static": "^2.0.3",
-				"@sveltejs/kit": "^1.25.1",
+				"@sveltejs/kit": "^1.25.2",
 				"@sveltejs/package": "^2.2.2",
-				"@types/node": "^20.8.2",
-				"@typescript-eslint/eslint-plugin": "^6.7.4",
-				"@typescript-eslint/parser": "^6.7.4",
-				"eslint": "^8.50.0",
+				"@types/node": "^20.8.6",
+				"@typescript-eslint/eslint-plugin": "^6.8.0",
+				"@typescript-eslint/parser": "^6.8.0",
+				"eslint": "^8.51.0",
 				"eslint-plugin-svelte": "^2.34.0",
 				"prettier": "^3.0.3",
 				"prettier-plugin-svelte": "^3.0.3",
@@ -45,10 +45,10 @@
 				"prismjs": "^1.29.0",
 				"svelte": "^4.2.1",
 				"svelte-check": "^3.5.2",
-				"svelte-preprocess-esbuild": "^3.0.1",
 				"tslib": "^2.6.2",
 				"typescript": "^5.2.2",
-				"uvu": "^0.5.6"
+				"uvu": "^0.5.6",
+				"zod": "^3.22.4"
 			},
 			"eslintConfig": {"root": true, "extends": "@feltjs", "rules": {"no-console": 1}},
 			"prettier": {
@@ -117,7 +117,14 @@
 					"svelte": "./dist/LibraryVocab.svelte",
 					"types": "./dist/LibraryVocab.svelte.d.ts"
 				},
-				"./package.json": {"default": "./dist/package.json", "types": "./dist/package.json.d.ts"},
+				"./package_meta.js": {
+					"default": "./dist/package_meta.js",
+					"types": "./dist/package_meta.d.ts"
+				},
+				"./package.gen.js": {
+					"default": "./dist/package.gen.js",
+					"types": "./dist/package.gen.d.ts"
+				},
 				"./package.js": {"default": "./dist/package.js", "types": "./dist/package.d.ts"},
 				"./packages.json": {
 					"default": "./dist/packages.json",
@@ -164,7 +171,7 @@
 		"package_json": {
 			"name": "@grogarden/gro",
 			"description": "task runner and toolkit extending SvelteKit",
-			"version": "0.93.1",
+			"version": "0.95.8",
 			"bin": {"gro": "dist/gro.js"},
 			"license": "MIT",
 			"homepage": "https://www.grogarden.org/",
@@ -195,7 +202,7 @@
 			],
 			"files": ["dist"],
 			"dependencies": {
-				"@grogarden/util": "^0.15.0",
+				"@grogarden/util": "^0.15.1",
 				"@ryanatkn/json-schema-to-typescript": "^11.1.5",
 				"chokidar": "^3.5.3",
 				"dotenv": "^16.3.1",
@@ -206,29 +213,27 @@
 				"prettier-plugin-svelte": "^3.0.3",
 				"tiny-glob": "^0.2.9",
 				"tslib": "^2.6.2",
-				"zod": "^3.22.2"
+				"zod": "^3.22.4"
 			},
 			"peerDependencies": {"esbuild": "^0.18", "svelte": "^4"},
 			"devDependencies": {
 				"@changesets/changelog-git": "^0.1.14",
 				"@changesets/types": "^5.2.1",
 				"@feltjs/eslint-config": "^0.4.0",
-				"@fuz.dev/fuz": "^0.72.1",
-				"@fuz.dev/fuz_library": "^0.9.0",
+				"@fuz.dev/fuz": "^0.73.0",
+				"@fuz.dev/fuz_library": "^0.11.0",
 				"@sveltejs/adapter-static": "^2.0.3",
-				"@sveltejs/kit": "^1.25.1",
+				"@sveltejs/kit": "^1.25.2",
 				"@sveltejs/package": "^2.2.2",
 				"@types/fs-extra": "^11.0.2",
-				"@types/node": "^20.7.2",
-				"@typescript-eslint/eslint-plugin": "^6.7.3",
-				"@typescript-eslint/parser": "^6.7.3",
+				"@types/node": "^20.8.6",
+				"@typescript-eslint/eslint-plugin": "^6.8.0",
+				"@typescript-eslint/parser": "^6.8.0",
 				"esbuild": "^0.18.0",
-				"eslint": "^8.50.0",
-				"eslint-plugin-svelte": "^2.33.2",
+				"eslint": "^8.51.0",
+				"eslint-plugin-svelte": "^2.34.0",
 				"svelte": "^4.2.1",
 				"svelte-check": "^3.5.2",
-				"svelte-preprocess": "^5.0.4",
-				"svelte-preprocess-esbuild": "^3.0.1",
 				"typescript": "^5.2.2",
 				"uvu": "^0.5.6"
 			},
@@ -250,8 +255,8 @@
 					"types": "./dist/changeset.task.d.ts"
 				},
 				"./check.task.js": {"default": "./dist/check.task.js", "types": "./dist/check.task.d.ts"},
+				"./clean_fs.js": {"default": "./dist/clean_fs.js", "types": "./dist/clean_fs.d.ts"},
 				"./clean.task.js": {"default": "./dist/clean.task.js", "types": "./dist/clean.task.d.ts"},
-				"./clean.js": {"default": "./dist/clean.js", "types": "./dist/clean.d.ts"},
 				"./cli.js": {"default": "./dist/cli.js", "types": "./dist/cli.d.ts"},
 				"./commit.task.js": {
 					"default": "./dist/commit.task.js",
@@ -293,10 +298,6 @@
 					"types": "./dist/esbuild_plugin_sveltekit_shim_env.d.ts"
 				},
 				"./exists.js": {"default": "./dist/exists.js", "types": "./dist/exists.d.ts"},
-				"./exports.task.js": {
-					"default": "./dist/exports.task.js",
-					"types": "./dist/exports.task.d.ts"
-				},
 				"./format_directory.js": {
 					"default": "./dist/format_directory.js",
 					"types": "./dist/format_directory.d.ts"
@@ -353,6 +354,11 @@
 					"default": "./dist/package_json.js",
 					"types": "./dist/package_json.d.ts"
 				},
+				"./package.gen.js": {
+					"default": "./dist/package.gen.js",
+					"types": "./dist/package.gen.d.ts"
+				},
+				"./package.js": {"default": "./dist/package.js", "types": "./dist/package.d.ts"},
 				"./path.js": {"default": "./dist/path.js", "types": "./dist/path.d.ts"},
 				"./paths.js": {"default": "./dist/paths.js", "types": "./dist/paths.d.ts"},
 				"./plugin.js": {"default": "./dist/plugin.js", "types": "./dist/plugin.d.ts"},
@@ -364,6 +370,10 @@
 				"./release.task.js": {
 					"default": "./dist/release.task.js",
 					"types": "./dist/release.task.d.ts"
+				},
+				"./resolve_node_specifier.js": {
+					"default": "./dist/resolve_node_specifier.js",
+					"types": "./dist/resolve_node_specifier.d.ts"
 				},
 				"./resolve_specifier.js": {
 					"default": "./dist/resolve_specifier.js",
@@ -404,10 +414,6 @@
 				"./sveltekit_shim_env.js": {
 					"default": "./dist/sveltekit_shim_env.js",
 					"types": "./dist/sveltekit_shim_env.d.ts"
-				},
-				"./sveltekit_sync.js": {
-					"default": "./dist/sveltekit_sync.js",
-					"types": "./dist/sveltekit_sync.d.ts"
 				},
 				"./sync.task.js": {"default": "./dist/sync.task.js", "types": "./dist/sync.task.d.ts"},
 				"./task_module.js": {
@@ -454,24 +460,23 @@
 			"files": ["dist"],
 			"devDependencies": {
 				"@feltjs/eslint-config": "^0.4.0",
-				"@fuz.dev/fuz": "^0.72.1",
-				"@fuz.dev/fuz_contextmenu": "^0.3.1",
-				"@fuz.dev/fuz_dialog": "^0.3.0",
-				"@fuz.dev/fuz_library": "^0.9.0",
-				"@grogarden/gro": "^0.93.1",
-				"@grogarden/util": "^0.15.0",
+				"@fuz.dev/fuz": "^0.73.0",
+				"@fuz.dev/fuz_contextmenu": "^0.4.1",
+				"@fuz.dev/fuz_dialog": "^0.3.1",
+				"@fuz.dev/fuz_library": "^0.11.0",
+				"@grogarden/gro": "^0.95.5",
+				"@grogarden/util": "^0.15.1",
 				"@sveltejs/adapter-static": "^2.0.3",
-				"@sveltejs/kit": "^1.25.1",
+				"@sveltejs/kit": "^1.25.2",
 				"@sveltejs/package": "^2.2.2",
-				"@typescript-eslint/eslint-plugin": "^6.7.4",
-				"@typescript-eslint/parser": "^6.7.4",
-				"eslint": "^8.50.0",
-				"eslint-plugin-svelte": "^2.33.2",
+				"@typescript-eslint/eslint-plugin": "^6.8.0",
+				"@typescript-eslint/parser": "^6.8.0",
+				"eslint": "^8.51.0",
+				"eslint-plugin-svelte": "^2.34.0",
 				"prettier": "^3.0.3",
 				"prettier-plugin-svelte": "^3.0.3",
 				"svelte": "^4.2.1",
 				"svelte-check": "^3.5.2",
-				"svelte-preprocess-esbuild": "^3.0.1",
 				"tslib": "^2.6.2",
 				"typescript": "^5.2.2",
 				"uvu": "^0.5.6"
@@ -484,7 +489,8 @@
 				"singleQuote": true,
 				"bracketSpacing": false,
 				"overrides": [{"files": "package.json", "options": {"useTabs": false}}]
-			}
+			},
+			"exports": {"./example.js": {"default": "./dist/example.js", "types": "./dist/example.d.ts"}}
 		}
 	}
 ]
