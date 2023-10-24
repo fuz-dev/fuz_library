@@ -1,5 +1,12 @@
 # @fuz.dev/fuz_library
 
+## 0.11.1
+
+### Patch Changes
+
+- 20d86c2: fix loading package.json for `gro packages`
+- 2033e1c: normalize `PackageMeta.repo_url`
+
 ## 0.11.0
 
 ### Minor Changes
