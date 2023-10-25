@@ -15,8 +15,8 @@
 <TomeDetails {tome}>
 	<div class="prose">
 		<section>
-			<Code content={`<Alert>:-)</Alert>`} />
-			<Alert>:-)</Alert>
+			<Code content={`<Alert>info</Alert>`} />
+			<Alert>info</Alert>
 		</section>
 		<section>
 			<Code
@@ -31,6 +31,7 @@
 			<Alert icon="😑" button={true} on:click={() => clicks++}>
 				alerts can be buttons{dots}
 			</Alert>
+			<aside>⚠️ this API will probably change</aside>
 		</section>
 		<section>
 			<Code
