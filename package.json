@@ -3,7 +3,6 @@
   "description": "components and helpers for Svelte, SvelteKit, and Fuz",
   "version": "0.11.1",
   "license": "MIT",
-  "type": "module",
   "homepage": "https://library.fuz.dev/",
   "repository": "https://github.com/fuz-dev/fuz_library",
   "author": {
@@ -11,6 +10,7 @@
     "email": "mail@ryanatkn.com",
     "url": "https://www.ryanatkn.com/"
   },
+  "type": "module",
   "engines": {
     "node": ">=20.7"
   },
@@ -25,7 +25,7 @@
     "dist"
   ],
   "dependencies": {
-    "@grogarden/util": "^0.15.0"
+    "@grogarden/util": "^0.15.2"
   },
   "peerDependencies": {
     "@sveltejs/kit": "*",
@@ -33,23 +33,23 @@
   },
   "devDependencies": {
     "@changesets/changelog-git": "^0.1.14",
-    "@feltjs/eslint-config": "^0.4.0",
+    "@feltjs/eslint-config": "^0.4.1",
     "@fuz.dev/fuz": "^0.73.0",
     "@fuz.dev/fuz_code": "^0.3.1",
-    "@grogarden/gro": "^0.95.3",
+    "@grogarden/gro": "^0.96.0",
     "@sveltejs/adapter-static": "^2.0.3",
-    "@sveltejs/kit": "^1.25.2",
+    "@sveltejs/kit": "^1.27.0",
     "@sveltejs/package": "^2.2.2",
-    "@types/node": "^20.8.6",
-    "@typescript-eslint/eslint-plugin": "^6.8.0",
-    "@typescript-eslint/parser": "^6.8.0",
-    "eslint": "^8.51.0",
+    "@types/node": "^20.8.8",
+    "@typescript-eslint/eslint-plugin": "^6.9.0",
+    "@typescript-eslint/parser": "^6.9.0",
+    "eslint": "^8.52.0",
     "eslint-plugin-svelte": "^2.34.0",
     "prettier": "^3.0.3",
     "prettier-plugin-svelte": "^3.0.3",
     "prism-svelte": "^0.5.0",
     "prismjs": "^1.29.0",
-    "svelte": "^4.2.1",
+    "svelte": "^4.2.2",
     "svelte-check": "^3.5.2",
     "tslib": "^2.6.2",
     "typescript": "^5.2.2",
