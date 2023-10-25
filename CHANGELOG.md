@@ -1,5 +1,11 @@
 # @fuz.dev/fuz_library
 
+## 0.11.2
+
+### Patch Changes
+
+- 0106770: fix PackageSummary centering
+
 ## 0.11.1
 
 ### Patch Changes
