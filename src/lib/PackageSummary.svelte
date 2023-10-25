@@ -43,9 +43,7 @@
 		{/if} -->
 	</div>
 	{#if npm_url}
-		<slot name="npm_url" {npm_url}
-			><blockquote class="npm_url text_align_center">npm i -D {name}</blockquote></slot
-		>
+		<slot name="npm_url" {npm_url}><blockquote class="npm_url">npm i -D {name}</blockquote></slot>
 	{/if}
 	<!-- TODO more details behind a `<details>`, including author -->
 </div>
@@ -63,9 +61,11 @@
 	.repo_name {
 		font-size: var(--size_2);
 		font-weight: 400;
+		text-align: center;
 	}
 	.npm_url {
 		font-family: var(--font_family_mono);
+		text-align: center;
 	}
 	.chip {
 		margin-left: var(--spacing_xs2);
