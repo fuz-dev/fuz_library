@@ -25,7 +25,7 @@ export const package_json = {
 		'@feltjs/eslint-config': '^0.4.1',
 		'@fuz.dev/fuz': '^0.75.1',
 		'@fuz.dev/fuz_code': '^0.3.1',
-		'@grogarden/gro': '^0.96.0',
+		'@grogarden/gro': '^0.96.1',
 		'@sveltejs/adapter-static': '^2.0.3',
 		'@sveltejs/kit': '^1.27.1',
 		'@sveltejs/package': '^2.2.2',
@@ -55,20 +55,31 @@ export const package_json = {
 		overrides: [{files: 'package.json', options: {useTabs: false}}],
 	},
 	exports: {
-		'./Alert.svelte': {svelte: './dist/Alert.svelte', types: './dist/Alert.svelte.d.ts'},
+		'./Alert.svelte': {
+			svelte: './dist/Alert.svelte',
+			default: './dist/Alert.svelte',
+			types: './dist/Alert.svelte.d.ts',
+		},
 		'./alert.js': {default: './dist/alert.js', types: './dist/alert.d.ts'},
 		'./Breadcrumb.svelte': {
 			svelte: './dist/Breadcrumb.svelte',
+			default: './dist/Breadcrumb.svelte',
 			types: './dist/Breadcrumb.svelte.d.ts',
 		},
-		'./Card.svelte': {svelte: './dist/Card.svelte', types: './dist/Card.svelte.d.ts'},
+		'./Card.svelte': {
+			svelte: './dist/Card.svelte',
+			default: './dist/Card.svelte',
+			types: './dist/Card.svelte.d.ts',
+		},
 		'./CopyToClipboard.svelte': {
 			svelte: './dist/CopyToClipboard.svelte',
+			default: './dist/CopyToClipboard.svelte',
 			types: './dist/CopyToClipboard.svelte.d.ts',
 		},
 		'./devmode.js': {default: './dist/devmode.js', types: './dist/devmode.d.ts'},
 		'./DevmodeControls.svelte': {
 			svelte: './dist/DevmodeControls.svelte',
+			default: './dist/DevmodeControls.svelte',
 			types: './dist/DevmodeControls.svelte.d.ts',
 		},
 		'./fetch_packages.js': {
@@ -77,33 +88,48 @@ export const package_json = {
 		},
 		'./GithubLogo.svelte': {
 			svelte: './dist/GithubLogo.svelte',
+			default: './dist/GithubLogo.svelte',
 			types: './dist/GithubLogo.svelte.d.ts',
 		},
 		'./helpers.js': {default: './dist/helpers.js', types: './dist/helpers.d.ts'},
-		'./HueInput.svelte': {svelte: './dist/HueInput.svelte', types: './dist/HueInput.svelte.d.ts'},
-		'./Library.svelte': {svelte: './dist/Library.svelte', types: './dist/Library.svelte.d.ts'},
+		'./HueInput.svelte': {
+			svelte: './dist/HueInput.svelte',
+			default: './dist/HueInput.svelte',
+			types: './dist/HueInput.svelte.d.ts',
+		},
+		'./Library.svelte': {
+			svelte: './dist/Library.svelte',
+			default: './dist/Library.svelte',
+			types: './dist/Library.svelte.d.ts',
+		},
 		'./LibraryFooter.svelte': {
 			svelte: './dist/LibraryFooter.svelte',
+			default: './dist/LibraryFooter.svelte',
 			types: './dist/LibraryFooter.svelte.d.ts',
 		},
 		'./LibraryHeader.svelte': {
 			svelte: './dist/LibraryHeader.svelte',
+			default: './dist/LibraryHeader.svelte',
 			types: './dist/LibraryHeader.svelte.d.ts',
 		},
 		'./LibraryMenu.svelte': {
 			svelte: './dist/LibraryMenu.svelte',
+			default: './dist/LibraryMenu.svelte',
 			types: './dist/LibraryMenu.svelte.d.ts',
 		},
 		'./LibraryNav.svelte': {
 			svelte: './dist/LibraryNav.svelte',
+			default: './dist/LibraryNav.svelte',
 			types: './dist/LibraryNav.svelte.d.ts',
 		},
 		'./LibraryPanel.svelte': {
 			svelte: './dist/LibraryPanel.svelte',
+			default: './dist/LibraryPanel.svelte',
 			types: './dist/LibraryPanel.svelte.d.ts',
 		},
 		'./LibraryVocab.svelte': {
 			svelte: './dist/LibraryVocab.svelte',
+			default: './dist/LibraryVocab.svelte',
 			types: './dist/LibraryVocab.svelte.d.ts',
 		},
 		'./package_meta.js': {default: './dist/package_meta.js', types: './dist/package_meta.d.ts'},
@@ -111,31 +137,45 @@ export const package_json = {
 		'./package.js': {default: './dist/package.js', types: './dist/package.d.ts'},
 		'./PackageDetail.svelte': {
 			svelte: './dist/PackageDetail.svelte',
+			default: './dist/PackageDetail.svelte',
 			types: './dist/PackageDetail.svelte.d.ts',
 		},
 		'./packages.json': {default: './dist/packages.json', types: './dist/packages.json.d.ts'},
 		'./packages.task.js': {default: './dist/packages.task.js', types: './dist/packages.task.d.ts'},
 		'./PackageSummary.svelte': {
 			svelte: './dist/PackageSummary.svelte',
+			default: './dist/PackageSummary.svelte',
 			types: './dist/PackageSummary.svelte.d.ts',
 		},
 		'./PendingAnimation.svelte': {
 			svelte: './dist/PendingAnimation.svelte',
+			default: './dist/PendingAnimation.svelte',
 			types: './dist/PendingAnimation.svelte.d.ts',
 		},
 		'./PendingButton.svelte': {
 			svelte: './dist/PendingButton.svelte',
+			default: './dist/PendingButton.svelte',
 			types: './dist/PendingButton.svelte.d.ts',
 		},
-		'./Redirect.svelte': {svelte: './dist/Redirect.svelte', types: './dist/Redirect.svelte.d.ts'},
-		'./Teleport.svelte': {svelte: './dist/Teleport.svelte', types: './dist/Teleport.svelte.d.ts'},
+		'./Redirect.svelte': {
+			svelte: './dist/Redirect.svelte',
+			default: './dist/Redirect.svelte',
+			types: './dist/Redirect.svelte.d.ts',
+		},
+		'./Teleport.svelte': {
+			svelte: './dist/Teleport.svelte',
+			default: './dist/Teleport.svelte',
+			types: './dist/Teleport.svelte.d.ts',
+		},
 		'./tome.js': {default: './dist/tome.js', types: './dist/tome.d.ts'},
 		'./TomeDetail.svelte': {
 			svelte: './dist/TomeDetail.svelte',
+			default: './dist/TomeDetail.svelte',
 			types: './dist/TomeDetail.svelte.d.ts',
 		},
 		'./TomeTitle.svelte': {
 			svelte: './dist/TomeTitle.svelte',
+			default: './dist/TomeTitle.svelte',
 			types: './dist/TomeTitle.svelte.d.ts',
 		},
 	},
