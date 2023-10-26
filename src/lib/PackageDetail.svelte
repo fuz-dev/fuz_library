@@ -88,6 +88,7 @@
 						class="module"
 						class:ts={module_name.endsWith('.js')}
 						class:svelte={module_name.endsWith('.svelte')}
+						class:css={module_name.endsWith('.css')}
 						class:json={module_name.endsWith('.json')}
 					>
 						<a class="chip" href={source_url}>{module_name}</a>
@@ -135,12 +136,16 @@
 	}
 	.module {
 		margin-bottom: var(--spacing_xs);
+		--link_color: var(--text_2);
 	}
 	.ts {
 		--link_color: var(--color_1);
 	}
 	.svelte {
 		--link_color: var(--color_4);
+	}
+	.css {
+		--link_color: var(--color_2);
 	}
 	.json {
 		--link_color: var(--color_6);
