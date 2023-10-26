@@ -29,7 +29,7 @@
 	{#if npm_url}
 		<slot name="npm_url" {npm_url}><blockquote class="npm_url">npm i -D {name}</blockquote></slot>
 	{/if}
-	<section class="spaced">
+	<section class="width_full spaced">
 		<div class="prose">
 			<h3>package</h3>
 		</div>
@@ -59,6 +59,10 @@
 				<code>license:</code> <a class="chip" title="license" href={license_url}>{license}</a>
 			</div>
 		{/if}
+		<details>
+			<summary>view <code>pkg: PackageMeta</code></summary>
+			<pre><code>{JSON.stringify(pkg, null, '\t')}</code></pre>
+		</details>
 	</section>
 	<!-- TODO more details behind a `<details>`, including author -->
 </div>
@@ -71,7 +75,8 @@
 		display: flex;
 		flex-direction: column;
 		align-items: flex-start;
-		max-width: var(--max_width, var(--width_sm));
+		width: 100%;
+		max-width: var(--max_width, var(--width_md));
 	}
 	.repo_name {
 		font-size: var(--size_2);
@@ -85,5 +90,10 @@
 	.chip {
 		margin-left: var(--spacing_xs2);
 		margin-right: var(--spacing_xs2);
+	}
+	pre {
+		display: flex;
+		overflow: auto;
+		width: 100%;
 	}
 </style>
