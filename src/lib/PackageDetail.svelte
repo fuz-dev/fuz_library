@@ -23,37 +23,43 @@
 	<slot />
 	{#if description}
 		<slot name="description" {description}
-			><blockquote class="spaced text_align_center">{description}</blockquote></slot
+			><blockquote class="spaced">{description}</blockquote></slot
 		>
 	{/if}
-	{#if homepage_url}
-		<slot name="homepage_url" {homepage_url}
-			><div class="spaced">
-				<a class="chip" class:active={homepage_url === $page.url.href} href={homepage_url}
-					>{format_host(homepage_url)}</a
-				>
-			</div></slot
-		>
-	{/if}
-	<div class="box row spaced">
-		{#if repo_url}
-			<a class="chip" href={repo_url}>repo</a>
-		{/if}
-		{#if changelog_url}
-			<a class="chip" title="version" href={changelog_url}>{version}</a>
-		{/if}
-		{#if npm_url}
-			<a class="chip" href={npm_url}>npm</a>
-		{/if}
-	</div>
-	<div class="box row spaced">
-		{#if license_url}
-			<a class="chip" title="license" href={license_url}>license: {license}</a>
-		{/if}
-	</div>
 	{#if npm_url}
 		<slot name="npm_url" {npm_url}><blockquote class="npm_url">npm i -D {name}</blockquote></slot>
 	{/if}
+	<section class="spaced">
+		<div class="prose">
+			<h3>package</h3>
+		</div>
+		{#if homepage_url}
+			<slot name="homepage_url" {homepage_url}>
+				<div class="row">
+					<code>homepage:</code>
+					<a class="chip" class:active={homepage_url === $page.url.href} href={homepage_url}
+						>{format_host(homepage_url)}</a
+					>
+				</div>
+			</slot>
+		{/if}
+		{#if repo_url}
+			<div class="row"><code>repo:</code> <a class="chip" href={repo_url}>{repo_name}</a></div>
+		{/if}
+		{#if npm_url}
+			<div class="row"><code>npm:</code> <a class="chip" href={npm_url}>{name}</a></div>
+		{/if}
+		{#if changelog_url}
+			<div class="row">
+				<code>version:</code> <a class="chip" title="version" href={changelog_url}>{version}</a>
+			</div>
+		{/if}
+		{#if license_url}
+			<div class="row">
+				<code>license:</code> <a class="chip" title="license" href={license_url}>{license}</a>
+			</div>
+		{/if}
+	</section>
 	<!-- TODO more details behind a `<details>`, including author -->
 </div>
 
@@ -64,7 +70,7 @@
 		padding: var(--spacing_lg);
 		display: flex;
 		flex-direction: column;
-		align-items: center;
+		align-items: flex-start;
 		max-width: var(--max_width, var(--width_sm));
 	}
 	.repo_name {

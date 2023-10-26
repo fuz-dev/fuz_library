@@ -24,6 +24,8 @@
 		</section>
 	</div>
 	<section>
-		<PackageDetail {pkg} />
+		<div class="box panel padded_md">
+			<PackageDetail {pkg} />
+		</div>
 	</section>
 </TomeDetail>
