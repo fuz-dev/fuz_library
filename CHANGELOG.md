@@ -1,5 +1,11 @@
 # @fuz.dev/fuz_library
 
+## 0.12.2
+
+### Patch Changes
+
+- b50bb29: improve `PackageDetail`
+
 ## 0.12.1
 
 ### Patch Changes
