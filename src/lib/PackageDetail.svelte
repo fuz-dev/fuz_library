@@ -1,11 +1,12 @@
 <script lang="ts">
 	import {page} from '$app/stores';
 	import {format_host, type PackageMeta} from '$lib/package_meta.js';
+	import {strip_end, strip_start} from '@grogarden/util/string.js';
 
 	export let pkg: PackageMeta; // TODO normalized version with cached primitives?
 
 	$: ({package_json, npm_url, repo_name, repo_url, changelog_url, homepage_url} = pkg);
-	$: ({name, version, description, license, repository} = package_json);
+	$: ({name, version, description, license, repository, exports: pkg_exports} = package_json);
 
 	$: repository_url = repository
 		? typeof repository === 'string'
@@ -13,6 +14,14 @@
 			: repository.url
 		: null;
 	$: license_url = license && repository_url ? repository_url + '/blob/main/LICENSE' : null;
+
+	// TODO helper, look at existing code
+	$: modules = pkg_exports
+		? Object.keys(pkg_exports).map((k) =>
+				// TODO regexp
+				strip_end(strip_end(strip_start(k, './'), '.js'), '.svelte'),
+		  )
+		: null;
 </script>
 
 <div class="package_detail">
@@ -65,6 +74,17 @@
 			<pre><code>{JSON.stringify(pkg, null, '\t')}</code></pre>
 		</details>
 	</section>
+
+	{#if modules}
+		<section class="width_full spaced">
+			<menu>
+				{#each modules as mod (mod)}
+					<li>{mod}</li>
+				{/each}
+			</menu>
+		</section>
+	{/if}
+
 	<!-- TODO more details behind a `<details>`, including author -->
 	<!-- TODO render exports, then link to source, then tomes -->
 </div>
