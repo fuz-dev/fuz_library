@@ -4,7 +4,7 @@
 
 	import {get_tome} from '$lib/tome.js';
 	import Card from '$lib/Card.svelte';
-	import TomeDetails from '$lib/TomeDetails.svelte';
+	import TomeDetail from '$lib/TomeDetail.svelte';
 
 	const LIBRARY_ITEM_NAME = 'Card';
 	const tome = get_tome(LIBRARY_ITEM_NAME);
@@ -12,7 +12,7 @@
 	const href = `${base}/library`;
 </script>
 
-<TomeDetails {tome}>
+<TomeDetail {tome}>
 	<div class="prose box">
 		<section>
 			<Code
@@ -113,7 +113,7 @@
 			</Card>
 		</section>
 	</div>
-</TomeDetails>
+</TomeDetail>
 
 <style>
 	section {

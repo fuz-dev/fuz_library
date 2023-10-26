@@ -70,6 +70,8 @@
 		top: 0;
 		height: 100%;
 		transform: translate3d(calc(-100% - var(--spacing_sm)), 0, 0);
+		display: flex;
+		justify-content: center;
 	}
 	.menu {
 		position: sticky;
@@ -79,7 +81,6 @@
 		.menu_wrapper {
 			position: relative;
 			transform: none;
-			margin-bottom: var(--spacing_3);
 		}
 	}
 	section {

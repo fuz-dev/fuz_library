@@ -3,7 +3,7 @@
 
 	import {get_tome} from '$lib/tome.js';
 	import Alert from '$lib/Alert.svelte';
-	import TomeDetails from '$lib/TomeDetails.svelte';
+	import TomeDetail from '$lib/TomeDetail.svelte';
 
 	const LIBRARY_ITEM_NAME = 'Alert';
 	const tome = get_tome(LIBRARY_ITEM_NAME);
@@ -12,7 +12,7 @@
 	$: dots = Array.from({length: clicks}).reduce((r, _) => r + '.', '');
 </script>
 
-<TomeDetails {tome}>
+<TomeDetail {tome}>
 	<div class="prose">
 		<section>
 			<Code content={`<Alert>info</Alert>`} />
@@ -107,4 +107,4 @@
 			</Alert>
 		</section>
 	</div>
-</TomeDetails>
+</TomeDetail>

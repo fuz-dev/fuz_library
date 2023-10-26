@@ -3,7 +3,7 @@
 
 	import {get_tome} from '$lib/tome.js';
 	import PendingButton from '$lib/PendingButton.svelte';
-	import TomeDetails from '$lib/TomeDetails.svelte';
+	import TomeDetail from '$lib/TomeDetail.svelte';
 
 	const LIBRARY_ITEM_NAME = 'PendingButton';
 	const tome = get_tome(LIBRARY_ITEM_NAME);
@@ -16,7 +16,7 @@
 		Extract a common thing to make arbitrary things not change width.
 	-->
 
-<TomeDetails {tome}>
+<TomeDetail {tome}>
 	<div class="prose box">
 		<section class="box">
 			<blockquote class="text_align_center">
@@ -54,4 +54,4 @@
 			</PendingButton>
 		</section>
 	</div>
-</TomeDetails>
+</TomeDetail>
