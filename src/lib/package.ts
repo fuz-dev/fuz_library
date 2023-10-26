@@ -3,7 +3,7 @@ import type {PackageJson} from '@grogarden/gro/package_json.js';
 export const package_json = {
 	name: '@fuz.dev/fuz_library',
 	description: 'components and helpers for Svelte, SvelteKit, and Fuz',
-	version: '0.11.2',
+	version: '0.11.3',
 	license: 'MIT',
 	homepage: 'https://library.fuz.dev/',
 	repository: 'https://github.com/fuz-dev/fuz_library',

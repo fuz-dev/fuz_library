@@ -1,5 +1,11 @@
 # @fuz.dev/fuz_library
 
+## 0.11.3
+
+### Patch Changes
+
+- f2dfe29: add `PackageDetail`
+
 ## 0.11.2
 
 ### Patch Changes
