@@ -1,5 +1,11 @@
 # @fuz.dev/fuz_library
 
+## 0.12.1
+
+### Patch Changes
+
+- 288f047: improve `PackageDetail`
+
 ## 0.12.0
 
 ### Minor Changes
