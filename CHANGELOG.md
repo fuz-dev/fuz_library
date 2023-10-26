@@ -1,5 +1,15 @@
 # @fuz.dev/fuz_library
 
+## 0.12.0
+
+### Minor Changes
+
+- 4fb64d0: rename `TomeDetail` from `TomeDetails`
+
+### Patch Changes
+
+- 4fb64d0: improve `PackageDetail`
+
 ## 0.11.3
 
 ### Patch Changes
