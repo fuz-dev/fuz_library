@@ -1,7 +1,7 @@
 <script lang="ts">
 	import {page} from '$app/stores';
 	import {format_host, type PackageMeta} from '$lib/package_meta.js';
-	import {strip_end, strip_start} from '@grogarden/util/string.js';
+	import {strip_start} from '@grogarden/util/string.js';
 
 	export let pkg: PackageMeta; // TODO normalized version with cached primitives?
 
@@ -16,12 +16,7 @@
 	$: license_url = license && repository_url ? repository_url + '/blob/main/LICENSE' : null;
 
 	// TODO helper, look at existing code
-	$: modules = pkg_exports
-		? Object.keys(pkg_exports).map((k) =>
-				// TODO regexp
-				strip_end(strip_end(strip_start(k, './'), '.js'), '.svelte'),
-		  )
-		: null;
+	$: modules = pkg_exports ? Object.keys(pkg_exports).map((k) => strip_start(k, './')) : null;
 </script>
 
 <div class="package_detail">
