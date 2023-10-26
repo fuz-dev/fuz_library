@@ -66,6 +66,7 @@
 		</details>
 	</section>
 	<!-- TODO more details behind a `<details>`, including author -->
+	<!-- TODO render exports, then link to source, then tomes -->
 </div>
 
 <!-- TODO better rendering, also show author, etc -->
@@ -96,5 +97,8 @@
 		display: flex;
 		overflow: auto;
 		width: 100%;
+	}
+	.row {
+		margin-bottom: var(--spacing_xs);
 	}
 </style>
