@@ -1,5 +1,11 @@
 # @fuz.dev/fuz_library
 
+## 0.12.3
+
+### Patch Changes
+
+- 6249ae7: upgrade gro with default svelte export fix
+
 ## 0.12.2
 
 ### Patch Changes
