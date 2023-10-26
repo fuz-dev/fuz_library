@@ -130,9 +130,9 @@ export const package_json = {
 		'./Redirect.svelte': {svelte: './dist/Redirect.svelte', types: './dist/Redirect.svelte.d.ts'},
 		'./Teleport.svelte': {svelte: './dist/Teleport.svelte', types: './dist/Teleport.svelte.d.ts'},
 		'./tome.js': {default: './dist/tome.js', types: './dist/tome.d.ts'},
-		'./TomeDetails.svelte': {
-			svelte: './dist/TomeDetails.svelte',
-			types: './dist/TomeDetails.svelte.d.ts',
+		'./TomeDetail.svelte': {
+			svelte: './dist/TomeDetail.svelte',
+			types: './dist/TomeDetail.svelte.d.ts',
 		},
 		'./TomeTitle.svelte': {
 			svelte: './dist/TomeTitle.svelte',

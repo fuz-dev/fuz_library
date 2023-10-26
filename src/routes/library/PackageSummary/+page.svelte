@@ -3,7 +3,7 @@
 
 	import {get_tome} from '$lib/tome.js';
 	import PackageSummary from '$lib/PackageSummary.svelte';
-	import TomeDetails from '$lib/TomeDetails.svelte';
+	import TomeDetail from '$lib/TomeDetail.svelte';
 	import {parse_package_meta} from '$lib/package_meta.js';
 	import {package_json} from '$lib/package.js';
 
@@ -13,7 +13,7 @@
 	const pkg = parse_package_meta(package_json.homepage, package_json);
 </script>
 
-<TomeDetails {tome}>
+<TomeDetail {tome}>
 	<div class="prose">
 		<section>
 			<Code
@@ -26,4 +26,4 @@
 	<section>
 		<PackageSummary {pkg} />
 	</section>
-</TomeDetails>
+</TomeDetail>

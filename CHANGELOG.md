@@ -140,7 +140,7 @@
 
 ### Patch Changes
 
-- b890cdf: replace `TomeTitle` with header slot in `TomeDetails`
+- b890cdf: replace `TomeTitle` with header slot in `TomeDetail`
 
 ## 0.2.0
 

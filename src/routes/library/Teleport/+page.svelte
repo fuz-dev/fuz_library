@@ -3,7 +3,7 @@
 
 	import {get_tome} from '$lib/tome.js';
 	import Teleport from '$lib/Teleport.svelte';
-	import TomeDetails from '$lib/TomeDetails.svelte';
+	import TomeDetail from '$lib/TomeDetail.svelte';
 
 	const LIBRARY_ITEM_NAME = 'Teleport';
 	const tome = get_tome(LIBRARY_ITEM_NAME);
@@ -13,7 +13,7 @@
 	let teleport_2: HTMLElement | undefined = undefined;
 </script>
 
-<TomeDetails {tome}>
+<TomeDetail {tome}>
 	<section class="prose width_sm">
 		<aside>
 			<p>
@@ -46,7 +46,7 @@
 		</div>
 		<button on:click={() => (swap = !swap)}> teleport the bunny </button>
 	</section>
-</TomeDetails>
+</TomeDetail>
 
 <style>
 	.teleports {

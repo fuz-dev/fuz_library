@@ -201,9 +201,9 @@
       "default": "./dist/tome.js",
       "types": "./dist/tome.d.ts"
     },
-    "./TomeDetails.svelte": {
-      "svelte": "./dist/TomeDetails.svelte",
-      "types": "./dist/TomeDetails.svelte.d.ts"
+    "./TomeDetail.svelte": {
+      "svelte": "./dist/TomeDetail.svelte",
+      "types": "./dist/TomeDetail.svelte.d.ts"
     },
     "./TomeTitle.svelte": {
       "svelte": "./dist/TomeTitle.svelte",

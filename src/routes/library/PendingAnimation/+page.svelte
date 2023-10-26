@@ -3,7 +3,7 @@
 
 	import {get_tome} from '$lib/tome.js';
 	import PendingAnimation from '$lib/PendingAnimation.svelte';
-	import TomeDetails from '$lib/TomeDetails.svelte';
+	import TomeDetail from '$lib/TomeDetail.svelte';
 
 	const LIBRARY_ITEM_NAME = 'PendingAnimation';
 	const tome = get_tome(LIBRARY_ITEM_NAME);
@@ -16,7 +16,7 @@
 	let pendingAnimation1Running = false;
 </script>
 
-<TomeDetails {tome}>
+<TomeDetail {tome}>
 	<div class="prose box">
 		<section>
 			<Code content={`<PendingAnimation running={${pendingAnimation0Running}} />`} />
@@ -106,7 +106,7 @@
 			</PendingAnimation>
 		</section>
 	</div>
-</TomeDetails>
+</TomeDetail>
 
 <style>
 	code button.inline {
