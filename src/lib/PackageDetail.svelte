@@ -27,12 +27,11 @@
 		>
 	{/if}
 	{#if npm_url}
-		<slot name="npm_url" {npm_url}><blockquote class="npm_url">npm i -D {name}</blockquote></slot>
+		<slot name="npm_url" {npm_url}
+			><blockquote class="npm_url spaced">npm i -D {name}</blockquote></slot
+		>
 	{/if}
 	<section class="width_full spaced">
-		<div class="prose">
-			<h3>package</h3>
-		</div>
 		{#if homepage_url}
 			<slot name="homepage_url" {homepage_url}>
 				<div class="row">
@@ -59,6 +58,8 @@
 				<code>license:</code> <a class="chip" title="license" href={license_url}>{license}</a>
 			</div>
 		{/if}
+	</section>
+	<section class="width_full spaced">
 		<details>
 			<summary>view <code>pkg: PackageMeta</code></summary>
 			<pre><code>{JSON.stringify(pkg, null, '\t')}</code></pre>
