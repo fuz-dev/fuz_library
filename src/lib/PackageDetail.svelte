@@ -25,7 +25,12 @@
 		(module_name.endsWith('.js') ? module_name.slice(0, -3) + '.ts' : module_name);
 
 	// TODO helper, look at existing code
-	$: modules = pkg_exports ? Object.keys(pkg_exports).map((k) => strip_start(k, './')) : null;
+	$: modules = pkg_exports
+		? Object.keys(pkg_exports).map((k) => {
+				const v = strip_start(k, './');
+				return v === '.' ? 'index.js' : v;
+		  })
+		: null;
 </script>
 
 <div class="package_detail">
