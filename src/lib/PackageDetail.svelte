@@ -1,9 +1,12 @@
 <script lang="ts">
 	import {page} from '$app/stores';
-	import {format_host, type PackageMeta} from '$lib/package_meta.js';
 	import {strip_start} from '@grogarden/util/string.js';
 
+	import {format_host, type PackageMeta} from '$lib/package_meta.js';
+
 	export let pkg: PackageMeta; // TODO normalized version with cached primitives?
+
+	// TODO show other data (lines of code)
 
 	$: ({package_json, npm_url, repo_name, repo_url, changelog_url, homepage_url} = pkg);
 	$: ({name, version, description, license, repository, exports: pkg_exports} = package_json);
@@ -14,6 +17,12 @@
 			: repository.url
 		: null;
 	$: license_url = license && repository_url ? repository_url + '/blob/main/LICENSE' : null;
+
+	// TODO refactor
+	const to_source_url = (repo_url: string, module_name: string): string =>
+		repo_url +
+		'/blob/main/src/lib/' +
+		(module_name.endsWith('.js') ? module_name.slice(0, -3) + '.ts' : module_name);
 
 	// TODO helper, look at existing code
 	$: modules = pkg_exports ? Object.keys(pkg_exports).map((k) => strip_start(k, './')) : null;
@@ -35,7 +44,7 @@
 			><blockquote class="npm_url spaced">npm i -D {name}</blockquote></slot
 		>
 	{/if}
-	<section class="width_full spaced">
+	<section class="properties width_full spaced">
 		{#if homepage_url}
 			<slot name="homepage_url" {homepage_url}>
 				<div class="row">
@@ -70,11 +79,19 @@
 		</details>
 	</section>
 
-	{#if modules}
+	{#if modules && repo_url}
 		<section class="width_full spaced">
 			<menu>
-				{#each modules as mod (mod)}
-					<li>{mod}</li>
+				{#each modules as module_name (module_name)}
+					{@const source_url = to_source_url(repo_url, module_name)}
+					<li
+						class="module"
+						class:ts={module_name.endsWith('.js')}
+						class:svelte={module_name.endsWith('.svelte')}
+						class:json={module_name.endsWith('.json')}
+					>
+						<a class="chip" href={source_url}>{module_name}</a>
+					</li>
 				{/each}
 			</menu>
 		</section>
@@ -113,7 +130,19 @@
 		overflow: auto;
 		width: 100%;
 	}
-	.row {
+	.properties .row {
 		margin-bottom: var(--spacing_xs);
+	}
+	.module {
+		margin-bottom: var(--spacing_xs);
+	}
+	.ts {
+		--link_color: var(--color_1);
+	}
+	.svelte {
+		--link_color: var(--color_4);
+	}
+	.json {
+		--link_color: var(--color_6);
 	}
 </style>
