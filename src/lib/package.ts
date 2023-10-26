@@ -109,6 +109,10 @@ export const package_json = {
 		'./package_meta.js': {default: './dist/package_meta.js', types: './dist/package_meta.d.ts'},
 		'./package.gen.js': {default: './dist/package.gen.js', types: './dist/package.gen.d.ts'},
 		'./package.js': {default: './dist/package.js', types: './dist/package.d.ts'},
+		'./PackageDetail.svelte': {
+			svelte: './dist/PackageDetail.svelte',
+			types: './dist/PackageDetail.svelte.d.ts',
+		},
 		'./packages.json': {default: './dist/packages.json', types: './dist/packages.json.d.ts'},
 		'./packages.task.js': {default: './dist/packages.task.js', types: './dist/packages.task.d.ts'},
 		'./PackageSummary.svelte': {

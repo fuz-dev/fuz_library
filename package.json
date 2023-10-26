@@ -165,6 +165,10 @@
       "default": "./dist/package.js",
       "types": "./dist/package.d.ts"
     },
+    "./PackageDetail.svelte": {
+      "svelte": "./dist/PackageDetail.svelte",
+      "types": "./dist/PackageDetail.svelte.d.ts"
+    },
     "./packages.json": {
       "default": "./dist/packages.json",
       "types": "./dist/packages.json.d.ts"

@@ -5,14 +5,22 @@
 	export let pkg: PackageMeta; // TODO normalized version with cached primitives?
 
 	$: ({package_json, npm_url, repo_name, repo_url, changelog_url, homepage_url} = pkg);
-	$: ({name, version, description} = package_json);
+	$: ({name, version, description, license, repository} = package_json);
+
+	$: repository_url = repository
+		? typeof repository === 'string'
+			? repository
+			: repository.url
+		: null;
+	$: license_url = license && repository_url ? repository_url + '/blob/main/LICENSE' : null;
 </script>
 
-<div class="package_summary">
+<div class="package_detail">
 	<!-- TODO maybe continue this slot pattern, or maybe simplify? -->
 	<header class="spaced">
 		<slot name="repo_name" {repo_name}><div class="repo_name">{repo_name}</div></slot>
 	</header>
+	<slot />
 	{#if description}
 		<slot name="description" {description}
 			><blockquote class="spaced text_align_center">{description}</blockquote></slot
@@ -38,6 +46,11 @@
 			<a class="chip" href={npm_url}>npm</a>
 		{/if}
 	</div>
+	<div class="box row spaced">
+		{#if license_url}
+			<a class="chip" title="license" href={license_url}>license: {license}</a>
+		{/if}
+	</div>
 	{#if npm_url}
 		<slot name="npm_url" {npm_url}><blockquote class="npm_url">npm i -D {name}</blockquote></slot>
 	{/if}
@@ -47,7 +60,7 @@
 <!-- TODO better rendering, also show author, etc -->
 
 <style>
-	.package_summary {
+	.package_detail {
 		padding: var(--spacing_lg);
 		display: flex;
 		flex-direction: column;

@@ -13,6 +13,8 @@
 
 <TomeDetails {tome}>
 	<div class="prose" style:--color="hsl({hue} 62% 31%)">
+		<!-- TODO make this a generic data-driven helper -->
+		<Code content={`import HueInput from\n\t'@fuz.dev/fuz_library/HueInput.svelte';`} lang="ts" />
 		<Code
 			content={`<HueInput
 	bind:hue

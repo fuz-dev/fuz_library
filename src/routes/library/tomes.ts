@@ -1,6 +1,8 @@
 import {init_tome, type Tome} from '$lib/tome.js';
 import PendingAnimation from '$routes/library/PendingAnimation/+page.svelte';
 import PendingButton from '$routes/library/PendingButton/+page.svelte';
+import PackageSummary from '$routes/library/PackageSummary/+page.svelte';
+import PackageDetail from '$routes/library/PackageDetail/+page.svelte';
 import Teleport from '$routes/library/Teleport/+page.svelte';
 import Alert from '$routes/library/Alert/+page.svelte';
 // import Library from '$routes/library/Library/+page.svelte';
@@ -61,6 +63,22 @@ export const tomes: Tome[] = [
 	// 	component: Library,
 	// 	related: [],
 	// },
+	{
+		name: 'PackageDetail',
+		slug: 'PackageDetail',
+		pathname: '',
+		category: 'components',
+		component: PackageDetail,
+		related: ['PackageSummary'],
+	},
+	{
+		name: 'PackageSummary',
+		slug: 'PackageSummary',
+		pathname: '',
+		category: 'components',
+		component: PackageSummary,
+		related: ['PackageDetail'],
+	},
 	{
 		name: 'PendingAnimation',
 		slug: 'PendingAnimation',

@@ -39,9 +39,6 @@ export const parse_package_meta = (url: Url, package_json: PackageJson): Package
 
 	const homepage_url = package_json.homepage ?? null;
 
-	// TODO for detail view
-	// const license_url = license && repository ? repository + '/blob/main/LICENSE' : null;
-
 	const published =
 		!package_json.private && !!package_json.exports && package_json.version !== '0.0.1';
 
