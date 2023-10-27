@@ -82,10 +82,6 @@ export const package_json = {
 			default: './dist/DevmodeControls.svelte',
 			types: './dist/DevmodeControls.svelte.d.ts',
 		},
-		'./fetch_packages.js': {
-			default: './dist/fetch_packages.js',
-			types: './dist/fetch_packages.d.ts',
-		},
 		'./GithubLogo.svelte': {
 			svelte: './dist/GithubLogo.svelte',
 			default: './dist/GithubLogo.svelte',
@@ -140,8 +136,6 @@ export const package_json = {
 			default: './dist/PackageDetail.svelte',
 			types: './dist/PackageDetail.svelte.d.ts',
 		},
-		'./packages.json': {default: './dist/packages.json', types: './dist/packages.json.d.ts'},
-		'./packages.task.js': {default: './dist/packages.task.js', types: './dist/packages.task.d.ts'},
 		'./PackageSummary.svelte': {
 			svelte: './dist/PackageSummary.svelte',
 			default: './dist/PackageSummary.svelte',

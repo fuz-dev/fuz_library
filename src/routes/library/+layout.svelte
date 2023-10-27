@@ -7,7 +7,7 @@
 	import LibraryFooter from '$lib/LibraryFooter.svelte';
 	import {set_tomes} from '$lib/tome.js';
 	import {tomes} from '$routes/library/tomes.js';
-	import packages from '$lib/packages.json';
+	import {package_json} from '$lib/package.js';
 	import {parse_package_meta} from '$lib/package_meta.js';
 
 	const tomes_by_name = new Map(tomes.map((t) => [t.name, t]));
@@ -20,9 +20,7 @@
 
 	// TODO factor this code out and publish the layout
 
-	const root_pkg = packages[0];
-
-	const pkg = parse_package_meta(root_pkg.url, root_pkg.package_json);
+	const pkg = parse_package_meta(package_json.homepage, package_json);
 </script>
 
 <main>
