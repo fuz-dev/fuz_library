@@ -1,5 +1,11 @@
 # @fuz.dev/fuz_library
 
+## 0.14.0
+
+### Minor Changes
+
+- 1094595: remove packages code, use `@ryanatkn/orc`
+
 ## 0.13.1
 
 ### Patch Changes
