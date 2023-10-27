@@ -1,7 +1,7 @@
 {
   "name": "@fuz.dev/fuz_library",
   "description": "components and helpers for Svelte, SvelteKit, and Fuz",
-  "version": "0.14.0",
+  "version": "0.14.1",
   "license": "MIT",
   "homepage": "https://library.fuz.dev/",
   "repository": "https://github.com/fuz-dev/fuz_library",
