@@ -1,5 +1,11 @@
 # @fuz.dev/fuz_library
 
+## 0.13.0
+
+### Minor Changes
+
+- fb896e4: remove `org_url` and its slot from `LibraryFooter` and add a default slot
+
 ## 0.12.3
 
 ### Patch Changes
