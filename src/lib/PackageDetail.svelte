@@ -1,6 +1,6 @@
 <script lang="ts">
 	import {page} from '$app/stores';
-	import {strip_start} from '@grogarden/util/string.js';
+	import {strip_end, strip_start} from '@grogarden/util/string.js';
 
 	import {format_host, type PackageMeta} from '$lib/package_meta.js';
 
@@ -81,7 +81,9 @@
 		{#if homepage_url}
 			<section class="row spaced">
 				<code>data:</code>
-				<a class="chip" title="data" href="{homepage_url}/.well-known/package.json">package.json</a>
+				<a class="chip" title="data" href="{strip_end(homepage_url, '/')}/.well-known/package.json"
+					>package.json</a
+				>
 			</section>
 		{/if}
 	</section>
