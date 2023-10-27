@@ -12,6 +12,9 @@ export interface PackageMeta extends Package {
 	name: string; // '@fuz.dev/fuz_library';
 	repo_name: string; // fuz_library
 	repo_url: Url | null; // 'https://github.com/fuz-dev/fuz_library';
+	/**
+	 * the is the github user/org, not npm
+	 */
 	owner_name: string | null; // 'fuz-dev';
 	homepage_url: Url | null; // 'https://www.fuz.dev/';
 	npm_url: Url | null; // 'https://npmjs.com/package/@fuz.dev/fuz_library';
@@ -50,9 +53,7 @@ export const parse_package_meta = (url: Url, package_json: PackageJson): Package
 
 	const repo_name = parse_repo_name(name);
 
-	const owner_name = repo_url
-		? strip_end(strip_start(repo_url, 'https://github.com/'), '/' + repo_name)
-		: null;
+	const owner_name = repo_url ? strip_start(repo_url, 'https://github.com/').split('/')[0] : null;
 
 	return {
 		url,
