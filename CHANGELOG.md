@@ -1,5 +1,11 @@
 # @fuz.dev/fuz_library
 
+## 0.15.1
+
+### Patch Changes
+
+- f0c3510: fix `owner_name`
+
 ## 0.15.0
 
 ### Minor Changes
