@@ -51,7 +51,7 @@ export const parse_package_meta = (url: Url, package_json: PackageJson): Package
 	const repo_name = parse_repo_name(name);
 
 	const owner_name = repo_url
-		? strip_end(strip_start('https://github.com/', repo_url), '/' + repo_name)
+		? strip_end(strip_start(repo_url, 'https://github.com/'), '/' + repo_name)
 		: null;
 
 	return {
