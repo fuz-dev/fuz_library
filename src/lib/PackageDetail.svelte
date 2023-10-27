@@ -77,6 +77,11 @@
 			</div>
 		{/if}
 	</section>
+	{#if homepage_url}
+		<section class="row spaced">
+			<a class="chip" href="{homepage_url}/.well-known/package.json">package.json</a>
+		</section>
+	{/if}
 	<section class="width_full spaced">
 		<details>
 			<summary>view <code>pkg: PackageMeta</code></summary>
