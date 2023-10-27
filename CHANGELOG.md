@@ -1,5 +1,11 @@
 # @fuz.dev/fuz_library
 
+## 0.15.2
+
+### Patch Changes
+
+- ff2f561: fix `owner_name` again
+
 ## 0.15.1
 
 ### Patch Changes
