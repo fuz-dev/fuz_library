@@ -1,5 +1,11 @@
 # @fuz.dev/fuz_library
 
+## 0.13.1
+
+### Patch Changes
+
+- 54d7795: add `package.json` link to `PackageDetail`
+
 ## 0.13.0
 
 ### Minor Changes
