@@ -61,10 +61,12 @@
 			</slot>
 		{/if}
 		{#if repo_url}
-			<div class="row"><code>repo:</code> <a class="chip" href={repo_url}>{repo_name}</a></div>
+			<div class="row">
+				<code>repo:</code> <a class="chip" title="repo" href={repo_url}>{repo_name}</a>
+			</div>
 		{/if}
 		{#if npm_url}
-			<div class="row"><code>npm:</code> <a class="chip" href={npm_url}>{name}</a></div>
+			<div class="row"><code>npm:</code> <a class="chip" title="npm" href={npm_url}>{name}</a></div>
 		{/if}
 		{#if changelog_url}
 			<div class="row">
@@ -76,12 +78,13 @@
 				<code>license:</code> <a class="chip" title="license" href={license_url}>{license}</a>
 			</div>
 		{/if}
+		{#if homepage_url}
+			<section class="row spaced">
+				<code>data:</code>
+				<a class="chip" title="data" href="{homepage_url}/.well-known/package.json">package.json</a>
+			</section>
+		{/if}
 	</section>
-	{#if homepage_url}
-		<section class="row spaced">
-			<a class="chip" href="{homepage_url}/.well-known/package.json">package.json</a>
-		</section>
-	{/if}
 	<section class="width_full spaced">
 		<details>
 			<summary>view <code>pkg: PackageMeta</code></summary>
