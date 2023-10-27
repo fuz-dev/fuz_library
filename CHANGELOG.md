@@ -1,5 +1,11 @@
 # @fuz.dev/fuz_library
 
+## 0.15.0
+
+### Minor Changes
+
+- 3310ece: add `owner_name` to `PackageMeta`
+
 ## 0.14.2
 
 ### Patch Changes
