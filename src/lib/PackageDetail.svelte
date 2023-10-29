@@ -1,6 +1,6 @@
 <script lang="ts">
 	import {page} from '$app/stores';
-	import {strip_end, strip_start} from '@grogarden/util/string.js';
+	import {ensure_end, strip_start} from '@grogarden/util/string.js';
 
 	import {format_host, type PackageMeta} from '$lib/package_meta.js';
 
@@ -53,35 +53,42 @@
 		{#if homepage_url}
 			<slot name="homepage_url" {homepage_url}>
 				<div class="row">
-					<code>homepage:</code>
-					<a class="chip" class:active={homepage_url === $page.url.href} href={homepage_url}
-						>{format_host(homepage_url)}</a
-					>
+					homepage:
+					<a class="chip row" class:active={homepage_url === $page.url.href} href={homepage_url}>
+						<img
+							src="{ensure_end(homepage_url, '/')}favicon.png"
+							alt="favicon to homepage at {homepage_url}"
+							style:width="16px"
+							style:height="16px"
+							style:margin-right="var(--spacing_xs)"
+						/>
+						{format_host(homepage_url)}
+					</a>
 				</div>
 			</slot>
 		{/if}
 		{#if repo_url}
 			<div class="row">
-				<code>repo:</code> <a class="chip" title="repo" href={repo_url}>{repo_name}</a>
+				repo: <a class="chip" title="repo" href={repo_url}>{repo_name}</a>
 			</div>
 		{/if}
 		{#if npm_url}
-			<div class="row"><code>npm:</code> <a class="chip" title="npm" href={npm_url}>{name}</a></div>
+			<div class="row">npm: <a class="chip" title="npm" href={npm_url}>{name}</a></div>
 		{/if}
 		{#if changelog_url}
 			<div class="row">
-				<code>version:</code> <a class="chip" title="version" href={changelog_url}>{version}</a>
+				version: <a class="chip" title="version" href={changelog_url}>{version}</a>
 			</div>
 		{/if}
 		{#if license_url}
 			<div class="row">
-				<code>license:</code> <a class="chip" title="license" href={license_url}>{license}</a>
+				license: <a class="chip" title="license" href={license_url}>{license}</a>
 			</div>
 		{/if}
 		{#if homepage_url}
 			<section class="row spaced">
-				<code>data:</code>
-				<a class="chip" title="data" href="{strip_end(homepage_url, '/')}/.well-known/package.json"
+				data:
+				<a class="chip" title="data" href="{ensure_end(homepage_url, '/')}.well-known/package.json"
 					>package.json</a
 				>
 			</section>
@@ -89,7 +96,7 @@
 	</section>
 	<section class="width_full spaced">
 		<details>
-			<summary>view <code>pkg: PackageMeta</code></summary>
+			<summary>view raw data for <code>pkg: PackageMeta</code></summary>
 			<pre><code>{JSON.stringify(pkg, null, '\t')}</code></pre>
 		</details>
 	</section>
