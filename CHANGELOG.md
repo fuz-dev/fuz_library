@@ -1,5 +1,11 @@
 # @fuz.dev/fuz_library
 
+## 0.15.3
+
+### Patch Changes
+
+- b98493c: add favicon to `PackageDetail`
+
 ## 0.15.2
 
 ### Patch Changes
