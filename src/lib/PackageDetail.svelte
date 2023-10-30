@@ -9,7 +9,15 @@
 	// TODO show other data (lines of code)
 
 	$: ({package_json, npm_url, repo_name, repo_url, changelog_url, homepage_url} = pkg);
-	$: ({name, version, description, license, repository, exports: pkg_exports} = package_json);
+	$: ({
+		name,
+		version,
+		description,
+		license,
+		repository,
+		exports: pkg_exports,
+		modules: pkg_modules,
+	} = package_json);
 
 	$: repository_url = repository
 		? typeof repository === 'string'
@@ -23,6 +31,8 @@
 		repo_url +
 		'/blob/main/src/lib/' +
 		(module_name.endsWith('.js') ? module_name.slice(0, -3) + '.ts' : module_name);
+
+	$: pkg_exports_keys = pkg_exports && Object.keys(pkg_exports); // TODO hacky, see usage
 
 	// TODO helper, look at existing code
 	$: modules = pkg_exports
@@ -104,8 +114,10 @@
 	{#if modules && repo_url}
 		<section class="width_full spaced">
 			<menu>
-				{#each modules as module_name (module_name)}
+				{#each modules as module_name, i (module_name)}
 					{@const source_url = to_source_url(repo_url, module_name)}
+					{@const exports_key = pkg_exports_keys?.[i]}
+					{@const pkg_module = exports_key && pkg_modules?.[exports_key]}
 					<li
 						class="module"
 						class:ts={module_name.endsWith('.js')}
@@ -114,6 +126,11 @@
 						class:json={module_name.endsWith('.json')}
 					>
 						<a class="chip" href={source_url}>{module_name}</a>
+						{#if pkg_module}
+							{#each pkg_module.declarations as declaration}
+								<span class="chip">{declaration.name}</span>
+							{/each}
+						{/if}
 					</li>
 				{/each}
 			</menu>
