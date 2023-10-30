@@ -131,7 +131,7 @@
 						{#if pkg_module}
 							<div class="flex flex_1 wrap">
 								{#each pkg_module.declarations as declaration}
-									<span class="chip">{declaration.name}</span>
+									<span class="chip {declaration.kind}">{declaration.name}</span>
 								{/each}
 							</div>
 						{/if}
@@ -192,5 +192,16 @@
 	}
 	.json {
 		--link_color: var(--color_6);
+	}
+	/* TODO extract */
+	.VariableDeclaration {
+		color: var(--color_3);
+	}
+	.InterfaceDeclaration,
+	.TypeAliasDeclaration {
+		color: var(--color_2);
+	}
+	.ClassDeclaration {
+		color: var(--color_6);
 	}
 </style>
