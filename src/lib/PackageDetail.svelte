@@ -9,7 +9,15 @@
 	// TODO show other data (lines of code)
 
 	$: ({package_json, npm_url, repo_name, repo_url, changelog_url, homepage_url} = pkg);
-	$: ({name, version, description, license, repository, exports: pkg_exports} = package_json);
+	$: ({
+		name,
+		version,
+		description,
+		license,
+		repository,
+		exports: pkg_exports,
+		modules: pkg_modules,
+	} = package_json);
 
 	$: repository_url = repository
 		? typeof repository === 'string'
@@ -23,6 +31,8 @@
 		repo_url +
 		'/blob/main/src/lib/' +
 		(module_name.endsWith('.js') ? module_name.slice(0, -3) + '.ts' : module_name);
+
+	$: pkg_exports_keys = pkg_exports && Object.keys(pkg_exports); // TODO hacky, see usage
 
 	// TODO helper, look at existing code
 	$: modules = pkg_exports
@@ -104,8 +114,10 @@
 	{#if modules && repo_url}
 		<section class="width_full spaced">
 			<menu>
-				{#each modules as module_name (module_name)}
+				{#each modules as module_name, i (module_name)}
 					{@const source_url = to_source_url(repo_url, module_name)}
+					{@const exports_key = pkg_exports_keys?.[i]}
+					{@const pkg_module = exports_key && pkg_modules?.[exports_key]}
 					<li
 						class="module"
 						class:ts={module_name.endsWith('.js')}
@@ -113,7 +125,24 @@
 						class:css={module_name.endsWith('.css')}
 						class:json={module_name.endsWith('.json')}
 					>
-						<a class="chip" href={source_url}>{module_name}</a>
+						<div>
+							<a class="chip" href={source_url}>{module_name}</a>
+						</div>
+						{#if pkg_module}
+							<ul class="declarations">
+								{#each pkg_module.declarations as { name, kind }}
+									<li
+										class="declaration chip"
+										class:variable_declaration={kind === 'VariableDeclaration'}
+										class:type_declaration={kind === 'InterfaceDeclaration' ||
+											kind === 'TypeAliasDeclaration'}
+										class:class_declaration={kind === 'ClassDeclaration'}
+									>
+										{name}
+									</li>
+								{/each}
+							</ul>
+						{/if}
 					</li>
 				{/each}
 			</menu>
@@ -171,5 +200,27 @@
 	}
 	.json {
 		--link_color: var(--color_6);
+	}
+	/* TODO extract */
+	.declarations {
+		display: flex;
+		flex: 1;
+		flex-direction: row;
+		flex-wrap: wrap;
+		align-items: flex-start;
+		gap: var(--spacing_xs) 0;
+	}
+	.declaration {
+		font-family: var(--font_family_mono);
+		font-size: var(--size_sm);
+	}
+	.variable_declaration {
+		color: var(--color_3);
+	}
+	.type_declaration {
+		color: var(--color_2);
+	}
+	.class_declaration {
+		color: var(--color_6);
 	}
 </style>
