@@ -104,13 +104,6 @@
 			</section>
 		{/if}
 	</section>
-	<section class="width_full spaced">
-		<details>
-			<summary>view raw data for <code>pkg: PackageMeta</code></summary>
-			<pre><code>{JSON.stringify(pkg, null, '\t')}</code></pre>
-		</details>
-	</section>
-
 	{#if modules && repo_url}
 		<section class="width_full spaced">
 			<menu>
@@ -148,6 +141,13 @@
 			</menu>
 		</section>
 	{/if}
+
+	<section class="width_full spaced">
+		<details>
+			<summary>raw data for <code>pkg: PackageMeta</code></summary>
+			<pre><code>{JSON.stringify(pkg, null, '\t')}</code></pre>
+		</details>
+	</section>
 
 	<!-- TODO more details behind a `<details>`, including author -->
 	<!-- TODO render exports, then link to source, then tomes -->
