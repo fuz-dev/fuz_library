@@ -1,5 +1,11 @@
 # @fuz.dev/fuz_library
 
+## 0.16.1
+
+### Patch Changes
+
+- eb110d2: tweak type color
+
 ## 0.16.0
 
 ### Minor Changes
