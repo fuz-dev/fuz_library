@@ -27,9 +27,9 @@ export const package_json = {
 		'@feltjs/eslint-config': '^0.4.1',
 		'@fuz.dev/fuz': '^0.76.0',
 		'@fuz.dev/fuz_code': '^0.4.0',
-		'@grogarden/gro': '^0.97.0',
+		'@grogarden/gro': '^0.98.1',
 		'@sveltejs/adapter-static': '^2.0.3',
-		'@sveltejs/kit': '^1.27.1',
+		'@sveltejs/kit': '^1.27.2',
 		'@sveltejs/package': '^2.2.2',
 		'@types/node': '^20.8.9',
 		'@typescript-eslint/eslint-plugin': '^6.9.0',
@@ -176,6 +176,7 @@ export const package_json = {
 		},
 	},
 	modules: {
+		'./Alert.svelte': {path: 'Alert.svelte', declarations: []},
 		'./alert.js': {
 			path: 'alert.ts',
 			declarations: [
@@ -184,6 +185,9 @@ export const package_json = {
 				{name: 'alert_status_options', kind: 'VariableDeclaration'},
 			],
 		},
+		'./Breadcrumb.svelte': {path: 'Breadcrumb.svelte', declarations: []},
+		'./Card.svelte': {path: 'Card.svelte', declarations: []},
+		'./CopyToClipboard.svelte': {path: 'CopyToClipboard.svelte', declarations: []},
 		'./devmode.js': {
 			path: 'devmode.ts',
 			declarations: [
@@ -191,6 +195,8 @@ export const package_json = {
 				{name: 'set_devmode', kind: 'VariableDeclaration'},
 			],
 		},
+		'./DevmodeControls.svelte': {path: 'DevmodeControls.svelte', declarations: []},
+		'./GithubLogo.svelte': {path: 'GithubLogo.svelte', declarations: []},
 		'./helpers.js': {
 			path: 'helpers.ts',
 			declarations: [
@@ -198,6 +204,14 @@ export const package_json = {
 				{name: 'to_library_path_info', kind: 'VariableDeclaration'},
 			],
 		},
+		'./HueInput.svelte': {path: 'HueInput.svelte', declarations: []},
+		'./Library.svelte': {path: 'Library.svelte', declarations: []},
+		'./LibraryFooter.svelte': {path: 'LibraryFooter.svelte', declarations: []},
+		'./LibraryHeader.svelte': {path: 'LibraryHeader.svelte', declarations: []},
+		'./LibraryMenu.svelte': {path: 'LibraryMenu.svelte', declarations: []},
+		'./LibraryNav.svelte': {path: 'LibraryNav.svelte', declarations: []},
+		'./LibraryPanel.svelte': {path: 'LibraryPanel.svelte', declarations: []},
+		'./LibraryVocab.svelte': {path: 'LibraryVocab.svelte', declarations: []},
 		'./package_meta.js': {
 			path: 'package_meta.ts',
 			declarations: [
@@ -214,6 +228,12 @@ export const package_json = {
 			path: 'package.ts',
 			declarations: [{name: 'package_json', kind: 'VariableDeclaration'}],
 		},
+		'./PackageDetail.svelte': {path: 'PackageDetail.svelte', declarations: []},
+		'./PackageSummary.svelte': {path: 'PackageSummary.svelte', declarations: []},
+		'./PendingAnimation.svelte': {path: 'PendingAnimation.svelte', declarations: []},
+		'./PendingButton.svelte': {path: 'PendingButton.svelte', declarations: []},
+		'./Redirect.svelte': {path: 'Redirect.svelte', declarations: []},
+		'./Teleport.svelte': {path: 'Teleport.svelte', declarations: []},
 		'./tome.js': {
 			path: 'tome.ts',
 			declarations: [
@@ -224,6 +244,8 @@ export const package_json = {
 				{name: 'get_tome', kind: 'VariableDeclaration'},
 			],
 		},
+		'./TomeDetail.svelte': {path: 'TomeDetail.svelte', declarations: []},
+		'./TomeTitle.svelte': {path: 'TomeTitle.svelte', declarations: []},
 	},
 } satisfies PackageJson;
 
