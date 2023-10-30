@@ -132,7 +132,7 @@
 							<ul class="declarations">
 								{#each pkg_module.declarations as { name, kind }}
 									<li
-										class="chip"
+										class="declaration chip"
 										class:variable_declaration={kind === 'VariableDeclaration'}
 										class:type_declaration={kind === 'InterfaceDeclaration' ||
 											kind === 'TypeAliasDeclaration'}
@@ -207,7 +207,12 @@
 		flex: 1;
 		flex-direction: row;
 		flex-wrap: wrap;
+		align-items: flex-start;
 		gap: var(--spacing_xs) 0;
+	}
+	.declaration {
+		font-family: var(--font_family_mono);
+		font-size: var(--size_sm);
 	}
 	.variable_declaration {
 		color: var(--color_3);
