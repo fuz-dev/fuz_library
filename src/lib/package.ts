@@ -173,4 +173,54 @@ export const package_json = {
 			types: './dist/TomeTitle.svelte.d.ts',
 		},
 	},
+	modules: {
+		'./alert.js': {
+			path: 'alert.ts',
+			declarations: [
+				{name: 'AlertStatus', kind: 'TypeAliasDeclaration'},
+				{name: 'AlertStatusOptions', kind: 'InterfaceDeclaration'},
+				{name: 'alert_status_options', kind: 'VariableDeclaration'},
+			],
+		},
+		'./devmode.js': {
+			path: 'devmode.ts',
+			declarations: [
+				{name: 'get_devmode', kind: 'VariableDeclaration'},
+				{name: 'set_devmode', kind: 'VariableDeclaration'},
+			],
+		},
+		'./helpers.js': {
+			path: 'helpers.ts',
+			declarations: [
+				{name: 'LIBRARY_PATH', kind: 'VariableDeclaration'},
+				{name: 'to_library_path_info', kind: 'VariableDeclaration'},
+			],
+		},
+		'./package_meta.js': {
+			path: 'package_meta.ts',
+			declarations: [
+				{name: 'Package', kind: 'InterfaceDeclaration'},
+				{name: 'PackageMeta', kind: 'InterfaceDeclaration'},
+				{name: 'parse_package_meta', kind: 'VariableDeclaration'},
+				{name: 'parse_repo_name', kind: 'VariableDeclaration'},
+				{name: 'format_host', kind: 'VariableDeclaration'},
+				{name: 'parse_org_url', kind: 'VariableDeclaration'},
+			],
+		},
+		'./package.gen.js': {path: 'package.gen.ts', declarations: []},
+		'./package.js': {
+			path: 'package.ts',
+			declarations: [{name: 'package_json', kind: 'VariableDeclaration'}],
+		},
+		'./tome.js': {
+			path: 'tome.ts',
+			declarations: [
+				{name: 'Tome', kind: 'VariableDeclaration'},
+				{name: 'init_tome', kind: 'VariableDeclaration'},
+				{name: 'get_tomes', kind: 'VariableDeclaration'},
+				{name: 'set_tomes', kind: 'VariableDeclaration'},
+				{name: 'get_tome', kind: 'VariableDeclaration'},
+			],
+		},
+	},
 } satisfies PackageJson;
