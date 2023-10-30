@@ -20,8 +20,7 @@ export const package_json = {
 		deploy: 'gro deploy',
 	},
 	files: ['dist'],
-	dependencies: {'@grogarden/util': '^0.15.2'},
-	peerDependencies: {'@sveltejs/kit': '*', svelte: '*'},
+	peerDependencies: {'@grogarden/util': '*', '@sveltejs/kit': '*', svelte: '*'},
 	devDependencies: {
 		'@changesets/changelog-git': '^0.1.14',
 		'@feltjs/eslint-config': '^0.4.1',

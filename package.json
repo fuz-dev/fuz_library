@@ -24,10 +24,8 @@
   "files": [
     "dist"
   ],
-  "dependencies": {
-    "@grogarden/util": "^0.15.2"
-  },
   "peerDependencies": {
+    "@grogarden/util": "*",
     "@sveltejs/kit": "*",
     "svelte": "*"
   },
