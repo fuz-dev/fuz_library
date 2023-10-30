@@ -1,5 +1,11 @@
 # @fuz.dev/fuz_library
 
+## 0.16.0
+
+### Minor Changes
+
+- ceceb4f: upgrade package detail with package modules
+
 ## 0.15.3
 
 ### Patch Changes
