@@ -125,11 +125,15 @@
 						class:css={module_name.endsWith('.css')}
 						class:json={module_name.endsWith('.json')}
 					>
-						<a class="chip" href={source_url}>{module_name}</a>
+						<div>
+							<a class="chip" href={source_url}>{module_name}</a>
+						</div>
 						{#if pkg_module}
-							{#each pkg_module.declarations as declaration}
-								<span class="chip">{declaration.name}</span>
-							{/each}
+							<div class="flex flex_1 wrap">
+								{#each pkg_module.declarations as declaration}
+									<span class="chip">{declaration.name}</span>
+								{/each}
+							</div>
 						{/if}
 					</li>
 				{/each}
