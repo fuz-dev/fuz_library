@@ -129,17 +129,19 @@
 							<a class="chip" href={source_url}>{module_name}</a>
 						</div>
 						{#if pkg_module}
-							<div class="flex flex_1 wrap">
+							<ul class="declarations">
 								{#each pkg_module.declarations as { name, kind }}
-									<span
+									<li
 										class="chip"
 										class:variable_declaration={kind === 'VariableDeclaration'}
 										class:type_declaration={kind === 'InterfaceDeclaration' ||
 											kind === 'TypeAliasDeclaration'}
-										class:class_declaration={kind === 'ClassDeclaration'}>{name}</span
+										class:class_declaration={kind === 'ClassDeclaration'}
 									>
+										{name}
+									</li>
 								{/each}
-							</div>
+							</ul>
 						{/if}
 					</li>
 				{/each}
@@ -200,6 +202,13 @@
 		--link_color: var(--color_6);
 	}
 	/* TODO extract */
+	.declarations {
+		display: flex;
+		flex: 1;
+		flex-direction: row;
+		flex-wrap: wrap;
+		gap: var(--spacing_xs) 0;
+	}
 	.variable_declaration {
 		color: var(--color_3);
 	}
