@@ -218,7 +218,7 @@
 		color: var(--color_3);
 	}
 	.type_declaration {
-		color: var(--color_2);
+		color: var(--color_7);
 	}
 	.class_declaration {
 		color: var(--color_6);
