@@ -130,8 +130,14 @@
 						</div>
 						{#if pkg_module}
 							<div class="flex flex_1 wrap">
-								{#each pkg_module.declarations as declaration}
-									<span class="chip {declaration.kind}">{declaration.name}</span>
+								{#each pkg_module.declarations as { name, kind }}
+									<span
+										class="chip"
+										class:variable_declaration={kind === 'VariableDeclaration'}
+										class:type_declaration={kind === 'InterfaceDeclaration' ||
+											kind === 'TypeAliasDeclaration'}
+										class:class_declaration={kind === 'ClassDeclaration'}>{name}</span
+									>
 								{/each}
 							</div>
 						{/if}
@@ -194,14 +200,13 @@
 		--link_color: var(--color_6);
 	}
 	/* TODO extract */
-	.VariableDeclaration {
+	.variable_declaration {
 		color: var(--color_3);
 	}
-	.InterfaceDeclaration,
-	.TypeAliasDeclaration {
+	.type_declaration {
 		color: var(--color_2);
 	}
-	.ClassDeclaration {
+	.class_declaration {
 		color: var(--color_6);
 	}
 </style>
