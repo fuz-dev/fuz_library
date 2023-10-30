@@ -1,5 +1,11 @@
 # @fuz.dev/fuz_library
 
+## 0.17.1
+
+### Patch Changes
+
+- f0c5add: update `PackageDetail`
+
 ## 0.17.0
 
 ### Minor Changes
