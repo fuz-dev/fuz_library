@@ -1,5 +1,15 @@
 # @fuz.dev/fuz_library
 
+## 0.17.0
+
+### Minor Changes
+
+- bad2390: change @grogarden/util to a peer dep
+
+### Patch Changes
+
+- b08eb0a: add `"public": true,` to `package.json`
+
 ## 0.16.2
 
 ### Patch Changes
