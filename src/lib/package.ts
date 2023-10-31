@@ -25,8 +25,8 @@ export const package_json = {
 	devDependencies: {
 		'@changesets/changelog-git': '^0.1.14',
 		'@feltjs/eslint-config': '^0.4.1',
-		'@fuz.dev/fuz': '^0.78.0',
-		'@fuz.dev/fuz_code': '^0.4.2',
+		'@fuz.dev/fuz': '^0.79.0',
+		'@fuz.dev/fuz_code': '^0.4.3',
 		'@grogarden/gro': '^0.98.3',
 		'@sveltejs/adapter-static': '^2.0.3',
 		'@sveltejs/kit': '^1.27.2',
