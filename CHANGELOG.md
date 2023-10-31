@@ -1,5 +1,11 @@
 # @fuz.dev/fuz_library
 
+## 0.18.0
+
+### Minor Changes
+
+- bd0e208: rename to `Proper_Snakes`
+
 ## 0.17.1
 
 ### Patch Changes
