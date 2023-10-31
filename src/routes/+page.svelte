@@ -1,8 +1,8 @@
 <script lang="ts">
 	import {base} from '$app/paths';
 
-	import LibraryHeader from '$lib/LibraryHeader.svelte';
-	import LibraryFooter from '$lib/LibraryFooter.svelte';
+	import Library_Header from '$lib/Library_Header.svelte';
+	import Library_Footer from '$lib/Library_Footer.svelte';
 	import {parse_package_meta} from '$lib/package_meta.js';
 	import {package_json} from '$lib/package.js';
 
@@ -12,7 +12,7 @@
 <main class="box width_full">
 	<div class="box width_md">
 		<section>
-			<LibraryHeader {pkg} />
+			<Library_Header {pkg} />
 		</section>
 		<section>
 			<a class="library-link panel" href="{base}/library">library</a>
@@ -21,7 +21,7 @@
 			<a href="{base}/about" class="chip">about</a>
 		</section>
 		<section>
-			<LibraryFooter {pkg} root_url="https://www.fuz.dev/" />
+			<Library_Footer {pkg} root_url="https://www.fuz.dev/" />
 		</section>
 	</div>
 </main>

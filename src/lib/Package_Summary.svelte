@@ -1,8 +1,8 @@
 <script lang="ts">
 	import {page} from '$app/stores';
-	import {format_host, type PackageMeta} from '$lib/package_meta.js';
+	import {format_host, type Package_Meta} from '$lib/package_meta.js';
 
-	export let pkg: PackageMeta; // TODO normalized version with cached primitives?
+	export let pkg: Package_Meta; // TODO normalized version with cached primitives?
 
 	$: ({package_json, npm_url, repo_name, repo_url, changelog_url, homepage_url} = pkg);
 	$: ({name, version, description} = package_json);

@@ -8,7 +8,7 @@ export interface Package {
 	package_json: PackageJson;
 }
 
-export interface PackageMeta extends Package {
+export interface Package_Meta extends Package {
 	name: string; // '@fuz.dev/fuz_library';
 	repo_name: string; // fuz_library
 	repo_url: Url | null; // 'https://github.com/fuz-dev/fuz_library';
@@ -22,7 +22,7 @@ export interface PackageMeta extends Package {
 	published: boolean;
 }
 
-export const parse_package_meta = (url: Url, package_json: PackageJson): PackageMeta => {
+export const parse_package_meta = (url: Url, package_json: PackageJson): Package_Meta => {
 	const {name} = package_json;
 
 	// TODO think through with other presentations - Details, Summary, Card
@@ -75,7 +75,7 @@ export const parse_repo_name = (name: string): string =>
 
 export const format_host = (url: string): string => strip_start(new URL(url).host, 'www.');
 
-export const parse_org_url = (pkg: PackageMeta): string | null => {
+export const parse_org_url = (pkg: Package_Meta): string | null => {
 	const {repo_name, repo_url} = pkg;
 	if (!repo_url) return null;
 	const suffix = '/' + repo_name;

@@ -73,85 +73,85 @@ export const package_json = {
 			default: './dist/Card.svelte',
 			types: './dist/Card.svelte.d.ts',
 		},
-		'./CopyToClipboard.svelte': {
-			svelte: './dist/CopyToClipboard.svelte',
-			default: './dist/CopyToClipboard.svelte',
-			types: './dist/CopyToClipboard.svelte.d.ts',
+		'./Copy_To_Clipboard.svelte': {
+			svelte: './dist/Copy_To_Clipboard.svelte',
+			default: './dist/Copy_To_Clipboard.svelte',
+			types: './dist/Copy_To_Clipboard.svelte.d.ts',
+		},
+		'./Devmode_Controls.svelte': {
+			svelte: './dist/Devmode_Controls.svelte',
+			default: './dist/Devmode_Controls.svelte',
+			types: './dist/Devmode_Controls.svelte.d.ts',
 		},
 		'./devmode.js': {default: './dist/devmode.js', types: './dist/devmode.d.ts'},
-		'./DevmodeControls.svelte': {
-			svelte: './dist/DevmodeControls.svelte',
-			default: './dist/DevmodeControls.svelte',
-			types: './dist/DevmodeControls.svelte.d.ts',
-		},
-		'./GithubLogo.svelte': {
-			svelte: './dist/GithubLogo.svelte',
-			default: './dist/GithubLogo.svelte',
-			types: './dist/GithubLogo.svelte.d.ts',
+		'./Github_Logo.svelte': {
+			svelte: './dist/Github_Logo.svelte',
+			default: './dist/Github_Logo.svelte',
+			types: './dist/Github_Logo.svelte.d.ts',
 		},
 		'./helpers.js': {default: './dist/helpers.js', types: './dist/helpers.d.ts'},
-		'./HueInput.svelte': {
-			svelte: './dist/HueInput.svelte',
-			default: './dist/HueInput.svelte',
-			types: './dist/HueInput.svelte.d.ts',
+		'./Hue_Input.svelte': {
+			svelte: './dist/Hue_Input.svelte',
+			default: './dist/Hue_Input.svelte',
+			types: './dist/Hue_Input.svelte.d.ts',
+		},
+		'./Library_Footer.svelte': {
+			svelte: './dist/Library_Footer.svelte',
+			default: './dist/Library_Footer.svelte',
+			types: './dist/Library_Footer.svelte.d.ts',
+		},
+		'./Library_Header.svelte': {
+			svelte: './dist/Library_Header.svelte',
+			default: './dist/Library_Header.svelte',
+			types: './dist/Library_Header.svelte.d.ts',
+		},
+		'./Library_Menu.svelte': {
+			svelte: './dist/Library_Menu.svelte',
+			default: './dist/Library_Menu.svelte',
+			types: './dist/Library_Menu.svelte.d.ts',
+		},
+		'./Library_Nav.svelte': {
+			svelte: './dist/Library_Nav.svelte',
+			default: './dist/Library_Nav.svelte',
+			types: './dist/Library_Nav.svelte.d.ts',
+		},
+		'./Library_Panel.svelte': {
+			svelte: './dist/Library_Panel.svelte',
+			default: './dist/Library_Panel.svelte',
+			types: './dist/Library_Panel.svelte.d.ts',
+		},
+		'./Library_Vocab.svelte': {
+			svelte: './dist/Library_Vocab.svelte',
+			default: './dist/Library_Vocab.svelte',
+			types: './dist/Library_Vocab.svelte.d.ts',
 		},
 		'./Library.svelte': {
 			svelte: './dist/Library.svelte',
 			default: './dist/Library.svelte',
 			types: './dist/Library.svelte.d.ts',
 		},
-		'./LibraryFooter.svelte': {
-			svelte: './dist/LibraryFooter.svelte',
-			default: './dist/LibraryFooter.svelte',
-			types: './dist/LibraryFooter.svelte.d.ts',
-		},
-		'./LibraryHeader.svelte': {
-			svelte: './dist/LibraryHeader.svelte',
-			default: './dist/LibraryHeader.svelte',
-			types: './dist/LibraryHeader.svelte.d.ts',
-		},
-		'./LibraryMenu.svelte': {
-			svelte: './dist/LibraryMenu.svelte',
-			default: './dist/LibraryMenu.svelte',
-			types: './dist/LibraryMenu.svelte.d.ts',
-		},
-		'./LibraryNav.svelte': {
-			svelte: './dist/LibraryNav.svelte',
-			default: './dist/LibraryNav.svelte',
-			types: './dist/LibraryNav.svelte.d.ts',
-		},
-		'./LibraryPanel.svelte': {
-			svelte: './dist/LibraryPanel.svelte',
-			default: './dist/LibraryPanel.svelte',
-			types: './dist/LibraryPanel.svelte.d.ts',
-		},
-		'./LibraryVocab.svelte': {
-			svelte: './dist/LibraryVocab.svelte',
-			default: './dist/LibraryVocab.svelte',
-			types: './dist/LibraryVocab.svelte.d.ts',
+		'./Package_Detail.svelte': {
+			svelte: './dist/Package_Detail.svelte',
+			default: './dist/Package_Detail.svelte',
+			types: './dist/Package_Detail.svelte.d.ts',
 		},
 		'./package_meta.js': {default: './dist/package_meta.js', types: './dist/package_meta.d.ts'},
+		'./Package_Summary.svelte': {
+			svelte: './dist/Package_Summary.svelte',
+			default: './dist/Package_Summary.svelte',
+			types: './dist/Package_Summary.svelte.d.ts',
+		},
 		'./package.gen.js': {default: './dist/package.gen.js', types: './dist/package.gen.d.ts'},
 		'./package.js': {default: './dist/package.js', types: './dist/package.d.ts'},
-		'./PackageDetail.svelte': {
-			svelte: './dist/PackageDetail.svelte',
-			default: './dist/PackageDetail.svelte',
-			types: './dist/PackageDetail.svelte.d.ts',
+		'./Pending_Animation.svelte': {
+			svelte: './dist/Pending_Animation.svelte',
+			default: './dist/Pending_Animation.svelte',
+			types: './dist/Pending_Animation.svelte.d.ts',
 		},
-		'./PackageSummary.svelte': {
-			svelte: './dist/PackageSummary.svelte',
-			default: './dist/PackageSummary.svelte',
-			types: './dist/PackageSummary.svelte.d.ts',
-		},
-		'./PendingAnimation.svelte': {
-			svelte: './dist/PendingAnimation.svelte',
-			default: './dist/PendingAnimation.svelte',
-			types: './dist/PendingAnimation.svelte.d.ts',
-		},
-		'./PendingButton.svelte': {
-			svelte: './dist/PendingButton.svelte',
-			default: './dist/PendingButton.svelte',
-			types: './dist/PendingButton.svelte.d.ts',
+		'./Pending_Button.svelte': {
+			svelte: './dist/Pending_Button.svelte',
+			default: './dist/Pending_Button.svelte',
+			types: './dist/Pending_Button.svelte.d.ts',
 		},
 		'./Redirect.svelte': {
 			svelte: './dist/Redirect.svelte',
@@ -163,31 +163,32 @@ export const package_json = {
 			default: './dist/Teleport.svelte',
 			types: './dist/Teleport.svelte.d.ts',
 		},
+		'./Tome_Detail.svelte': {
+			svelte: './dist/Tome_Detail.svelte',
+			default: './dist/Tome_Detail.svelte',
+			types: './dist/Tome_Detail.svelte.d.ts',
+		},
+		'./Tome_Title.svelte': {
+			svelte: './dist/Tome_Title.svelte',
+			default: './dist/Tome_Title.svelte',
+			types: './dist/Tome_Title.svelte.d.ts',
+		},
 		'./tome.js': {default: './dist/tome.js', types: './dist/tome.d.ts'},
-		'./TomeDetail.svelte': {
-			svelte: './dist/TomeDetail.svelte',
-			default: './dist/TomeDetail.svelte',
-			types: './dist/TomeDetail.svelte.d.ts',
-		},
-		'./TomeTitle.svelte': {
-			svelte: './dist/TomeTitle.svelte',
-			default: './dist/TomeTitle.svelte',
-			types: './dist/TomeTitle.svelte.d.ts',
-		},
 	},
 	modules: {
 		'./Alert.svelte': {path: 'Alert.svelte', declarations: []},
 		'./alert.js': {
 			path: 'alert.ts',
 			declarations: [
-				{name: 'AlertStatus', kind: 'TypeAliasDeclaration'},
-				{name: 'AlertStatusOptions', kind: 'InterfaceDeclaration'},
+				{name: 'Alert_Status', kind: 'TypeAliasDeclaration'},
+				{name: 'Alert_Status_Options', kind: 'InterfaceDeclaration'},
 				{name: 'alert_status_options', kind: 'VariableDeclaration'},
 			],
 		},
 		'./Breadcrumb.svelte': {path: 'Breadcrumb.svelte', declarations: []},
 		'./Card.svelte': {path: 'Card.svelte', declarations: []},
-		'./CopyToClipboard.svelte': {path: 'CopyToClipboard.svelte', declarations: []},
+		'./Copy_To_Clipboard.svelte': {path: 'Copy_To_Clipboard.svelte', declarations: []},
+		'./Devmode_Controls.svelte': {path: 'Devmode_Controls.svelte', declarations: []},
 		'./devmode.js': {
 			path: 'devmode.ts',
 			declarations: [
@@ -195,8 +196,7 @@ export const package_json = {
 				{name: 'set_devmode', kind: 'VariableDeclaration'},
 			],
 		},
-		'./DevmodeControls.svelte': {path: 'DevmodeControls.svelte', declarations: []},
-		'./GithubLogo.svelte': {path: 'GithubLogo.svelte', declarations: []},
+		'./Github_Logo.svelte': {path: 'Github_Logo.svelte', declarations: []},
 		'./helpers.js': {
 			path: 'helpers.ts',
 			declarations: [
@@ -204,36 +204,38 @@ export const package_json = {
 				{name: 'to_library_path_info', kind: 'VariableDeclaration'},
 			],
 		},
-		'./HueInput.svelte': {path: 'HueInput.svelte', declarations: []},
+		'./Hue_Input.svelte': {path: 'Hue_Input.svelte', declarations: []},
+		'./Library_Footer.svelte': {path: 'Library_Footer.svelte', declarations: []},
+		'./Library_Header.svelte': {path: 'Library_Header.svelte', declarations: []},
+		'./Library_Menu.svelte': {path: 'Library_Menu.svelte', declarations: []},
+		'./Library_Nav.svelte': {path: 'Library_Nav.svelte', declarations: []},
+		'./Library_Panel.svelte': {path: 'Library_Panel.svelte', declarations: []},
+		'./Library_Vocab.svelte': {path: 'Library_Vocab.svelte', declarations: []},
 		'./Library.svelte': {path: 'Library.svelte', declarations: []},
-		'./LibraryFooter.svelte': {path: 'LibraryFooter.svelte', declarations: []},
-		'./LibraryHeader.svelte': {path: 'LibraryHeader.svelte', declarations: []},
-		'./LibraryMenu.svelte': {path: 'LibraryMenu.svelte', declarations: []},
-		'./LibraryNav.svelte': {path: 'LibraryNav.svelte', declarations: []},
-		'./LibraryPanel.svelte': {path: 'LibraryPanel.svelte', declarations: []},
-		'./LibraryVocab.svelte': {path: 'LibraryVocab.svelte', declarations: []},
+		'./Package_Detail.svelte': {path: 'Package_Detail.svelte', declarations: []},
 		'./package_meta.js': {
 			path: 'package_meta.ts',
 			declarations: [
 				{name: 'Package', kind: 'InterfaceDeclaration'},
-				{name: 'PackageMeta', kind: 'InterfaceDeclaration'},
+				{name: 'Package_Meta', kind: 'InterfaceDeclaration'},
 				{name: 'parse_package_meta', kind: 'VariableDeclaration'},
 				{name: 'parse_repo_name', kind: 'VariableDeclaration'},
 				{name: 'format_host', kind: 'VariableDeclaration'},
 				{name: 'parse_org_url', kind: 'VariableDeclaration'},
 			],
 		},
+		'./Package_Summary.svelte': {path: 'Package_Summary.svelte', declarations: []},
 		'./package.gen.js': {path: 'package.gen.ts', declarations: []},
 		'./package.js': {
 			path: 'package.ts',
 			declarations: [{name: 'package_json', kind: 'VariableDeclaration'}],
 		},
-		'./PackageDetail.svelte': {path: 'PackageDetail.svelte', declarations: []},
-		'./PackageSummary.svelte': {path: 'PackageSummary.svelte', declarations: []},
-		'./PendingAnimation.svelte': {path: 'PendingAnimation.svelte', declarations: []},
-		'./PendingButton.svelte': {path: 'PendingButton.svelte', declarations: []},
+		'./Pending_Animation.svelte': {path: 'Pending_Animation.svelte', declarations: []},
+		'./Pending_Button.svelte': {path: 'Pending_Button.svelte', declarations: []},
 		'./Redirect.svelte': {path: 'Redirect.svelte', declarations: []},
 		'./Teleport.svelte': {path: 'Teleport.svelte', declarations: []},
+		'./Tome_Detail.svelte': {path: 'Tome_Detail.svelte', declarations: []},
+		'./Tome_Title.svelte': {path: 'Tome_Title.svelte', declarations: []},
 		'./tome.js': {
 			path: 'tome.ts',
 			declarations: [
@@ -244,8 +246,6 @@ export const package_json = {
 				{name: 'get_tome', kind: 'VariableDeclaration'},
 			],
 		},
-		'./TomeDetail.svelte': {path: 'TomeDetail.svelte', declarations: []},
-		'./TomeTitle.svelte': {path: 'TomeTitle.svelte', declarations: []},
 	},
 } satisfies PackageJson;
 

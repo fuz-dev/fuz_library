@@ -2,9 +2,9 @@
 	import {page} from '$app/stores';
 
 	import Breadcrumb from '$lib/Breadcrumb.svelte';
-	import LibraryMenu from '$lib/LibraryMenu.svelte';
-	import LibraryHeader from '$lib/LibraryHeader.svelte';
-	import LibraryFooter from '$lib/LibraryFooter.svelte';
+	import Library_Menu from '$lib/Library_Menu.svelte';
+	import Library_Header from '$lib/Library_Header.svelte';
+	import Library_Footer from '$lib/Library_Footer.svelte';
 	import {set_tomes} from '$lib/tome.js';
 	import {tomes} from '$routes/library/tomes.js';
 	import {package_json} from '$lib/package.js';
@@ -28,18 +28,18 @@
 	<div class="layout width_md">
 		<div class="menu_wrapper">
 			<div class="menu width_sm">
-				<LibraryMenu {tomes} />
+				<Library_Menu {tomes} />
 				{#if tomes_related_to_selected}
-					<LibraryMenu tomes={tomes_related_to_selected} let:category>
+					<Library_Menu tomes={tomes_related_to_selected} let:category>
 						<h6>related {category}</h6>
-					</LibraryMenu>
+					</Library_Menu>
 				{/if}
 			</div>
 		</div>
-		<LibraryHeader {pkg} />
+		<Library_Header {pkg} />
 		<slot />
 		<section class="box">
-			<LibraryFooter {pkg} root_url="https://www.fuz.dev/" />
+			<Library_Footer {pkg} root_url="https://www.fuz.dev/" />
 		</section>
 		<section class="box">
 			<Breadcrumb>🧶</Breadcrumb>

@@ -2,10 +2,10 @@
 	import Code from '@fuz.dev/fuz_code/Code.svelte';
 
 	import {get_tome} from '$lib/tome.js';
-	import PendingAnimation from '$lib/PendingAnimation.svelte';
-	import TomeDetail from '$lib/TomeDetail.svelte';
+	import Pending_Animation from '$lib/Pending_Animation.svelte';
+	import Tome_Detail from '$lib/Tome_Detail.svelte';
 
-	const LIBRARY_ITEM_NAME = 'PendingAnimation';
+	const LIBRARY_ITEM_NAME = 'Pending_Animation';
 	const tome = get_tome(LIBRARY_ITEM_NAME);
 
 	let turtleSlot = '🐢';
@@ -16,19 +16,19 @@
 	let pendingAnimation1Running = false;
 </script>
 
-<TomeDetail {tome}>
+<Tome_Detail {tome}>
 	<div class="prose box">
 		<section>
-			<Code content={`<PendingAnimation running={${pendingAnimation0Running}} />`} />
+			<Code content={`<Pending_Animation running={${pendingAnimation0Running}} />`} />
 			<!-- svelte-ignore a11y-click-events-have-key-events a11y-no-static-element-interactions -->
 			<div on:click={() => (pendingAnimation0Running = !pendingAnimation0Running)}>
-				<PendingAnimation running={pendingAnimation0Running} />
+				<Pending_Animation running={pendingAnimation0Running} />
 			</div>
 			<button on:click={() => (pendingAnimation0Running = !pendingAnimation0Running)}
 				>{#if pendingAnimation0Running}pause animation{:else}play animation{/if}</button
 			>
 			<Code
-				content={`<PendingAnimation\n\tattrs={{class: 'height_full'}}\n\trunning={${pendingAnimation0Running}}\n/>`}
+				content={`<Pending_Animation\n\tattrs={{class: 'height_full'}}\n\trunning={${pendingAnimation0Running}}\n/>`}
 			/>
 			<div
 				class="box"
@@ -37,7 +37,7 @@
 				on:click={() => (pendingAnimation0Running = !pendingAnimation0Running)}
 				role="none"
 			>
-				<PendingAnimation attrs={{class: 'height_full'}} running={pendingAnimation0Running} />
+				<Pending_Animation attrs={{class: 'height_full'}} running={pendingAnimation0Running} />
 			</div>
 		</section>
 		<section>
@@ -47,9 +47,9 @@
 	style:font-size="var(--size_6)"
 	style:--animation_duration="var(--duration_6)"
 >
-	<PendingAnimation running={${pendingAnimation1Running}}>
+	<Pending_Animation running={${pendingAnimation1Running}}>
 		{${turtleSlot}}
-	</PendingAnimation>
+	</Pending_Animation>
 </div>`}
 			/>
 			<p>
@@ -68,15 +68,15 @@
 				style:--animation_duration="var(--duration_6)"
 				style:text-align="center"
 			>
-				<PendingAnimation running={pendingAnimation1Running}>
+				<Pending_Animation running={pendingAnimation1Running}>
 					{turtleSlot}
-				</PendingAnimation>
+				</Pending_Animation>
 			</div>
 		</section>
 		<section>
 			<h3>slot <code>index</code> prop</h3>
 			<Code
-				content={`<PendingAnimation running={${frogsRunning}} let:index>
+				content={`<Pending_Animation running={${frogsRunning}} let:index>
 	<div class="row box">
 		{${turtleSlot2a}}
 		{index}
@@ -84,7 +84,7 @@
 			{${turtleSlot2b}}
 		</span>}
 	</div>
-</PendingAnimation>`}
+</Pending_Animation>`}
 			/>
 			<p>
 				with
@@ -97,16 +97,16 @@
 				and slots <input class="inline" bind:value={turtleSlot2a} />
 				<input class="inline" bind:value={turtleSlot2b} />
 			</p>
-			<PendingAnimation running={frogsRunning} let:index>
+			<Pending_Animation running={frogsRunning} let:index>
 				<div class="row box">
 					<span style="font-size: var(--size_5)">{turtleSlot2a}</span>
 					<span class="index">{index}</span>
 					{turtleSlot2b}
 				</div>
-			</PendingAnimation>
+			</Pending_Animation>
 		</section>
 	</div>
-</TomeDetail>
+</Tome_Detail>
 
 <style>
 	code button.inline {

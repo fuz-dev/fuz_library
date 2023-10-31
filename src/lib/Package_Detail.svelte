@@ -2,9 +2,9 @@
 	import {page} from '$app/stores';
 	import {ensure_end, strip_start} from '@grogarden/util/string.js';
 
-	import {format_host, type PackageMeta} from '$lib/package_meta.js';
+	import {format_host, type Package_Meta} from '$lib/package_meta.js';
 
-	export let pkg: PackageMeta; // TODO normalized version with cached primitives?
+	export let pkg: Package_Meta; // TODO normalized version with cached primitives?
 
 	// TODO show other data (lines of code)
 
@@ -144,7 +144,7 @@
 
 	<section class="width_full spaced">
 		<details>
-			<summary>raw data for <code>pkg: PackageMeta</code></summary>
+			<summary>raw data for <code>pkg: Package_Meta</code></summary>
 			<pre><code>{JSON.stringify(pkg, null, '\t')}</code></pre>
 		</details>
 	</section>

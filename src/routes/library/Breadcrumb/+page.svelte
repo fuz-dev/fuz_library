@@ -3,14 +3,14 @@
 
 	import {get_tome} from '$lib/tome.js';
 	import Breadcrumb from '$lib/Breadcrumb.svelte';
-	import TomeDetail from '$lib/TomeDetail.svelte';
+	import Tome_Detail from '$lib/Tome_Detail.svelte';
 	import BreadcrumbExample from '$routes/library/Breadcrumb/BreadcrumbExample.svelte';
 
 	const LIBRARY_ITEM_NAME = 'Breadcrumb';
 	const tome = get_tome(LIBRARY_ITEM_NAME);
 </script>
 
-<TomeDetail {tome}>
+<Tome_Detail {tome}>
 	<div class="prose box">
 		<section>
 			<Code content={`<Breadcrumb />`} />
@@ -27,7 +27,7 @@
 			<BreadcrumbExample selected_path="/a/b" />
 		</section>
 	</div>
-</TomeDetail>
+</Tome_Detail>
 
 <style>
 	section {
