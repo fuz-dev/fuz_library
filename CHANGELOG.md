@@ -1,5 +1,11 @@
 # @fuz.dev/fuz_library
 
+## 0.19.1
+
+### Patch Changes
+
+- e326f4d: fix deps
+
 ## 0.19.0
 
 ### Minor Changes
