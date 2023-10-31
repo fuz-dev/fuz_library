@@ -26,6 +26,7 @@
     "dist"
   ],
   "peerDependencies": {
+    "@grogarden/gro": "*",
     "@grogarden/util": "*",
     "@sveltejs/kit": "*",
     "svelte": "*"
@@ -35,7 +36,7 @@
     "@feltjs/eslint-config": "^0.4.1",
     "@fuz.dev/fuz": "^0.79.1",
     "@fuz.dev/fuz_code": "^0.4.3",
-    "@grogarden/gro": "^0.98.3",
+    "@grogarden/gro": "^0.100.0",
     "@sveltejs/adapter-static": "^2.0.3",
     "@sveltejs/kit": "^1.27.2",
     "@sveltejs/package": "^2.2.2",

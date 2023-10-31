@@ -1,11 +1,11 @@
-import type {PackageJson} from '@grogarden/gro/package_json.js';
+import type {Package_Json} from '@grogarden/gro/package_json.js';
 import type {Url} from '@grogarden/gro/paths.js';
 import {strip_start, strip_end} from '@grogarden/util/string.js';
 
 // TODO refactor/rethink
 export interface Package {
 	url: Url;
-	package_json: PackageJson;
+	package_json: Package_Json;
 }
 
 export interface Package_Meta extends Package {
@@ -22,7 +22,7 @@ export interface Package_Meta extends Package {
 	published: boolean;
 }
 
-export const parse_package_meta = (url: Url, package_json: PackageJson): Package_Meta => {
+export const parse_package_meta = (url: Url, package_json: Package_Json): Package_Meta => {
 	const {name} = package_json;
 
 	// TODO think through with other presentations - Details, Summary, Card
