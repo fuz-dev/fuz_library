@@ -1,5 +1,11 @@
 # @fuz.dev/fuz_library
 
+## 0.18.1
+
+### Patch Changes
+
+- 3336931: upgrade deps
+
 ## 0.18.0
 
 ### Minor Changes
