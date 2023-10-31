@@ -1,5 +1,11 @@
 # @fuz.dev/fuz_library
 
+## 0.19.0
+
+### Minor Changes
+
+- 8e1f8a1: upgrade gro and add it to peer deps
+
 ## 0.18.1
 
 ### Patch Changes
