@@ -1,10 +1,10 @@
 <script lang="ts">
 	import type {Url} from '@grogarden/gro/paths.js';
 
-	import GithubLogo from '$lib/GithubLogo.svelte';
-	import {format_host, type PackageMeta} from '$lib/package_meta.js';
+	import Github_Logo from '$lib/Github_Logo.svelte';
+	import {format_host, type Package_Meta} from '$lib/package_meta.js';
 
-	export let pkg: PackageMeta;
+	export let pkg: Package_Meta;
 	export let root_url: Url | null = null;
 
 	$: ({repo_url} = pkg);
@@ -13,7 +13,7 @@
 <footer class="panel padded_lg">
 	<slot />
 	<div class="logo">
-		<a href={repo_url} rel="me"><slot name="logo"><GithubLogo /></slot></a>
+		<a href={repo_url} rel="me"><slot name="logo"><Github_Logo /></slot></a>
 	</div>
 	{#if root_url}
 		<div class="root_url">

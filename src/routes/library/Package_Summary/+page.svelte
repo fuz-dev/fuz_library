@@ -2,30 +2,28 @@
 	import Code from '@fuz.dev/fuz_code/Code.svelte';
 
 	import {get_tome} from '$lib/tome.js';
-	import PackageDetail from '$lib/PackageDetail.svelte';
-	import TomeDetail from '$lib/TomeDetail.svelte';
+	import Package_Summary from '$lib/Package_Summary.svelte';
+	import Tome_Detail from '$lib/Tome_Detail.svelte';
 	import {parse_package_meta} from '$lib/package_meta.js';
 	import {package_json} from '$lib/package.js';
 
-	const LIBRARY_ITEM_NAME = 'PackageDetail';
+	const LIBRARY_ITEM_NAME = 'Package_Summary';
 	const tome = get_tome(LIBRARY_ITEM_NAME);
 
 	const pkg = parse_package_meta(package_json.homepage, package_json);
 </script>
 
-<TomeDetail {tome}>
+<Tome_Detail {tome}>
 	<div class="prose">
 		<section>
 			<Code
-				content={`import PackageDetail from\n\t'@fuz.dev/fuz_library/PackageDetail.svelte';`}
+				content={`import Package_Summary from\n\t'@fuz.dev/fuz_library/Package_Summary.svelte';`}
 				lang="ts"
 			/>
-			<Code content={`<PackageDetail {pkg} />`} />
+			<Code content={`<Package_Summary {pkg} />`} />
 		</section>
 	</div>
-	<section class="width_full">
-		<div class="box panel padded_md">
-			<PackageDetail {pkg} />
-		</div>
+	<section>
+		<Package_Summary {pkg} />
 	</section>
-</TomeDetail>
+</Tome_Detail>

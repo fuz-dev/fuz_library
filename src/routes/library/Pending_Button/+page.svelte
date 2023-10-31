@@ -2,25 +2,25 @@
 	import Code from '@fuz.dev/fuz_code/Code.svelte';
 
 	import {get_tome} from '$lib/tome.js';
-	import PendingButton from '$lib/PendingButton.svelte';
-	import TomeDetail from '$lib/TomeDetail.svelte';
+	import Pending_Button from '$lib/Pending_Button.svelte';
+	import Tome_Detail from '$lib/Tome_Detail.svelte';
 
-	const LIBRARY_ITEM_NAME = 'PendingButton';
+	const LIBRARY_ITEM_NAME = 'Pending_Button';
 	const tome = get_tome(LIBRARY_ITEM_NAME);
 
 	let pending_1 = false;
 	let pending_2 = true;
 </script>
 
-<!-- TODO maybe PendingButton shouldn't be a component? action? Or renderless maybe?
+<!-- TODO maybe Pending_Button shouldn't be a component? action? Or renderless maybe?
 		Extract a common thing to make arbitrary things not change width.
 	-->
 
-<TomeDetail {tome}>
+<Tome_Detail {tome}>
 	<div class="prose box">
 		<section class="box">
 			<blockquote class="text_align_center">
-				<p><code>PendingButton</code> preserves the normal width of the button while animating.</p>
+				<p><code>Pending_Button</code> preserves the normal width of the button while animating.</p>
 				<p>This component may be replaced with an action in the future.</p>
 			</blockquote>
 			<button
@@ -31,27 +31,27 @@
 			>
 
 			<Code
-				content={`<PendingButton
+				content={`<Pending_Button
 	pending={${pending_1}}
 	on:click={() => (pending_1 = !pending_1)}
 >
 	do something async
-</PendingButton>`}
+</Pending_Button>`}
 			/>
-			<PendingButton pending={pending_1} on:click={() => (pending_1 = !pending_1)}>
+			<Pending_Button pending={pending_1} on:click={() => (pending_1 = !pending_1)}>
 				do something async
-			</PendingButton>
+			</Pending_Button>
 			<Code
-				content={`<PendingButton
+				content={`<Pending_Button
 	pending={${pending_2}}
 	on:click={() => (pending_2 = !pending_2)}
 >
 	do another
-</PendingButton>`}
+</Pending_Button>`}
 			/>
-			<PendingButton pending={pending_2} on:click={() => (pending_2 = !pending_2)}>
+			<Pending_Button pending={pending_2} on:click={() => (pending_2 = !pending_2)}>
 				do another
-			</PendingButton>
+			</Pending_Button>
 		</section>
 	</div>
-</TomeDetail>
+</Tome_Detail>

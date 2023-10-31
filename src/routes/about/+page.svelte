@@ -1,7 +1,7 @@
 <script lang="ts">
-	import PackageDetail from '$lib/PackageDetail.svelte';
+	import Package_Detail from '$lib/Package_Detail.svelte';
 	import {parse_package_meta} from '$lib/package_meta.js';
-	import LibraryFooter from '$lib/LibraryFooter.svelte';
+	import Library_Footer from '$lib/Library_Footer.svelte';
 	import Breadcrumb from '$lib/Breadcrumb.svelte';
 	import {package_json} from '$lib/package.js';
 
@@ -21,11 +21,11 @@
 	</div>
 	<section class="box width_full spaced">
 		<div class="panel padded_md width_md">
-			<PackageDetail {pkg} />
+			<Package_Detail {pkg} />
 		</div>
 	</section>
 	<section class="box">
-		<LibraryFooter {pkg} />
+		<Library_Footer {pkg} />
 		<Breadcrumb>🧶</Breadcrumb>
 	</section>
 </main>

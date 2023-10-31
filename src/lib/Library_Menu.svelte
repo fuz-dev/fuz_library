@@ -4,9 +4,9 @@
 	import {base} from '$app/paths';
 
 	import type {Tome} from '$lib/tome.js';
-	import LibraryPanel from '$lib/LibraryPanel.svelte';
+	import Library_Panel from '$lib/Library_Panel.svelte';
 
-	// LibraryMenu floats alongside the docs, showing scrolled item as active
+	// Library_Menu floats alongside the docs, showing scrolled item as active
 	export let tomes: Tome[];
 
 	let tomes_by_category: Record<string, Tome[]>;
@@ -22,7 +22,7 @@
 
 {#each Object.entries(tomes_by_category) as [category, tomes] (category)}
 	<div transition:slide>
-		<LibraryPanel>
+		<Library_Panel>
 			<div class="library_menu">
 				<slot {category}>
 					<h6>{category}</h6>
@@ -38,7 +38,7 @@
 					{/each}
 				</menu>
 			</div>
-		</LibraryPanel>
+		</Library_Panel>
 	</div>
 {/each}
 

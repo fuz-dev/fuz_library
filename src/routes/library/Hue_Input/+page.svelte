@@ -2,21 +2,21 @@
 	import Code from '@fuz.dev/fuz_code/Code.svelte';
 
 	import {get_tome} from '$lib/tome.js';
-	import HueInput from '$lib/HueInput.svelte';
-	import TomeDetail from '$lib/TomeDetail.svelte';
+	import Hue_Input from '$lib/Hue_Input.svelte';
+	import Tome_Detail from '$lib/Tome_Detail.svelte';
 
-	const LIBRARY_ITEM_NAME = 'HueInput';
+	const LIBRARY_ITEM_NAME = 'Hue_Input';
 	const tome = get_tome(LIBRARY_ITEM_NAME);
 
 	let hue: number;
 </script>
 
-<TomeDetail {tome}>
+<Tome_Detail {tome}>
 	<div class="prose" style:--color="hsl({hue} 62% 31%)">
 		<!-- TODO make this a generic data-driven helper -->
-		<Code content={`import HueInput from\n\t'@fuz.dev/fuz_library/HueInput.svelte';`} lang="ts" />
+		<Code content={`import Hue_Input from\n\t'@fuz.dev/fuz_library/Hue_Input.svelte';`} lang="ts" />
 		<Code
-			content={`<HueInput
+			content={`<Hue_Input
 	bind:hue
 	on:input={(e) => {
 		// hue === e.detail
@@ -24,11 +24,11 @@
 	}}
 />`}
 		/>
-		<HueInput
+		<Hue_Input
 			bind:hue
 			on:input={(e) => {
 				if (hue !== e.detail) throw Error();
 			}}
 		/>
 	</div>
-</TomeDetail>
+</Tome_Detail>

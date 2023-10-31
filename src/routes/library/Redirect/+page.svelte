@@ -3,13 +3,13 @@
 
 	import {get_tome} from '$lib/tome.js';
 	import Redirect from '$lib/Redirect.svelte';
-	import TomeDetail from '$lib/TomeDetail.svelte';
+	import Tome_Detail from '$lib/Tome_Detail.svelte';
 
 	const LIBRARY_ITEM_NAME = 'Redirect';
 	const tome = get_tome(LIBRARY_ITEM_NAME);
 </script>
 
-<TomeDetail {tome}>
+<Tome_Detail {tome}>
 	<div class="box prose">
 		<p>
 			Adds a redirect for a page using <a
@@ -45,7 +45,7 @@
 			</Redirect>
 		</section>
 	</div>
-</TomeDetail>
+</Tome_Detail>
 
 <style>
 	section {

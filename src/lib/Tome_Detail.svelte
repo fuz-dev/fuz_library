@@ -1,6 +1,6 @@
 <script lang="ts">
-	import TomeTitle from '$lib/TomeTitle.svelte';
-	import LibraryPanel from '$lib/LibraryPanel.svelte';
+	import Tome_Title from '$lib/Tome_Title.svelte';
+	import Library_Panel from '$lib/Library_Panel.svelte';
 	import type {Tome} from '$lib/tome.js';
 
 	// TODO component name?
@@ -8,14 +8,14 @@
 	export let tome: Tome;
 </script>
 
-<LibraryPanel>
+<Library_Panel>
 	<header>
 		<slot name="header">
-			<TomeTitle {tome} />
+			<Tome_Title {tome} />
 		</slot>
 	</header>
 	<slot />
-</LibraryPanel>
+</Library_Panel>
 
 <style>
 	header {

@@ -1,14 +1,14 @@
 import {init_tome, type Tome} from '$lib/tome.js';
-import PendingAnimation from '$routes/library/PendingAnimation/+page.svelte';
-import PendingButton from '$routes/library/PendingButton/+page.svelte';
-import PackageSummary from '$routes/library/PackageSummary/+page.svelte';
-import PackageDetail from '$routes/library/PackageDetail/+page.svelte';
+import Pending_Animation from '$routes/library/Pending_Animation/+page.svelte';
+import Pending_Button from '$routes/library/Pending_Button/+page.svelte';
+import Package_Summary from '$routes/library/Package_Summary/+page.svelte';
+import Package_Detail from '$routes/library/Package_Detail/+page.svelte';
 import Teleport from '$routes/library/Teleport/+page.svelte';
 import Alert from '$routes/library/Alert/+page.svelte';
 // import Library from '$routes/library/Library/+page.svelte';
 // import menu_item from '$routes/library/menu_item/+page.svelte';
 import Redirect from '$routes/library/Redirect/+page.svelte';
-import HueInput from '$routes/library/HueInput/+page.svelte';
+import Hue_Input from '$routes/library/Hue_Input/+page.svelte';
 import Breadcrumb from '$routes/library/Breadcrumb/+page.svelte';
 import Card from '$routes/library/Card/+page.svelte';
 
@@ -47,11 +47,11 @@ export const tomes: Tome[] = [
 		related: ['Alert'],
 	},
 	{
-		name: 'HueInput',
-		slug: 'HueInput',
+		name: 'Hue_Input',
+		slug: 'Hue_Input',
 		pathname: '',
 		category: 'components',
-		component: HueInput,
+		component: Hue_Input,
 		related: [], // TODO externals?
 	},
 	// TODO implement
@@ -64,36 +64,36 @@ export const tomes: Tome[] = [
 	// 	related: [],
 	// },
 	{
-		name: 'PackageDetail',
-		slug: 'PackageDetail',
+		name: 'Package_Detail',
+		slug: 'Package_Detail',
 		pathname: '',
 		category: 'components',
-		component: PackageDetail,
-		related: ['PackageSummary'],
+		component: Package_Detail,
+		related: ['Package_Summary'],
 	},
 	{
-		name: 'PackageSummary',
-		slug: 'PackageSummary',
+		name: 'Package_Summary',
+		slug: 'Package_Summary',
 		pathname: '',
 		category: 'components',
-		component: PackageSummary,
-		related: ['PackageDetail'],
+		component: Package_Summary,
+		related: ['Package_Detail'],
 	},
 	{
-		name: 'PendingAnimation',
-		slug: 'PendingAnimation',
+		name: 'Pending_Animation',
+		slug: 'Pending_Animation',
 		pathname: '',
 		category: 'components',
-		component: PendingAnimation,
-		related: ['PendingButton'],
+		component: Pending_Animation,
+		related: ['Pending_Button'],
 	},
 	{
-		name: 'PendingButton',
-		slug: 'PendingButton',
+		name: 'Pending_Button',
+		slug: 'Pending_Button',
 		pathname: '',
 		category: 'components',
-		component: PendingButton,
-		related: ['PendingAnimation'],
+		component: Pending_Button,
+		related: ['Pending_Animation'],
 	},
 	{
 		name: 'Redirect',

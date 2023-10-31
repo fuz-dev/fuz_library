@@ -1,8 +1,8 @@
 <script lang="ts">
-	import type {AlertStatus} from '$lib/alert.js';
+	import type {Alert_Status} from '$lib/alert.js';
 	import {alert_status_options} from '$lib/alert.js';
 
-	export let status: AlertStatus = 'inform';
+	export let status: Alert_Status = 'inform';
 	export let icon: string | null | undefined = undefined;
 	export let button: boolean | undefined = undefined;
 

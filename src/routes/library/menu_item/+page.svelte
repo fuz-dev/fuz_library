@@ -3,7 +3,7 @@
 	import Code from '@fuz.dev/fuz_code/Code.svelte';
 
 	import {get_tome} from '$lib/tome.js';
-	import TomeDetail from '$lib/TomeDetail.svelte';
+	import Tome_Detail from '$lib/Tome_Detail.svelte';
 
 	const LIBRARY_ITEM_NAME = 'menu item';
 	const tome = get_tome(LIBRARY_ITEM_NAME);
@@ -21,7 +21,7 @@
 	};
 </script>
 
-<TomeDetail {tome}>
+<Tome_Detail {tome}>
 	<section class="prose box">
 		<h3>
 			<code>.menu_item</code> CSS class
@@ -135,7 +135,7 @@
 			</li>
 		</ul>
 	</section>
-</TomeDetail>
+</Tome_Detail>
 
 <style>
 	section {

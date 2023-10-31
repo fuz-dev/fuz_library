@@ -1,5 +1,5 @@
 <script lang="ts">
-	import PendingAnimation from '$lib/PendingAnimation.svelte';
+	import Pending_Animation from '$lib/Pending_Animation.svelte';
 
 	export let pending: boolean;
 	export let running: boolean | undefined = undefined;
@@ -23,7 +23,7 @@
 	</div>
 	{#if pending}
 		<div class="animation">
-			<PendingAnimation {running} />
+			<Pending_Animation {running} />
 		</div>
 	{/if}
 </button>
