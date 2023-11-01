@@ -1,5 +1,11 @@
 # @fuz.dev/fuz_library
 
+## 0.19.2
+
+### Patch Changes
+
+- 606401f: tweak Package_Detail
+
 ## 0.19.1
 
 ### Patch Changes
