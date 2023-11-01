@@ -50,9 +50,7 @@
 	</header>
 	<slot />
 	{#if description}
-		<slot name="description" {description}
-			><blockquote class="spaced">{description}</blockquote></slot
-		>
+		<slot name="description" {description}><div class="spaced">{description}</div></slot>
 	{/if}
 	{#if npm_url}
 		<slot name="npm_url" {npm_url}
