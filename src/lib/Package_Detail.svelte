@@ -21,9 +21,12 @@
 
 	// TODO helper (zod parser?)
 	$: repository_url = repository
-		? strip_end(
-				strip_end(typeof repository === 'string' ? repository : repository.url, '.git'),
-				'/',
+		? strip_start(
+				strip_end(
+					strip_end(typeof repository === 'string' ? repository : repository.url, '.git'),
+					'/',
+				),
+				'git+',
 		  )
 		: null;
 	$: license_url = license && repository_url ? repository_url + '/blob/main/LICENSE' : null;
