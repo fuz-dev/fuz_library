@@ -1,5 +1,11 @@
 # @fuz.dev/fuz_library
 
+## 0.19.3
+
+### Patch Changes
+
+- e5782f3: fix `Package_Detail` license link
+
 ## 0.19.2
 
 ### Patch Changes
