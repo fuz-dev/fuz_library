@@ -1,5 +1,11 @@
 # @fuz.dev/fuz_library
 
+## 0.19.4
+
+### Patch Changes
+
+- 1c1bc2e: fix `repository_url` for `Package_Detail`
+
 ## 0.19.3
 
 ### Patch Changes
