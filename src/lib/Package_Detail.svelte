@@ -1,6 +1,6 @@
 <script lang="ts">
 	import {page} from '$app/stores';
-	import {ensure_end, strip_start} from '@grogarden/util/string.js';
+	import {ensure_end, strip_end, strip_start} from '@grogarden/util/string.js';
 
 	import {format_host, type Package_Meta} from '$lib/package_meta.js';
 
@@ -19,10 +19,12 @@
 		modules: pkg_modules,
 	} = package_json);
 
+	// TODO helper (zod parser?)
 	$: repository_url = repository
-		? typeof repository === 'string'
-			? repository
-			: repository.url
+		? strip_end(
+				strip_end(typeof repository === 'string' ? repository : repository.url, '.git'),
+				'/',
+		  )
 		: null;
 	$: license_url = license && repository_url ? repository_url + '/blob/main/LICENSE' : null;
 
