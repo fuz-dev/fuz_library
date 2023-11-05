@@ -1,5 +1,11 @@
 # @fuz.dev/fuz_library
 
+## 0.19.5
+
+### Patch Changes
+
+- 9a0433b: show icon on `Package_Detail`
+
 ## 0.19.4
 
 ### Patch Changes
