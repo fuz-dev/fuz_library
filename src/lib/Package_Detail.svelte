@@ -13,6 +13,7 @@
 		name,
 		version,
 		description,
+		icon,
 		license,
 		repository,
 		exports: pkg_exports,
@@ -51,7 +52,11 @@
 <div class="package_detail">
 	<!-- TODO maybe continue this slot pattern, or maybe simplify? -->
 	<header class="spaced">
-		<slot name="repo_name" {repo_name}><div class="repo_name">{repo_name}</div></slot>
+		<slot name="repo_name" {repo_name}
+			><div class="repo_name">
+				{repo_name}{#if icon}{' '}{icon}{/if}
+			</div></slot
+		>
 	</header>
 	<slot />
 	{#if description}
