@@ -64,6 +64,7 @@ export const parse_package_meta = (
 	return {
 		url,
 		package_json,
+		src_json,
 		name,
 		repo_name,
 		repo_url,
