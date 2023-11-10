@@ -1,5 +1,12 @@
 # @fuz.dev/fuz_library
 
+## 0.21.1
+
+### Patch Changes
+
+- f0bae6c: improve `Library_Menu` style
+- e58c27a: add `src_json` link to `Package_Detail`
+
 ## 0.21.0
 
 ### Minor Changes
