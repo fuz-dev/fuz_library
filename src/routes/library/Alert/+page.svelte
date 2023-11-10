@@ -15,6 +15,8 @@
 <Tome_Detail {tome}>
 	<div class="prose">
 		<section>
+			<!-- TODO make this a generic data-driven helper -->
+			<Code content={`import Alert from '@fuz.dev/fuz_library/Alert.svelte';`} lang="ts" />
 			<Code content={`<Alert>info</Alert>`} />
 			<Alert>info</Alert>
 		</section>

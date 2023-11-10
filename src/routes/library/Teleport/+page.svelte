@@ -15,15 +15,16 @@
 
 <Tome_Detail {tome}>
 	<section class="prose width_sm">
+		<p>Relocates elements in the DOM, in the rare cases that's useful and the best solution.</p>
 		<aside>
-			<p>
-				The <code>Teleport</code> can be used to relocate other elements too, in the rare cases that's
-				useful.
-			</p>
 			<p>Use only when necessary or fun.</p>
 		</aside>
 	</section>
 	<section>
+		<div class="spaced">
+			<!-- TODO make this a generic data-driven helper -->
+			<Code content={`import Teleport from\n\t'@fuz.dev/fuz_library/Teleport.svelte';`} lang="ts" />
+		</div>
 		<Code
 			content={`<Teleport to={swap ? teleport_1 : teleport_2}>
 	🐰

@@ -13,6 +13,11 @@
 <Tome_Detail {tome}>
 	<div class="prose box">
 		<section>
+			<!-- TODO make this a generic data-driven helper -->
+			<Code
+				content={`import Breadcrumb from\n\t'@fuz.dev/fuz_library/Breadcrumb.svelte';`}
+				lang="ts"
+			/>
 			<Code content={`<Breadcrumb />`} />
 			<Breadcrumb />
 		</section>

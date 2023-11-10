@@ -19,10 +19,15 @@
 <Tome_Detail {tome}>
 	<div class="prose box">
 		<section class="box">
-			<blockquote class="text_align_center">
-				<p><code>Pending_Button</code> preserves the normal width of the button while animating.</p>
-				<p>This component may be replaced with an action in the future.</p>
-			</blockquote>
+			<p class="width_sm">Preserves a button's normal width while animating.</p>
+			<aside class="width_sm">
+				<p>This component may be replaced with an action in the future or otherwise change.</p>
+			</aside>
+			<!-- TODO make this a generic data-driven helper -->
+			<Code
+				content={`import Pending_Button from\n\t'@fuz.dev/fuz_library/Pending_Button.svelte';`}
+				lang="ts"
+			/>
 			<button
 				on:click={() => {
 					pending_1 = !pending_1;

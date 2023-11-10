@@ -11,7 +11,7 @@
 
 <Tome_Detail {tome}>
 	<div class="box prose">
-		<p>
+		<p class="width_sm">
 			Adds a redirect for a page using <a
 				href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Redirections#html_redirections"
 				>a meta tag</a
@@ -21,6 +21,8 @@
 				>the <code>refresh</code> header</a
 			>. Includes a rendered link and JS navigation fallback.
 		</p>
+		<!-- TODO make this a generic data-driven helper -->
+		<Code content={`import Redirect from\n\t'@fuz.dev/fuz_library/Redirect.svelte';`} lang="ts" />
 		<aside class="width_sm">
 			Please note: <code>auto={'{'}false}</code> is only used here to prevent the page from redirecting!
 			Normally you wouldn't include it as a prop.

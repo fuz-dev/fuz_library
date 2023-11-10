@@ -19,6 +19,11 @@
 <Tome_Detail {tome}>
 	<div class="prose box">
 		<section>
+			<!-- TODO make this a generic data-driven helper -->
+			<Code
+				content={`import Pending_Animation from\n\t'@fuz.dev/fuz_library/Pending_Animation.svelte';`}
+				lang="ts"
+			/>
 			<Code content={`<Pending_Animation running={${pendingAnimation0Running}} />`} />
 			<!-- svelte-ignore a11y-click-events-have-key-events a11y-no-static-element-interactions -->
 			<div on:click={() => (pendingAnimation0Running = !pendingAnimation0Running)}>

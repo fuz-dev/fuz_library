@@ -31,6 +31,7 @@
 					{#each tomes as item (item.slug)}
 						<li role="none" transition:slide>
 							<a
+								class="menu_item"
 								href="{base}/library/{item.slug}"
 								class:selected={item.pathname === $page.url.pathname}>{item.name}</a
 							>
@@ -52,5 +53,16 @@
 	}
 	h6:not(:first-child) {
 		margin-top: var(--spacing_1);
+	}
+	li {
+		width: 100%;
+	}
+	/* TODO should be a CSS class or variable, maybe should be the default?
+	problem is it doesn't work on .bg, maybe needs a variant/modifier in the name? */
+	menu a:hover {
+		background-color: var(--bg_5);
+	}
+	menu a:is(:active, .selected) {
+		background-color: var(--bg_7);
 	}
 </style>
