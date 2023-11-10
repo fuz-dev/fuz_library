@@ -5,12 +5,12 @@
 	import Package_Summary from '$lib/Package_Summary.svelte';
 	import Tome_Detail from '$lib/Tome_Detail.svelte';
 	import {parse_package_meta} from '$lib/package_meta.js';
-	import {package_json} from '$lib/package.js';
+	import {package_json, src_json} from '$lib/package.js';
 
 	const LIBRARY_ITEM_NAME = 'Package_Summary';
 	const tome = get_tome(LIBRARY_ITEM_NAME);
 
-	const pkg = parse_package_meta(package_json.homepage, package_json);
+	const pkg = parse_package_meta(package_json.homepage, package_json, src_json);
 </script>
 
 <Tome_Detail {tome}>
