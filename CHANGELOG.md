@@ -1,5 +1,23 @@
 # @fuz.dev/fuz_library
 
+## 0.21.0
+
+### Minor Changes
+
+- 08d0fef: upgrade gro with src_json support split out from package_json
+
+## 0.20.0
+
+### Minor Changes
+
+- d8e8c24: upgrade deps
+
+## 0.19.5
+
+### Patch Changes
+
+- 9a0433b: show icon on `Package_Detail`
+
 ## 0.19.4
 
 ### Patch Changes

@@ -3,9 +3,9 @@
 	import {parse_package_meta} from '$lib/package_meta.js';
 	import Library_Footer from '$lib/Library_Footer.svelte';
 	import Breadcrumb from '$lib/Breadcrumb.svelte';
-	import {package_json} from '$lib/package.js';
+	import {package_json, src_json} from '$lib/package.js';
 
-	const pkg = parse_package_meta(package_json.homepage, package_json);
+	const pkg = parse_package_meta(package_json.homepage, package_json, src_json);
 
 	// TODO standardize
 </script>

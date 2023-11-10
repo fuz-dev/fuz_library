@@ -8,16 +8,9 @@
 
 	// TODO show other data (lines of code)
 
-	$: ({package_json, npm_url, repo_name, repo_url, changelog_url, homepage_url} = pkg);
-	$: ({
-		name,
-		version,
-		description,
-		license,
-		repository,
-		exports: pkg_exports,
-		modules: pkg_modules,
-	} = package_json);
+	$: ({package_json, src_json, npm_url, repo_name, repo_url, changelog_url, homepage_url} = pkg);
+	$: ({name, version, description, icon, license, repository, exports: pkg_exports} = package_json);
+	$: ({modules: pkg_modules} = src_json);
 
 	// TODO helper (zod parser?)
 	$: repository_url = repository
@@ -51,7 +44,11 @@
 <div class="package_detail">
 	<!-- TODO maybe continue this slot pattern, or maybe simplify? -->
 	<header class="spaced">
-		<slot name="repo_name" {repo_name}><div class="repo_name">{repo_name}</div></slot>
+		<slot name="repo_name" {repo_name}
+			><div class="repo_name">
+				{repo_name}{#if icon}{' '}{icon}{/if}
+			</div></slot
+		>
 	</header>
 	<slot />
 	{#if description}
@@ -127,13 +124,7 @@
 						{#if pkg_module}
 							<ul class="declarations">
 								{#each pkg_module.declarations as { name, kind }}
-									<li
-										class="declaration chip"
-										class:variable_declaration={kind === 'VariableDeclaration'}
-										class:type_declaration={kind === 'InterfaceDeclaration' ||
-											kind === 'TypeAliasDeclaration'}
-										class:class_declaration={kind === 'ClassDeclaration'}
-									>
+									<li class="declaration chip {kind}_declaration">
 										{name}
 									</li>
 								{/each}
@@ -219,6 +210,9 @@
 	}
 	.variable_declaration {
 		color: var(--color_3);
+	}
+	.function_declaration {
+		color: var(--color_5);
 	}
 	.type_declaration {
 		color: var(--color_7);
