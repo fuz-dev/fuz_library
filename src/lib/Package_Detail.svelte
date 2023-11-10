@@ -8,17 +8,9 @@
 
 	// TODO show other data (lines of code)
 
-	$: ({package_json, npm_url, repo_name, repo_url, changelog_url, homepage_url} = pkg);
-	$: ({
-		name,
-		version,
-		description,
-		icon,
-		license,
-		repository,
-		exports: pkg_exports,
-		modules: pkg_modules,
-	} = package_json);
+	$: ({package_json, src_json, npm_url, repo_name, repo_url, changelog_url, homepage_url} = pkg);
+	$: ({name, version, description, icon, license, repository, exports: pkg_exports} = package_json);
+	$: ({modules: pkg_modules} = src_json);
 
 	// TODO helper (zod parser?)
 	$: repository_url = repository
