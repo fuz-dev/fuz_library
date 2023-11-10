@@ -101,6 +101,9 @@
 				<a class="chip" title="data" href="{ensure_end(homepage_url, '/')}.well-known/package.json"
 					>package.json</a
 				>
+				<a class="chip" title="data" href="{ensure_end(homepage_url, '/')}.well-known/src.json"
+					>src.json</a
+				>
 			</section>
 		{/if}
 	</section>
