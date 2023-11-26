@@ -4,7 +4,7 @@
 	import Library_Header from '$lib/Library_Header.svelte';
 	import Library_Footer from '$lib/Library_Footer.svelte';
 	import {parse_package_meta} from '$lib/package_meta.js';
-	import {package_json, src_json} from '$lib/package.js';
+	import {package_json, src_json} from '$routes/package.js';
 
 	const pkg = parse_package_meta(package_json.homepage, package_json, src_json);
 </script>
