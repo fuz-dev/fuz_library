@@ -1,5 +1,11 @@
 # @fuz.dev/fuz_library
 
+## 0.22.0
+
+### Minor Changes
+
+- 5aa4a77: unpublish package.ts
+
 ## 0.21.1
 
 ### Patch Changes

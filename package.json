@@ -1,6 +1,6 @@
 {
   "name": "@fuz.dev/fuz_library",
-  "version": "0.21.1",
+  "version": "0.22.0",
   "description": "components and helpers for Svelte, SvelteKit, and Fuz",
   "icon": "🧶",
   "public": true,
