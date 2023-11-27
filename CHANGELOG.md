@@ -1,5 +1,11 @@
 # @fuz.dev/fuz_library
 
+## 0.22.1
+
+### Patch Changes
+
+- 898d68c: update icons
+
 ## 0.22.0
 
 ### Minor Changes
