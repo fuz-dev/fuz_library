@@ -1,5 +1,11 @@
 # @fuz.dev/fuz_library
 
+## 0.23.0
+
+### Minor Changes
+
+- 31b5284: rename active to selected
+
 ## 0.22.1
 
 ### Patch Changes

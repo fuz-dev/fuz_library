@@ -5,7 +5,7 @@ import type {Src_Json} from '@grogarden/gro/src_json.js';
 
 export const package_json = {
 	name: '@fuz.dev/fuz_library',
-	version: '0.22.1',
+	version: '0.23.0',
 	description: 'components and helpers for Svelte, SvelteKit, and Fuz',
 	icon: '🧶',
 	public: true,
@@ -180,7 +180,7 @@ export const package_json = {
 
 export const src_json = {
 	name: '@fuz.dev/fuz_library',
-	version: '0.22.1',
+	version: '0.23.0',
 	modules: {
 		'./Alert.svelte': {path: 'Alert.svelte', declarations: []},
 		'./alert.js': {
