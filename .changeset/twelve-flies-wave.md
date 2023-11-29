@@ -1,5 +1,5 @@
 ---
-'@fuz.dev/fuz_library': patch
+'@fuz.dev/fuz_library': minor
 ---
 
 rename active to selected
