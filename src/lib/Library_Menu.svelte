@@ -6,7 +6,7 @@
 	import type {Tome} from '$lib/tome.js';
 	import Library_Panel from '$lib/Library_Panel.svelte';
 
-	// Library_Menu floats alongside the docs, showing scrolled item as active
+	// Library_Menu floats alongside the docs, showing scrolled item as selected
 	export let tomes: Tome[];
 
 	let tomes_by_category: Record<string, Tome[]>;

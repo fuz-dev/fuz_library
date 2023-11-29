@@ -64,7 +64,7 @@
 			<slot name="homepage_url" {homepage_url}>
 				<div class="row">
 					homepage:
-					<a class="chip row" class:active={homepage_url === $page.url.href} href={homepage_url}>
+					<a class="chip row" class:selected={homepage_url === $page.url.href} href={homepage_url}>
 						<img
 							src="{ensure_end(homepage_url, '/')}favicon.png"
 							alt="favicon to homepage at {homepage_url}"

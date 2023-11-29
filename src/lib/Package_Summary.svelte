@@ -21,7 +21,7 @@
 	{#if homepage_url}
 		<slot name="homepage_url" {homepage_url}
 			><div class="spaced">
-				<a class="chip" class:active={homepage_url === $page.url.href} href={homepage_url}
+				<a class="chip" class:selected={homepage_url === $page.url.href} href={homepage_url}
 					>{format_host(homepage_url)}</a
 				>
 			</div></slot

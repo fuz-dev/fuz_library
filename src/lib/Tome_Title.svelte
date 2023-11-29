@@ -6,9 +6,9 @@
 
 	export let tome: Tome;
 
-	$: ({path, path_is_active} = to_library_path_info(tome.slug, $page.url.pathname));
+	$: ({path, path_is_selected} = to_library_path_info(tome.slug, $page.url.pathname));
 </script>
 
 <h2 class="box" id={tome.name}>
-	{#if path_is_active}{tome.name}{:else}<a href={path}>{tome.name}</a>{/if}
+	{#if path_is_selected}{tome.name}{:else}<a href={path}>{tome.name}</a>{/if}
 </h2>
