@@ -20,7 +20,7 @@
 					'/',
 				),
 				'git+',
-		  )
+			)
 		: null;
 	$: license_url = license && repository_url ? repository_url + '/blob/main/LICENSE' : null;
 
@@ -37,7 +37,7 @@
 		? Object.keys(pkg_exports).map((k) => {
 				const v = strip_start(k, './');
 				return v === '.' ? 'index.js' : v;
-		  })
+			})
 		: null;
 </script>
 
